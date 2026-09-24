@@ -4,7 +4,7 @@
  *
  * Add to a page with:
  *   <div id="cars-flashcards"></div>
- *   <script src="https://cdn.jsdelivr.net/gh/JohnBThomas/cars-flashcards@v0.2.0/flashcards.js"></script>
+ *   <script src="https://cdn.jsdelivr.net/gh/JohnBThomas/cars-flashcards@v0.2.1/flashcards.js"></script>
  *
  * Optional attributes on the div:
  *   data-exam-link   URL for "Find an exam session"
@@ -172,7 +172,8 @@
     var view = VIEWS[state.view] || VIEWS.home;
     root.appendChild(view());
     var focus = root.querySelector('[data-autofocus]') || root.querySelector('h2');
-    if (!focus) return;
+    // Don't pull focus into the app when the page first loads.
+    if (!focus || state.initial) return;
     if (focus.tagName === 'H2') focus.setAttribute('tabindex', '-1');
     focus.focus({ preventScroll: true });
     // Keep the reader's place for in-card updates; jump to the top for new screens.
@@ -238,21 +239,29 @@
   };
 
   VIEWS.home = function () {
+    var last = lastPoolEntry();
     return h('div', null,
       h('div', { class: 'cf-intro' },
         h('h2', { text: 'Study for your license' }),
         h('p', { text: 'Learn each topic first, then practice. Cards you miss come back sooner, and cards you know come back less often, so your study time goes where it helps most.' })),
+      last ? h('div', { class: 'cf-card cf-continue' },
+        h('span', { text: 'Welcome back. You were studying ' + last.name + '.' }),
+        h('button', { type: 'button', class: 'cf-btn', 'data-autofocus': true, onclick: function () { openPool(last); }, text: 'Continue: ' + last.name })) : null,
       h('div', { class: 'cf-grid' }, manifest.pools.map(function (p) {
         var ready = !!p.file;
         return h('div', { class: 'cf-card cf-pool' + (ready ? '' : ' cf-soon') },
           h('h3', { text: p.name }),
           h('p', { class: 'cf-muted', text: p.blurb || '' }),
           ready
-            ? h('button', { type: 'button', class: 'cf-btn', onclick: function () { openPool(p); }, text: 'Start studying' })
+            ? h('button', { type: 'button', class: p === last ? 'cf-btn cf-btn-quiet' : 'cf-btn', onclick: function () { openPool(p); }, text: p === last ? 'Continue studying' : 'Start studying' })
             : h('p', { class: 'cf-muted', text: 'Coming soon' }));
       })),
       footer());
   };
+
+  function lastPoolEntry() {
+    return manifest.pools.filter(function (p) { return p.id === progress.prefs.lastPool && p.file; })[0] || null;
+  }
 
   function openPool(entry) {
     go('loading', { message: 'Loading ' + entry.name + ' questions…' });
@@ -648,6 +657,7 @@
     '.cf p{margin:0 0 .7rem}',
     '.cf-card{background:var(--cf-surface);border:1px solid var(--cf-line);border-radius:10px;padding:1.1rem 1.25rem;margin:0 0 1rem}',
     '.cf-intro{margin:0 0 1rem}',
+    '.cf-continue{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center;justify-content:space-between;border-left:4px solid var(--cf-gold)}',
     '.cf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}',
     '.cf-soon{opacity:.75}',
     '.cf-muted{color:var(--cf-muted)}',
@@ -731,8 +741,8 @@
     go('loading');
     fetchJSON('data/pools.json').then(function (m) {
       manifest = m;
-      var last = m.pools.filter(function (p) { return p.id === progress.prefs.lastPool && p.file; })[0];
-      if (last) openPool(last); else go('home');
+      // Always open on "All exams"; returning learners get a Continue button there.
+      go('home', { initial: true });
     }).catch(function (err) { go('error', { error: err }); });
   }
 

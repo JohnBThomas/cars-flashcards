@@ -17,7 +17,7 @@ The page is plain JavaScript with no build step or server. The CARS WordPress si
 
 ```html
 <div id="cars-flashcards" data-exam-link="https://nf4cq.com/..." data-elmer-link="https://nf4cq.com/..."></div>
-<script src="https://cdn.jsdelivr.net/gh/JohnBThomas/cars-flashcards@v0.2.0/flashcards.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JohnBThomas/cars-flashcards@v0.2.1/flashcards.js"></script>
 ```
 
 The script loads `data/` and `images/` from the same version, so pinning the tag (`@v0.1.0`) keeps the page stable. To publish an update: commit, push, create a new tag (for example `v0.2.0`), then change the tag in the WordPress block.
