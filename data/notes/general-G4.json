@@ -1,0 +1,645 @@
+{
+  "subelement": "G4",
+  "concepts": [
+    {
+      "id": "g4a-notch-reverse-sideband",
+      "group": "G4A",
+      "title": "Notch filter and reverse sideband: dodging interfering signals",
+      "body": [
+        "A notch filter cuts a very narrow slice out of the receiver's passband. Its job is to kill a steady carrier, such as someone tuning up or a whistling heterodyne, that falls inside the audio you are listening to. It works on the receiver, not the transmitter, and it does little against crashes of impulse noise or broad splatter.",
+        "When you receive CW, the radio can place the incoming signal on either side of its filter, called normal and reverse (or opposite) sideband. Flipping to the reverse sideband moves nearby signals to the other side of your filter. An interfering station that was right on top of you may land outside the passband, so switching sides may reduce or eliminate the interference."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4a-noise-overload",
+      "group": "G4A",
+      "title": "Noise blanker, noise reduction, and the attenuator",
+      "body": [
+        "A noise blanker is built for short, sharp pulses such as ignition noise or electric fence clicks. It watches for each pulse and turns the receiver gain down for just that instant, so the pop never reaches your ears.",
+        "Noise reduction (usually a DSP control) is different: it tries to separate a signal from steady background hiss. Turning it up lowers the noise, but too much makes voices sound watery, hollow, or distorted, because the processing starts eating the signal too.",
+        "A receive attenuator deliberately weakens everything coming in from the antenna. That sounds backward, but a very strong nearby signal can overload the receiver's front end and cause false signals and desensing. Knocking all signals down a few dB lets the receiver work normally again."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4a-antenna-tuner",
+      "group": "G4A",
+      "title": "What an antenna tuner really does",
+      "body": [
+        "Modern transmitters want to see a load of about 50 Ω. When the feed line presents some other impedance, the transmitter cannot deliver its full power and may fold back its output to protect itself.",
+        "An antenna tuner sitting at the radio transforms whatever impedance the feed line shows into 50 Ω. That increases the power transfer from the transmitter into the feed line.",
+        "The tuner does not fix the mismatch at the antenna. The SWR on the feed line between the tuner and the antenna stays exactly the same, and so does the loss in that feed line. A tuner only makes the transmitter happy."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4a-tube-amp-tuning",
+      "group": "G4A",
+      "title": "Tuning a vacuum-tube amplifier: TUNE and LOAD",
+      "body": [
+        "Many tube amplifiers have two front-panel knobs, TUNE (or PLATE) and LOAD (or COUPLING), plus a meter showing plate current.",
+        "• TUNE sets the output circuit to resonance on your frequency. When it is right, plate current falls to a pronounced dip, because a resonant circuit wastes the least energy in the tube.",
+        "• LOAD sets how tightly the amplifier couples power into the antenna system. Adjust it for the output power you want, without letting plate current go above the tube's maximum rating.",
+        "In practice you go back and forth between the two, redipping TUNE after each LOAD change."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4a-alc",
+      "group": "G4A",
+      "title": "Automatic level control (ALC)",
+      "body": [
+        "ALC is a feedback line that automatically turns down the drive when the output starts to get too strong. Between a transceiver and an external RF power amplifier, the amplifier's ALC tells the exciter to back off, preventing excessive drive that would overdrive the amplifier and make it splatter.",
+        "For data modes sent as audio tones (AFSK), such as FT8 or PSK31, you want no ALC action at all. ALC works by constantly squeezing the gain, which distorts the carefully shaped signal and creates spurious products. Set the audio level from the computer low enough that the ALC meter stays at or near zero, and adjust power with the power control instead."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4a-amp-keying",
+      "group": "G4A",
+      "title": "Keying an external amplifier",
+      "body": [
+        "When you key up, the transceiver signals the amplifier through a keying line (often a jack called SEND or TX GND). The amplifier then operates a relay that moves the antenna from the transceiver's path to the amplifier's output.",
+        "A relay takes a few milliseconds to move. If RF arrives before the contacts settle, the relay switches under power (hot switching), which can burn the contacts. That is why many radios can delay RF output slightly after closing the keying line: it gives the amplifier time to switch the antenna over first."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4a-keyer-dual-vfo",
+      "group": "G4A",
+      "title": "Electronic keyers and dual VFOs",
+      "body": [
+        "An electronic keyer works with a paddle. Hold one side and it automatically sends a string of perfectly timed dots; hold the other and it sends dashes. It generates dots and dashes for CW, but it has nothing to do with transmit/receive switching or data modes.",
+        "A dual-VFO radio holds two frequencies, usually called VFO A and VFO B. The common use is split operation: transmit on one frequency while listening on another. DX stations often ask callers to transmit a few kHz away from them, and split lets you do that. The radio still transmits on only one frequency at a time, and it does not receive while transmitting."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4b-oscilloscope",
+      "group": "G4B",
+      "title": "The oscilloscope: seeing the waveform",
+      "body": [
+        "An oscilloscope draws a graph of voltage over time. It has a vertical channel amplifier (which moves the trace up and down with the signal voltage) and a horizontal channel amplifier (which sweeps the trace across the screen with time). No meter has that pair.",
+        "A voltmeter gives you a single number. A scope shows the whole shape, so it can display and measure complex waveforms, not just a level. That makes it the best tool for checking the keying waveform of a CW transmitter: you can see if each dot and dash starts and stops with smooth, rounded edges or with sharp corners that cause key clicks.",
+        "A scope is not the choice for measuring complex impedance, and it is not more precise or lower-power than a digital meter. Its advantage is seeing the waveform."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4b-envelope-two-tone",
+      "group": "G4B",
+      "title": "Watching the RF envelope and the two-tone test",
+      "body": [
+        "To look at the RF envelope of your transmitted signal, feed a sample of the transmitter's RF output, attenuated down to a safe level, into the scope's vertical input. The outline (envelope) of the RF shows how the signal's strength rises and falls.",
+        "A two-tone test checks the linearity of an SSB transmitter or amplifier, meaning whether the output is a faithful, scaled-up copy of the input. Two audio tones are fed into the microphone input at the same time. They must not be harmonically related (for example 700 Hz and 1900 Hz, where neither is a whole-number multiple of the other), so any distortion products stand out clearly.",
+        "A clean, linear transmitter shows a smooth, regular pattern of rounded humps on the scope. Flattened tops or bent edges show the transmitter is not linear and will splatter."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4b-meters",
+      "group": "G4B",
+      "title": "Voltmeters: input impedance, digital vs analog",
+      "body": [
+        "Any meter you connect to a circuit draws a little current and can change what you are measuring. That is called loading. Voltmeters are built with a very high input impedance so they draw almost nothing and disturb the circuit as little as possible.",
+        "A digital multimeter shows several digits, so it has higher precision than reading a needle against a scale.",
+        "An analog meter still wins in one job: adjusting a circuit for a peak or a dip. A swinging needle shows at a glance whether the reading is rising or falling, while changing digits are hard to follow. So an analog meter is preferred when tuning for a maximum or minimum value."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4b-directional-wattmeter",
+      "group": "G4B",
+      "title": "The directional wattmeter",
+      "body": [
+        "A directional wattmeter goes in the feed line and measures the power traveling in one direction at a time: forward power heading to the antenna and reflected power coming back.",
+        "From the ratio of reflected to forward power you can work out the standing wave ratio (SWR), and many meters show SWR directly. A wattmeter in the feed line cannot tell you an antenna's front-to-back ratio, find the source of interference, or measure propagation."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4b-antenna-analyzer",
+      "group": "G4B",
+      "title": "The antenna analyzer",
+      "body": [
+        "An antenna analyzer contains its own tiny signal source and measuring bridge. Connect it to the antenna's feed line (with the antenna attached) and it sweeps frequency and reports SWR and impedance. No transmitter or receiver is involved; the analyzer replaces the radio.",
+        "Because it measures such small signals, a strong signal from a nearby transmitter coupled in through the antenna adds received power the analyzer cannot tell from its own, throwing off the SWR reading.",
+        "Besides antenna SWR, an analyzer can measure impedance, including the characteristic impedance of a piece of coaxial cable. It cannot measure antenna gain, front-to-back ratio, or transmitter power, since those need a real transmitted signal or a far-off receiving setup."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4c-rfi-symptoms",
+      "group": "G4C",
+      "title": "Recognizing interference by its sound",
+      "body": [
+        "When RF gets into an audio device such as a stereo, intercom, or telephone, a diode or transistor inside rectifies it, and the device plays back the changes in the signal's strength.",
+        "• A CW transmitter turns on and off, so the victim hears on-and-off humming or clicking in time with the keying.",
+        "• A single sideband phone transmitter's strength follows the voice, so the victim hears distorted, garbled speech (usually not clear enough to understand).",
+        "Interference that covers a wide range of frequencies usually comes from arcing, such as a loose or corroded electrical connection or a failing power line insulator. A spark creates energy all across the spectrum at once, rather than on one channel."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4c-rfi-cures",
+      "group": "G4C",
+      "title": "Cures: bypass capacitors and ferrite chokes",
+      "body": [
+        "A bypass capacitor is a small capacitor from an audio line to ground. A capacitor's opposition to current drops as frequency goes up, so it looks like a short circuit to RF but almost an open circuit to audio. The RF is shunted to ground while the audio passes on unharmed. An inductor would do the opposite, so a bypass inductor is the wrong part.",
+        "Often RF rides on the outside of a cable as common-mode current: the whole cable, shield and conductors together, acting like an antenna. Snapping a ferrite choke (a ferrite bead or clamp-on core) around the cable, or winding the cable through a ferrite toroid, adds impedance to that common-mode current while leaving the normal signal inside the cable alone.",
+        "Never short or ground a signal conductor to kill RFI; that just breaks the cable's real job."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4c-rf-ground",
+      "group": "G4C",
+      "title": "RF grounds, resonance, and hot spots",
+      "body": [
+        "A ground wire is not a perfect short at radio frequencies. A long ground lead has inductance, so it has impedance at RF. If the ground wire has high impedance on your operating frequency, RF voltage builds up on the equipment instead of flowing away, and you can get an RF burn from touching the rig or microphone.",
+        "The worst case is a resonant ground connection. A ground lead about a quarter wavelength long (or an odd multiple) acts like an open circuit at the station end, so high RF voltages appear on the enclosures of your station equipment.",
+        "The fix for RF hot spots is to bond all the equipment enclosures together with short, wide conductors so every chassis sits at the same RF potential."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4c-ground-loops",
+      "group": "G4C",
+      "title": "Ground loops and hum",
+      "body": [
+        "A ground loop happens when pieces of equipment are connected to ground by more than one path, for example through their power cords and also through the shields of audio cables. Small currents circulate around the loop and add an unwanted voltage to the signal.",
+        "The classic symptom in a ham station is other hams telling you there is hum on your transmitted signal, often after you connect a computer sound interface.",
+        "To minimize ground loops, bond the equipment enclosures together so they share one common ground reference. Connecting grounds in series, or tying the AC neutral to the ground wire, is wrong and unsafe."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4c-safety-lightning",
+      "group": "G4C",
+      "title": "Safety grounding and lightning grounds",
+      "body": [
+        "Every metal equipment enclosure must be grounded (through the power cord's ground pin, for AC equipment). If a wire inside comes loose and touches the case, the ground gives the fault current a path and trips the breaker or blows the fuse. It ensures hazardous voltages cannot appear on a chassis you might touch.",
+        "Lightning ground connections should be clamped or welded, not soldered. A lightning strike carries enormous current that heats the joint in a flash. Solder melts at a low temperature, so a soldered joint will likely be destroyed just when you need it most."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4d-speech-processor",
+      "group": "G4D",
+      "title": "Speech processors",
+      "body": [
+        "A human voice has a few loud peaks and a lot of quieter sound in between. An SSB transmitter's peak power is limited, so most of the time it runs well below full output.",
+        "A speech processor compresses the voice, lifting the quiet parts closer to the peaks. The peak power stays the same, but the average power goes up. On the other end, your voice sounds louder and punches through noise better. That is its purpose: increasing the apparent loudness of your signal.",
+        "Too much processing hurts. A badly adjusted processor causes distorted speech, extra intermodulation products (splatter onto nearby frequencies), and loud background noise, since room noise gets boosted along with your voice."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4d-s-meter",
+      "group": "G4D",
+      "title": "The S meter",
+      "body": [
+        "The S meter on a receiver measures received signal strength. It reads in S units from S1 to S9, and above S9 it switches to decibels, such as S9 + 20 dB.",
+        "On a properly calibrated meter, each S unit is a 6 dB change in signal strength. It does not measure transmitter power, impedance, or carrier suppression.",
+        "Many real-world S meters are not calibrated that carefully, so treat them as a rough guide."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4d-db-power",
+      "group": "G4D",
+      "title": "Decibels and power ratios",
+      "body": [
+        "A decibel (dB) compares two power levels. The useful anchors:",
+        "• 3 dB is about 2 times the power",
+        "• 6 dB is about 4 times the power",
+        "• 10 dB is 10 times the power",
+        "• 20 dB is 100 times the power",
+        "So a signal 20 dB over S9 is 100 times as strong as one reading S9. And because one S unit is 6 dB, a distant station must raise its power about 4 times to move your meter up by one S unit, say from S8 to S9. Doubling power only gains about half an S unit, which is why a small power boost rarely makes a big difference on the air."
+      ],
+      "formula": "power ratio = 10^(dB ÷ 10)",
+      "status": "draft"
+    },
+    {
+      "id": "g4d-sideband-occupied",
+      "group": "G4D",
+      "title": "Where an SSB signal actually sits",
+      "body": [
+        "On SSB, the frequency your radio displays is the suppressed carrier frequency. Your voice occupies about 3 kHz on one side of that number, not centered on it.",
+        "• Lower sideband (LSB) sits below the displayed frequency: from (display minus 3 kHz) up to the display.",
+        "• Upper sideband (USB) sits above the displayed frequency: from the display up to (display plus 3 kHz).",
+        "Remember 3 kHz is 0.003 MHz when you do the arithmetic."
+      ],
+      "formula": "LSB: display − 3 kHz to display.  USB: display to display + 3 kHz",
+      "status": "draft"
+    },
+    {
+      "id": "g4d-band-edges",
+      "group": "G4D",
+      "title": "Staying inside the band edges",
+      "body": [
+        "Every part of your signal, not just the displayed number, must stay inside your authorized segment. Since the signal spreads 3 kHz to one side, you need 3 kHz of room on that side.",
+        "• Near the bottom edge of a phone segment, using LSB, keep the displayed frequency at least 3 kHz above the edge, because your signal extends 3 kHz below the display.",
+        "• Near the top edge of a phone segment, using USB, keep the displayed frequency at least 3 kHz below the edge, because your signal extends 3 kHz above the display.",
+        "Leaving a little extra margin is wise, since radio calibration and filter widths vary."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4e-mobile-antenna-parts",
+      "group": "G4E",
+      "title": "Capacitance hats and corona balls",
+      "body": [
+        "A full-size antenna for the lower HF bands would be far too long for a car, so mobile whips are physically short. A capacitance hat is a set of spokes or a disk near the top of the whip. It adds capacitance at the top, which electrically lengthens a physically short antenna, so it can resonate lower with less loading coil and better efficiency.",
+        "A corona ball is the smooth ball on the tip of many HF mobile whips. A sharp tip concentrates the very high RF voltage there and can let it discharge into the air (corona). A rounded ball spreads the voltage out and reduces that RF discharge while transmitting."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4e-short-antenna-limits",
+      "group": "G4E",
+      "title": "The weak link: short mobile antennas",
+      "body": [
+        "The factor that most limits an HF mobile station is the efficiency of the electrically short antenna. A short whip has a very low radiation resistance, so a large share of your power is lost as heat in the loading coil and ground losses instead of being radiated. The lower the band, the worse it gets.",
+        "A shortened, loaded antenna also has a high Q, which means a very narrow operating bandwidth. Move a few kHz away and the SWR climbs, so you may need to retune the antenna when you change frequency."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4e-mobile-power",
+      "group": "G4E",
+      "title": "Powering a mobile HF rig",
+      "body": [
+        "A 100-watt HF transceiver draws around 20 amps or more on transmit. Run heavy-gauge wire directly to the vehicle battery, with a fuse in each lead near the battery. The battery acts as a big filter and reservoir. Connecting to the alternator is noisier and not the right point, and balanced transmission line is for RF, not DC power.",
+        "Do not plug a 100-watt radio into the auxiliary power (cigarette lighter) socket. That socket's wiring and fuse are usually meant for about 10 to 15 amps and may be inadequate for the current the transceiver draws. The voltage drop can make the radio misbehave, and the wiring can overheat."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4e-vehicle-noise",
+      "group": "G4E",
+      "title": "Noise sources in a vehicle",
+      "body": [
+        "A modern vehicle is full of electrical noise makers that can interfere with HF reception:",
+        "• The battery charging system: alternator whine that rises and falls with engine speed.",
+        "• The fuel delivery system: the electric fuel pump motor.",
+        "• The control computers: engine and body control modules with fast digital clocks.",
+        "Ignition systems, blower motors, and LED lighting can add more. Tracking down mobile noise means checking each system in turn."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4e-solar-cells",
+      "group": "G4E",
+      "title": "Solar cells and panels",
+      "body": [
+        "A single silicon photovoltaic cell in full sunlight produces only about 0.5 volt with no load connected (its open-circuit voltage). That is far too little to charge a 12-volt battery by itself.",
+        "So a solar panel connects many cells in a series-parallel arrangement. Cells in series add their voltages to reach a useful level, and parallel strings add their currents for more amps."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g4e-solar-charging",
+      "group": "G4E",
+      "title": "Charging a battery from solar",
+      "body": [
+        "At night or in heavy shade, the panel's voltage drops below the battery's, and current could flow backward from the battery through the panel, draining it. A diode in series between the panel and the battery lets current flow only from panel to battery, preventing that discharge.",
+        "Lithium iron phosphate (LiFePO4) batteries are popular for portable operating, but they need a careful charging profile. A charge controller designed for that chemistry must sit between the panel and the battery to control voltage and current and stop charging when the battery is full. A simple resistor or diode alone is not enough."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "G4A01": {
+      "why": "A notch filter removes a narrow slice of the receiver passband, ideal for killing a steady carrier or whistle that lands inside the signal you are copying. It does nothing to the transmitter's bandwidth, and it is not the tool for impulse noise or broad splatter.",
+      "concept": "g4a-notch-reverse-sideband",
+      "status": "draft"
+    },
+    "G4A02": {
+      "why": "Switching to the reverse sideband moves nearby signals to the other side of your receive filter, so an interfering station may drop outside the passband. It does not remove impulse noise or have anything to do with out-of-band operation.",
+      "concept": "g4a-notch-reverse-sideband",
+      "status": "draft"
+    },
+    "G4A03": {
+      "why": "A noise blanker detects each short noise pulse and cuts the receiver gain for that instant, so the pulse is silenced. It does not widen the bandwidth or just clip the peaks.",
+      "concept": "g4a-noise-overload",
+      "status": "draft"
+    },
+    "G4A04": {
+      "why": "When the TUNE control brings the plate circuit to resonance, plate current drops to a pronounced dip. A peak would mean you are moving away from resonance, not toward it.",
+      "concept": "g4a-tube-amp-tuning",
+      "status": "draft"
+    },
+    "G4A05": {
+      "why": "ALC feeds back from the amplifier and automatically reduces drive, preventing excessive drive that would overdrive the amplifier and cause splatter. It is not an audio equalizer or a harmonic filter.",
+      "concept": "g4a-alc",
+      "status": "draft"
+    },
+    "G4A06": {
+      "why": "A tuner matches the feed line's impedance to the 50 Ω the transmitter wants, increasing power transfer from the transmitter into the feed line. It does not change the SWR or the loss on the feed line between the tuner and the antenna, so 'all these choices' is wrong.",
+      "concept": "g4a-antenna-tuner",
+      "status": "draft"
+    },
+    "G4A07": {
+      "why": "Turning up noise reduction cuts more noise but the processing starts to affect the signal too, so received signals may sound distorted. It does not change the frequency you are tuned to.",
+      "concept": "g4a-noise-overload",
+      "status": "draft"
+    },
+    "G4A08": {
+      "why": "LOAD or COUPLING sets how much power the tube delivers to the antenna, so adjust it for the output you want while keeping plate current under the tube's maximum rating. Minimum SWR on the antenna is not something the amplifier's controls can set.",
+      "concept": "g4a-tube-amp-tuning",
+      "status": "draft"
+    },
+    "G4A09": {
+      "why": "The delay gives the amplifier's relay time to switch the antenna from the transceiver to the amplifier output before RF arrives, so the relay contacts are not hot-switched. It has nothing to do with key clicks or the power supply.",
+      "concept": "g4a-amp-keying",
+      "status": "draft"
+    },
+    "G4A10": {
+      "why": "An electronic keyer, used with a paddle, automatically generates correctly timed dots and dashes for CW. Transmit/receive switching and data-mode interfaces are other jobs.",
+      "concept": "g4a-keyer-dual-vfo",
+      "status": "draft"
+    },
+    "G4A11": {
+      "why": "ALC works by constantly adjusting gain, and that distorts an AFSK data signal and creates spurious products. Keep the audio drive low enough that ALC stays inactive. It does not invert the modulation or overheat the transmitter.",
+      "concept": "g4a-alc",
+      "status": "draft"
+    },
+    "G4A12": {
+      "why": "Dual VFOs let you transmit on one frequency and listen on another, called split operation, which is common when working DX. The radio still transmits on only one frequency at a time and does not receive while transmitting.",
+      "concept": "g4a-keyer-dual-vfo",
+      "status": "draft"
+    },
+    "G4A13": {
+      "why": "A receive attenuator weakens all incoming signals to prevent receiver overload from very strong signals. It does not affect transmit power, battery drain, or simply turn the audio down.",
+      "concept": "g4a-noise-overload",
+      "status": "draft"
+    },
+    "G4B01": {
+      "why": "An oscilloscope has a vertical amplifier to move the trace with the signal voltage and a horizontal amplifier to sweep it across the screen with time. Ohmmeters, ammeters, and signal generators have no such pair.",
+      "concept": "g4b-oscilloscope",
+      "status": "draft"
+    },
+    "G4B02": {
+      "why": "A scope shows the full shape of a signal, so it can display and measure complex waveforms that a voltmeter would reduce to one number. It is not more precise and does not use less power.",
+      "concept": "g4b-oscilloscope",
+      "status": "draft"
+    },
+    "G4B03": {
+      "why": "Only an oscilloscope lets you see the shape of each keyed dot and dash, including whether the edges are smooth or sharp enough to cause key clicks. A field strength meter or wavemeter just shows that RF is present.",
+      "concept": "g4b-oscilloscope",
+      "status": "draft"
+    },
+    "G4B04": {
+      "why": "To view the RF envelope you feed the scope's vertical input with a sample of the transmitter's actual RF output, attenuated to a safe level. Internal stages like the local oscillator or mixer do not show what is actually transmitted.",
+      "concept": "g4b-envelope-two-tone",
+      "status": "draft"
+    },
+    "G4B05": {
+      "why": "A high input impedance means the voltmeter draws very little current, decreasing loading on the circuit so the reading reflects how the circuit really behaves. It does not by itself raise the safe voltage limit.",
+      "concept": "g4b-meters",
+      "status": "draft"
+    },
+    "G4B06": {
+      "why": "A digital multimeter reads out several exact digits, giving higher precision than estimating a needle's position. It is not faster to respond; a needle actually shows changes more quickly to the eye.",
+      "concept": "g4b-meters",
+      "status": "draft"
+    },
+    "G4B07": {
+      "why": "A two-tone test uses two audio tones that are not harmonically related, so any distortion products fall on frequencies that are easy to spot. Same-frequency tones, swept tones, or square waves would not give a clean test.",
+      "concept": "g4b-envelope-two-tone",
+      "status": "draft"
+    },
+    "G4B08": {
+      "why": "The two-tone test checks linearity: whether the transmitter's output is a faithful, scaled-up copy of its input. Carrier suppression and frequency modulation are measured other ways.",
+      "concept": "g4b-envelope-two-tone",
+      "status": "draft"
+    },
+    "G4B09": {
+      "why": "When adjusting a circuit for a peak or a dip, a moving needle shows the trend at a glance, while changing digits are hard to follow. For high precision or logic circuits a digital meter is the better tool.",
+      "concept": "g4b-meters",
+      "status": "draft"
+    },
+    "G4B10": {
+      "why": "A directional wattmeter measures forward and reflected power, and the ratio of the two gives the standing wave ratio. It cannot measure an antenna's front-to-back ratio or propagation.",
+      "concept": "g4b-directional-wattmeter",
+      "status": "draft"
+    },
+    "G4B11": {
+      "why": "The analyzer has its own low-power signal source, so for SWR measurements it connects to the feed line with the antenna attached. No transmitter or receiver is involved.",
+      "concept": "g4b-antenna-analyzer",
+      "status": "draft"
+    },
+    "G4B12": {
+      "why": "A strong nearby signal picked up by the antenna adds received power the analyzer cannot tell from its own tiny test signal, which throws off the SWR reading.",
+      "concept": "g4b-antenna-analyzer",
+      "status": "draft"
+    },
+    "G4B13": {
+      "why": "An antenna analyzer measures impedance, so it can check the impedance of a piece of coaxial cable. Gain, front-to-back ratio, and transmitter power all need a real transmitted signal, not the analyzer's small test source.",
+      "concept": "g4b-antenna-analyzer",
+      "status": "draft"
+    },
+    "G4C01": {
+      "why": "A bypass capacitor looks like a short circuit to RF but nearly an open circuit to audio, so it shunts the RF to ground while the audio passes. An inductor does the opposite, and diodes would make rectification worse.",
+      "concept": "g4c-rfi-cures",
+      "status": "draft"
+    },
+    "G4C02": {
+      "why": "Arcing at a poor electrical connection creates sparks, and a spark produces energy across a very wide range of frequencies at once. Balun choices affect a single antenna system, not wideband noise.",
+      "concept": "g4c-rfi-symptoms",
+      "status": "draft"
+    },
+    "G4C03": {
+      "why": "An SSB signal's strength follows the speaker's voice, so a device that rectifies it plays back distorted, garbled speech. Clear speech is unlikely because the device is not properly demodulating SSB.",
+      "concept": "g4c-rfi-symptoms",
+      "status": "draft"
+    },
+    "G4C04": {
+      "why": "A CW signal simply turns on and off, so the affected device hears on-and-off humming or clicking in step with the keying. It does not reproduce a clean CW tone.",
+      "concept": "g4c-rfi-symptoms",
+      "status": "draft"
+    },
+    "G4C05": {
+      "why": "If the ground wire has high impedance on your operating frequency, RF cannot flow away through it, so RF voltage builds up on the equipment and can burn you. Flat braid and insulated wire are fine for grounding.",
+      "concept": "g4c-rf-ground",
+      "status": "draft"
+    },
+    "G4C06": {
+      "why": "A ground lead that is resonant (about a quarter wavelength long) acts like an open circuit at the station end, leaving high RF voltages on the equipment enclosures. It does not cause corrosion or a ground loop.",
+      "concept": "g4c-rf-ground",
+      "status": "draft"
+    },
+    "G4C07": {
+      "why": "Lightning current heats a joint enormously in an instant, and solder melts at a low temperature, so a soldered joint will likely be destroyed by the strike. Clamps or welded connections survive.",
+      "concept": "g4c-safety-lightning",
+      "status": "draft"
+    },
+    "G4C08": {
+      "why": "A ferrite choke on the cable adds impedance to common-mode current flowing on the outside of the cable while leaving the audio signal inside alone. Shorting or grounding the center conductor would kill the audio itself.",
+      "concept": "g4c-rfi-cures",
+      "status": "draft"
+    },
+    "G4C09": {
+      "why": "Bonding the equipment enclosures together gives all of them one common ground reference, so no loop currents circulate between them. Tying the AC neutral to ground is both wrong and a safety hazard.",
+      "concept": "g4c-ground-loops",
+      "status": "draft"
+    },
+    "G4C10": {
+      "why": "Ground loop currents add a low-frequency voltage to your audio, so other stations report hum on your transmitted signal. Ground loops do not change your SWR or produce harmonics.",
+      "concept": "g4c-ground-loops",
+      "status": "draft"
+    },
+    "G4C11": {
+      "why": "Bonding all the equipment enclosures together with short, wide conductors keeps them at the same RF potential, so no single piece becomes a hot spot. Surge suppressors and low-pass filters address other problems.",
+      "concept": "g4c-rf-ground",
+      "status": "draft"
+    },
+    "G4C12": {
+      "why": "Grounding a metal enclosure gives fault current a path if a live wire touches the case, so hazardous voltages cannot appear on the chassis. It is about protecting people, not signal overload.",
+      "concept": "g4c-safety-lightning",
+      "status": "draft"
+    },
+    "G4D01": {
+      "why": "A speech processor raises the quieter parts of your voice so your signal sounds louder at the other end, increasing its apparent loudness. It does not prevent distortion; overused, it causes it.",
+      "concept": "g4d-speech-processor",
+      "status": "draft"
+    },
+    "G4D02": {
+      "why": "Processing lifts the quiet parts of speech toward the peaks, so the average power goes up while the peak power stays the same. It does not reduce distortion.",
+      "concept": "g4d-speech-processor",
+      "status": "draft"
+    },
+    "G4D03": {
+      "why": "A badly adjusted processor can cause distorted speech, extra intermodulation products (splatter), and boosted background noise, so all these choices are correct.",
+      "concept": "g4d-speech-processor",
+      "status": "draft"
+    },
+    "G4D04": {
+      "why": "An S meter is on the receiver and measures received signal strength. It does not read transmitter power output or impedance.",
+      "concept": "g4d-s-meter",
+      "status": "draft"
+    },
+    "G4D05": {
+      "why": "Every 10 dB is a factor of 10 in power, so 20 dB is 10 × 10 = 100 times more powerful than the S9 signal.",
+      "work": [
+        "power ratio = 10^(dB ÷ 10)",
+        "10^(20 ÷ 10) = 10^2 = 100",
+        "S9 + 20 dB is 100 times the power of S9"
+      ],
+      "concept": "g4d-db-power",
+      "status": "draft"
+    },
+    "G4D06": {
+      "why": "On a properly calibrated S meter, one S unit represents a 6 dB change in signal strength.",
+      "concept": "g4d-s-meter",
+      "status": "draft"
+    },
+    "G4D07": {
+      "why": "One S unit is 6 dB, and 6 dB is about 4 times the power. Doubling the power adds only 3 dB, about half an S unit.",
+      "work": [
+        "S8 to S9 = 1 S unit = 6 dB",
+        "power ratio = 10^(6 ÷ 10) = 10^0.6 ≈ 3.98",
+        "about 4 times the power"
+      ],
+      "concept": "g4d-db-power",
+      "status": "draft"
+    },
+    "G4D08": {
+      "why": "Lower sideband sits below the displayed carrier frequency, so the signal runs from 3 kHz below 7.178 MHz up to 7.178 MHz. It is not centered on the displayed frequency.",
+      "work": [
+        "3 kHz = 0.003 MHz",
+        "LSB bottom: 7.178 MHz − 0.003 MHz = 7.175 MHz",
+        "occupies 7.175 MHz to 7.178 MHz"
+      ],
+      "concept": "g4d-sideband-occupied",
+      "status": "draft"
+    },
+    "G4D09": {
+      "why": "Upper sideband sits above the displayed carrier frequency, so the signal runs from 14.347 MHz up 3 kHz to 14.350 MHz. A tempting wrong answer adds 0.3 MHz instead of 0.003 MHz.",
+      "work": [
+        "3 kHz = 0.003 MHz",
+        "USB top: 14.347 MHz + 0.003 MHz = 14.350 MHz",
+        "occupies 14.347 MHz to 14.350 MHz"
+      ],
+      "concept": "g4d-sideband-occupied",
+      "status": "draft"
+    },
+    "G4D10": {
+      "why": "An LSB signal extends 3 kHz below the displayed frequency, so the display must be at least 3 kHz above the lower edge of the segment to keep the whole signal inside. Setting it below the edge would put you out of the segment entirely.",
+      "work": [
+        "LSB occupies display − 3 kHz to display",
+        "need display − 3 kHz ≥ lower edge",
+        "so display ≥ lower edge + 3 kHz"
+      ],
+      "concept": "g4d-band-edges",
+      "status": "draft"
+    },
+    "G4D11": {
+      "why": "A USB signal extends 3 kHz above the displayed frequency, so the display must be at least 3 kHz below the upper edge to keep the whole signal inside. Setting it above the edge would put you out of the band.",
+      "work": [
+        "USB occupies display to display + 3 kHz",
+        "need display + 3 kHz ≤ upper edge",
+        "so display ≤ upper edge − 3 kHz"
+      ],
+      "concept": "g4d-band-edges",
+      "status": "draft"
+    },
+    "G4E01": {
+      "why": "A capacitance hat adds capacitance near the top of the whip, which electrically lengthens a physically short antenna so it resonates lower and more efficiently. It does not raise power handling or lower the radiation angle.",
+      "concept": "g4e-mobile-antenna-parts",
+      "status": "draft"
+    },
+    "G4E02": {
+      "why": "The very high RF voltage at a whip's tip can discharge into the air from a sharp point. The rounded corona ball spreads that voltage out and reduces the discharge. It is not there as a bumper for striking objects.",
+      "concept": "g4e-mobile-antenna-parts",
+      "status": "draft"
+    },
+    "G4E03": {
+      "why": "A 100-watt radio needs a fused, heavy-gauge wire run straight to the battery, which acts as a big reservoir and filter. The alternator is the wrong connection point, and balanced transmission line is for RF, not DC power.",
+      "concept": "g4e-mobile-power",
+      "status": "draft"
+    },
+    "G4E04": {
+      "why": "A 100-watt HF transceiver draws 20 amps or more on transmit, and the auxiliary socket's wiring may be inadequate for that much current. The socket's polarity is standard, and it has nothing to do with engine temperature.",
+      "concept": "g4e-mobile-power",
+      "status": "draft"
+    },
+    "G4E05": {
+      "why": "The electrically short antenna on a vehicle wastes much of the power as heat, so its low efficiency is the biggest limit on an HF mobile station. There is no special FCC mobile power limit on 75 meters.",
+      "concept": "g4e-short-antenna-limits",
+      "status": "draft"
+    },
+    "G4E06": {
+      "why": "A shortened, loaded antenna has a high Q, which makes its usable operating bandwidth very narrow. Saying its Q is very low gets it backward.",
+      "concept": "g4e-short-antenna-limits",
+      "status": "draft"
+    },
+    "G4E07": {
+      "why": "The charging system (alternator whine), the fuel pump, and the vehicle's control computers can all create receive interference, so all these choices are correct.",
+      "concept": "g4e-vehicle-noise",
+      "status": "draft"
+    },
+    "G4E08": {
+      "why": "Solar cells are wired in series-parallel: series strings add voltage to a useful level, and parallel strings add current. Shunt, bypass, and full-wave bridge are not panel wiring arrangements.",
+      "concept": "g4e-solar-cells",
+      "status": "draft"
+    },
+    "G4E09": {
+      "why": "A fully lit silicon photovoltaic cell produces about 0.5 volt with no load attached, which is why many cells must be wired in series to charge a 12-volt battery.",
+      "concept": "g4e-solar-cells",
+      "status": "draft"
+    },
+    "G4E10": {
+      "why": "When the panel is dark its voltage falls below the battery's, and current could flow backward through the panel. A series diode only lets current flow from panel to battery, preventing that discharge. It does not regulate voltage or limit current.",
+      "concept": "g4e-solar-charging",
+      "status": "draft"
+    },
+    "G4E11": {
+      "why": "Lithium iron phosphate batteries need a controlled charging profile, so the solar panel must feed them through a charge controller that controls voltage and current and stops charging when the battery is full. A series resistor is not a substitute.",
+      "concept": "g4e-solar-charging",
+      "status": "draft"
+    }
+  }
+}

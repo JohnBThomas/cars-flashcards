@@ -4,7 +4,7 @@
  *
  * Add to a page with:
  *   <div id="cars-flashcards"></div>
- *   <script src="https://cdn.jsdelivr.net/gh/JohnBThomas/cars-flashcards@v0.1.0/flashcards.js"></script>
+ *   <script src="https://cdn.jsdelivr.net/gh/JohnBThomas/cars-flashcards@v0.2.0/flashcards.js"></script>
  *
  * Optional attributes on the div:
  *   data-exam-link   URL for "Find an exam session"
@@ -272,6 +272,7 @@
       h('div', { class: 'cf-card' },
         h('h2', { text: pool.label + ' (' + pool.name.replace(/^\D+/, '') + ' pool)' }),
         h('p', { class: 'cf-muted', text: pool.questions.length + ' questions in ' + pool.subelements.length + ' topics. The exam has ' + pool.examSize + ' questions, one from each group, and you need ' + Math.ceil(pool.examSize * PASS_RATE) + ' correct to pass.' }),
+        poolDates(pool),
         bar(overall, 'Overall'),
         h('p', { class: 'cf-muted', text: pct(overall) + ' mastered' }),
         h('div', { class: 'cf-actions' },
@@ -290,6 +291,21 @@
       })),
       footer());
   };
+
+  function longDate(iso) {
+    var p = iso.split('-');
+    return new Date(+p[0], +p[1] - 1, +p[2]).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  }
+
+  // Tell learners when a pool is about to be replaced, since exams switch on July 1.
+  function poolDates(pool) {
+    if (!pool.effective) return null;
+    var text = 'This question pool is used for exams from ' + longDate(pool.effective.from) + ' through ' + longDate(pool.effective.to) + '.';
+    var daysLeft = (new Date(pool.effective.to + 'T23:59:59') - Date.now()) / DAY;
+    if (daysLeft < 0) return h('p', { class: 'cf-warn', text: text + ' It has been replaced, so check which pool your exam will use.' });
+    if (daysLeft < 180) return h('p', { class: 'cf-warn', text: text + ' A new pool starts after that, so if your exam is later, study the new pool instead.' });
+    return h('p', { class: 'cf-fine', text: text });
+  }
 
   VIEWS.sub = function () {
     var pool = state.pool, sub = state.sub;
@@ -636,6 +652,7 @@
     '.cf-soon{opacity:.75}',
     '.cf-muted{color:var(--cf-muted)}',
     '.cf-fine{color:var(--cf-muted);font-size:.85rem}',
+    '.cf-warn{border-left:4px solid var(--cf-gold);padding:.4rem .7rem;background:var(--cf-page);border-radius:4px}',
     '.cf-eyebrow{color:var(--cf-eyebrow);font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin:0 0 .3rem}',
     '.cf-section{margin:1.4rem 0 .6rem}',
     '.cf-btn{font:inherit;font-weight:600;background:var(--cf-gold);color:var(--cf-on-gold);border:0;box-shadow:inset 0 0 0 1.5px var(--cf-panel);border-radius:8px;padding:.6rem 1.1rem;cursor:pointer;min-height:44px}',

@@ -1,0 +1,472 @@
+{
+  "subelement": "G9",
+  "concepts": [
+    {
+      "id": "g9a-characteristic-impedance",
+      "group": "G9A",
+      "title": "Characteristic impedance of a feed line",
+      "body": [
+        "Every feed line has a characteristic impedance, written Z0. It is the ratio of voltage to current that a signal sees as it travels down a long, properly terminated line. It is set by the line's physical shape, not by its length or by the frequency you use.",
+        "For a parallel conductor line (twin-lead, ladder line, window line), Z0 depends on two things: how far apart the centers of the two wires are, and how thick the wires are (their radius). Wider spacing or thinner wire raises the impedance; closer spacing or fatter wire lowers it. Coax works the same way, using the sizes of the center conductor and the shield.",
+        "Common values to remember:",
+        "• Most amateur coax: 50 ohms",
+        "• TV-style coax: 75 ohms",
+        "• Flat TV twin-lead: 300 ohms",
+        "• Window line (ladder line with plastic webbing cut into windows): about 450 ohms"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g9a-line-loss",
+      "group": "G9A",
+      "title": "Feed line loss and frequency",
+      "body": [
+        "No feed line is perfect. Some of your power turns into heat in the wire and the insulation on the way to the antenna. This loss is given in decibels per 100 feet of line, so a spec sheet might say a cable loses 1.2 dB per 100 feet at 30 MHz.",
+        "The loss of coax goes up as frequency goes up. A cable that is fine on 80 meters can waste a large part of your power on 2 meters or 70 centimeters. That is why VHF and UHF stations use thicker, lower-loss cable and keep runs short. The 'Marconi's Law of Attenuation' choice is made up; there is no such law."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g9a-reflections-swr",
+      "group": "G9A",
+      "title": "Mismatch, reflected power, and SWR",
+      "body": [
+        "When the antenna's feed point impedance equals the feed line's characteristic impedance, all the power flowing up the line is accepted by the antenna. When they differ, part of the power bounces back down the line. That returning wave is reflected power, and it is caused by the impedance mismatch, not by resonance, too much power, or the type of line.",
+        "The forward and reflected waves add and cancel along the line, making peaks and dips of voltage called standing waves. Standing wave ratio (SWR) compares the highest voltage to the lowest. The only way to get rid of standing waves on the line is to match the feed point impedance to the line's characteristic impedance. Cutting the line to some special length does not remove them.",
+        "For a purely resistive load, SWR is the larger impedance divided by the smaller one. The result is always written with the bigger number first, like 4:1, never 1:4."
+      ],
+      "formula": "SWR = larger impedance ÷ smaller impedance",
+      "status": "draft"
+    },
+    {
+      "id": "g9a-swr-effects",
+      "group": "G9A",
+      "title": "What SWR does, and what tuners and loss do to it",
+      "body": [
+        "High SWR makes a lossy feed line waste even more power. The reflected power travels back and forth along the line, and each trip loses some to heat, and the higher currents and voltages on the line add to the loss.",
+        "An antenna tuner (matching network) at the transmitter end only makes the transmitter see 1:1. It does not change the mismatch at the antenna, so the SWR on the feed line between the tuner and the antenna stays exactly what it was. With 5:1 at the antenna, the line still runs at 5:1.",
+        "Line loss can fool your SWR meter. Reflected power has to travel up the line and back before the meter sees it, getting weaker both ways. The more loss in the line, the smaller the reflection that returns, so a lossy line makes the SWR at the transmitter end look better than it really is at the antenna."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g9b-random-wire",
+      "group": "G9B",
+      "title": "Random-wire antennas and RF in the shack",
+      "body": [
+        "A random wire is just a length of wire, not cut to any particular band, connected straight to the transmitter or its tuner. It is simple, but the station itself becomes part of the antenna system.",
+        "Because there is no proper feed line or counterpoise, RF current flows on the radio case, the tuner, the microphone cord, and other station equipment. That can cause RF burns, a 'hot' microphone, and interference to nearby gear. A good RF ground or counterpoise helps."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g9b-verticals",
+      "group": "G9B",
+      "title": "Quarter-wave verticals and their radials",
+      "body": [
+        "A quarter-wave vertical (a monopole) uses a ground system as the other half of the antenna. It radiates equally well in every compass direction, which is called omnidirectional in azimuth. It is not isotropic, because it sends little energy straight up.",
+        "An elevated ground-plane vertical with radials sticking straight out has a feed point impedance of roughly 36 ohms. Sloping the radials downward, about 45 degrees, raises the impedance to near 50 ohms for a good match to coax.",
+        "A ground-mounted vertical uses many radial wires laid on the surface of the ground or buried a few inches under it. They spread out from the base like spokes and give the return current a low-loss path so it does not have to flow through lossy soil."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g9b-dipole-pattern",
+      "group": "G9B",
+      "title": "Dipole radiation patterns and height",
+      "body": [
+        "In free space, a half-wave dipole's pattern, seen looking down on the wire, is a figure-eight. The two big lobes point out broadside, at right angles to the wire, and there is very little radiation off the ends.",
+        "Real dipoles are close to the ground, and the ground reflection changes the pattern. When a horizontal dipole is less than half a wavelength high, most of its energy goes upward at high angles, and at those high angles the pattern is almost the same in every direction. On the low HF bands, most dipoles are this low, so they are close to omnidirectional for nearby contacts."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g9b-dipole-impedance",
+      "group": "G9B",
+      "title": "What changes a dipole's feed point impedance",
+      "body": [
+        "A center-fed half-wave dipole high in the air has a feed point impedance around 70 ohms. At the center, current is highest and voltage is lowest, which makes the impedance low.",
+        "Move the feed point away from the center toward an end and the current drops while the voltage rises, so the impedance steadily increases. At the very end it is thousands of ohms.",
+        "Height matters too. As a horizontal dipole is lowered toward about 1/10 wavelength above ground, its feed point impedance steadily decreases, because the nearby ground couples to the antenna.",
+        "Horizontal antennas have an advantage over verticals: lower ground losses. A vertical depends on the soil or a radial system for its return current, and poor soil wastes power. A horizontal dipole does not need that ground connection."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g9b-antenna-length",
+      "group": "G9B",
+      "title": "Figuring dipole and quarter-wave lengths",
+      "body": [
+        "A handy rule gives the length of a half-wave dipole in feet: divide 468 by the frequency in megahertz. The number 468 already includes a small shortening from a free-space half wave (about 492 ÷ f) to allow for the effects of real wire and its ends.",
+        "A quarter-wave vertical (monopole) is half of that, so divide 234 by the frequency in megahertz.",
+        "Quick checks: a 20-meter dipole is about 33 feet, an 80-meter dipole is about 132 feet, and a 10-meter quarter-wave whip is about 8 feet."
+      ],
+      "formula": "Half-wave length (ft) = 468 ÷ f (MHz); quarter-wave length (ft) = 234 ÷ f (MHz)",
+      "status": "draft"
+    },
+    {
+      "id": "g9c-yagi-elements",
+      "group": "G9C",
+      "title": "Parts of a Yagi",
+      "body": [
+        "A Yagi is a beam antenna built on a boom. The driven element is the one connected to the feed line, and it is about a half wavelength long, like a dipole.",
+        "The other elements are parasitic: they are not connected to anything but pick up and re-radiate energy. The reflector sits behind the driven element and is a bit longer. The directors sit in front and are a bit shorter. Together they push the signal forward, toward the directors.",
+        "A memory aid: the reflector is longer and behind, like a wall at your back; the directors are shorter and point the way."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g9c-yagi-design",
+      "group": "G9C",
+      "title": "Tuning a Yagi's performance",
+      "body": [
+        "A longer boom with more directors gives more gain, and a narrower beam as a result.",
+        "Designers trade among forward gain, front-to-back ratio, and SWR bandwidth. Every physical choice affects these: the boom length, the number of elements, and the spacing of each element along the boom. No one setting is best at everything.",
+        "Fatter elements (larger diameter) widen the usable bandwidth of a Yagi. Loading coils and close element spacing do the opposite and make the antenna narrower."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g9c-pattern-terms",
+      "group": "G9C",
+      "title": "Main lobe and front-to-back ratio",
+      "body": [
+        "The main lobe of a directional antenna is the direction in which it radiates the strongest field. It is the direction you point the beam.",
+        "Front-to-back ratio compares the power radiated in the main lobe to the power radiated in the exact opposite direction, usually given in decibels. A high front-to-back ratio means the beam hears and sends very little off its back, which helps reject interference from behind."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g9c-gain-units",
+      "group": "G9C",
+      "title": "dBi, dBd, and stacking gain",
+      "body": [
+        "Antenna gain is always compared to a reference. dBi compares to an isotropic antenna, an imaginary point that radiates equally in all directions. dBd compares to a half-wave dipole.",
+        "A dipole already has 2.15 dB of gain over isotropic. So the same antenna's gain is always 2.15 dB higher when stated in dBi than in dBd. Watch out for ads that quote dBi because it makes the number look bigger.",
+        "Stacking two identical Yagis, properly spaced and fed in phase, doubles the effective aperture. Doubling is 3 dB, so the pair has about 3 dB more gain than one antenna alone."
+      ],
+      "formula": "dBi = dBd + 2.15",
+      "status": "draft"
+    },
+    {
+      "id": "g9c-matching",
+      "group": "G9C",
+      "title": "Hairpin and gamma matches",
+      "body": [
+        "A Yagi's driven element often has a low feed point impedance, well below 50 ohms, so it needs a matching network.",
+        "A beta or hairpin match is a short piece of transmission line, shorted at the far end, connected across the split driven element's feed point. It often looks like a U-shaped wire hairpin. It acts as an inductor that transforms the low impedance up to 50 ohms.",
+        "A gamma match uses a rod running parallel to one side of the driven element, connected to it by a sliding strap, with a series capacitor. Its big advantage is that the driven element does not have to be split or insulated from the boom; its center can be bolted right to the metal boom."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g9d-nvis",
+      "group": "G9D",
+      "title": "NVIS: low dipoles for regional coverage",
+      "body": [
+        "Near vertical incidence skywave (NVIS) sends signals almost straight up so they reflect off the ionosphere and come down within a few hundred miles. It fills in the 'skip zone' that ground wave cannot reach and ordinary skywave jumps over.",
+        "The best NVIS antenna is a horizontal dipole mounted low, between about 1/10 and 1/4 wavelength above ground. The ground reflection pushes the radiation upward. On 40 meters that is only about 13 to 33 feet high. NVIS works on 40 and 80 meters during the day, and is popular for emergency nets covering a state or region."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g9d-special-antennas",
+      "group": "G9D",
+      "title": "End-fed wires, inverted Vs, halos, and screwdrivers",
+      "body": [
+        "• End-fed half-wave: fed at one end of a half-wave wire, where voltage is high and current is low, so the feed point impedance is very high (thousands of ohms). It needs a matching transformer to connect to coax.",
+        "• Inverted V: a dipole hung from one central support, with the two legs sloping down toward the ground. It needs only one tall support.",
+        "• Halo: a half-wave dipole bent into a circle, used horizontally on VHF and UHF mobiles. It radiates about equally in all directions in the plane of the halo.",
+        "• Screwdriver: an HF mobile antenna with a motor that slides a base loading coil in or out, changing the loading inductance to tune the antenna and match its feed point impedance on different frequencies."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g9d-multiband",
+      "group": "G9D",
+      "title": "Traps and multiband antennas",
+      "body": [
+        "A trap is a parallel inductor and capacitor circuit placed in the antenna wire. At its resonant frequency it acts like an open switch and cuts off the rest of the wire; at lower frequencies it lets the whole wire work. This lets one antenna work on several bands, which is the main purpose of traps.",
+        "The drawback of any antenna that works on several bands is poor harmonic rejection. If your transmitter puts out a harmonic that lands on another band the antenna is built for, the antenna radiates it quite well. A single-band antenna would tend to reject it."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g9d-directional-special",
+      "group": "G9D",
+      "title": "Log-periodics, stacked Yagis, Beverages, and small loops",
+      "body": [
+        "• Log-periodic: elements get longer and farther apart in a steady logarithmic pattern along the boom. Only a few elements are active at any frequency, so the antenna works over a very wide frequency range. Its gain per element is lower than a Yagi's.",
+        "• Stacked Yagis: stacking horizontally polarized Yagis one above the other narrows the main lobe in elevation, squeezing energy toward the horizon. It does not narrow the beam in azimuth.",
+        "• Beverage: a very long, low wire, often a wavelength or more, used for directional receiving on the MF and low HF bands such as 160 and 80 meters. It is too inefficient to transmit with but is excellent at pulling signals out of noise.",
+        "• Small loop: a loop with a circumference under 1/10 wavelength has sharp nulls broadside to the loop (along the axis through its center) and maximum response in the plane of the loop. Those deep nulls make it good for direction finding and for nulling out noise."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "G9A01": {
+      "why": "A parallel line's characteristic impedance is set by its geometry: the spacing between the wire centers and the radius of the wires. Length and frequency do not change it.",
+      "concept": "g9a-characteristic-impedance",
+      "status": "draft"
+    },
+    "G9A02": {
+      "why": "With high SWR, reflected power travels back and forth along the line and the line runs at higher currents and voltages, so a lossy line wastes even more power. High SWR does not make loss matter less.",
+      "concept": "g9a-swr-effects",
+      "status": "draft"
+    },
+    "G9A03": {
+      "why": "Window line, a parallel line held apart by plastic with cut-out windows, is about 450 ohms. 50 and 75 ohms are coax values.",
+      "concept": "g9a-characteristic-impedance",
+      "status": "draft"
+    },
+    "G9A04": {
+      "why": "Power reflects when the feed line's impedance and the antenna's feed point impedance are different. Operating at resonance helps, and too much power or unbalanced line is not what makes the reflection.",
+      "concept": "g9a-reflections-swr",
+      "status": "draft"
+    },
+    "G9A05": {
+      "why": "Coax loses more power at higher frequencies, so its attenuation increases as frequency goes up. There is no 'Marconi's Law of Attenuation.'",
+      "concept": "g9a-line-loss",
+      "status": "draft"
+    },
+    "G9A06": {
+      "why": "Feed line loss is stated in decibels per 100 feet. Ohms measure impedance, not loss.",
+      "concept": "g9a-line-loss",
+      "status": "draft"
+    },
+    "G9A07": {
+      "why": "Standing waves come from a mismatch, so the cure is to match the antenna's feed point impedance to the feed line's characteristic impedance. Special line lengths only change what the transmitter sees, not the standing waves on the line.",
+      "concept": "g9a-reflections-swr",
+      "status": "draft"
+    },
+    "G9A08": {
+      "why": "A tuner at the transmitter end only makes the transmitter see a match. The mismatch at the antenna is unchanged, so the feed line still has a 5:1 SWR.",
+      "concept": "g9a-swr-effects",
+      "status": "draft"
+    },
+    "G9A09": {
+      "why": "For a resistive load, SWR is the larger impedance divided by the smaller. 200 divided by 50 gives 4:1, and SWR is always written with the larger number first.",
+      "work": [
+        "SWR = larger impedance ÷ smaller impedance",
+        "SWR = 200 Ω ÷ 50 Ω = 4",
+        "SWR = 4:1"
+      ],
+      "concept": "g9a-reflections-swr",
+      "status": "draft"
+    },
+    "G9A10": {
+      "why": "Divide the larger impedance by the smaller: 50 divided by 10 is 5, so the SWR is 5:1. Writing it as 1:5 is not the standard form.",
+      "work": [
+        "SWR = larger impedance ÷ smaller impedance",
+        "SWR = 50 Ω ÷ 10 Ω = 5",
+        "SWR = 5:1"
+      ],
+      "concept": "g9a-reflections-swr",
+      "status": "draft"
+    },
+    "G9A11": {
+      "why": "Reflected power is weakened by the line loss on its way back to the meter, so higher loss makes the SWR measured at the line's input look lower than the real SWR at the antenna.",
+      "concept": "g9a-swr-effects",
+      "status": "draft"
+    },
+    "G9B01": {
+      "why": "With a random wire connected straight to the radio, the station is part of the antenna system, so station equipment can carry significant RF current. It does not need to be longer than a wavelength.",
+      "concept": "g9b-random-wire",
+      "status": "draft"
+    },
+    "G9B02": {
+      "why": "Sloping the radials downward raises the feed point impedance of an elevated ground-plane from about 36 ohms toward 50 ohms, a good match for coax.",
+      "concept": "g9b-verticals",
+      "status": "draft"
+    },
+    "G9B03": {
+      "why": "A quarter-wave vertical radiates equally in every compass direction, so it is omnidirectional in azimuth. It is not isotropic, because it radiates little straight up.",
+      "concept": "g9b-verticals",
+      "status": "draft"
+    },
+    "G9B04": {
+      "why": "In free space a dipole's pattern is a figure-eight with the lobes at right angles to the wire. Little energy goes off the ends, which rules out the figure-eight off the ends.",
+      "concept": "g9b-dipole-pattern",
+      "status": "draft"
+    },
+    "G9B05": {
+      "why": "A horizontal dipole under a half wavelength high sends much of its energy upward, and at those high angles the azimuthal pattern is almost omnidirectional. Height clearly does affect the pattern.",
+      "concept": "g9b-dipole-pattern",
+      "status": "draft"
+    },
+    "G9B06": {
+      "why": "Radials of a ground-mounted vertical are laid on the ground surface or buried a few inches below it, spreading out from the base. Radials placed high in the air belong to elevated ground-plane antennas, not ground-mounted ones.",
+      "concept": "g9b-verticals",
+      "status": "draft"
+    },
+    "G9B07": {
+      "why": "As a horizontal dipole is brought down toward 1/10 wavelength above ground, the ground's coupling steadily lowers its feed point impedance.",
+      "concept": "g9b-dipole-impedance",
+      "status": "draft"
+    },
+    "G9B08": {
+      "why": "Current is highest at the center of a half-wave dipole and voltage is highest at the ends, so moving the feed point toward an end steadily increases the impedance.",
+      "concept": "g9b-dipole-impedance",
+      "status": "draft"
+    },
+    "G9B09": {
+      "why": "A horizontal antenna does not depend on the soil for its return current, so it has lower ground losses than a vertical. It needs no radials at all.",
+      "concept": "g9b-dipole-impedance",
+      "status": "draft"
+    },
+    "G9B10": {
+      "why": "Using the half-wave formula, 468 divided by 14.25 MHz is about 33 feet.",
+      "work": [
+        "Length (ft) = 468 ÷ f (MHz)",
+        "Length = 468 ÷ 14.250",
+        "Length ≈ 32.8 ft, about 33 feet"
+      ],
+      "concept": "g9b-antenna-length",
+      "status": "draft"
+    },
+    "G9B11": {
+      "why": "Using the half-wave formula, 468 divided by 3.55 MHz is about 132 feet. 263 feet would be a full wavelength, and 84 feet is too short.",
+      "work": [
+        "Length (ft) = 468 ÷ f (MHz)",
+        "Length = 468 ÷ 3.550",
+        "Length ≈ 131.8 ft, about 132 feet"
+      ],
+      "concept": "g9b-antenna-length",
+      "status": "draft"
+    },
+    "G9B12": {
+      "why": "A quarter wave is half a dipole, so use 234 divided by the frequency: 234 divided by 28.5 MHz is about 8 feet. 16 feet would be a half wave.",
+      "work": [
+        "Length (ft) = 234 ÷ f (MHz)",
+        "Length = 234 ÷ 28.5",
+        "Length ≈ 8.2 ft, about 8 feet"
+      ],
+      "concept": "g9b-antenna-length",
+      "status": "draft"
+    },
+    "G9C01": {
+      "why": "Larger-diameter elements widen a Yagi's bandwidth. Loading coils and closer element spacing tend to narrow it.",
+      "concept": "g9c-yagi-design",
+      "status": "draft"
+    },
+    "G9C02": {
+      "why": "The driven element of a Yagi is essentially a dipole, about 1/2 wavelength long.",
+      "concept": "g9c-yagi-elements",
+      "status": "draft"
+    },
+    "G9C03": {
+      "why": "The reflector is a little longer than the driven element and the director a little shorter. That difference is what steers the signal toward the directors.",
+      "concept": "g9c-yagi-elements",
+      "status": "draft"
+    },
+    "G9C04": {
+      "why": "A dipole has 2.15 dB of gain over an isotropic antenna, so any antenna's gain is 2.15 dB higher when stated in dBi than in dBd.",
+      "work": [
+        "dBi = dBd + 2.15",
+        "Example: 6 dBd = 6 + 2.15 = 8.15 dBi"
+      ],
+      "concept": "g9c-gain-units",
+      "status": "draft"
+    },
+    "G9C05": {
+      "why": "A longer boom with more directors mainly increases gain. The beam gets narrower, not wider.",
+      "concept": "g9c-yagi-design",
+      "status": "draft"
+    },
+    "G9C07": {
+      "why": "Front-to-back ratio compares the power in the main lobe to the power radiated in the opposite direction. It is not a count of elements or a comparison to a dipole.",
+      "concept": "g9c-pattern-terms",
+      "status": "draft"
+    },
+    "G9C08": {
+      "why": "The main lobe is the direction in which the antenna radiates its strongest field, the way the beam points.",
+      "concept": "g9c-pattern-terms",
+      "status": "draft"
+    },
+    "G9C09": {
+      "why": "Two identical Yagis stacked and fed in phase double the effective aperture, and doubling is about 3 dB of gain. 6 dB would take four times the gain.",
+      "work": [
+        "Gain change (dB) = 10 × log10(power ratio)",
+        "10 × log10(2) ≈ 3 dB"
+      ],
+      "concept": "g9c-gain-units",
+      "status": "draft"
+    },
+    "G9C10": {
+      "why": "Boom length, number of elements, and element spacing all shape a Yagi's gain, front-to-back ratio, and SWR bandwidth, so all these choices are correct.",
+      "concept": "g9c-yagi-design",
+      "status": "draft"
+    },
+    "G9C11": {
+      "why": "A beta or hairpin match is a shorted transmission line stub across a Yagi's feed point that acts as an inductor to match the low feed point impedance to the feed line.",
+      "concept": "g9c-matching",
+      "status": "draft"
+    },
+    "G9C12": {
+      "why": "A gamma match feeds the driven element off to one side, so the element's center can be bolted to the boom without insulation. It does use a capacitor, so 'no inductors or capacitors' is wrong.",
+      "concept": "g9c-matching",
+      "status": "draft"
+    },
+    "G9D01": {
+      "why": "NVIS needs energy sent nearly straight up, and a horizontal dipole only 1/10 to 1/4 wavelength above ground does exactly that. At 1/2 wavelength high, a dipole sends more energy at lower angles for longer-distance contacts.",
+      "concept": "g9d-nvis",
+      "status": "draft"
+    },
+    "G9D02": {
+      "why": "At the end of a half-wave wire, voltage is high and current is low, so the feed point impedance is very high. That is why end-fed half-waves need a matching transformer.",
+      "concept": "g9d-special-antennas",
+      "status": "draft"
+    },
+    "G9D03": {
+      "why": "A halo is a dipole bent into a circle, and it radiates roughly equally in all directions in the plane of the halo. Mounted flat on a vehicle, that gives all-around horizontal coverage.",
+      "concept": "g9d-special-antennas",
+      "status": "draft"
+    },
+    "G9D04": {
+      "why": "Traps switch sections of the antenna in or out depending on frequency, so their main purpose is to let one antenna work on several bands.",
+      "concept": "g9d-multiband",
+      "status": "draft"
+    },
+    "G9D05": {
+      "why": "Stacking horizontally polarized Yagis one above another narrows the main lobe in elevation, concentrating energy at low angles. It does not narrow the beam in azimuth or change polarization.",
+      "concept": "g9d-directional-special",
+      "status": "draft"
+    },
+    "G9D06": {
+      "why": "A log-periodic works over a wide range of frequencies, so wide bandwidth is its advantage. Its gain per element is actually lower than a Yagi's.",
+      "concept": "g9d-directional-special",
+      "status": "draft"
+    },
+    "G9D07": {
+      "why": "In a log-periodic, the element lengths and spacings change in a logarithmic pattern along the boom, which is where the name comes from.",
+      "concept": "g9d-directional-special",
+      "status": "draft"
+    },
+    "G9D08": {
+      "why": "A screwdriver antenna uses a motor to change how much of its base loading coil is in use, varying the loading inductance to tune and match the antenna.",
+      "concept": "g9d-special-antennas",
+      "status": "draft"
+    },
+    "G9D09": {
+      "why": "A Beverage is a long, low wire used for directional receiving on the MF and low HF bands. It is too inefficient for transmitting.",
+      "concept": "g9d-directional-special",
+      "status": "draft"
+    },
+    "G9D10": {
+      "why": "An electrically small loop has its nulls broadside to the loop, along the axis through its center, and its strongest response in the plane of the loop.",
+      "concept": "g9d-directional-special",
+      "status": "draft"
+    },
+    "G9D11": {
+      "why": "An antenna built to work on several bands will also radiate harmonics that fall on those bands, so multiband antennas have poor harmonic rejection. They do not all need a tuner or open-wire feed.",
+      "concept": "g9d-multiband",
+      "status": "draft"
+    },
+    "G9D12": {
+      "why": "A dipole hung from one center support with its legs sloping down is called an inverted V. An inverted L is a different antenna, a vertical wire with a horizontal top section.",
+      "concept": "g9d-special-antennas",
+      "status": "draft"
+    }
+  }
+}

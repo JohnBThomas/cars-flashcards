@@ -1,0 +1,161 @@
+{
+  "subelement": "E0",
+  "concepts": [
+    {
+      "id": "e0a-mpe-controlled-uncontrolled",
+      "group": "E0A",
+      "title": "MPE limits: controlled vs. uncontrolled",
+      "body": [
+        "MPE stands for Maximum Permissible Exposure. It is the FCC limit on how strong an RF field a person may be exposed to, averaged over time (47 CFR 1.1310). Note the word: exposure, which is what happens to a person. It is not about your station's emissions, which is a separate set of rules.",
+        "The FCC has two tiers of MPE limits:",
+        "• Controlled (occupational): for people who know they are being exposed and can do something about it, such as you and household members you have informed. These limits are higher and are averaged over 6 minutes.",
+        "• Uncontrolled (general population): for everyone else, such as neighbors, passers-by, and anyone who does not know about your station. These limits are about five times stricter and are averaged over 30 minutes.",
+        "Your neighbors have no say over your transmitter and may not even know it is there, so any evaluation at a neighbor's home must show your signals are below the uncontrolled MPE limits. Section 97.13(c) makes the licensee responsible for meeting these limits."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e0a-frequency-and-microwaves",
+      "group": "E0A",
+      "title": "Frequency matters: VHF resonance and microwave dishes",
+      "body": [
+        "The body absorbs RF most readily when its size is a sizable fraction of the wavelength, so it acts a bit like a receiving antenna. For adults that whole-body resonance falls in the VHF range, which is why the FCC limits are most restrictive from 30 to 300 MHz. In that range the uncontrolled limit is 0.2 mW/cm² and the controlled limit is 1.0 mW/cm²; outside it, the limits are higher.",
+        "Microwaves are still non-ionizing radiation. Their energy per photon is far too low to break chemical bonds, so the concern is heating, the same as at lower frequencies.",
+        "The special hazard at microwave frequencies comes from the antennas. Dishes and other high-gain antennas squeeze the transmitter's power into a narrow beam, so even modest power can produce a high exposure level for someone standing in front of the antenna. Stay out of the beam of a dish that may be transmitting."
+      ],
+      "formula": "Strictest MPE limits: 30 to 300 MHz",
+      "status": "draft"
+    },
+    {
+      "id": "e0a-e-and-h-fields",
+      "group": "E0A",
+      "title": "Why E and H fields have separate limits below 300 MHz",
+      "body": [
+        "A radio wave has an electric (E) field, measured in volts per meter, and a magnetic (H) field, measured in amperes per meter. Far from the antenna the two are locked in a fixed ratio, so measuring one tells you the other. Close to an antenna, especially at HF and VHF where wavelengths are long and people are often within a wavelength or so, that is not true.",
+        "Below 300 MHz the FCC table gives separate E and H limits, for several reasons that all apply at once:",
+        "• The body reacts to both the E field and the H field.",
+        "• Ground reflections and scattering make the field strength vary from place to place.",
+        "• The E field and H field can peak at different locations, so one reading alone can miss a hot spot.",
+        "Above 300 MHz, the limits are given as power density only."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e0a-sar-and-handhelds",
+      "group": "E0A",
+      "title": "SAR and hand-held radios",
+      "body": [
+        "SAR stands for Specific Absorption Rate: the rate at which RF energy is absorbed by the body, measured in watts per kilogram of tissue. It is the measure used for devices held right against the body, like hand-held radios and cell phones, where field-strength MPE tables do not describe the exposure well.",
+        "The FCC's updated RF exposure rules took effect on May 3, 2021. The question pool treats hand-held transceivers sold before that date as exempt from RF exposure evaluations.",
+        "Things that are not exemptions: a transceiver just because it puts out less than 7 watts, a small dish antenna, or an antenna that radiates 'only in the near field'. The near field is right next to the antenna, which is where exposure tends to be highest, not lowest."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e0a-station-evaluation",
+      "group": "E0A",
+      "title": "Every station gets an RF exposure evaluation",
+      "body": [
+        "Older FCC rules let amateur stations below certain power levels on each band skip evaluation. The rules in force since 2021 dropped those simple wattage cutoffs for amateurs. Under 47 CFR 1.1307 and 97.13(c), the licensee must make sure the station meets the MPE limits wherever people can be.",
+        "For a station on 80 meters, an evaluation must always be performed. The evaluation can be simple: using the FCC's exemption formulas, which take frequency, power, and distance to people into account, and finding that the station falls under them counts. If it does not qualify, you calculate or measure the exposure and fix any problem.",
+        "Operating CW, running under 100 watts, or having an ERP under 10 watts does not by itself excuse you from doing the evaluation. Lower power and duty cycle lower the exposure, and they go into the evaluation; they do not replace it."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e0a-shared-sites",
+      "group": "E0A",
+      "title": "Shared sites with several transmitters",
+      "body": [
+        "At a site where several transmitters operate at once, such as a hilltop with repeaters from several groups, the exposure from each one adds up. An area can be over the total MPE limit even if no single transmitter would exceed it alone.",
+        "The FCC rule (47 CFR 1.1307(b)) spreads the responsibility: in any area where the total limit is exceeded, every transmitter that produces 5 percent or more of its own MPE limit there shares responsibility for fixing the over-exposure. Transmitters below 5 percent at that spot are not responsible. Duty cycle affects how much a transmitter contributes, but it is not the test for responsibility."
+      ],
+      "formula": "Shared responsibility: 5% or more of its MPE limit where the total is exceeded",
+      "status": "draft"
+    },
+    {
+      "id": "e0a-ground-rod",
+      "group": "E0A",
+      "title": "What the ground rod is for",
+      "body": [
+        "The main job of an external earth connection, such as a ground rod driven outside, is to carry lightning charge safely into the earth. A lightning strike or a nearby surge dumps a huge current onto a tower, antenna, or feed line, and the ground rod system gives that current a low-impedance path into the soil outside the house instead of through your station.",
+        "Other jobs belong to other parts of the system. Keeping RF current from flowing between pieces of equipment is done by bonding them together inside the station, not by the rod itself. Static on power lines and surge protection for the breaker panel are the power company's and electrician's concern."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e0a-tower-fall-protection",
+      "group": "E0A",
+      "title": "Fall protection on a tower: 100% tie-off",
+      "body": [
+        "100% tie-off means the climber has at least one lanyard attached to the tower at all times. When moving past an obstacle, you attach a second lanyard before unhooking the first, so there is never a moment when a slip means a fall to the ground.",
+        "Attach lanyards to the tower legs. The legs are the main structural members built to carry heavy loads. Rungs and cross braces, guy brackets, and the antenna mast are not meant to stop a falling person and could bend, break, or let the lanyard slide off.",
+        "A shock-absorbing lanyard should be attached above the climber's head. That keeps the free-fall distance short before the lanyard catches you, so the shock absorber can bring you to a stop with less force on your body. Attached at the waist or lower, you would fall farther and hit the end of the lanyard much harder."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "E0A01": {
+      "why": "A ground rod's primary purpose is to dissipate lightning charge into the earth outside the building. Reducing RF current between pieces of equipment is done by bonding them together, not by the ground rod.",
+      "concept": "e0a-ground-rod",
+      "status": "draft"
+    },
+    "E0A02": {
+      "why": "Neighbors are members of the general public who have no control over your transmitter, so your signals at their home must be below the uncontrolled MPE limits. MPE means maximum permissible exposure, not emission.",
+      "concept": "e0a-mpe-controlled-uncontrolled",
+      "status": "draft"
+    },
+    "E0A03": {
+      "why": "The human body absorbs RF most efficiently in the VHF range, where its size is a sizable fraction of a wavelength, so the FCC limits are strictest from 30 to 300 MHz.",
+      "concept": "e0a-frequency-and-microwaves",
+      "status": "draft"
+    },
+    "E0A04": {
+      "why": "Under 47 CFR 1.1307(b), in an area where the total MPE limit is exceeded, every transmitter producing 5 percent or more of its own MPE limit there shares responsibility for fixing it. Duty cycle is not the test, and 20 percent is too high a cutoff.",
+      "concept": "e0a-shared-sites",
+      "status": "draft"
+    },
+    "E0A05": {
+      "why": "The high-gain antennas common at microwave frequencies concentrate power into a narrow beam, which can produce high exposure levels in front of the antenna. Microwaves are non-ionizing, and they do not travel faster than other radio waves.",
+      "concept": "e0a-frequency-and-microwaves",
+      "status": "draft"
+    },
+    "E0A06": {
+      "why": "All of these are reasons: the body responds to both the E and H fields, reflections make field strength vary with location, and E and H peaks can occur in different places near an antenna.",
+      "concept": "e0a-e-and-h-fields",
+      "status": "draft"
+    },
+    "E0A07": {
+      "why": "100% tie-off means at least one lanyard is attached to the tower at all times, including while moving past obstacles. It is about the climber staying connected, not about securing ropes, tools, or breakers.",
+      "concept": "e0a-tower-fall-protection",
+      "status": "draft"
+    },
+    "E0A08": {
+      "why": "SAR, Specific Absorption Rate, is the rate at which RF energy is absorbed by the body, measured in watts per kilogram.",
+      "concept": "e0a-sar-and-handhelds",
+      "status": "draft"
+    },
+    "E0A09": {
+      "why": "The pool lists hand-held transceivers sold before May 3, 2021, when the updated FCC RF exposure rules took effect, as exempt from evaluation. There is no exemption for radios under 7 watts or for small dishes, and the near field is where exposure is usually highest.",
+      "concept": "e0a-sar-and-handhelds",
+      "status": "draft",
+      "reviewNote": "Keyed answer explained as the pool states it. Elmers may want to confirm the specific rule paragraph behind the May 3, 2021 hand-held exemption (FCC 19-126 / 47 CFR 1.1307, 2.1093) before marking reviewed; the card avoids citing one."
+    },
+    "E0A10": {
+      "why": "Under the current rules an RF exposure evaluation must always be performed; finding that the station meets the FCC exemption criteria is itself a simple evaluation. Mode, output power under 100 watts, or low ERP go into the evaluation but do not excuse it.",
+      "concept": "e0a-station-evaluation",
+      "status": "draft"
+    },
+    "E0A11": {
+      "why": "Lanyards belong on the tower legs, the main structural members strong enough to stop a fall. Rungs, guy brackets, and the mast are not designed to be fall-arrest anchor points.",
+      "concept": "e0a-tower-fall-protection",
+      "status": "draft"
+    },
+    "E0A12": {
+      "why": "Attaching a shock-absorbing lanyard above head level keeps the free-fall distance short, so the fall is stopped sooner and with less force. Attaching at the waist or lower lets you fall farther before it catches.",
+      "concept": "e0a-tower-fall-protection",
+      "status": "draft"
+    }
+  }
+}

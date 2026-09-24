@@ -5,18 +5,74 @@
    "name": "Technician",
    "blurb": "Your first license: VHF/UHF, repeaters, and some HF. 35 questions.",
    "file": "data/technician-2026-2030.json",
-   "notes": ["data/notes/technician-T1.json", "data/notes/technician-T5.json"],
-   "images": { "T-1": "images/t-1.jpg", "T-2": "images/t-2.jpg", "T-3": "images/t-3.jpg" }
+   "notes": [
+    "data/notes/technician-T1.json",
+    "data/notes/technician-T2.json",
+    "data/notes/technician-T3.json",
+    "data/notes/technician-T4.json",
+    "data/notes/technician-T5.json",
+    "data/notes/technician-T6.json",
+    "data/notes/technician-T7.json",
+    "data/notes/technician-T8.json",
+    "data/notes/technician-T9.json",
+    "data/notes/technician-T0.json"
+   ],
+   "images": {
+    "T-1": "images/t-1.jpg",
+    "T-2": "images/t-2.jpg",
+    "T-3": "images/t-3.jpg"
+   }
   },
   {
    "id": "general",
    "name": "General",
-   "blurb": "Opens up most of the HF bands. 35 questions."
+   "blurb": "Opens up most of the HF bands for worldwide contacts. 35 questions.",
+   "file": "data/general-2023-2027.json",
+   "images": {
+    "G7-1": "images/g7-1.png"
+   },
+   "notes": [
+    "data/notes/general-G1.json",
+    "data/notes/general-G2.json",
+    "data/notes/general-G3.json",
+    "data/notes/general-G4.json",
+    "data/notes/general-G5.json",
+    "data/notes/general-G6.json",
+    "data/notes/general-G7.json",
+    "data/notes/general-G8.json",
+    "data/notes/general-G9.json",
+    "data/notes/general-G0.json"
+   ]
   },
   {
    "id": "extra",
    "name": "Amateur Extra",
-   "blurb": "Full privileges on every amateur band. 50 questions."
+   "blurb": "Full privileges on every amateur band. 50 questions.",
+   "file": "data/extra-2024-2028.json",
+   "images": {
+    "E5-1": "images/e5-1.png",
+    "E6-1": "images/e6-1.png",
+    "E6-2": "images/e6-2.png",
+    "E6-3": "images/e6-3.png",
+    "E7-1": "images/e7-1.png",
+    "E7-2": "images/e7-2.png",
+    "E7-3": "images/e7-3.png",
+    "E9-1": "images/e9-1.png",
+    "E9-2": "images/e9-2.png",
+    "E9-3": "images/e9-3.png"
+   },
+   "notes": [
+    "data/notes/extra-E1.json",
+    "data/notes/extra-E2.json",
+    "data/notes/extra-E3.json",
+    "data/notes/extra-E4.json",
+    "data/notes/extra-E5.json",
+    "data/notes/extra-E6.json",
+    "data/notes/extra-E7.json",
+    "data/notes/extra-E8.json",
+    "data/notes/extra-E9.json",
+    "data/notes/extra-E0.json"
+   ]
   }
  ]
 }

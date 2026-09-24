@@ -1,0 +1,236 @@
+{
+  "subelement": "G6",
+  "concepts": [
+    {
+      "id": "g6a-batteries",
+      "group": "G6A",
+      "title": "Lead-acid batteries: discharge limits and internal resistance",
+      "body": [
+        "A standard 12-volt lead-acid battery is six cells of about 2.1 volts each, so it reads around 12.6 to 12.8 volts when fully charged. As it discharges the voltage sags. Draining it much below about 10.5 volts (roughly 1.75 volts per cell) causes lasting damage, mostly from sulfation of the plates, and shortens its life. For maximum life, stop discharging at 10.5 volts.",
+        "Every battery has some internal resistance, which acts like a small resistor in series with the cells. Under a heavy load, voltage is lost across that resistance and it turns into heat. A battery with low internal resistance can therefore deliver a high discharge current without its output voltage collapsing, which is exactly what a 100-watt transceiver needs on transmit.",
+        "Low internal resistance does not raise the battery's voltage (that is set by the chemistry and number of cells), and it does not by itself give longer life or faster recharging."
+      ],
+      "formula": "12 V lead-acid: stop at about 10.5 V (1.75 V per cell)",
+      "status": "draft"
+    },
+    {
+      "id": "g6a-diodes",
+      "group": "G6A",
+      "title": "Diode forward threshold voltage",
+      "body": [
+        "A semiconductor diode lets current flow easily in one direction (forward) and blocks it in the other. Even in the forward direction, it barely conducts until the voltage across it reaches a threshold, sometimes called the forward voltage drop.",
+        "The threshold depends on the material. A silicon junction diode needs about 0.7 volts. A germanium diode needs only about 0.3 volts, which is why germanium diodes are still used as detectors for very weak signals, as in a crystal radio.",
+        "Memory aid: germanium is the older, lower number (0.3); silicon, the everyday modern diode, is 0.7. The 0.1 and 1.0 volt figures do not match either one."
+      ],
+      "formula": "germanium ≈ 0.3 V, silicon ≈ 0.7 V",
+      "status": "draft"
+    },
+    {
+      "id": "g6a-capacitor-types",
+      "group": "G6A",
+      "title": "Electrolytic and ceramic capacitors",
+      "body": [
+        "Electrolytic capacitors use an extremely thin oxide layer as the insulator, formed chemically on a metal foil. Because the insulator is so thin, they pack a lot of capacitance into a small can: high capacitance for a given volume. The trade-offs are loose tolerance, more leakage current than other types, polarity that must be observed, and poor performance at RF. They are the usual choice for power supply filtering.",
+        "Low-voltage ceramic capacitors are the small disc and chip capacitors found all over radio circuit boards. Their main selling point is comparatively low cost. Common ceramic types are not especially tight in tolerance or stable with temperature, and they cannot match an electrolytic for capacitance in a given size.",
+        "Match each type to its strength: electrolytic means lots of capacitance in a small space; ceramic means cheap."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g6a-rf-behavior",
+      "group": "G6A",
+      "title": "Real parts at radio frequencies",
+      "body": [
+        "No real part is purely what its label says. Every resistor, capacitor, and inductor also has small amounts of the other properties built in, and at radio frequencies those hidden extras start to matter.",
+        "A wire-wound resistor is made by winding resistance wire around a form, which is basically a coil. That coil adds inductance, and inductive reactance grows with frequency, so in an RF circuit the part no longer behaves like a simple resistor and the circuit's performance becomes unpredictable. Use non-inductive types, such as carbon or metal film, for RF.",
+        "An inductor has a little capacitance between its turns. At some frequency that capacitance resonates with the inductance: the self-resonant frequency. Above that frequency the capacitance dominates and the inductor actually behaves like a capacitor. So an inductor is only useful below its self-resonant frequency."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g6a-transistors",
+      "group": "G6A",
+      "title": "Transistors as switches, and how a MOSFET is built",
+      "body": [
+        "A bipolar transistor can work as an amplifier or as a switch. As an amplifier it runs in the active region, between fully off and fully on, where the output follows the input. As a switch it uses only the two extremes: cutoff (no current flows, switch open) and saturation (maximum current flows, switch closed). Spending little time in between keeps the transistor cool and efficient.",
+        "In a MOSFET (metal-oxide-semiconductor field-effect transistor), the gate is separated from the channel by a very thin insulating layer, usually silicon oxide. The gate voltage controls the channel through its electric field without any direct connection, so almost no gate current flows. That thin layer is also why MOSFETs can be damaged by static electricity.",
+        "Do not confuse this with a JFET, whose gate is a reverse-biased (back-biased) junction rather than an insulating layer. Enhancement and depletion are MOSFET operating types, not switch operating points."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g6a-vacuum-tubes",
+      "group": "G6A",
+      "title": "Vacuum tube grids",
+      "body": [
+        "In a vacuum tube, a heated cathode gives off electrons, which are drawn to the positively charged plate (anode). Grids are wire meshes placed between the two.",
+        "The control grid sits closest to the cathode. A small change in its voltage makes a large change in how many electrons reach the plate, so it regulates the electron flow between cathode and plate. This is how a tube amplifies.",
+        "In a simple triode, the control grid and plate act like two plates of a small capacitor, and that grid-to-plate capacitance can feed output back to the input and cause oscillation, especially at RF. A tetrode adds a screen grid between the control grid and plate mainly to reduce that grid-to-plate capacitance. A pentode adds a third grid, the suppressor grid, to deal with secondary electrons bouncing off the plate."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g6b-ferrite",
+      "group": "G6B",
+      "title": "Ferrite cores, toroids, and beads",
+      "body": [
+        "Ferrite is a ceramic made from iron oxide blended with other metal oxides. The exact recipe, called the mix, sets its magnetic properties, including which range of frequencies it works best at. Mix numbers are chosen for the job: some are best for low-frequency inductors, others for suppressing RF in the HF or VHF range. Size and shape matter less than the mix.",
+        "Winding an inductor on a ferrite toroid (a doughnut-shaped core) has several advantages: the core's high permeability gives large inductance with few turns, the mix can be chosen for a specific frequency range, and the closed ring keeps most of the magnetic field inside the core, so it couples little to nearby parts.",
+        "A ferrite bead or core slipped over a coax cable acts on common-mode current, the unwanted RF flowing on the outside of the shield. It adds impedance to that current's path, much like a choke, which reduces it. The normal signal inside the coax is unaffected because its fields cancel outside the cable."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g6b-integrated-circuits",
+      "group": "G6B",
+      "title": "Integrated circuits: MMIC, CMOS, TTL, and op amps",
+      "body": [
+        "An integrated circuit (IC) puts many transistors and other parts on one chip. ICs fall into two broad families. Analog ICs handle smoothly varying signals; the operational amplifier (op amp) is the classic analog IC, a high-gain amplifier used in filters, audio stages, and signal processing. Digital ICs handle on-and-off logic levels.",
+        "Two common digital logic families are TTL (transistor-transistor logic, built from bipolar transistors) and CMOS (complementary metal-oxide-semiconductor, built from pairs of MOSFETs). CMOS draws almost no current except when it switches, so its big advantage is low power consumption, which is why it dominates battery-powered gear. Neither family is meant for RF amplification or power handling.",
+        "An MMIC is a Monolithic Microwave Integrated Circuit: a complete amplifier or other RF building block on a single chip (monolithic means one piece), designed for UHF and microwave frequencies. MMICs are popular for simple, broadband preamps."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g6b-led",
+      "group": "G6B",
+      "title": "LEDs",
+      "body": [
+        "A light-emitting diode (LED) is a diode that gives off light when current flows through it in the forward direction. It must be forward biased to light: positive voltage on the anode relative to the cathode, enough to pass its forward threshold.",
+        "Reverse biasing an LED blocks current, so it stays dark. Zener voltage and tunnel effects belong to other kinds of diodes. An LED normally needs a series resistor to limit its current."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g6b-connectors",
+      "group": "G6B",
+      "title": "RF and signal connectors",
+      "body": [
+        "Different connectors suit different jobs and frequencies. Know these:",
+        "• PL-259 (UHF connector): the common threaded coax plug on HF radios. Fine on HF, but its impedance is not constant, so it is not the choice for high UHF or microwave.",
+        "• BNC: a small bayonet (push and twist) 50-ohm connector, common on test gear and handhelds. It keeps a low SWR up to about 4 GHz.",
+        "• Type N: a larger threaded, moisture-resistant (gasketed) 50-ohm connector that works well to about 10 GHz. A favorite for outdoor VHF, UHF, and microwave runs.",
+        "• SMA: a small threaded connector good for signals up to several GHz, found on many handheld radios, SDR dongles, and microwave modules.",
+        "• RCA phono: the simple push-on jack from home audio. On a transceiver it is commonly used for low-frequency or DC connections such as audio, keying, PTT, or ALC lines, not for RF antenna feed lines."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "G6A01": {
+      "why": "A 12-volt lead-acid battery should not be discharged below about 10.5 volts (about 1.75 volts per cell). Going lower damages the plates and shortens battery life; 12 volts is already a partly discharged battery, not the floor.",
+      "concept": "g6a-batteries",
+      "status": "draft"
+    },
+    "G6A02": {
+      "why": "Low internal resistance means little voltage is lost inside the battery under load, so it can supply a high discharge current. It does not change the battery's voltage, which is set by its chemistry and number of cells.",
+      "concept": "g6a-batteries",
+      "status": "draft"
+    },
+    "G6A03": {
+      "why": "A germanium diode begins conducting at about 0.3 volts. The 0.7 volt figure belongs to silicon diodes.",
+      "concept": "g6a-diodes",
+      "status": "draft"
+    },
+    "G6A04": {
+      "why": "An electrolytic capacitor's very thin oxide insulating layer gives it high capacitance for its size. Electrolytics actually have loose tolerance and more leakage than other types, and they are poor at RF.",
+      "concept": "g6a-capacitor-types",
+      "status": "draft"
+    },
+    "G6A05": {
+      "why": "A silicon junction diode starts to conduct at about 0.7 volts. The 0.3 volt figure is for germanium diodes.",
+      "concept": "g6a-diodes",
+      "status": "draft"
+    },
+    "G6A06": {
+      "why": "A wire-wound resistor is essentially a coil, so it has inductance, and inductive reactance changes with frequency. At RF that inductance makes the circuit behave unpredictably. The problem is inductance, not capacitance or tolerance.",
+      "concept": "g6a-rf-behavior",
+      "status": "draft"
+    },
+    "G6A07": {
+      "why": "A transistor switch uses only its two extremes: cutoff (fully off) and saturation (fully on). The active region between them is where an amplifier operates.",
+      "concept": "g6a-transistors",
+      "status": "draft"
+    },
+    "G6A08": {
+      "why": "Low-voltage ceramic capacitors are popular mainly because they are comparatively cheap. High capacitance for a given volume describes electrolytics, and ordinary ceramics are not known for tight tolerance or high stability.",
+      "concept": "g6a-capacitor-types",
+      "status": "draft"
+    },
+    "G6A09": {
+      "why": "In a MOSFET the gate is separated from the channel by a thin insulating oxide layer, so the gate controls the channel by its electric field alone. A gate formed by a back-biased junction describes a JFET instead.",
+      "concept": "g6a-transistors",
+      "status": "draft"
+    },
+    "G6A10": {
+      "why": "The control grid, closest to the cathode, regulates how many electrons reach the plate. The screen and suppressor grids have other jobs, and a trigger electrode is not part of an ordinary amplifier tube.",
+      "concept": "g6a-vacuum-tubes",
+      "status": "draft"
+    },
+    "G6A11": {
+      "why": "Above its self-resonant frequency, the capacitance between an inductor's turns dominates, so the inductor behaves like a capacitor. Its inductive reactance does not keep rising as you might expect.",
+      "concept": "g6a-rf-behavior",
+      "status": "draft"
+    },
+    "G6A12": {
+      "why": "The screen grid sits between the control grid and the plate to reduce grid-to-plate capacitance, which could otherwise feed output back to the input and cause oscillation.",
+      "concept": "g6a-vacuum-tubes",
+      "status": "draft"
+    },
+    "G6B01": {
+      "why": "A ferrite core's behavior at different frequencies is set by its composition, or mix, of materials. Its size and shape matter much less.",
+      "concept": "g6b-ferrite",
+      "status": "draft"
+    },
+    "G6B02": {
+      "why": "MMIC stands for Monolithic Microwave Integrated Circuit, a complete RF building block on a single chip for UHF and microwave use.",
+      "concept": "g6b-integrated-circuits",
+      "status": "draft"
+    },
+    "G6B03": {
+      "why": "CMOS logic draws almost no current except while switching, so its main advantage over TTL is low power consumption. Neither family is intended for power handling, RF amplification, or regulation.",
+      "concept": "g6b-integrated-circuits",
+      "status": "draft"
+    },
+    "G6B04": {
+      "why": "A 50-ohm BNC connector keeps a low SWR up to roughly 4 GHz. It works fine well above 50 or 500 MHz, but 40 GHz is far beyond it.",
+      "concept": "g6b-connectors",
+      "status": "draft"
+    },
+    "G6B05": {
+      "why": "A ferrite toroid gives large inductance with few turns, its mix can be chosen for a specific frequency range, and its closed ring keeps most of the magnetic field inside the core. So all of the choices are correct.",
+      "concept": "g6b-ferrite",
+      "status": "draft"
+    },
+    "G6B06": {
+      "why": "An operational amplifier handles smoothly varying signals, so it is an analog device. It is not a logic chip or a microwave IC.",
+      "concept": "g6b-integrated-circuits",
+      "status": "draft"
+    },
+    "G6B07": {
+      "why": "The type N connector is a threaded, moisture-resistant RF connector that works well to about 10 GHz. The small bayonet connector is the BNC, and the N is not a version of the PL-259.",
+      "concept": "g6b-connectors",
+      "status": "draft"
+    },
+    "G6B08": {
+      "why": "An LED gives off light only when current flows through it in the forward direction, so it must be forward biased. Reverse biased, it blocks current and stays dark.",
+      "concept": "g6b-led",
+      "status": "draft"
+    },
+    "G6B10": {
+      "why": "A ferrite bead or core adds impedance to the path of the common-mode current on the outside of the shield, choking it down. It does not cancel the current or convert it to another mode.",
+      "concept": "g6b-ferrite",
+      "status": "draft"
+    },
+    "G6B11": {
+      "why": "An SMA is a small threaded coax connector suitable for signals up to several GHz, common on handhelds and microwave modules. The letters are not about type-S or type-M adaptors or serial access.",
+      "concept": "g6b-connectors",
+      "status": "draft"
+    },
+    "G6B12": {
+      "why": "RCA phono connectors are common on transceivers for low-frequency or DC connections such as audio, keying, and control lines. PL-259, BNC, and type N are RF coax connectors.",
+      "concept": "g6b-connectors",
+      "status": "draft"
+    }
+  }
+}

@@ -1,0 +1,347 @@
+{
+  "subelement": "G1",
+  "concepts": [
+    {
+      "id": "g1a-extra-segments",
+      "group": "G1A",
+      "title": "Where a General may not transmit on HF",
+      "body": [
+        "Upgrading to General opens most of HF, but not all of it. On four bands, 80, 40, 20, and 15 meters, Part 97 (97.301) keeps some segments for Amateur Extra operators only (plus a few shared with the old Advanced class). Those are the only HF bands where a General is locked out of part of the band.",
+        "On every other HF and MF band, 160, 60, 30, 17, 12, and 10 meters, a General has the same frequency privileges as an Extra.",
+        "The Extra-only pieces sit in two places on each of those four bands: the first 25 kHz at the very bottom of the band (for example 7.000 to 7.025 MHz and 14.000 to 14.025 MHz), and the lower part of the phone segment."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g1a-general-segments",
+      "group": "G1A",
+      "title": "The General segments on the four split bands",
+      "body": [
+        "On the four bands that are split by license class, the General segments are:",
+        "• 80 meters: 3.525 to 3.600 MHz (CW, data) and 3.800 to 4.000 MHz (phone, image)",
+        "• 40 meters: 7.025 to 7.125 MHz (CW, data) and 7.175 to 7.300 MHz (phone, image)",
+        "• 20 meters: 14.025 to 14.150 MHz (CW, data) and 14.225 to 14.350 MHz (phone, image)",
+        "• 15 meters: 21.025 to 21.200 MHz (CW, data) and 21.275 to 21.450 MHz (phone, image)",
+        "Notice the pattern in the phone segments: Extras (and Advanced) get the lower part of each phone segment, and the General slice is always the upper frequency portion, running up to the top of the band. So 7.125 to 7.175 MHz on 40 meters is off limits to a General, while 21.300 MHz on 15 meters is fine.",
+        "A quick band check helps too: 14 MHz is 20 meters, 18 MHz is 17 meters, 21 MHz is 15 meters, and 24.9 MHz is 12 meters."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g1a-mode-rules",
+      "group": "G1A",
+      "title": "Mode rules: 30 meters and CW everywhere",
+      "body": [
+        "30 meters (10.100 to 10.150 MHz) is a narrow band shared with other services, so Part 97 (97.305) allows only CW and RTTY/data there. Phone (voice) and image modes such as SSTV and fax are prohibited on 30 meters for every license class. 30 meters also carries a 200 watt PEP limit.",
+        "CW is the opposite case: Part 97 authorizes CW on every amateur frequency. So even where a band has separate 'phone' and 'data' segments, CW may be sent anywhere in it. On 10 meters, a General may send CW across the entire band, 28.000 to 29.700 MHz."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g1a-ten-meters",
+      "group": "G1A",
+      "title": "10 meters: all of it, including repeaters",
+      "body": [
+        "A General has full privileges on 10 meters, 28.000 to 29.700 MHz. Voice is allowed from 28.300 MHz up.",
+        "10 meters is the only HF band where repeaters are permitted, and only in its top 200 kHz: 29.500 to 29.700 MHz (97.205(b)). That is where you will find 10 meter FM repeaters, near the 29.600 MHz FM simplex calling frequency."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g1a-secondary",
+      "group": "G1A",
+      "title": "Being a secondary user",
+      "body": [
+        "Some bands are shared, with another radio service as primary and amateurs as secondary. 30 meters and 60 meters on HF are examples, as are several VHF and UHF bands.",
+        "The rule for a secondary user is simple and has two halves: amateurs must not cause harmful interference to primary users, and must accept any interference from them. There is no requirement to log the primary station, no time-of-day schedule, and no limit to emergency use. If a primary user shows up, the ham moves or stops."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g1b-antenna-height",
+      "group": "G1B",
+      "title": "Antenna height and local rules",
+      "body": [
+        "Tall structures can be a hazard to aircraft. Under 97.15(a) and FCC Part 17, an antenna structure that is not near a public-use airport may be up to 200 feet above ground level without notifying the FAA and registering with the FCC. Near an airport the limit is lower and depends on the distance to the runway.",
+        "Towns and counties may regulate towers too, but only within limits set by the FCC's PRB-1 policy, written into 97.15(b). Local rules must reasonably accommodate amateur communications, and must be the minimum practical regulation needed to accomplish the local government's legitimate purpose, such as safety. The FCC does not simply override local rules, and there is no fixed 50 foot threshold."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g1b-good-practice",
+      "group": "G1B",
+      "title": "Good engineering and good amateur practice",
+      "body": [
+        "Part 97 cannot cover every situation. Section 97.101(a) fills the gap: in all respects not specifically covered by the rules, a station must be operated in accordance with good engineering and good amateur practice.",
+        "Who decides what counts as good practice? The FCC does, since it is the agency that enforces the rule. The control operator, the IEEE, and the ITU may offer opinions and standards, but they do not make that determination."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g1b-beacons",
+      "group": "G1B",
+      "title": "Beacon stations",
+      "body": [
+        "Part 97 defines a beacon as an amateur station transmitting for the purpose of observation of propagation and reception. Beacons are not for identifying repeaters or sending bulletins.",
+        "Section 97.203 sets the key limits:",
+        "• Power: no more than 100 watts",
+        "• Only one beacon per band from the same station location at a time",
+        "• Automatic control is allowed only in certain segments; the only HF one is 28.20 to 28.30 MHz on 10 meters (others include 50.06 to 50.08 MHz and 144.275 to 144.300 MHz)",
+        "There is no national beacon coordinator that must approve the frequency, and no requirement to publish it."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g1b-content",
+      "group": "G1B",
+      "title": "What may and may not be transmitted",
+      "body": [
+        "Every transmission must be identified, however short. There is no exception for brief tests.",
+        "Messages encoded to hide their meaning are prohibited (97.113(a)(4)), whatever the intent, so encryption is not allowed even for lawful purposes. Abbreviations and procedural signals such as Q signals, 73, or CQ are fine because their meanings are widely known; they are allowed as long as they do not obscure the meaning of a message. Part 97 does not list approved abbreviations.",
+        "Some one-way transmissions are allowed (97.111(b)), including transmissions to help people learn or improve their International Morse code, information bulletins for amateurs, and emergency communications. Advertising equipment for sale on a regular basis is not allowed."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g1b-retransmission",
+      "group": "G1B",
+      "title": "Retransmitting other signals",
+      "body": [
+        "In general an amateur station may not retransmit programs or signals from other radio services (97.113(e)). Two exceptions: propagation and weather forecast information intended for the public and originated by US government stations, and communications from NASA crewed spacecraft. Occasionally retransmitting a National Weather Service forecast is therefore allowed.",
+        "Automatically retransmitting other amateur signals is limited to repeaters, auxiliary stations, and space stations. An ordinary station may not act as a relay on its own (97.113(d))."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g1b-foreign-contacts",
+      "group": "G1B",
+      "title": "Contacting other countries",
+      "body": [
+        "US amateurs may contact amateurs in any country except those whose governments have notified the ITU that they object to such communications (97.111(a)(1)). There is no need for UN or IARU membership.",
+        "A third-party agreement is a different thing: it matters only when a non-licensed person (a third party) takes part in the message. For an ordinary ham-to-ham contact, no agreement is needed."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g1c-power-limits",
+      "group": "G1C",
+      "title": "Maximum power, and how it is measured",
+      "body": [
+        "Part 97 (97.313) measures transmitter power as peak envelope power (PEP) output from the transmitter. It is not RMS power, and it is not measured at the antenna, so feed line losses do not count in your favor.",
+        "The overall limit for any amateur station is 1500 watts PEP output. A General may use the full 1500 watts on 160, 80, 40, 20, 17, 15, 12, and 10 meters, including 1.8 MHz and 28 MHz.",
+        "The exceptions a General needs to know:",
+        "• 30 meters (10.100 to 10.150 MHz, so including 10.140 MHz): 200 watts PEP",
+        "• 60 meters: limited by effective radiated power instead (see the 60 meter card)",
+        "• Spread spectrum: 10 watts PEP (covered in G1E)",
+        "Always remember the first rule of 97.313: use the minimum power needed to carry out the communication."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g1c-sixty-meters",
+      "group": "G1C",
+      "title": "60 meters: channels, bandwidth, and ERP",
+      "body": [
+        "60 meters is shared with government stations, where amateurs are secondary, so it has its own rules (97.303(h) and 97.313(i)). Under the current rules Generals may transmit on four channels, centered on 5332, 5348, 5373, and 5405 kHz, and in a small band from 5351.5 to 5366.5 kHz.",
+        "Emissions may not occupy more than 2.8 kHz. For USB phone on a channel, you set the dial (suppressed carrier) 1.5 kHz below the channel center, so the voice fills the channel. CW is sent right on the channel center.",
+        "Power is limited by effective radiated power (ERP): 100 watts ERP on the four channels and 9.15 watts ERP in the 5351.5 to 5366.5 kHz band. ERP is transmitter PEP times the antenna gain compared with a half-wave dipole, and a dipole is assumed to have a gain of 1. If you use any antenna other than a dipole, you must keep a record of its gain in your station records, either the manufacturer's data or your own calculation. No log of contacts or equipment makers is required."
+      ],
+      "formula": "ERP = transmitter PEP × antenna gain relative to a dipole",
+      "status": "draft"
+    },
+    {
+      "id": "g1c-digital-protocols",
+      "group": "G1C",
+      "title": "New digital protocols must be public",
+      "body": [
+        "Amateurs are free to invent new digital modes. The one condition (97.309(a)(4)) is that the technical characteristics of the protocol must be publicly documented before it is used on the air. That way anyone can decode the signal, which keeps it from becoming a secret code and lets others identify the station.",
+        "No FCC rule-making proposal, experimental license, or type certification is needed."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g1d-ve-rules",
+      "group": "G1D",
+      "title": "Volunteer Examiners and VECs",
+      "body": [
+        "Amateur exams are given by Volunteer Examiners (VEs). A VE is accredited by a Volunteer Examiner Coordinator (VEC), an organization such as the ARRL VEC or W5YI that has an agreement with the FCC. The FCC itself does not accredit individual VEs.",
+        "To be a VE (97.509(b)) you must:",
+        "• Be accredited by the coordinating VEC",
+        "• Be at least 18 years old",
+        "• Hold an FCC-granted General, Advanced, or Amateur Extra license",
+        "• Never have had an amateur license revoked or suspended",
+        "US citizenship and residency are not required. A non-citizen who holds an FCC General or higher license may be a VE."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g1d-exam-sessions",
+      "group": "G1D",
+      "title": "Who may give which exam",
+      "body": [
+        "Every exam session needs a team of at least three VEs (97.509(a)). What the team may administer depends on their license class:",
+        "• General VEs: Technician (Element 2) only",
+        "• Advanced VEs: Technician and General",
+        "• Amateur Extra VEs: all elements",
+        "So a Technician exam must be observed by at least three VEs of General class or higher. A General-class VE cannot give the General exam."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g1d-csce-upgrade",
+      "group": "G1D",
+      "title": "Using new privileges right away with a CSCE",
+      "body": [
+        "When you pass an exam, the VEs give you a Certificate of Successful Completion of Examination (CSCE). It is good for exam element credit for 365 days (97.505(b)).",
+        "If you already hold a license and pass an upgrade, the CSCE lets you use the new privileges immediately, before the upgrade shows up in the FCC database (97.9(b)). A Technician who passes General may operate anywhere in the General and Technician band segments, 30 and 60 meters included.",
+        "Until the upgrade appears, you must add the temporary indicator 'AG' to your call sign whenever you use General privileges, for example 'KF1XXX temporary AG' or KF1XXX/AG. When you are only using Technician privileges, no indicator is needed."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g1d-expired-credit",
+      "group": "G1D",
+      "title": "Coming back after a license has expired",
+      "body": [
+        "Once a license has expired and the two-year grace period has passed, it cannot be renewed or reinstated; you apply for a new one. Former licensees get some credit (97.505(a)):",
+        "• Expired General, Advanced, or Technician granted before March 21, 1987: credit for Element 3 (General)",
+        "• Expired Amateur Extra: credit for Elements 3 and 4",
+        "• Expired later Technician or Technician Plus: no credit",
+        "The applicant must show proof of the old license grant, and must still pass the current Element 2 (Technician) exam. For a former General, that means passing Element 2 is all that stands between them and a new General license."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g1d-remote-operation",
+      "group": "G1D",
+      "title": "Remote operation across borders",
+      "body": [
+        "Whose rules apply depends on where the transmitter is, because that is where the signal is actually radiated.",
+        "• Controlling a US station from another country: the station transmits under FCC rules, so the control operator needs a US license (an FCC operator/primary station license). No special remote permit exists.",
+        "• Controlling a station in another country from the US, for example over the internet to South America: only that country's rules apply. The FCC does not regulate a transmitter outside its jurisdiction, so you need whatever that country requires."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g1e-control-automatic",
+      "group": "G1E",
+      "title": "Automatically controlled digital stations",
+      "body": [
+        "Some digital stations, such as Winlink gateways, run unattended under automatic control. Under 97.221(b), two automatically controlled data stations may talk to each other anywhere on 6 meters and shorter wavelength bands, and only in limited segments of some HF bands (for example 14.0950 to 14.0995 MHz and 14.1005 to 14.112 MHz on 20 meters).",
+        "Outside those segments, an automatically controlled digital station may still transmit on frequencies where data is allowed, but only when it is answering a station under local or remote control (a human is in charge of the calling station), and with a bandwidth of 500 Hz or less (97.221(c)). This rule does not apply to the 60 meter channels."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g1e-repeaters",
+      "group": "G1E",
+      "title": "Crossband repeaters and privileges",
+      "body": [
+        "A repeater's transmissions must stay within the privileges of the repeater's own control operator. A 10 meter repeater (29.500 to 29.700 MHz) is transmitting on HF, where a Technician has no phone privileges.",
+        "So a 10 meter repeater may retransmit a 2 meter signal from a station with a Technician control operator only if the 10 meter repeater's control operator holds at least a General license. No special authorization or emergency declaration is involved."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g1e-third-party",
+      "group": "G1E",
+      "title": "Third-party rules",
+      "body": [
+        "A third party is someone who speaks or sends a message through your station. Citizenship and language do not matter. The one person who may not be a third party is someone whose amateur license has been revoked or suspended and not reinstated (97.115(b)(2)); otherwise a ham who lost their license could just keep operating through friends.",
+        "When talking with a country that has a third-party agreement with the US, the messages are limited to amateur radio topics, remarks of a personal character, and emergency or disaster relief messages. There is no time limit and no requirement to log the third party's name.",
+        "Remote control does not change anything: third-party messages may be sent through a remotely controlled station under any circumstances in which they would be allowed anyway."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g1e-interference-care",
+      "group": "G1E",
+      "title": "Situations that call for extra care",
+      "body": [
+        "Part 97 requires specific steps to avoid harmful interference in several situations, including:",
+        "• Operating within one mile of an FCC monitoring station (97.13(b)), where the station must be protected from harmful interference",
+        "• Using a band where amateurs are the secondary service",
+        "• Transmitting spread spectrum (SS), which spreads a signal across a wide range of frequencies. SS must not cause harmful interference, and its power is limited to 10 watts PEP output (97.313)."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g1e-wifi",
+      "group": "G1E",
+      "title": "Amateurs and Wi-Fi on 2.4 GHz",
+      "body": [
+        "Amateur stations may communicate only with other amateur stations, apart from narrow exceptions such as RACES and emergencies. Ordinary Wi-Fi routers and laptops are unlicensed Part 15 devices, not amateur stations.",
+        "So even though the amateur 13 cm band overlaps the Wi-Fi channels at 2.4 GHz, there is no part of the band where an amateur station may communicate with unlicensed Wi-Fi stations. Hams who build high-power mesh networks there must use equipment operating as amateur stations, talking only to other amateur stations."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g1e-itu-beacons",
+      "group": "G1E",
+      "title": "ITU regions and the international beacon frequencies",
+      "body": [
+        "The ITU divides the world into three regions, each with somewhat different frequency allocations. Region 1 is Europe, Africa, and the Middle East. Region 2 is North and South America, including the US. Region 3 is most of Asia and the Pacific. There is no Region 4.",
+        "The NCDXF/IARU International Beacon Project runs 18 beacons around the world, taking turns on 14.100, 18.110, 21.150, 24.930, and 28.200 MHz. Listening to them shows which paths are open. Avoid transmitting on those frequencies so you do not cover up the beacons."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "G1A01": { "why": "Only 80, 40, 20, and 15 meters have segments reserved for Amateur Extra (and Advanced) operators. On 160, 60, 30, 17, 12, and 10 meters, a General has full privileges.", "concept": "g1a-extra-segments", "status": "draft" },
+    "G1A02": { "why": "30 meters is limited to CW and RTTY/data by 97.305, so voice is not allowed there for any license class. Phone is permitted on 160, 17, and 12 meters.", "concept": "g1a-mode-rules", "status": "draft" },
+    "G1A03": { "why": "30 meters allows only CW and RTTY/data, so image modes like SSTV are prohibited there. Image is allowed in the phone segments of 160, 20, and 12 meters.", "concept": "g1a-mode-rules", "status": "draft" },
+    "G1A05": { "why": "On 40 meters, 7.125 to 7.175 MHz is the lower part of the phone segment, reserved for Extra and Advanced operators; General phone begins at 7.175 MHz. Generals may use 28.000 to 28.025 MHz and 21.275 to 21.300 MHz, so 'all these choices' is wrong.", "concept": "g1a-general-segments", "status": "draft" },
+    "G1A06": { "why": "A secondary user must not cause harmful interference to primary users and must accept interference from them. Part 97 does not require logging primary stations, set operating hours, or limit secondary use to emergencies.", "concept": "g1a-secondary", "status": "draft" },
+    "G1A07": { "why": "CW is authorized on every amateur frequency, and a General has full privileges on 10 meters. So CW may be sent across the entire band, not just the lower data segment.", "concept": "g1a-mode-rules", "status": "draft" },
+    "G1A08": { "why": "80, 40, 20, and 15 meters are the only HF bands with segments set aside for Amateur Extra licensees. 160, 60, 30, 17, 12, and 10 meters are fully open to Generals.", "concept": "g1a-extra-segments", "status": "draft" },
+    "G1A09": { "why": "The General phone segment on 15 meters runs from 21.275 to 21.450 MHz, so 21300 kHz (21.300 MHz) is inside it. 14250 kHz is on 20 meters, 18155 kHz is on 17 meters, and 24900 kHz is on 12 meters.", "concept": "g1a-general-segments", "status": "draft" },
+    "G1A10": { "why": "Section 97.205(b) allows repeaters on 10 meters only from 29.5 to 29.7 MHz. The rest of the band is not available for repeater operation.", "concept": "g1a-ten-meters", "status": "draft" },
+    "G1A11": { "why": "Where a phone segment is split by license class, Extras (and Advanced) get the lower part and Generals get the upper frequency portion. This holds on 80, 40, 20, and 15 meters alike.", "concept": "g1a-general-segments", "status": "draft" },
+
+    "G1B01": { "why": "Away from public-use airports, an antenna structure may be up to 200 feet above ground without FAA notification and FCC registration. Near an airport the allowed height is lower.", "concept": "g1b-antenna-height", "status": "draft" },
+    "G1B02": { "why": "Section 97.203(b) says a beacon may not transmit on more than one channel in the same band from the same station location. There is no national beacon coordinator or publication requirement.", "concept": "g1b-beacons", "status": "draft" },
+    "G1B03": { "why": "Part 97 defines a beacon as a station transmitting for observation of propagation and reception. Identifying repeaters and sending bulletins are not beacon purposes.", "concept": "g1b-beacons", "status": "draft" },
+    "G1B04": { "why": "Section 97.113(e) permits retransmitting propagation and weather forecast information that US government stations originate for the public. Unidentified tests and encrypted messages are never allowed, and automatic retransmission of amateur signals is limited to repeaters, auxiliary stations, and space stations.", "concept": "g1b-retransmission", "status": "draft" },
+    "G1B05": { "why": "Transmissions to help people learn International Morse code are a permitted one-way transmission under 97.111(b). Unidentified tests are never permitted, and regular sales offers would make it a business.", "concept": "g1b-content", "status": "draft" },
+    "G1B06": { "why": "Under PRB-1, written into 97.15(b), local rules must reasonably accommodate amateur communications and be the minimum practical regulation needed for a legitimate local purpose. The FCC does not automatically override local rules, and no FCC filing or 50 foot threshold is involved.", "concept": "g1b-antenna-height", "status": "draft" },
+    "G1B07": { "why": "Abbreviations and procedural signals are allowed as long as they do not obscure the meaning of a message, since codes meant to hide meaning are prohibited. Part 97 does not restrict you to Q signals or to a list of approved abbreviations.", "concept": "g1b-content", "status": "draft" },
+    "G1B08": { "why": "US amateurs may contact amateurs in any country except those whose administrations have notified the ITU that they object. Third-party agreements matter only when non-licensed people take part, and UN or IARU membership is irrelevant.", "concept": "g1b-foreign-contacts", "status": "draft" },
+    "G1B09": { "why": "Under 97.203(d), the only HF segment where automatically controlled beacons are allowed is 28.20 to 28.30 MHz on 10 meters. Low power or Morse code does not make any other frequency acceptable.", "concept": "g1b-beacons", "status": "draft" },
+    "G1B10": { "why": "Section 97.203(c) limits beacon transmitter power to 100 watts. The 200 watt figure is the limit on 30 meters and in Technician HF segments, not for beacons.", "concept": "g1b-beacons", "status": "draft" },
+    "G1B11": { "why": "Section 97.101(a) requires good engineering and good amateur practice wherever the rules are silent, and the FCC, as the enforcing agency, determines what that means. The control operator, IEEE, and ITU do not.", "concept": "g1b-good-practice", "status": "draft" },
+
+    "G1C01": { "why": "10.140 MHz is on 30 meters (10.100 to 10.150 MHz), where 97.313(c) limits power to 200 watts PEP output. The 1500 watt limit applies on most other HF bands.", "concept": "g1c-power-limits", "status": "draft" },
+    "G1C02": { "why": "12 meters has no special power limit, so the normal maximum of 1500 watts PEP output applies. The ERP limit relative to a dipole is a 60 meter rule.", "concept": "g1c-power-limits", "status": "draft" },
+    "G1C03": { "why": "On 60 meters, emissions may not occupy more than 2.8 kHz, which is enough for a standard USB voice signal. The other widths are not the 60 meter limit.", "concept": "g1c-sixty-meters", "status": "draft" },
+    "G1C04": { "why": "Power on 60 meters is limited by ERP relative to a half-wave dipole, so if you use a different antenna you must keep a record of its gain, from the manufacturer or your own calculation. No log of contacts, third-party traffic, or equipment makers is required.", "concept": "g1c-sixty-meters", "status": "draft" },
+    "G1C05": { "why": "A General has full privileges on 10 meters (28 MHz), so the normal maximum of 1500 watts PEP output applies. There is no reduced limit for Generals there.", "concept": "g1c-power-limits", "status": "draft" },
+    "G1C06": { "why": "160 meters (1.8 MHz) has no special power restriction, so the standard 1500 watts PEP output maximum applies. The 200 watt limit belongs to 30 meters.", "concept": "g1c-power-limits", "status": "draft" },
+    "G1C07": { "why": "Section 97.309(a)(4) allows a new digital code as long as its technical characteristics are publicly documented, so anyone can decode it. No type certification, experimental license, or rule-making proposal is needed.", "concept": "g1c-digital-protocols", "status": "draft" },
+    "G1C11": { "why": "Part 97 power limits are stated as peak envelope power (PEP) output from the transmitter. They are not RMS values and are not measured at the antenna.", "concept": "g1c-power-limits", "status": "draft" },
+
+    "G1D01": { "why": "Under 97.505(a), someone who once held a General, Advanced, or Amateur Extra license gets credit for Element 3 even after the license has expired past the grace period. Expired later-era Technician licenses earn no credit, and foreign licenses or a 5 to 15 year window are not part of the rule.", "concept": "g1d-expired-credit", "reviewNote": "The current 97.505(a) table also gives Element 3 credit for an expired Technician license granted before March 21, 1987, which the keyed answer does not mention. The keyed answer is still the best choice.", "status": "draft" },
+    "G1D02": { "why": "A General-class VE may administer only the Technician (Element 2) exam. Giving the General exam requires an Advanced or Extra VE, and Extra is not required to be a VE at all.", "concept": "g1d-exam-sessions", "status": "draft" },
+    "G1D03": { "why": "A licensee holding a valid CSCE for an upgrade may use the new privileges right away (97.9(b)), so a Technician who passed General may use every General and Technician segment, 30 and 60 meters included. There is no wait for the database or a fee receipt.", "concept": "g1d-csce-upgrade", "status": "draft" },
+    "G1D04": { "why": "Every exam session needs at least three VEs, and for the Technician exam they must hold General class or higher. Two VEs is not enough, and Technicians cannot be VEs.", "concept": "g1d-exam-sessions", "status": "draft" },
+    "G1D05": { "why": "A US station transmits under FCC rules wherever the operator happens to be, so its control operator needs a US operator/primary station license. There is no special FCC remote station permit, and a foreign license alone does not qualify.", "concept": "g1d-remote-operation", "status": "draft" },
+    "G1D06": { "why": "The 'AG' indicator is required whenever the new General uses General frequency privileges before the upgrade appears in the FCC database. On Technician privileges no indicator is needed, and filing the application does not remove the requirement.", "concept": "g1d-csce-upgrade", "status": "draft" },
+    "G1D07": { "why": "VEs are accredited by a Volunteer Examiner Coordinator, which has an agreement with the FCC. The FCC, its Wireless Telecommunications Bureau, and the ULS database do not accredit individual VEs.", "concept": "g1d-ve-rules", "status": "draft" },
+    "G1D08": { "why": "Citizenship is not a VE requirement; a non-citizen who holds an FCC-granted General or higher license may be accredited. There is no residency period or ITU region requirement.", "concept": "g1d-ve-rules", "status": "draft" },
+    "G1D09": { "why": "Under 97.505(b), a CSCE gives exam element credit for 365 days. It is not tied to your current license term.", "concept": "g1d-csce-upgrade", "status": "draft" },
+    "G1D10": { "why": "Section 97.509(b) requires a VE to be at least 18 years old. Younger hams can hold any license class but cannot serve as VEs.", "concept": "g1d-ve-rules", "status": "draft" },
+    "G1D11": { "why": "After the grace period a license cannot be reinstated. The former General gets Element 3 credit by showing proof of the expired grant, but must pass the current Element 2 exam to get a new license.", "concept": "g1d-expired-credit", "status": "draft" },
+    "G1D12": { "why": "The transmitter is in South America, so only that country's regulations apply. The FCC does not regulate a station located outside its jurisdiction.", "concept": "g1d-remote-operation", "status": "draft" },
+
+    "G1E01": { "why": "Section 97.115(b)(2) bars a person whose amateur license was revoked or suspended and not reinstated from being a third party. Citizenship and language are not restrictions.", "concept": "g1e-third-party", "status": "draft" },
+    "G1E02": { "why": "The 10 meter repeater transmits on HF, so its transmissions must fall within its own control operator's privileges. It may relay a Technician's 2 meter signal only if its control operator holds at least a General license.", "concept": "g1e-repeaters", "status": "draft" },
+    "G1E03": { "why": "Outside the automatic control segments, an automatically controlled digital station may transmit only when answering a station under local or remote control, with 500 Hz or less of bandwidth. The calling station may not itself be automatic, and no Extra license is required.", "concept": "g1e-control-automatic", "status": "draft" },
+    "G1E04": { "why": "Part 97 requires specific steps to avoid harmful interference near an FCC monitoring station, on bands where amateurs are secondary, and when using spread spectrum. All three apply.", "concept": "g1e-interference-care", "status": "draft" },
+    "G1E05": { "why": "Messages to a third party in an agreement country must relate to amateur radio, remarks of a personal character, or emergency and disaster relief. They are not limited to emergencies or to licensed hams, and there is no time limit or logging rule.", "concept": "g1e-third-party", "status": "draft" },
+    "G1E06": { "why": "North and South America make up ITU Region 2. Region 1 is Europe, Africa, and the Middle East, Region 3 is most of Asia and the Pacific, and there is no Region 4.", "concept": "g1e-itu-beacons", "status": "draft" },
+    "G1E07": { "why": "Amateur stations may communicate only with other amateur stations, and Wi-Fi devices are unlicensed Part 15 equipment. So there is no part of the 2.4 GHz band where a ham station may communicate with them.", "concept": "g1e-wifi", "status": "draft" },
+    "G1E08": { "why": "Spread spectrum transmissions are limited to 10 watts PEP output by 97.313. 1500 watts is the general maximum, not the SS limit.", "concept": "g1e-interference-care", "status": "draft" },
+    "G1E10": { "why": "These are the frequencies of the NCDXF/IARU International Beacon Project, whose beacons take turns transmitting for propagation checks. Transmitting there would cover them up; they are not for emergencies, digital stations, or FCC bulletins.", "concept": "g1e-itu-beacons", "status": "draft" },
+    "G1E11": { "why": "Section 97.221(b) allows automatically controlled data stations to work each other anywhere on 6 meters and shorter wavelength bands, and only in specific small segments on some HF bands. It is not every digital segment, and not the Extra segments.", "concept": "g1e-control-automatic", "status": "draft" },
+    "G1E12": { "why": "Remote control does not change the third-party rules. Third-party messages may be sent through a remotely controlled station whenever FCC rules would permit them anyway.", "concept": "g1e-third-party", "status": "draft" }
+  }
+}

@@ -1,0 +1,581 @@
+{
+  "subelement": "G2",
+  "concepts": [
+    {
+      "id": "g2a-why-ssb",
+      "group": "G2A",
+      "title": "Why single sideband rules HF voice",
+      "body": [
+        "An AM voice signal has three parts: a carrier in the middle and two sidebands, one above and one below. The carrier carries no voice information, and the two sidebands are mirror images of each other, so each one holds the complete message.",
+        "Single sideband (SSB) strips away the carrier and one of the two sidebands, and sends only the one that is left. That brings two big wins:",
+        "• Less bandwidth: an SSB signal is roughly half as wide as AM (about 2.4 to 3 kHz), so more stations fit in a crowded band.",
+        "• Better power efficiency: none of the transmitter's power is spent on a carrier or a duplicate sideband, so it all goes into the part that carries your voice.",
+        "That is why SSB is the most common voice mode on the HF amateur bands. It is not a high-fidelity mode, it is not especially easy to tune in, and it does not reject static crashes or impulse noise any better than AM. It is not the only voice mode allowed on any HF band, either; AM and, on 10 meters, FM are also legal where phone is permitted."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g2a-usb-lsb",
+      "group": "G2A",
+      "title": "Upper or lower sideband: the custom",
+      "body": [
+        "Both sidebands work equally well, so hams simply agree on which one to use on each band. That way two stations are always on the same sideband and can hear each other.",
+        "• Lower sideband (LSB): 160, 75/80, and 40 meters (below about 10 MHz)",
+        "• Upper sideband (USB): 20 meters (14 MHz) and every band above it, including 17, 15, 12, and 10 meters",
+        "• Upper sideband is also the normal choice for SSB on VHF and UHF (6 meters, 2 meters, 70 cm and up)",
+        "• 60 meters is the exception below 10 MHz: USB is used there",
+        "The LSB habit on the low bands is not a rule and has nothing to do with efficiency or AM compatibility. It grew out of early transceiver designs and has stayed because it is commonly accepted amateur practice. Operating USB on 40 meters is legal, but nobody tuning in on LSB would understand you."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g2a-breaking-in",
+      "group": "G2A",
+      "title": "Breaking into a phone contact",
+      "body": [
+        "If you want to join a conversation already going on, wait for a pause between transmissions and say your call sign once. The stations will hear you and invite you in when it is convenient.",
+        "Do not say \"Breaker breaker\"; that is CB talk. Do not send \"QRZ\" (which means \"who is calling me?\") or \"CQ\" (a general call to anyone). A single, clear call sign is the polite and effective way."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g2a-vox-alc",
+      "group": "G2A",
+      "title": "Setting up the transmitter for voice: VOX and ALC",
+      "body": [
+        "PTT (push to talk) means you press a button on the microphone to transmit. VOX (voice operated transmit) switches the transmitter on automatically when you speak and off when you stop. The advantage of VOX is hands-free operation, handy for logging or typing during a contact. It does not change your bandwidth, your power output, or how received signals sound.",
+        "ALC (automatic level control) is a circuit that keeps the transmitter from being overdriven. If you feed it too much audio, the signal distorts and splatters onto nearby frequencies. The control you normally adjust for a proper ALC reading is the transmit audio (microphone) gain: turn it up until the ALC meter moves into the range your radio's manual recommends, and no further.",
+        "The attenuator affects the receiver, the antenna tuner's inductance and capacitance match the antenna, and speech clipping is a separate setting; none of these is the usual ALC adjustment."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g2a-cq-dx",
+      "group": "G2A",
+      "title": "Answering a CQ DX call",
+      "body": [
+        "DX means distant stations, usually in other countries. When a station in the contiguous 48 states calls \"CQ DX,\" it wants to talk only with stations outside the lower 48. That includes other countries and also Alaska, Hawaii, and U.S. territories.",
+        "If you are in the lower 48 yourself, the courteous thing is to stay quiet and let the DX stations answer. The call is not limited to one country and has nothing to do with contests."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g2b-no-priority",
+      "group": "G2B",
+      "title": "Nobody owns a frequency",
+      "body": [
+        "Except during emergencies, no amateur station has priority access to any frequency. Nets, ongoing conversations, and contests all share the bands on equal terms. Whoever got there first usually keeps the spot as a matter of courtesy, not law.",
+        "Propagation changes all the time, so a frequency that was clear can suddenly fill with stations that could not hear you before. When that happens, good practice is to work it out with the other stations in a mutually acceptable way, for example one group moving a few kilohertz. Claiming priority, or just pressing on, is not the answer."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g2b-distress",
+      "group": "G2B",
+      "title": "When a station in distress breaks in",
+      "body": [
+        "A call for help comes before everything else. If a station in distress breaks into your contact, the first thing to do is acknowledge that station and find out what help it needs.",
+        "Do not stop transmitting or go silent; the station needs someone to answer. Calling the emergency coordinator or other agencies may follow, but only after you know what the problem is."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g2b-spacing",
+      "group": "G2B",
+      "title": "Picking a clear frequency",
+      "body": [
+        "Different modes take up different widths, so leave enough room from neighboring signals:",
+        "• CW: at least 150 to 500 Hz away from other stations",
+        "• SSB: at least 2 to 3 kHz away (an SSB voice signal is about that wide)",
+        "Before calling CQ on a frequency that sounds empty, ask whether it is in use, because you may be hearing only one side of a contact. On CW send \"QRL?\" followed by your call sign; on phone ask \"Is this frequency in use?\" and give your call sign. Listen for a reply before calling.",
+        "Also follow the voluntary band plan, which says which parts of each band are customarily used for CW, digital modes, SSB, SSTV, and so on. Band plans are not law, but following them is commonly accepted amateur practice. Listening for a fixed two minutes or sending your call three times is not what the custom asks."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g2b-dx-window",
+      "group": "G2B",
+      "title": "The 6 meter DX window",
+      "body": [
+        "Six meters opens up for long-distance contacts only now and then, and the signals are often weak. The band plan sets aside 50.100 to 50.125 MHz as a DX window.",
+        "Stations in the 48 contiguous states should use that segment only for contacts with stations outside the lower 48. Domestic contacts should move elsewhere so the rare DX can be heard. This is a voluntary band plan practice, not an FCC rule."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g2b-nets",
+      "group": "G2B",
+      "title": "Running a good net",
+      "body": [
+        "A net is an organized on-air meeting run by a net control station. Good net managers plan for trouble: they pick a backup frequency ahead of time so the net can move if interference or poor conditions make the main frequency unusable.",
+        "Good nets also keep things short and efficient. Reading the whole roster at every session or using several sets of phonetics at check-in just wastes air time."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g2b-races",
+      "group": "G2B",
+      "title": "RACES operation and drills",
+      "body": [
+        "RACES (Radio Amateur Civil Emergency Service) stations support government emergency management agencies. They are still amateur stations, so the control operator must hold an FCC-issued amateur operator license. A government official without an amateur license cannot be the control operator, and neither can a volunteer just because normal systems are running.",
+        "Practice matters, but RACES stations may not turn the amateur bands into an agency radio system. Under Part 97 (97.407), routine RACES training drills and tests are limited to no more than 1 hour per week. Longer exercises need special authorization."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g2c-qsk",
+      "group": "G2C",
+      "title": "Full break-in (QSK)",
+      "body": [
+        "In ordinary CW operation the radio switches back to receive only after you pause for a moment. With full break-in, also called QSK, the transmitter and receiver switch so fast that you can hear incoming signals in the gaps between your dots, dashes, and characters.",
+        "That lets the other operator interrupt you at any moment, just as in a face-to-face conversation. It has nothing to do with sending \"BK,\" using an automatic keyer, or flipping a manual send/receive switch."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g2c-speed-zero-beat",
+      "group": "G2C",
+      "title": "Matching speed and frequency",
+      "body": [
+        "When you answer a CQ in Morse code, send at the fastest speed you can comfortably copy, but no faster than the station calling CQ. That station has told you what speed it likes by how fast it sent. There is no standard calling speed.",
+        "Zero beat means setting your transmit frequency to exactly match the frequency of the station you hear. On older receivers this was done by tuning until the tone between the two signals dropped to zero. On today's radios, you line the signal up with the sidetone or use a spot or auto-zero feature. Being zero beat keeps the other station from having to retune to hear you."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g2c-prosigns",
+      "group": "G2C",
+      "title": "CW prosigns",
+      "body": [
+        "Prosigns are two letters run together as one character to signal a procedure:",
+        "• AR: end of a formal message",
+        "• KN: go ahead, but only the station or stations I am working (others please don't call)",
+        "• K: go ahead, anyone may reply",
+        "• BK: break, a quick back-and-forth handover",
+        "• SK: end of contact",
+        "A \"C\" added to an RST signal report (for example 579C) warns that the signal is chirpy or unstable, meaning its frequency shifts as the key goes down. Other letters flag other faults, such as \"K\" for key clicks."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g2c-q-signals",
+      "group": "G2C",
+      "title": "Q signals you will hear",
+      "body": [
+        "Q signals are three-letter codes that start with Q. Sent with a question mark they ask something; sent without one they answer or state it.",
+        "• QRL?: Are you busy? Is this frequency in use?",
+        "• QRS: Send more slowly. If someone sends \"QRS?\" they are asking whether they should slow down; if you hear a plain QRS, slow down.",
+        "• QSL: I have received and understood. (A QSL card confirms a contact, but the signal itself means \"received.\")",
+        "• QRN: I am troubled by static (natural noise).",
+        "• QRM: I am troubled by interference from other stations.",
+        "• QRV: I am ready to receive.",
+        "• QRZ: Who is calling me?",
+        "• QSY: Change frequency.",
+        "• QRP: Low power."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g2d-volunteer-monitors",
+      "group": "G2D",
+      "title": "The Volunteer Monitor Program",
+      "body": [
+        "The Volunteer Monitor Program is a partnership between the ARRL and the FCC. Amateur volunteers are formally enlisted and trained to monitor the airwaves for rules violations. They send good-operating notices to hams who slip up and pass evidence of serious problems to the FCC.",
+        "Its goal is to encourage amateurs to regulate themselves and comply with the rules. It is not the volunteer examiner system, repeater coordination, or emergency communications.",
+        "Volunteer Monitors can help find a problem station. If someone's stuck carrier is holding a repeater on, each monitor points a directional antenna at the strongest signal on the repeater's input frequency from home. Comparing those beam headings on a map shows where the lines cross, which is near the offending transmitter."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g2d-calling-cq",
+      "group": "G2D",
+      "title": "Calling CQ and exchanging reports",
+      "body": [
+        "To look for a contact with any station, say \"CQ\" a few times, then \"this is\" and your call sign a few times, then stop and listen. Repeat if needed. For example: \"CQ CQ CQ, this is NF4CQ NF4CQ, over.\" Never send an unmodulated carrier to get attention.",
+        "Signal reports are usually swapped at the start of an HF contact so each station knows how it is getting through and can operate to suit conditions: speed up or slow down, spell with phonetics, raise or lower power, or keep it short.",
+        "Use the standard NATO (ITU) phonetic alphabet: Alfa, Bravo, Charlie, Delta, Echo, and so on. Older sets such as Able, Baker or Adam, Boy are out of date, and made-up words like place names are easily misunderstood."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g2d-long-path-maps",
+      "group": "G2D",
+      "title": "Pointing the beam: azimuthal maps and long path",
+      "body": [
+        "A normal wall map distorts directions over long distances. An azimuthal projection map is centered on one location, usually your station, and shows the true bearing and distance from there to anywhere on Earth. It is the right map for aiming a directional antenna.",
+        "Signals usually travel the shorter way around the globe, the short path. Sometimes the long way around works better. To make a long-path contact, point the antenna 180 degrees from the short-path heading. If Asia is at 330 degrees on the short path, the long path is at 150 degrees."
+      ],
+      "formula": "Long-path heading = short-path heading ± 180°",
+      "status": "draft"
+    },
+    {
+      "id": "g2d-logs-contests-qrp",
+      "group": "G2D",
+      "title": "Logs, contests, and QRP",
+      "body": [
+        "The FCC no longer requires a general station log, but many amateurs keep one anyway. If the FCC asks about your station's operation, a log helps you answer accurately. It is not needed to renew your license.",
+        "In a contest, the only FCC requirement is to identify your station the same way you always must. Submitting a log to the sponsor and sending QSL cards are contest customs or rules for awards, not FCC requirements.",
+        "QRP means low-power operation, usually 5 watts or less on CW and digital and 10 watts or less on SSB. Many hams enjoy the challenge of making contacts with little power."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g2e-afsk-sidebands",
+      "group": "G2E",
+      "title": "Digital modes through an SSB radio",
+      "body": [
+        "Many digital modes are sent by feeding audio tones from a computer into an SSB transmitter. This is called AFSK (audio frequency-shift keying). The SSB radio shifts those tones up to RF.",
+        "Which sideband to use depends on the mode's custom:",
+        "• RTTY sent via AFSK: normally lower sideband, so the mark and space tones come out in the same order as traditional RTTY equipment",
+        "• JT65, JT9, FT4, and FT8: upper sideband, on every band",
+        "RTTY most commonly uses a 170 Hz shift between the mark and space tones. If an RTTY or other FSK signal seems tuned in properly but will not decode, check three things: the mark and space may be reversed, the baud rate may be wrong, or you may be on the wrong sideband (which also reverses mark and space)."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g2e-ft8",
+      "group": "G2E",
+      "title": "Operating FT8",
+      "body": [
+        "FT8 stations take turns in 15-second time slots, alternating between even and odd slots. Because every transmission must start at the right moment, your computer's clock must be accurate to within about 1 second. No special modem, attenuator setting, or antenna is needed.",
+        "The FT8 display is a waterfall about 3 kHz wide. To answer a CQ, pick a clear spot in the waterfall and transmit in the alternate time slot from the calling station. Calling right on top of the station's frequency just piles you onto other callers.",
+        "On 20 meters, FT8 lives on a dial frequency of 14.074 MHz, so the signals themselves fall between about 14.074 and 14.077 MHz."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g2e-20m-digital",
+      "group": "G2E",
+      "title": "Where digital modes live on 20 meters",
+      "body": [
+        "Band plans gather digital signals together. On 20 meters most digital mode activity is found from 14.070 to 14.100 MHz, near the top of the CW segment and below the phone segment. FT8 (14.074 MHz) and much RTTY and PSK activity sit in this range.",
+        "The slow-scan TV calling area (around 14.230 MHz) and the top of the phone band are voice and image areas, and the middle of the CW segment is mainly for Morse code."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g2e-winlink",
+      "group": "G2E",
+      "title": "Winlink, gateways, PACTOR, and VARA",
+      "body": [
+        "Winlink is an amateur radio email system. It lets hams send and receive email over the air, to and from the internet, on both HF and VHF/UHF. On VHF it often uses packet radio.",
+        "A Winlink station that connects the radio side to the internet is called a Remote Message Server (RMS), more commonly a gateway. To reach a gateway or other digital messaging system, you transmit a connect request on the station's published frequency.",
+        "On HF, Winlink uses modem protocols such as PACTOR and VARA. VARA is a digital protocol written for use with Winlink. These are connected modes: the two stations exchange data and acknowledgments, and any lost block is sent again.",
+        "Because a PACTOR (or VARA) link is a connection between just two stations, nobody else can join it. When other signals interfere, the link struggles: you may see frequent retries or timeouts, long pauses in the message, or a failure to connect at all."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g2e-aredn",
+      "group": "G2E",
+      "title": "AREDN mesh networks",
+      "body": [
+        "AREDN (Amateur Radio Emergency Data Network) turns commercial wireless networking gear, re-programmed for the ham bands, into a mesh of linked nodes. Each node passes traffic along to the others, so the network routes around a node that fails.",
+        "Its main purpose is to provide high-speed data services, such as email, file sharing, video, and voice over IP, during an emergency or a community event. It is not a repeater system, a propagation monitor, or a DX spotting network."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "G2A01": {
+      "why": "By long-standing custom, voice SSB on 14 MHz (20 meters) and all higher HF bands uses upper sideband. Lower sideband is the custom only on the bands below about 10 MHz.",
+      "concept": "g2a-usb-lsb",
+      "status": "draft"
+    },
+    "G2A02": {
+      "why": "The low HF bands of 160, 75, and 40 meters are all below 10 MHz, where hams customarily use lower sideband for voice.",
+      "concept": "g2a-usb-lsb",
+      "status": "draft"
+    },
+    "G2A03": {
+      "why": "SSB on VHF and UHF (6 meters, 2 meters, 70 cm and up) follows the same upper sideband convention as the higher HF bands.",
+      "concept": "g2a-usb-lsb",
+      "status": "draft"
+    },
+    "G2A04": {
+      "why": "17 meters (18 MHz) and 12 meters (24 MHz) are both above 14 MHz, so voice there is normally upper sideband.",
+      "concept": "g2a-usb-lsb",
+      "status": "draft"
+    },
+    "G2A05": {
+      "why": "Single sideband is the workhorse voice mode on HF because it is narrow and power-efficient. FM is found mostly on VHF/UHF and the top of 10 meters, and double sideband is rarely used.",
+      "concept": "g2a-why-ssb",
+      "status": "draft"
+    },
+    "G2A06": {
+      "why": "SSB drops the carrier and one duplicate sideband, so it takes about half the bandwidth of AM and puts all its power into the part that carries your voice. It is not high fidelity and is no better at rejecting static or impulse noise.",
+      "concept": "g2a-why-ssb",
+      "status": "draft"
+    },
+    "G2A07": {
+      "why": "In SSB both the carrier and one sideband are suppressed, leaving only the other sideband. Keeping the carrier would be a different mode, and SSB is not the only voice mode allowed on any HF band.",
+      "concept": "g2a-why-ssb",
+      "status": "draft"
+    },
+    "G2A08": {
+      "why": "Between transmissions, say your call sign once; the stations will hear you and bring you in. QRZ asks who is calling, CQ is a general call, and \"Breaker breaker\" is CB slang.",
+      "concept": "g2a-breaking-in",
+      "status": "draft"
+    },
+    "G2A09": {
+      "why": "No rule requires LSB on the low bands, and it is no more efficient there than USB. Hams use it simply because it is the commonly accepted practice that everyone follows.",
+      "concept": "g2a-usb-lsb",
+      "status": "draft"
+    },
+    "G2A10": {
+      "why": "VOX keys the transmitter when you talk, so your hands stay free. It does not change bandwidth, output power, or how received signals sound.",
+      "concept": "g2a-vox-alc",
+      "status": "draft"
+    },
+    "G2A11": {
+      "why": "A lower-48 station calling CQ DX wants contacts only with stations outside the contiguous 48 states, which includes other countries plus Alaska, Hawaii, and U.S. territories. It is not limited to one country or to contest stations.",
+      "concept": "g2a-cq-dx",
+      "status": "draft"
+    },
+    "G2A12": {
+      "why": "The ALC reading depends on how hard the audio drives the transmitter, so you set it with the transmit audio or microphone gain. The attenuator and antenna tuning controls do not affect ALC this way.",
+      "concept": "g2a-vox-alc",
+      "status": "draft"
+    },
+    "G2B01": {
+      "why": "Except in emergencies, no amateur station has priority on any frequency. Nets, ongoing contacts, and contests all share the bands; being there first is a courtesy, not a right.",
+      "concept": "g2b-no-priority",
+      "status": "draft"
+    },
+    "G2B02": {
+      "why": "A distress call comes first, so acknowledge the station and find out what help it needs. Going silent or cutting power leaves the station with no one to answer it.",
+      "concept": "g2b-distress",
+      "status": "draft"
+    },
+    "G2B03": {
+      "why": "When band conditions change and stations start interfering with each other, nobody has priority. The right thing is to work it out with the other stations in a way everyone accepts.",
+      "concept": "g2b-no-priority",
+      "status": "draft"
+    },
+    "G2B04": {
+      "why": "A CW signal is very narrow, so 150 to 500 Hz of separation is usually enough to avoid bothering a neighbor. The kilohertz figures are SSB spacings, and 5 to 50 Hz is far too close.",
+      "concept": "g2b-spacing",
+      "status": "draft"
+    },
+    "G2B05": {
+      "why": "An SSB voice signal is roughly 2.4 to 3 kHz wide, so stay at least 2 to 3 kHz away from other SSB stations. The hertz-range spacings suit CW, not voice.",
+      "concept": "g2b-spacing",
+      "status": "draft"
+    },
+    "G2B06": {
+      "why": "A frequency can sound clear when you are hearing only one side of a contact, so ask. On CW send QRL? and your call; on phone ask if the frequency is in use and give your call. QSY means change frequency, and sending test signals would itself cause interference.",
+      "concept": "g2b-spacing",
+      "status": "draft"
+    },
+    "G2B07": {
+      "why": "Following the voluntary band plan puts you among stations using the same mode and keeps modes from clashing. There is no custom of listening exactly two minutes or sending your call three times, so not all the choices are correct.",
+      "concept": "g2b-spacing",
+      "status": "draft"
+    },
+    "G2B08": {
+      "why": "50.100 to 50.125 MHz is the 6 meter DX window. Stations in the lower 48 should use it only to work stations outside the contiguous 48 states, and move domestic contacts elsewhere.",
+      "concept": "g2b-dx-window",
+      "status": "draft"
+    },
+    "G2B09": {
+      "why": "A RACES station is still an amateur station, so its control operator must hold an FCC-issued amateur operator license. A government official or net control title does not replace the license.",
+      "concept": "g2b-races",
+      "status": "draft"
+    },
+    "G2B10": {
+      "why": "Planning a backup frequency lets the net move quickly when interference or poor conditions hit. Reading the full roster or using several sets of phonetics just wastes air time, so not all the choices are correct.",
+      "concept": "g2b-nets",
+      "status": "draft"
+    },
+    "G2B11": {
+      "why": "Part 97 limits routine RACES drills and tests to no more than 1 hour per week. Longer exercises need special authorization.",
+      "concept": "g2b-races",
+      "status": "draft"
+    },
+    "G2C01": {
+      "why": "With full break-in (QSK), the radio switches to receive in the tiny gaps between code elements and characters, so the other operator can interrupt at any time. Sending BK or using a keyer is something else.",
+      "concept": "g2c-qsk",
+      "status": "draft"
+    },
+    "G2C02": {
+      "why": "QRS means send more slowly, so QRS? asks whether you should slow down. When you hear it, slow down.",
+      "concept": "g2c-q-signals",
+      "status": "draft"
+    },
+    "G2C03": {
+      "why": "KN means go ahead, but only the station or stations I am already working should reply. Plain K invites anyone, and SK closes the contact.",
+      "concept": "g2c-prosigns",
+      "status": "draft"
+    },
+    "G2C04": {
+      "why": "QRL? asks whether the frequency is in use, which is why it is sent before calling CQ on an apparently clear frequency.",
+      "concept": "g2c-q-signals",
+      "status": "draft"
+    },
+    "G2C05": {
+      "why": "Send as fast as you can comfortably copy, but no faster than the CQ; the calling station has shown the speed it is comfortable with. Answering faster than the CQ can lose the other operator, and there is no standard calling speed.",
+      "concept": "g2c-speed-zero-beat",
+      "status": "draft"
+    },
+    "G2C06": {
+      "why": "Zero beat means putting your transmit frequency exactly on the frequency of the signal you are receiving, so the other station doesn't have to retune. It has nothing to do with code speed or sending accuracy.",
+      "concept": "g2c-speed-zero-beat",
+      "status": "draft"
+    },
+    "G2C07": {
+      "why": "A C after the RST numbers warns that the signal is chirpy or unstable, meaning its frequency wobbles each time the key goes down. Key clicks get a different letter.",
+      "concept": "g2c-prosigns",
+      "status": "draft"
+    },
+    "G2C08": {
+      "why": "AR marks the end of a formal message. SK ends the contact, BK is a quick break, and KN invites only the station you are working.",
+      "concept": "g2c-prosigns",
+      "status": "draft"
+    },
+    "G2C09": {
+      "why": "QSL means I have received and understood. The name QSL card comes from it, but the signal itself simply means received, not that the contact has already been confirmed.",
+      "concept": "g2c-q-signals",
+      "status": "draft"
+    },
+    "G2C10": {
+      "why": "QRN means I am troubled by static, the natural noise from lightning and the atmosphere. Interference from other stations is QRM, and send more slowly is QRS.",
+      "concept": "g2c-q-signals",
+      "status": "draft"
+    },
+    "G2C11": {
+      "why": "QRV means I am ready to receive. It is not the signal for sending too fast (QRS) or interference (QRM).",
+      "concept": "g2c-q-signals",
+      "status": "draft"
+    },
+    "G2D01": {
+      "why": "Volunteer Monitors are amateurs formally enlisted to monitor the bands for rules violations, under an ARRL and FCC program. License exams, repeater coordination, and civil defense help are handled by other volunteers.",
+      "concept": "g2d-volunteer-monitors",
+      "status": "draft"
+    },
+    "G2D02": {
+      "why": "The program's goal is to encourage amateurs to regulate themselves and follow the rules. Exams, emergency communications, and repeater coordination belong to other groups.",
+      "concept": "g2d-volunteer-monitors",
+      "status": "draft"
+    },
+    "G2D03": {
+      "why": "Each monitor points a beam at the strongest signal on the repeater's input from home, and comparing those headings on a map shows where the lines cross, near the stuck transmitter. Checking the repeater's output would show only the repeater itself, not where the carrier is coming from.",
+      "concept": "g2d-volunteer-monitors",
+      "status": "draft"
+    },
+    "G2D04": {
+      "why": "An azimuthal projection map is centered on one location and shows the true bearing and distance to every other place from there. That is exactly what you need to aim a beam. It does distort the shapes of land masses far from the center.",
+      "concept": "g2d-long-path-maps",
+      "status": "draft"
+    },
+    "G2D05": {
+      "why": "A general call is CQ a few times, then \"this is\" and your call sign a few times, then listen. QTC is about messages to send, and a steady carrier would only cause interference.",
+      "concept": "g2d-calling-cq",
+      "status": "draft"
+    },
+    "G2D06": {
+      "why": "The long path goes the opposite way around the Earth, so you aim the antenna 180 degrees from the short-path heading. The gray line and the sun affect when the long path opens, not which way to point.",
+      "concept": "g2d-long-path-maps",
+      "status": "draft"
+    },
+    "G2D07": {
+      "why": "Alpha (spelled Alfa in the official list), Bravo, Charlie, Delta is the NATO/ITU phonetic alphabet. Able, Baker and Adam, Boy are older or informal sets, and place names are not standard.",
+      "concept": "g2d-calling-cq",
+      "status": "draft"
+    },
+    "G2D08": {
+      "why": "The FCC no longer requires a general log, but a log lets you give accurate answers if the FCC asks about your station's operation. License renewal does not depend on a log.",
+      "concept": "g2d-logs-contests-qrp",
+      "status": "draft"
+    },
+    "G2D09": {
+      "why": "The only FCC requirement in a contest is to identify your station the same way you always must. Sending in a log and QSLing are contest or award customs, not FCC rules, so not all the choices are required.",
+      "concept": "g2d-logs-contests-qrp",
+      "status": "draft"
+    },
+    "G2D10": {
+      "why": "QRP is the Q signal for low power, and QRP operation means transmitting with low power, usually 5 watts or less on CW.",
+      "concept": "g2d-logs-contests-qrp",
+      "status": "draft"
+    },
+    "G2D11": {
+      "why": "Signal reports tell each station how well it is being heard, so both can adjust speed, power, or procedure to suit conditions. Awards and frequency calibration have nothing to do with it.",
+      "concept": "g2d-calling-cq",
+      "status": "draft"
+    },
+    "G2E01": {
+      "why": "By convention, RTTY sent as audio tones through an SSB transmitter uses lower sideband, which keeps the mark and space tones in the traditional order.",
+      "concept": "g2e-afsk-sidebands",
+      "status": "draft"
+    },
+    "G2E02": {
+      "why": "VARA is a digital protocol (a software modem) used with the Winlink email system. It is not a moonbounce mode, a direction-finding system, or a spotting network.",
+      "concept": "g2e-winlink",
+      "status": "draft"
+    },
+    "G2E03": {
+      "why": "PACTOR and VARA resend any data that doesn't get through. Interference can cause frequent retries or timeouts, long pauses, or no connection at all, so all the choices are correct.",
+      "concept": "g2e-winlink",
+      "status": "draft"
+    },
+    "G2E04": {
+      "why": "FT8 stations take turns in alternating 15-second slots, so you must transmit in the opposite slot from the station calling CQ, on a clear spot in the waterfall. Transmitting in the same slot means you both transmit at once and neither hears the other.",
+      "concept": "g2e-ft8",
+      "status": "draft"
+    },
+    "G2E05": {
+      "why": "JT65, JT9, FT4, and FT8 are always sent on upper sideband, whatever the band, even on 40 or 80 meters.",
+      "concept": "g2e-afsk-sidebands",
+      "status": "draft"
+    },
+    "G2E06": {
+      "why": "Amateur HF RTTY almost always uses a 170 Hz shift between mark and space. The wider 425 and 850 Hz shifts are older or commercial standards.",
+      "concept": "g2e-afsk-sidebands",
+      "status": "draft"
+    },
+    "G2E07": {
+      "why": "FT8 transmissions must start and stop in precise 15-second slots, so the computer clock must be accurate to within about 1 second. No special modem or antenna is needed.",
+      "concept": "g2e-ft8",
+      "status": "draft"
+    },
+    "G2E08": {
+      "why": "Most 20 meter digital activity sits between 14.070 and 14.100 MHz, including FT8 at 14.074 MHz. The other frequencies are in SSTV, phone, or CW territory.",
+      "concept": "g2e-20m-digital",
+      "status": "draft"
+    },
+    "G2E09": {
+      "why": "A PACTOR link is a connection between just two stations, so a third station cannot join. Sending a carrier to break the link would be deliberate interference.",
+      "concept": "g2e-winlink",
+      "status": "draft"
+    },
+    "G2E10": {
+      "why": "To reach a gateway, you transmit a connect request on its published frequency and the gateway answers automatically. Emailing the operator or sending QRL doesn't open a connection.",
+      "concept": "g2e-winlink",
+      "status": "draft"
+    },
+    "G2E11": {
+      "why": "AREDN is a mesh network built for high-speed data such as email, video, and file sharing during an emergency or community event. It is not a repeater system or a propagation or DX spotting service.",
+      "concept": "g2e-aredn",
+      "status": "draft"
+    },
+    "G2E12": {
+      "why": "Winlink is an amateur radio email system that reaches the internet, can use packet radio, and runs on both HF and VHF, so all the choices are correct.",
+      "concept": "g2e-winlink",
+      "status": "draft"
+    },
+    "G2E13": {
+      "why": "A Winlink Remote Message Server is usually called a gateway because it links radio users to the internet email system. A TNC is a modem at the user's station, and RJ-45 is a network connector.",
+      "concept": "g2e-winlink",
+      "status": "draft"
+    },
+    "G2E14": {
+      "why": "If the mark and space tones are swapped, the baud rate is wrong, or you are on the wrong sideband (which also swaps the tones), the signal can look tuned in but won't decode. All the choices are correct.",
+      "concept": "g2e-afsk-sidebands",
+      "status": "draft"
+    },
+    "G2E15": {
+      "why": "FT8 on 20 meters uses a dial frequency of 14.074 MHz on upper sideband, and its signals fill the next few kilohertz, about 14.074 to 14.077 MHz. It doesn't spread across the voice or CW segments.",
+      "concept": "g2e-ft8",
+      "status": "draft"
+    }
+  }
+}

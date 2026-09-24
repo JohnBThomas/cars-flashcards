@@ -1,0 +1,360 @@
+{
+  "subelement": "E2",
+  "concepts": [
+    {
+      "id": "e2a-orbits",
+      "group": "E2A",
+      "title": "Orbits, passes, and Keplerian elements",
+      "body": [
+        "Most amateur satellites are in low earth orbit (LEO), a few hundred miles up. They circle the Earth in about 90 to 100 minutes, so from your backyard each one rises, crosses the sky in 10 to 20 minutes, and sets.",
+        "Many LEO satellites travel in near-polar orbits, heading roughly north or south as they go. A pass where the satellite is moving from south to north is called an ascending pass; one moving from north to south is a descending pass. Think of the satellite climbing up the map.",
+        "A geostationary satellite sits about 22,300 miles above the equator and circles once a day, exactly as fast as the Earth turns. From the ground it appears to stay in one spot in the sky, so the antenna never has to move. HEO (highly elliptical orbit) satellites swing far out and back, and LEO satellites move quickly across the sky; neither stays put.",
+        "Tracking software needs to know where each satellite is. It uses Keplerian elements, a short set of numbers (inclination, eccentricity, orbit period, and so on) that define a satellite's orbit. They have nothing to do with antenna elements or tubes."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e2a-modes-bands",
+      "group": "E2A",
+      "title": "Satellite modes and band letters",
+      "body": [
+        "On an amateur satellite, 'mode' does not mean SSB or FM. It names the pair of bands the satellite listens on (uplink) and transmits on (downlink). The letters in a mode designator specify those uplink and downlink frequency ranges. For example, mode V/U means a VHF uplink and a UHF downlink.",
+        "Common letters:",
+        "• H: 21 MHz (15 meters)",
+        "• A: 29 MHz (10 meters)",
+        "• V: 145 MHz (2 meters)",
+        "• U: 435 MHz (70 centimeters)",
+        "• L: 1.2 GHz (23 centimeters)",
+        "• S: 2.4 GHz (13 centimeters)",
+        "So 'L band' and 'S band' refer to the 23 centimeter and 13 centimeter bands. The mode says nothing about orbit type, orientation, power, or polarization."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e2a-linear-transponder",
+      "group": "E2A",
+      "title": "Linear transponders, and why inverting helps",
+      "body": [
+        "A linear transponder is like a bent-pipe repeater for a whole slice of spectrum. It receives a passband perhaps 50 to 100 kHz wide on the uplink, converts the entire slice to the downlink band, and amplifies it without changing the signals. Because it is linear, anything that fits in the passband comes through: CW, SSB, FM, SSTV, PSK, packet, and more. Many stations can use it at the same time.",
+        "Most use an inverting design. The incoming signal is mixed with a local oscillator, and the difference product is transmitted. Taking the difference flips the passband upside down:",
+        "• A signal near the bottom of the uplink comes out near the top of the downlink, so signal position in the band is reversed.",
+        "• Upper sideband going up comes down as lower sideband, and vice versa.",
+        "• Doppler shift on the uplink and downlink move in opposite directions, so they partly cancel and the total shift you must chase is smaller.",
+        "Nothing is detected, demodulated, or remodulated along the way; it is purely a frequency conversion."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e2a-sharing-power",
+      "group": "E2A",
+      "title": "Don't hog the transponder",
+      "body": [
+        "A linear transponder has a fixed amount of downlink power, and every signal in its passband shares it. If one station sends up a signal much stronger than needed, the transponder spends a big share of its power repeating that one signal, and everyone else's downlink gets weaker.",
+        "So limit your effective radiated power (ERP) on the uplink. A good rule is that your downlink signal should be no louder than the satellite's beacon. Using just enough power is about courtesy to other users, not about telemetry errors or out-of-band emissions."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e2a-polarization-fading",
+      "group": "E2A",
+      "title": "Spin modulation, Faraday rotation, and circular polarization",
+      "body": [
+        "Satellite signals fade in two special ways. Spin modulation is a regular rise and fall in signal strength as the spinning satellite turns its antennas toward and away from you. Faraday rotation is a slow twisting of the signal's polarization as it passes through the ionosphere.",
+        "Either way, a linearly polarized ground antenna (for example, a horizontal Yagi) will see deep fades whenever the incoming polarization no longer lines up with it. A circularly polarized antenna, such as a crossed Yagi or a helix, responds about equally to any linear polarization angle, so it greatly reduces these fades."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e2a-store-forward",
+      "group": "E2A",
+      "title": "Store-and-forward satellites",
+      "body": [
+        "A LEO satellite is only in view of two stations at once if they are fairly close together. Store-and-forward gets around this. The satellite receives digital messages while passing over one station, holds them in memory, and lets another station download them later, when it passes over them.",
+        "It is a mailbox in orbit. It is not for uploading transponder software, and it does not relay messages from one satellite to another."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e2b-ntsc",
+      "group": "E2B",
+      "title": "Analog fast-scan TV: NTSC frames and interlace",
+      "body": [
+        "Fast-scan television (FSTV) is full-motion video, the same kind the old US broadcast stations sent. The US analog standard is NTSC. Each complete picture, or frame, is made of 525 horizontal lines, and about 30 frames are sent per second.",
+        "To reduce flicker, NTSC uses interlaced scanning. Each frame is split into two fields. The first field scans all the odd-numbered lines, and the second field fills in the even-numbered lines between them. Every line is still scanned left to right and top to bottom; the fields just take turns.",
+        "Hams on 70 centimeters can use ordinary analog TV sets or cable-ready receivers, because several cable TV channels (roughly channels 57 to 61) fall inside the 420 to 450 MHz amateur band. Tune the receiver to the cable channel that matches the ham frequency."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e2b-vsb",
+      "group": "E2B",
+      "title": "Vestigial sideband",
+      "body": [
+        "A video signal is very wide, so plain double-sideband AM would use a lot of spectrum. Single sideband would save space, but filtering right at the carrier would damage the lowest video frequencies, which carry the large, broad areas of the picture.",
+        "Vestigial sideband (VSB) is the compromise. It is amplitude modulation in which one complete sideband is sent along with a small part (a vestige) of the other sideband near the carrier. That reduces bandwidth while keeping good fidelity for the low-frequency video components. The vestige does not carry the audio or the color."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e2b-digital-tv",
+      "group": "E2B",
+      "title": "Digital ATV: DVB-T and coding rate",
+      "body": [
+        "Many ham TV stations now use digital television, often the DVB-T standard. DVB-T spreads the data over many carriers, each modulated with QPSK or QAM (phase and amplitude combinations that carry several bits per symbol).",
+        "Digital TV adds forward error correction (FEC): extra bits that let the receiver repair errors without asking for a resend. The coding rate tells you how much is real data. A rate of 3/4 means 3 of every 4 bits are data and 1 of every 4 is FEC, so 25 percent of what is sent is error correction. A lower rate like 1/2 is more robust but carries less picture data."
+      ],
+      "formula": "FEC share = 1 − coding rate",
+      "status": "draft"
+    },
+    {
+      "id": "e2b-sstv-tones",
+      "group": "E2B",
+      "title": "Analog SSTV: pictures made of tones",
+      "body": [
+        "Slow-scan television (SSTV) sends still pictures through an ordinary voice channel, usually on SSB. The picture is built one line at a time from audio tones.",
+        "Brightness is set by the tone frequency: about 1500 Hz is black, about 2300 Hz is white, and in between are grays. Amplitude does not carry the picture, which helps because signal strength changes with fading.",
+        "At the start of each line a sync pulse, a specific tone frequency (1200 Hz), tells the receiving software to begin a new line. It is not a timer, an amplitude level, or a two-tone signal.",
+        "Color SSTV sends the color components as separate lines in sequence, for example a green line, then blue, then red, and the software combines them. There is no color subcarrier or color burst like broadcast TV."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e2b-sstv-vis-drm",
+      "group": "E2B",
+      "title": "VIS codes and digital SSTV",
+      "body": [
+        "There are many SSTV modes (Scottie, Martin, Robot, PD, and others) with different timing and color schemes. At the start of each picture the sender transmits a short vertical interval signaling (VIS) code that identifies which mode is being used, so the receiving software can set itself up automatically. The VIS code is not the call sign and not the sync.",
+        "Digital SSTV often uses Digital Radio Mondiale (DRM), which sends the image file as data on many closely spaced carriers within a normal voice bandwidth. An ordinary SSB receiver feeding a computer sound card is all you need to receive it."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e2c-contest-dx-habits",
+      "group": "E2C",
+      "title": "Where and how to call in contests and pileups",
+      "body": [
+        "Contesting is not done on the WARC bands: 30, 17, and 12 meters. By long-standing agreement those bands are kept contest-free, and 30 meters is also very narrow and shared.",
+        "In VHF and UHF contests, SSB and CW activity is concentrated in the weak-signal segment near the bottom of each band, clustered around the SSB/CW calling frequency (for example 50.125 MHz or 144.200 MHz). FM simplex channels in the middle of the band are a different world.",
+        "When calling a DX station or a contest station, send your full call sign once or twice, then listen. Partial calls (just the last two letters) cause confusion, extra information like your grid wastes time, and long calls cover up the DX station's reply."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e2c-split",
+      "group": "E2C",
+      "title": "Why DX stations work split",
+      "body": [
+        "A rare DX station may have hundreds of stations calling at once. It often transmits on one frequency and listens on another, or across a range of frequencies (operating 'split'). This does several things at once:",
+        "• It keeps the callers from covering the DX station's own signal, so everyone can hear who is being worked.",
+        "• Spreading callers out reduces interference and speeds up the rate of contacts.",
+        "• The DX station may be transmitting on a frequency that some callers are not permitted to use in their own country, so they must reply elsewhere."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e2c-logs-qsl",
+      "group": "E2C",
+      "title": "Log formats, QSL managers, and LoTW",
+      "body": [
+        "Two standard file formats come up constantly:",
+        "• ADIF (Amateur Data Interchange Format): the general format for exchanging log data between logging programs, QSL services, and award systems.",
+        "• Cabrillo: the standard format for submitting electronic contest logs to the contest sponsor.",
+        "A DX QSL manager handles QSL card confirmations for a DX station, receiving requests and sending out cards so the DX operator can concentrate on operating.",
+        "Logbook of The World (LoTW) is the ARRL's online confirmation system. Two stations upload digitally signed logs, and matching contacts are confirmed. It works for contacts between US stations, between US and non-US stations, for special event stations, and for awards like Worked All States and DXCC."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e2c-remote",
+      "group": "E2C",
+      "title": "Remote operation: ID and latency",
+      "body": [
+        "Many hams operate a station somewhere else over the internet. If the remote transmitter is located in the US, a US licensee identifies normally, with no extra indicator. There is no required state, district, or ARRL section suffix.",
+        "Latency is the delay between something the control operator does (pressing PTT, sending a character) and the matching change in the transmitted signal. Internet links add latency, which matters for fast CW and for break-in operation. Jitter is variation in that delay, and hang time and anti-VOX are unrelated transmitter settings."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e2c-mesh",
+      "group": "E2C",
+      "title": "Amateur mesh networks",
+      "body": [
+        "An amateur mesh network (such as AREDN) links many nodes into a high-speed data network that can carry email, video, voice-over-IP, and file sharing, and it keeps working when individual links drop out.",
+        "Nodes are usually commercial wireless routers loaded with custom firmware, operating under amateur rules. They use microwave frequencies that hams share with unlicensed wireless data services, such as parts of the 2.4, 3.4, and 5.8 GHz ranges used by Wi-Fi. A slow 1200 or 9600 baud packet radio is not what mesh networks use."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e2d-weak-signal-modes",
+      "group": "E2D",
+      "title": "Weak-signal digital modes for VHF and up",
+      "body": [
+        "The WSJT family of modes was built to make contacts with signals too weak to hear by ear. Match the mode to the job:",
+        "• JT65: uses 65 tones, a multitone AFSK signal, and decodes signals with a very low signal-to-noise ratio, well below what the ear can copy. Its name has nothing to do with its bandwidth or baud rate.",
+        "• Q65: designed for EME (moonbounce) and other tough paths such as ionospheric scatter. It can average several receive cycles together to pull out a signal too weak to decode in one.",
+        "• MSK144: designed for meteor scatter, where a signal comes through in short bursts off meteor trails lasting a fraction of a second.",
+        "• FT8 and FT4: general-purpose modes. In a VHF contest, the grid square is sent where the signal-to-noise report would normally go, because grid squares are the contest exchange.",
+        "WSPR is a beacon-style propagation mode, and Hellschreiber is a fax-like text mode; neither is built for meteor scatter or EME."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e2d-eme",
+      "group": "E2D",
+      "title": "EME (moonbounce) procedure",
+      "body": [
+        "Earth-Moon-Earth (EME) contacts bounce signals off the moon. The path loss is enormous and the echo is weak, so procedure matters.",
+        "The standard method is time-synchronous transmissions alternating between the stations: each station transmits during agreed time periods (often one minute, or the WSJT cycle) and listens during the other's periods. Both stations need accurate clocks. Contacts are not made through store-and-forward, by listening for beacons off the moon, or with high-speed CW."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e2d-aprs",
+      "group": "E2D",
+      "title": "APRS: packet position reporting",
+      "body": [
+        "APRS (Automatic Packet Reporting System) sends position reports, weather data, telemetry, and short messages. It is commonly used for real-time tracking of vehicles, hikers, and high-altitude balloons carrying amateur transmitters.",
+        "APRS runs on the AX.25 packet radio protocol, usually 1200 baud on 144.39 MHz in North America. Its beacons are sent as Unnumbered Information (UI) frames. A UI frame is broadcast to anyone listening; no connection is set up and no acknowledgement is expected.",
+        "Packets are relayed by digipeaters (digital repeaters), which receive a packet, store it for a moment, and retransmit it on the same frequency. Internet gateways (IGates) then pass many packets to the APRS internet system. APRS is not relayed through C4FM or DMR voice repeaters."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e2d-aprs-path",
+      "group": "E2D",
+      "title": "Reading an APRS path like WIDE3-1",
+      "body": [
+        "The path in an APRS packet tells digipeaters how far to relay it. In WIDEn-N, the first number (n) is how many digipeater hops were requested, and the second number (N) is how many hops remain.",
+        "Each digipeater that relays the packet reduces the second number by one. So WIDE3-1 means three hops were requested and one hop is left; two digipeaters have already relayed it. When the second number reaches zero, the packet is not relayed further."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e2e-hf-data-basics",
+      "group": "E2E",
+      "title": "HF data modulation: FSK, direct and audio",
+      "body": [
+        "Below 30 MHz, data is usually sent with frequency shift keying (FSK): the transmitter shifts between two or more frequencies to represent the data. RTTY is the classic example. Pulse modulation, spread spectrum, and DTMF-on-FM are not the normal HF data methods.",
+        "There are two ways to make FSK:",
+        "• Direct FSK: the data line shifts the transmitter's VFO (oscillator) frequency directly.",
+        "• Audio FSK (AFSK): the computer produces audio tones, which are fed into the microphone input of an SSB transmitter. The result on the air looks much the same.",
+        "The difference is in how the shift is produced, not in bandwidth or speed."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e2e-wsjt-timing",
+      "group": "E2E",
+      "title": "WSJT-X timing: FT8, FT4, FST4, and Q65",
+      "body": [
+        "WSJT-X modes send and receive in fixed time slots, so both stations must agree on when each cycle starts. That is done by synchronizing the computers' clocks, usually to internet time or GPS, within about a second.",
+        "• FT8: a transmission cycle is 15 seconds. It uses 8 tones and occupies only about 50 Hz, one of the narrowest common HF modes.",
+        "• FT4: faster, with 7.5 second cycles for contesting. The '4' refers to its four-tone continuous-phase frequency shift keying.",
+        "• FST4: uses four-tone Gaussian FSK, offers a choice of transmit/receive periods (from 15 seconds up to 30 minutes), and uses different tone spacings matched to those periods. Longer periods let it copy weaker signals.",
+        "• Q65: unlike JT65, its decoder can average multiple receive cycles to build up a signal too weak to decode in one try."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e2e-keyboard-modes",
+      "group": "E2E",
+      "title": "Keyboard modes, file transfer, and varicode",
+      "body": [
+        "Keyboard-to-keyboard modes let you type a live conversation: RTTY, PSK31, MFSK16, and similar. WSPR is different. It sends only a short beacon message (call sign, grid, power) for propagation study, so it does not support conversation.",
+        "PSK31 uses variable-length character coding, called varicode. Common letters like 'e' get short codes and rare characters get long ones, much like Morse code, which saves time. RTTY uses fixed 5-bit Baudot codes.",
+        "PACTOR is an ARQ mode: the receiver acknowledges each block and asks for repeats of damaged ones, so it delivers error-free data. That makes it able to transfer binary files, such as attachments through Winlink. PACTOR IV has the highest throughput of the common HF modes under good conditions, but it needs a full 2.4 kHz voice-width channel. PSK31, RTTY, and AMTOR are text modes."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e2e-bandwidth-throughput",
+      "group": "E2E",
+      "title": "Bandwidth versus throughput",
+      "body": [
+        "Narrow and fast rarely go together. Rough bandwidths for common HF modes:",
+        "• FT8: about 50 Hz",
+        "• 170 Hz shift, 45 baud RTTY: about 250 Hz",
+        "• MFSK16: about 316 Hz",
+        "• PACTOR IV: about 2.4 kHz",
+        "So FT8 is the narrowest of these, but it carries only a few characters every 15 seconds. PACTOR IV is the widest, and it moves the most data per second when the path is clear."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e2e-ale",
+      "group": "E2E",
+      "title": "Automatic Link Establishment (ALE)",
+      "body": [
+        "ALE solves the HF problem of 'which band is open right now?' An ALE radio constantly scans a list of frequencies. A calling station sends a call to a specific station, and when the designated call sign is received, the target radio stops scanning, alerts the operator, and links up on that channel. ALE radios also track which channels have worked best recently.",
+        "It works entirely over the radio; it does not rely on an internet site, a constant tone, or back scatter."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "E2A01": { "why": "An ascending pass is one where the satellite is moving from south to north, climbing up the map. A pass moving north to south is descending.", "concept": "e2a-orbits", "status": "draft" },
+    "E2A02": { "why": "An inverting transponder transmits the difference product, which flips the passband. That reverses signal position, swaps upper and lower sideband, and makes uplink and downlink Doppler shifts move in opposite directions so they partly cancel. All of these are true.", "concept": "e2a-linear-transponder", "status": "draft" },
+    "E2A03": { "why": "The uplink passband is mixed with a local oscillator and the difference product is amplified and transmitted, which inverts it. Nothing is detected or remodulated, and there is no I/Q filtering.", "concept": "e2a-linear-transponder", "status": "draft" },
+    "E2A04": { "why": "A satellite's mode names the bands it listens on and transmits on, its uplink and downlink. It says nothing about orbit type or orientation.", "concept": "e2a-modes-bands", "status": "draft" },
+    "E2A05": { "why": "Each letter stands for a band, so a designator like V/U tells you the uplink and downlink frequency ranges. The letters do not specify power, polarization, or the ground station's location.", "concept": "e2a-modes-bands", "status": "draft" },
+    "E2A06": { "why": "Keplerian elements are the set of numbers that define a satellite's orbit, which tracking programs use to predict passes. They are not antenna parts, tube filaments, or codes.", "concept": "e2a-orbits", "status": "draft" },
+    "E2A07": { "why": "A linear transponder repeats everything in its passband without altering it, so any mode that fits comes through: FM, CW, SSB, SSTV, PSK, packet, and more.", "concept": "e2a-linear-transponder", "status": "draft" },
+    "E2A08": { "why": "All the signals in a linear transponder share its limited downlink power. An overly strong uplink grabs more than its share and weakens everyone else's downlink.", "concept": "e2a-sharing-power", "status": "draft" },
+    "E2A09": { "why": "In satellite band letters, L is the 23 centimeter band (about 1.2 GHz) and S is the 13 centimeter band (about 2.4 GHz). V and U are the 2 meter and 70 centimeter bands.", "concept": "e2a-modes-bands", "status": "draft" },
+    "E2A10": { "why": "A geostationary satellite orbits over the equator once a day, matching the Earth's rotation, so it appears fixed in the sky. LEO and HEO satellites move across the sky, and 'geomagnetic' is not an orbit type.", "concept": "e2a-orbits", "status": "draft" },
+    "E2A11": { "why": "Spin modulation and Faraday rotation both change the polarization angle of the arriving signal. A circularly polarized antenna responds about equally to any linear angle, so it minimizes the fades a linearly polarized antenna would suffer.", "concept": "e2a-polarization-fading", "status": "draft" },
+    "E2A12": { "why": "Store-and-forward lets the satellite hold digital messages in memory and deliver them later to a station it passes over. It is a mailbox in orbit, not a software upload channel or a satellite-to-satellite relay.", "concept": "e2a-store-forward", "status": "draft" },
+
+    "E2B01": { "why": "A coding rate of 3/4 means 3 out of every 4 bits are data and 1 out of 4 is forward error correction. One quarter is 25 percent.", "work": ["FEC share = 1 − coding rate", "FEC share = 1 − 3/4 = 1/4", "1/4 = 25% of the data sent is FEC"], "concept": "e2b-digital-tv", "status": "draft" },
+    "E2B02": { "why": "An NTSC frame has 525 horizontal lines. About 30 frames are sent each second, which is where the tempting '30' comes from, and 1080 is a high-definition digital format.", "concept": "e2b-ntsc", "status": "draft" },
+    "E2B03": { "why": "Interlacing scans the odd-numbered lines in one field and the even-numbered lines in the next, so two fields make one frame. Every line is still scanned left to right, top to bottom.", "concept": "e2b-ntsc", "status": "draft" },
+    "E2B04": { "why": "Analog color SSTV sends each color component as its own line, one after another, and the software combines them. There is no color subcarrier or color burst as in broadcast TV.", "concept": "e2b-sstv-tones", "status": "draft" },
+    "E2B05": { "why": "Sending one full sideband plus a small vestige of the other cuts bandwidth compared with double sideband, while protecting the low-frequency video components near the carrier. The vestige does not carry audio or color.", "concept": "e2b-vsb", "status": "draft" },
+    "E2B06": { "why": "Vestigial sideband is amplitude modulation that transmits one complete sideband and only a portion of the other. It is not an inverted sideband, an FM method, or spread spectrum.", "concept": "e2b-vsb", "status": "draft" },
+    "E2B07": { "why": "DVB-T carries its data on many carriers, each modulated with QPSK or QAM. FM, FSK, AM, and OOK are not used for DVB-T.", "concept": "e2b-digital-tv", "status": "draft" },
+    "E2B08": { "why": "Several cable TV channels fall inside the 70 centimeter amateur band, so a cable-ready analog TV tuned to the matching channel can receive amateur fast-scan TV. Satellite dishes and old channel 2 are not the answer.", "concept": "e2b-ntsc", "status": "draft" },
+    "E2B09": { "why": "DRM digital SSTV fits in a normal voice channel, so an ordinary SSB receiver feeding a computer sound card can receive it. CDMA and AREDN are unrelated technologies, and an AM receiver is not the standard choice.", "concept": "e2b-sstv-vis-drm", "status": "draft" },
+    "E2B10": { "why": "In analog SSTV, brightness is set by the tone frequency, from about 1500 Hz for black to about 2300 Hz for white. Amplitude does not carry picture information.", "concept": "e2b-sstv-tones", "status": "draft" },
+    "E2B11": { "why": "The VIS code at the start of a picture tells the receiving software which SSTV mode is being sent, so it can decode automatically. It does not carry the call sign or provide sync.", "concept": "e2b-sstv-vis-drm", "status": "draft" },
+    "E2B12": { "why": "A sync pulse at a specific tone frequency (1200 Hz) marks the start of each new line. SSTV relies on frequency, not amplitude or elapsed time, to tell the software what to do.", "concept": "e2b-sstv-tones", "status": "draft" },
+
+    "E2C01": { "why": "When a US licensee remotely operates a transmitter located in the US, normal identification is enough. No state, district, or ARRL section indicator is required.", "concept": "e2c-remote", "status": "draft" },
+    "E2C02": { "why": "ADIF, the Amateur Data Interchange Format, is the standard for exchanging log data between programs and services. NEC is antenna modeling software, and the other names are not log formats.", "concept": "e2c-logs-qsl", "status": "draft" },
+    "E2C03": { "why": "By long-standing agreement, contests are not held on the WARC bands, which include 30 meters. 6 meters, 70 centimeters, and 33 centimeters all see VHF/UHF contest activity.", "concept": "e2c-contest-dx-habits", "status": "draft" },
+    "E2C04": { "why": "Amateur mesh networks run on microwave frequencies hams share with unlicensed wireless data services such as Wi-Fi. HF, cable TV channels, and 60 meter channels cannot carry the needed data rates.", "concept": "e2c-mesh", "status": "draft" },
+    "E2C05": { "why": "A DX QSL manager handles the receiving and sending of confirmations for a DX station, so the DX operator can concentrate on making contacts. The manager does not assign frequencies or run nets.", "concept": "e2c-logs-qsl", "status": "draft" },
+    "E2C06": { "why": "VHF/UHF contest SSB and CW activity gathers in each band's weak-signal segment, clustered around the SSB/CW calling frequency. The middle of the band is mostly FM, and there is no reserved contest segment at the top.", "concept": "e2c-contest-dx-habits", "status": "draft" },
+    "E2C07": { "why": "Cabrillo is the standard file format for submitting electronic contest logs to a sponsor. It is not an on-air exchange method or a set of contest rules.", "concept": "e2c-logs-qsl", "status": "draft" },
+    "E2C08": { "why": "LoTW confirms contacts of all these kinds: between US stations including special events, between US and non-US stations, and for awards like Worked All States.", "concept": "e2c-logs-qsl", "status": "draft" },
+    "E2C09": { "why": "Mesh nodes are typically commercial wireless routers loaded with custom amateur firmware, such as AREDN. Slow 1200 or 9600 baud packet radios and EchoLink are not how mesh networks are built.", "concept": "e2c-mesh", "status": "draft" },
+    "E2C10": { "why": "Working split keeps callers off the DX station's frequency, reduces interference so contacts move faster, and lets the DX transmit where some callers may not be allowed to. All of these reasons apply.", "concept": "e2c-split", "status": "draft" },
+    "E2C11": { "why": "Send your full call sign once or twice and then listen. Partial calls cause confusion, adding a grid square wastes time, and long repeated calls cover the DX station's reply.", "concept": "e2c-contest-dx-habits", "status": "draft" },
+    "E2C12": { "why": "Latency is the delay between the control operator's action and the change in the transmitted signal, which is a concern with remote operation over the internet. Jitter is variation in delay, and hang time and anti-VOX are transmitter settings.", "concept": "e2c-remote", "status": "draft" },
+
+    "E2D01": { "why": "MSK144 was designed for meteor scatter, where signals arrive in very short bursts from meteor trails. WSPR is for propagation beacons, Hellschreiber is a text mode, and APRS is position reporting.", "concept": "e2d-weak-signal-modes", "status": "draft" },
+    "E2D02": { "why": "In a VHF contest, grid squares are the exchange, so FT8 and FT4 send the grid square where the signal-to-noise report normally goes.", "concept": "e2d-weak-signal-modes", "status": "draft" },
+    "E2D03": { "why": "Q65 was designed for EME and other very weak, difficult paths, and can average several receive cycles. MSK144 is for meteor scatter, and PACTOR III and WSPR are not EME modes.", "concept": "e2d-weak-signal-modes", "status": "draft" },
+    "E2D04": { "why": "APRS sends position reports that can be tracked in real time, which makes it the usual choice for tracking high-altitude balloons. FT8 and PACTOR III are not tracking systems.", "concept": "e2d-aprs", "status": "draft" },
+    "E2D05": { "why": "JT65 is known for decoding signals with a very low signal-to-noise ratio, far below what can be heard by ear. The '65' refers to its 65 tones, not its bandwidth or baud rate.", "concept": "e2d-weak-signal-modes", "status": "draft" },
+    "E2D06": { "why": "EME contacts use time-synchronous transmissions, with the two stations alternating in agreed time periods. Store-and-forward, moon-reflected beacons, and high-speed CW are not the method.", "concept": "e2d-eme", "status": "draft" },
+    "E2D07": { "why": "APRS runs on AX.25, the standard amateur packet radio protocol. PACTOR and AMTOR are HF modes, and QAM is a modulation type.", "concept": "e2d-aprs", "status": "draft" },
+    "E2D08": { "why": "APRS beacons go out as Unnumbered Information (UI) frames, which anyone can receive with no connection and no acknowledgement. Connect and acknowledgement frames belong to connected packet sessions.", "concept": "e2d-aprs", "status": "draft" },
+    "E2D09": { "why": "JT65 sends one of 65 audio tones at a time, which is multitone AFSK. It is not PSK, RTTY, or QAM.", "concept": "e2d-weak-signal-modes", "status": "draft" },
+    "E2D10": { "why": "In WIDEn-N, the first number is how many digipeater hops were requested and the second is how many remain. WIDE3-1 means three hops were requested and one is left.", "concept": "e2d-aprs-path", "status": "draft" },
+    "E2D11": { "why": "APRS packets are relayed by packet digipeaters, which receive and retransmit them on the same frequency. C4FM and DMR are digital voice repeater systems.", "concept": "e2d-aprs", "status": "draft" },
+
+    "E2E01": { "why": "HF data is normally sent with frequency shift keying, as in RTTY. DTMF on FM, pulse modulation, and spread spectrum are not the usual HF data methods.", "concept": "e2e-hf-data-basics", "status": "draft" },
+    "E2E02": { "why": "WSJT-X modes transmit and receive in fixed time slots, so the stations' computer clocks must be synchronized, usually within about a second. There is no sync pulse or sync field doing that job.", "concept": "e2e-wsjt-timing", "status": "draft" },
+    "E2E03": { "why": "The '4' in FT4 refers to its four-tone continuous-phase frequency shift keying. It does not mean four cycles per minute; FT4 cycles are 7.5 seconds.", "concept": "e2e-wsjt-timing", "status": "draft" },
+    "E2E04": { "why": "FST4 uses four-tone Gaussian FSK, lets you choose among several transmit/receive periods, and uses different tone spacings matched to them. All of these describe it.", "concept": "e2e-wsjt-timing", "status": "draft" },
+    "E2E05": { "why": "WSPR sends only short beacon messages for propagation study, so you cannot hold a typed conversation with it. RTTY, PSK31, and MFSK16 are all keyboard-to-keyboard modes.", "concept": "e2e-keyboard-modes", "status": "draft" },
+    "E2E06": { "why": "FT8 uses a fixed 15 second transmission cycle, regardless of the message. FT4 uses 7.5 seconds, so 8 or 30 seconds are both wrong.", "concept": "e2e-wsjt-timing", "status": "draft" },
+    "E2E07": { "why": "The Q65 decoder can average several receive cycles to dig out a signal too weak to decode in a single cycle. It is not a keyboard-to-keyboard mode and does not use quadrature modulation.", "concept": "e2e-wsjt-timing", "status": "draft" },
+    "E2E08": { "why": "PACTOR is an ARQ mode that acknowledges and repeats data blocks until they arrive error-free, so it can transfer binary files. PSK31, RTTY, and AMTOR are text modes.", "concept": "e2e-keyboard-modes", "status": "draft" },
+    "E2E09": { "why": "PSK31 uses varicode, a variable-length code that gives common characters short codes, much like Morse. RTTY uses fixed-length Baudot codes.", "concept": "e2e-keyboard-modes", "status": "draft" },
+    "E2E10": { "why": "FT8 occupies only about 50 Hz. RTTY and MFSK16 are a few hundred hertz wide, and PACTOR IV needs about 2.4 kHz.", "concept": "e2e-bandwidth-throughput", "status": "draft" },
+    "E2E11": { "why": "Direct FSK shifts the transmitter's VFO frequency itself, while audio FSK feeds audio tones into an SSB transmitter. The difference is how the shift is made, not bandwidth or speed.", "concept": "e2e-hf-data-basics", "status": "draft" },
+    "E2E12": { "why": "An ALE radio keeps scanning a list of frequencies and activates when it hears its own designated call sign. It does not use an internet site, a constant tone, or back scatter.", "concept": "e2e-ale", "status": "draft" },
+    "E2E13": { "why": "Under clear conditions PACTOR IV moves far more data than the others, using its full 2.4 kHz channel. FT8 is very narrow but carries only a few characters per cycle.", "concept": "e2e-bandwidth-throughput", "status": "draft" }
+  }
+}

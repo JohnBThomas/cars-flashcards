@@ -1,0 +1,1082 @@
+{
+  "subelement": "E7",
+  "concepts": [
+    {
+      "id": "e7a-logic-gates",
+      "group": "E7A",
+      "title": "Logic gates and truth tables",
+      "body": [
+        "Digital circuits work with just two states, 1 and 0. A logic gate looks at its inputs and produces a 1 or a 0 according to a fixed rule. A truth table is simply a list of every possible combination of inputs to a digital device and the output each one produces. It is a digital idea; op-amps are analog parts and do not have truth tables.",
+        "• AND: output is 1 only if all inputs are 1.",
+        "• OR: output is 1 if any input is 1.",
+        "• NAND (NOT-AND): the opposite of AND. Output is 0 only if all inputs are 1; any 0 on an input gives a 1 out.",
+        "• NOR (NOT-OR): output is 1 only if all inputs are 0.",
+        "• XOR (exclusive OR): with two inputs, output is 1 if one and only one input is 1 (the inputs differ).",
+        "• XNOR (exclusive NOR): the opposite of XOR. With two inputs, output is 0 if one and only one input is 1, and 1 when the inputs match.",
+        "A handy trick: for any gate whose name starts with N, work out the plain gate first and then flip the answer."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7a-positive-logic",
+      "group": "E7A",
+      "title": "Positive and negative logic",
+      "body": [
+        "Inside a real circuit, a 1 or a 0 is just a voltage. Someone has to decide which voltage means which.",
+        "In positive logic, the higher voltage represents a 1 and the lower voltage represents a 0. This is the usual convention. In negative logic it is reversed: the lower voltage is the 1.",
+        "The term has nothing to do with noise immunity, a circuit being 'true,' or both levels being positive voltages. It only describes which voltage level stands for a 1."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7a-flip-flops",
+      "group": "E7A",
+      "title": "Flip-flops: the bistable memory cell",
+      "body": [
+        "A flip-flop is a circuit with two stable states. It will sit in either state indefinitely until an input tells it to change. Because it has two stable states it is called bistable, and because it remembers its state it can store one bit of data. Plain gates like AND and OR are not bistable; their outputs follow their inputs with no memory.",
+        "A flip-flop wired to toggle (change state) on each incoming clock pulse makes a divide-by-2 circuit. It takes two input pulses to make its output go through one full cycle (high, then low), so the output frequency is half the input frequency."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7a-dividers-counters",
+      "group": "E7A",
+      "title": "Frequency dividers and decade counters",
+      "body": [
+        "Chain toggling flip-flops together, each one feeding the next, and each stage divides by 2 again. Two stages divide by 4, three by 8, four by 16. In general, n flip-flops divide by 2 raised to the power n.",
+        "A decade counter counts input pulses from 0 through 9 and then starts over, producing one output pulse for every 10 input pulses. That makes it a divide-by-10 circuit, handy for things like frequency counters and marker generators. It is a counter, not a display decoder; turning a number into the segments of an LED display is a separate decoder chip's job."
+      ],
+      "formula": "division ratio = 2^n, where n = number of flip-flops",
+      "status": "draft"
+    },
+    {
+      "id": "e7a-multivibrators",
+      "group": "E7A",
+      "title": "Astable and monostable multivibrators",
+      "body": [
+        "A multivibrator is a two-state switching circuit. The three kinds are named by how many stable states they have.",
+        "• Bistable (the flip-flop): two stable states; stays put until told to change.",
+        "• Monostable (the 'one-shot'): one stable state. A trigger pulse flips it to the other state temporarily, and after a set time (fixed by a resistor and capacitor) it returns on its own. Useful for making a pulse of a fixed length.",
+        "• Astable: no stable state at all. It keeps flipping back and forth on its own, with no external clock, producing a continuous square wave. It is a simple oscillator or clock source."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7b-amplifier-classes",
+      "group": "E7B",
+      "title": "Amplifier classes: how much of the cycle each device conducts",
+      "body": [
+        "An amplifier's class describes how much of each input cycle (360 degrees) the active device conducts current.",
+        "• Class A: conducts for the whole 360 degrees. It is biased at about the middle of its range, halfway between saturation (fully on) and cutoff (fully off), so the signal can swing equally both ways. Very linear, but inefficient (at best about 25 to 50 percent).",
+        "• Class B: each device conducts for exactly 180 degrees. Used in push-pull pairs, one device for each half of the wave.",
+        "• Class AB: each device conducts for more than 180 but less than 360 degrees. The small overlap avoids the crossover distortion of pure Class B. Common in linear HF amplifiers.",
+        "• Class C: conducts for less than 180 degrees. Very efficient, but badly nonlinear."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7b-linearity",
+      "group": "E7B",
+      "title": "Which signals need a linear amplifier",
+      "body": [
+        "SSB and AM carry information in the amplitude of the signal, so the amplifier must reproduce the amplitude faithfully. That calls for a linear amplifier (Class A, AB, or B push-pull).",
+        "A Class C amplifier only conducts on the peaks, so its output does not follow the input's amplitude. Feeding it an SSB signal causes severe distortion and creates intermodulation products that spread the signal over far more bandwidth than it should use (splatter).",
+        "Class C is fine for constant-amplitude signals such as FM and CW, where the amplitude carries no information."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7b-switching-amps",
+      "group": "E7B",
+      "title": "Switching amplifiers (Class D and E)",
+      "body": [
+        "A Class D amplifier uses its transistors as switches, driving them hard on or hard off instead of letting them operate partway. That gives very high efficiency.",
+        "Why: the power wasted in a transistor is the voltage across it times the current through it. When the switch is saturated (fully on), current is high but voltage across it is nearly zero. When it is cut off, voltage is high but current is zero. Either way little power turns to heat. Because the device spends almost all its time at saturation or cutoff, efficiency is high. A linear amplifier, by contrast, spends its time partway on, with both voltage and current present.",
+        "The catch: switching produces a square-ish waveform full of harmonics. An RF switching amplifier must have a filter at its output to remove the harmonic content before the signal reaches the antenna."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7b-parasitics",
+      "group": "E7B",
+      "title": "Stopping unwanted oscillations",
+      "body": [
+        "An RF power amplifier has plenty of gain, and if some of its output leaks back to its input in the right phase, it can break into oscillation on its own. Oscillations at a frequency unrelated to the operating frequency (often VHF) are called parasitics.",
+        "Two standard cures:",
+        "• Parasitic suppressors: typically a small coil with a resistor in parallel, placed in the lead to the tube or transistor. It lets the operating frequency pass but adds loss at VHF, where parasitics tend to occur.",
+        "• Neutralization: deliberately feeding back a small amount of signal in opposite phase to cancel the unwanted internal feedback (for example through a tube's grid-to-plate capacitance).",
+        "Tuning for maximum power or minimum loading does not cure instability and can make it worse."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7b-grounded-grid",
+      "group": "E7B",
+      "title": "The grounded-grid amplifier",
+      "body": [
+        "Many amateur HF linear amplifiers use tubes in a grounded-grid circuit. The grid is connected to ground for RF, the drive signal goes into the cathode, and output is taken from the plate.",
+        "Because the drive goes into the cathode, which carries the full tube current, the input impedance is low (often around 50 to 100 ohms), making it easy to drive directly from a transceiver. The grounded grid also acts as a shield between input and output, so this circuit is quite stable and usually needs no neutralization.",
+        "Power gain is moderate rather than high, since part of the drive power passes straight through to the output."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7b-transistor-configs",
+      "group": "E7B",
+      "title": "Common emitter, common base, and common collector",
+      "body": [
+        "A bipolar transistor amplifier is named by which lead is common to both input and output (usually tied to ground for signals).",
+        "• Common emitter: input on the base, output from the collector. The most common amplifier. It has good voltage gain and inverts the signal (output is 180 degrees out of phase with the input).",
+        "• Common base: input on the emitter, output from the collector. Low input impedance, no phase inversion.",
+        "• Common collector, also called the emitter follower: input on the base, output from the emitter. Voltage gain is just under 1, the output is in phase with the input, input impedance is high and output impedance is low. It is used as a buffer."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7b-figure-e7-1",
+      "group": "E7B",
+      "title": "Reading Figure E7-1: a biased common-emitter stage",
+      "body": [
+        "Figure E7-1 shows an NPN transistor. The input comes through capacitor C1 to the base; the output is taken through capacitor C2 from the collector, which connects to the positive supply through a resistor. The emitter goes to ground through R3, with capacitor C3 from the emitter to ground. Input on the base and output on the collector means this is a common-emitter amplifier.",
+        "• R1 (from the supply to the base) and R2 (from the base to ground) form a voltage divider that sets the base voltage. This is voltage divider bias.",
+        "• R3 in the emitter is self bias: as emitter current rises, the voltage across R3 rises, which reduces the base-to-emitter voltage and pulls the current back. That stabilizes the operating point against temperature changes.",
+        "• C3 is the emitter bypass capacitor. It shorts R3 for AC signals so R3 does not cut the stage's signal gain. C1 and C2 are coupling capacitors that pass the signal but block DC."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7c-pi-and-t",
+      "group": "E7C",
+      "title": "Pi and T networks",
+      "body": [
+        "Networks are named by the shape their parts make when drawn. A Pi network has one part in series between input and output, and one part from each side to ground (it looks like the Greek letter pi). A T network has two series parts with one part to ground in the middle.",
+        "To tell low-pass from high-pass, remember that inductors pass low frequencies and block high ones, while capacitors do the opposite.",
+        "• Low-pass Pi network (the classic tube amplifier output network): a capacitor from the input to ground, a capacitor from the output to ground, and an inductor in series between input and output. The series inductor passes low frequencies, and the shunt capacitors bleed high frequencies to ground.",
+        "• T network with series capacitors and a shunt inductor: the series capacitors pass high frequencies and block low ones, and the inductor shunts low frequencies to ground. The result is a high-pass response."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7c-pi-l",
+      "group": "E7C",
+      "title": "The Pi-L network",
+      "body": [
+        "A Pi-L network is an ordinary Pi network with one more inductor added in series at the output side. The added inductor forms a second low-pass section.",
+        "The payoff is greater harmonic suppression than a Pi network alone gives, which is why it is popular in high-power tube amplifier output circuits. It does not remove a capacitor or eliminate the connections to ground; it simply adds one more part."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7c-matching",
+      "group": "E7C",
+      "title": "How a matching network turns a complex impedance into a resistance",
+      "body": [
+        "A complex impedance has two parts: resistance (which absorbs power) and reactance (inductive or capacitive, which stores energy and sends it back). A transmitter wants to see a pure resistance of the right value, usually 50 ohms.",
+        "An impedance-matching network made of inductors and capacitors does two jobs at once. It adds reactance of the opposite kind to cancel the load's reactive part, and it transforms the remaining resistive part up or down to the desired value.",
+        "It does this with low-loss reactive parts; it does not burn off reactive current in resistors or introduce 'negative resistance.'"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7c-filter-families",
+      "group": "E7C",
+      "title": "Butterworth, Chebyshev, and elliptical filters",
+      "body": [
+        "Filter designs trade flatness in the passband against how sharply they cut off. Three families come up often:",
+        "• Butterworth: the flattest possible passband, with no ripple, but a relatively gradual rolloff.",
+        "• Chebyshev: allows some ripple (small ups and downs) in the passband in exchange for a sharper cutoff than a Butterworth of the same size.",
+        "• Elliptical (also called Cauer): the sharpest cutoff of the three, achieved by placing one or more deep notches (zeros) in the stop band just beyond the cutoff. It has ripple in the stop band, and usually in the passband too.",
+        "Memory aid: the fancier the name sounds, the sharper the skirt, and the more ripple you accept."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7c-special-filters",
+      "group": "E7C",
+      "title": "Crystal, helical, and cavity filters",
+      "body": [
+        "Some filters are built from special resonators that have far higher Q (sharper resonance) than ordinary coils and capacitors.",
+        "• Crystal lattice filter: several quartz crystals combined to make a sharp band-pass filter for low-level signals, such as the IF filter that sets an SSB or CW receiver's bandwidth. The crystals themselves are ordinary; 'lattice' describes the circuit arrangement, not their shape.",
+        "• Helical filter: resonators made of a coil inside a shielded can. Compact and high-Q at VHF and UHF, they are the filter most often used as band-pass or notch filters in VHF and UHF transceivers.",
+        "• Cavity filter: large metal cavities with very high Q and the ability to handle transmitter power. A 2-meter repeater duplexer uses cavity filters to keep the repeater's own transmitter out of its receiver when the two frequencies are only 600 kHz apart."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7c-shape-factor",
+      "group": "E7C",
+      "title": "Shape factor: how steep are the skirts",
+      "body": [
+        "A filter's shape factor compares its bandwidth far down the skirts to its bandwidth near the top. It is commonly given as the bandwidth at 60 dB down divided by the bandwidth at 6 dB down.",
+        "A perfect 'brick wall' filter would have a shape factor of 1. The closer to 1, the steeper the sides and the better the filter rejects strong signals in adjacent channels. For example, a 2.4 kHz SSB filter that is 4.8 kHz wide at 60 dB down has a shape factor of 2.",
+        "Passband ripple and phase response describe other qualities, and noise factor describes a receiver's added noise, not selectivity."
+      ],
+      "formula": "shape factor = bandwidth at -60 dB ÷ bandwidth at -6 dB",
+      "status": "draft"
+    },
+    {
+      "id": "e7d-linear-regulators",
+      "group": "E7D",
+      "title": "Linear regulators: series and shunt",
+      "body": [
+        "A linear voltage regulator keeps its output steady by continuously adjusting how much a control element (usually a transistor) conducts. If the output starts to rise, the control element conducts a little less; if it sags, it conducts more. It works smoothly, never switching on and off.",
+        "• Series regulator: the control element (the pass transistor) sits in series between the input and the load, acting like an automatically adjusted resistor. The familiar three-terminal regulator chips (like the 7805 or LM317, with input, output, and ground or adjust pins) are series regulators.",
+        "• Shunt regulator: the control element sits across (in parallel with) the load and draws whatever current is needed to hold the voltage steady. It works by loading the unregulated source, usually through a series resistor. A simple Zener diode and resistor is a shunt regulator."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7d-dropout-dissipation",
+      "group": "E7D",
+      "title": "Dropout voltage and heat in a series regulator",
+      "body": [
+        "A series regulator can only take voltage away, never add it. It needs a certain minimum difference between input and output to keep working. That minimum input-to-output voltage is the dropout voltage. If the input sags closer to the output than that, the output falls out of regulation. Standard regulators need about 2 volts; 'low dropout' (LDO) types need much less.",
+        "All the voltage the regulator drops, it turns into heat. The power it dissipates equals the voltage difference from input to output multiplied by the output current (the current through the pass element). Example: 18 V in, 12 V out, 2 A load: (18 - 12) × 2 = 12 watts of heat. That is why linear supplies need big heat sinks."
+      ],
+      "formula": "P regulator = (V in - V out) × I out",
+      "status": "draft"
+    },
+    {
+      "id": "e7d-zener-reference",
+      "group": "E7D",
+      "title": "The Zener diode as a voltage reference",
+      "body": [
+        "A regulator needs a steady voltage to compare its output against. The usual choice is a Zener diode.",
+        "A Zener is designed to be operated in reverse breakdown. Once reverse voltage reaches its rated Zener voltage, it conducts and holds the voltage across it nearly constant over a wide range of current. That makes it a simple, stable voltage reference.",
+        "SCRs are switches, and analog-to-digital or digital-to-analog converters themselves need a reference; none of them serves as the basic reference."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7d-figure-e7-2",
+      "group": "E7D",
+      "title": "Reading Figure E7-2: a simple linear regulator",
+      "body": [
+        "Figure E7-2 shows a +25 V unregulated input on the left and a +12 V regulated output on the right. Between them is transistor Q1, with its collector on the input and its emitter on the output, so all the load current flows through it. Q1 is a series pass transistor.",
+        "Q1's base is held at a fixed voltage by Zener diode D1 (to ground), fed through resistor R1 from the input. Q1 works as an emitter follower: its emitter, the output, sits about 0.6 V below the Zener voltage. Q1 automatically varies its conduction, controlling the current to keep the output voltage constant as the load or input changes. Since the pass element conducts smoothly rather than switching, this is a linear voltage regulator.",
+        "The capacitors: C1 filters the input. C2 is connected from the Zener and base junction to ground, in parallel with D1; it bypasses leftover rectifier ripple around D1 so the reference, and therefore the output, stays clean. C3 is a small bypass capacitor on the output, and R2 is the load (or a bleeder)."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7d-switchmode",
+      "group": "E7D",
+      "title": "Switchmode supplies and regulators",
+      "body": [
+        "A switchmode regulator switches its transistor fully on and off very rapidly, producing pulses that feed an inductor-capacitor filter. The filter smooths the pulses into DC. The regulator controls the output voltage by varying the duty cycle (the fraction of time the switch is on): longer on-time gives more output. Because the switch is always fully on or fully off, it wastes little power.",
+        "A switching power supply first converts the incoming power to a high frequency (tens or hundreds of kHz) with an inverter. A transformer's required size shrinks as the frequency goes up, so a high-frequency transformer and filter capacitors and chokes can be far smaller than the heavy iron transformer and large capacitors a 60 Hz linear supply needs for the same power. That is why switchers are lighter and cheaper. They still need an output filter.",
+        "The trade-off for hams: the fast switching can radiate RF noise, so good switchers are well filtered and shielded."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7d-batteries-solar",
+      "group": "E7D",
+      "title": "Battery run time and solar inverters",
+      "body": [
+        "A battery's capacity is rated in amp-hours (Ah): the current it can supply multiplied by how many hours it can supply it. To estimate operating time, divide the capacity by the average current drawn. Example: a 100 Ah battery supplying an average of 5 A lasts roughly 100 ÷ 5 = 20 hours (in practice less, because you should not fully discharge it).",
+        "Solar panels produce DC. An inverter connected to a panel's output converts that DC to AC so it can run ordinary AC equipment or feed the power grid. Other jobs in a solar setup, like keeping the battery from discharging back through the panel at night or regulating the charge, belong to blocking diodes and charge controllers, not the inverter."
+      ],
+      "formula": "operating time (hours) = capacity (Ah) ÷ average current (A)",
+      "status": "draft"
+    },
+    {
+      "id": "e7d-hv-supplies",
+      "group": "E7D",
+      "title": "High-voltage supplies: equalizing resistors and step-start",
+      "body": [
+        "Amplifier power supplies with thousands of volts often stack several filter capacitors in series, because a single capacitor with that high a voltage rating would be huge. Equal-value resistors are connected across each capacitor, and they do three jobs at once:",
+        "• They equalize the voltage across each capacitor, so no single capacitor is overstressed because of small differences in leakage.",
+        "• They discharge the capacitors after the power is turned off (acting as bleeders), an important safety feature.",
+        "• They provide a minimum load on the supply, which helps its voltage regulation.",
+        "At switch-on, big empty filter capacitors look almost like a short circuit and can draw a huge inrush current that stresses the rectifiers, fuses, and transformer. A step-start circuit puts a resistor in series with the supply for the first second or two so the filter capacitors charge gradually, then a relay shorts the resistor out for normal operation."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7e-fm-generation",
+      "group": "E7E",
+      "title": "Making FM with a reactance modulator",
+      "body": [
+        "An oscillator's frequency is set by its inductance and capacitance. If the audio can vary one of those, it varies the frequency, which is frequency modulation.",
+        "A reactance modulator does exactly that. Typically a varactor diode (whose capacitance changes with the voltage across it) or a transistor circuit that behaves like a variable capacitance is placed in the oscillator's tuned circuit. The audio varies that capacitance, which produces FM (or, applied to a later stage, phase modulation).",
+        "It is applied to a low-level oscillator, such as the local oscillator, not to the final amplifier. Balanced modulators are for making SSB, not FM."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7e-emphasis",
+      "group": "E7E",
+      "title": "Pre-emphasis and de-emphasis",
+      "body": [
+        "On FM, the noise in the received audio is worst at the higher audio frequencies. To fight that, the transmitter uses a pre-emphasis network that boosts the higher audio frequencies before modulation. The receiver then uses a de-emphasis network that cuts those same high frequencies back down by the same amount. Speech comes out with its normal balance, and the high-frequency noise picked up along the way is reduced.",
+        "There is a connection with phase modulation. In PM, the amount of frequency deviation naturally rises with audio frequency, so PM has built-in pre-emphasis. Many amateur 'FM' transmitters actually use phase modulation. FM receivers include de-emphasis so they are compatible with those PM transmitters and deliver natural-sounding audio."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7e-ssb-generation",
+      "group": "E7E",
+      "title": "Making SSB: balanced modulator and filter",
+      "body": [
+        "A balanced modulator mixes the audio with a carrier-frequency signal and cancels the carrier, leaving both sidebands with no carrier: double-sideband suppressed carrier (DSB).",
+        "Following it with a sharp filter (usually a crystal filter) that passes only one sideband removes the other, leaving single sideband. This 'filter method' is the classic way to produce SSB in analog radios. Reactance modulators are for FM, and a product detector is a receiving circuit."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7e-detectors",
+      "group": "E7E",
+      "title": "Detectors for AM, FM, and SSB",
+      "body": [
+        "A detector (demodulator) recovers the audio from a received signal. Each mode needs a suitable detector.",
+        "• AM: the diode envelope detector. The diode rectifies the RF, passing only one polarity, and a capacitor filters out the RF, leaving a voltage that follows the signal's envelope, which is the audio.",
+        "• FM: the frequency discriminator. It converts changes in frequency into changes in output voltage, recovering the audio from an FM signal. (It is a detector, not a generator or a band switch.)",
+        "• SSB and CW: the product detector. SSB has no carrier, so the receiver's beat frequency oscillator (BFO) supplies one. The product detector mixes the signal with the BFO, and the difference frequency is the audio."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7e-mixers",
+      "group": "E7E",
+      "title": "Mixers and their products",
+      "body": [
+        "A mixer combines two input frequencies. The principal frequencies at its output are the two original input frequencies plus their sum and their difference. Example: 14.2 MHz mixed with 9 MHz gives 14.2, 9, 23.2, and 5.2 MHz. A filter then picks the one that is wanted.",
+        "A mixer only behaves this cleanly when its input levels are within its design limits. If the input signals are too strong, the mixer is overdriven and generates many extra spurious products (harmonics of the inputs mixing with each other), which show up as unwanted signals."
+      ],
+      "formula": "outputs: f1, f2, f1 + f2, f1 - f2",
+      "status": "draft"
+    },
+    {
+      "id": "e7e-baseband",
+      "group": "E7E",
+      "title": "Baseband",
+      "body": [
+        "Baseband is the frequency range occupied by the message signal itself, before it is modulated onto a carrier. For voice, that is the audio range, roughly 300 to 3000 Hz. For a digital mode, it is the range occupied by the data signal.",
+        "Modulation shifts the baseband signal up to radio frequency; demodulation brings it back down to baseband. The term does not mean the lowest band a radio covers or an unmodulated bandwidth."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7f-sampling-rate",
+      "group": "E7F",
+      "title": "Sampling rate and the Nyquist rule",
+      "body": [
+        "An analog-to-digital converter (ADC) turns a signal into a string of numbers by measuring (sampling) it at regular intervals. To accurately reproduce a signal, you must sample at least twice the rate of the highest frequency component in it. This is the Nyquist rule. Half the sample rate is called the Nyquist frequency.",
+        "That means the sample rate sets the widest range of frequencies an SDR can capture. A direct-sampling receiver sampling at 122.88 million samples per second can cover everything from near 0 up to about 61 MHz. More bits per sample improve precision, not bandwidth."
+      ],
+      "formula": "sample rate ≥ 2 × highest frequency",
+      "status": "draft"
+    },
+    {
+      "id": "e7f-resolution",
+      "group": "E7F",
+      "title": "Bits of resolution",
+      "body": [
+        "Each sample is stored as a binary number. With n bits, the ADC can represent 2^n different levels. The full input range (set by the ADC's reference voltage) is divided into that many steps.",
+        "To find how many bits are needed, divide the range by the desired resolution to get the number of steps, then find the smallest power of 2 at least that big. Useful powers: 2^8 = 256, 2^10 = 1024, 2^12 = 4096, 2^16 = 65,536.",
+        "The smallest step, one least significant bit, is the smallest change the converter can register. So without atmospheric or thermal noise to limit it, the smallest signal a direct-sampling receiver can detect is set by its reference voltage and its sample width in bits."
+      ],
+      "formula": "levels = 2^n;  smallest step = reference voltage ÷ 2^n",
+      "status": "draft"
+    },
+    {
+      "id": "e7f-direct-sampling",
+      "group": "E7F",
+      "title": "Direct sampling SDRs",
+      "body": [
+        "Older SDR designs first mix the incoming signal down to a low frequency with a local oscillator (often producing I and Q signals), then digitize that. A direct-sampling SDR skips the mixing: the incoming RF, after filtering and perhaps amplification, is fed straight into a fast analog-to-digital converter. Everything after that, including tuning, filtering, and demodulation, is done in software.",
+        "The term has nothing to do with compiling software; it describes where the digitizing happens."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7f-decimation",
+      "group": "E7F",
+      "title": "Decimation and anti-aliasing",
+      "body": [
+        "Once a signal is digitized, there are usually far more samples per second than needed for the narrow signal you want. Decimation reduces the effective sample rate by keeping only some samples, for example every tenth one. This lowers the processing load.",
+        "Lowering the sample rate also lowers the Nyquist frequency. Any signal components above the new Nyquist frequency would not simply vanish; they would fold down and appear as false lower-frequency signals, an effect called aliasing. So a decimator needs an anti-aliasing low-pass filter first, to remove those high-frequency components before samples are thrown away."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7f-fft",
+      "group": "E7F",
+      "title": "The Fast Fourier Transform",
+      "body": [
+        "A string of samples describes a signal in the time domain: how its voltage changes over time, like an oscilloscope trace. The Fast Fourier Transform (FFT) is an efficient calculation that converts those samples into the frequency domain: how much signal is present at each frequency, like a spectrum analyzer display.",
+        "The FFT is what draws the panadapter and waterfall displays on an SDR. It does not convert between analog and digital; that is the ADC's and DAC's job. The reverse process, frequency back to time, is the inverse FFT."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7f-fir-taps",
+      "group": "E7F",
+      "title": "FIR filters and taps",
+      "body": [
+        "A common digital filter is built from a chain of delays. The signal steps down the chain one sample at a time, and at each step, called a tap, a copy of the delayed sample is multiplied by a coefficient and all the results are added up. The taps provide the incremental signal delays the filter algorithm needs.",
+        "More taps let the filter look at a longer stretch of the signal, which allows a sharper filter response (steeper skirts), at the cost of more computing.",
+        "A Finite Impulse Response (FIR) filter works this way with no feedback. A big advantage is that it can delay all frequency components by the same amount (linear phase), which keeps data signals from being smeared. Infinite Impulse Response (IIR) filters use feedback and can often meet a given rolloff with fewer calculations, so FIR is not always the easier or faster-responding choice."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7f-dsp-modes",
+      "group": "E7F",
+      "title": "DSP for SSB and noise reduction",
+      "body": [
+        "SSB in DSP: the phasing method. The audio is split into two copies 90 degrees apart (in quadrature), known as I and Q. The digital filter that creates the 90-degree shift across the whole audio range is a Hilbert-transform filter. When the two paths are combined in the proper quadrature phase relationship, one sideband adds and the other cancels, producing SSB with no crystal filter.",
+        "Noise reduction: the DSP noise reduction on a receiver uses an adaptive filter. It continually adjusts its own coefficients to pass the parts of the signal that are predictable, like speech and tones, and suppress random noise. Crystal-lattice filters are analog hardware, not DSP."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7g-op-amp-basics",
+      "group": "E7G",
+      "title": "What an op-amp is",
+      "body": [
+        "An operational amplifier (op-amp) is a high-gain, direct-coupled (it amplifies DC as well as AC) differential amplifier. It has two inputs, inverting (-) and non-inverting (+), and amplifies the difference between them.",
+        "The ideal op-amp, which exam questions use as a model:",
+        "• Very high input impedance, so it draws almost no current from what it is connected to.",
+        "• Very low output impedance, so it can drive a load without its output voltage sagging.",
+        "• Extremely high gain that does not vary with frequency. (Real op-amps' open-loop gain does fall off as frequency rises, but the ideal one is flat.)",
+        "In practice, external parts (resistors and capacitors in a feedback loop) set the gain and frequency response of an op-amp circuit."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7g-offset-gbw",
+      "group": "E7G",
+      "title": "Real op-amp limits: offset voltage and gain-bandwidth",
+      "body": [
+        "Input offset voltage: in a real op-amp, the two input sides are never perfectly matched. With both inputs at the same voltage, the output would drift away from zero. The input offset voltage is the small differential voltage you must apply between the inputs to bring the open-loop output back to zero.",
+        "Gain-bandwidth: a real op-amp's open-loop gain drops as frequency rises. The gain-bandwidth figure is the frequency at which the open-loop gain has fallen to one (unity). It limits how much gain you can get at a given frequency: roughly, gain × bandwidth stays constant."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7g-inverting-amp",
+      "group": "E7G",
+      "title": "The inverting amplifier (Figure E7-3)",
+      "body": [
+        "Figure E7-3 shows an op-amp with the signal fed through input resistor R1 to the inverting (-) input. A feedback resistor RF runs from the output back to that same inverting input. The non-inverting (+) input is tied to ground. This is an inverting amplifier.",
+        "Its voltage gain is set only by the two resistors: gain = -RF ÷ R1. The minus sign means the output is inverted (a positive input gives a negative output). When a question asks for 'absolute' gain, drop the minus sign.",
+        "To find the output voltage, multiply the input voltage by the gain, keeping the minus sign. Watch units: convert kilohms to ohms (68 kilohms = 68,000 ohms) before dividing."
+      ],
+      "formula": "gain = -RF ÷ R1;  V out = -(RF ÷ R1) × V in",
+      "status": "draft"
+    },
+    {
+      "id": "e7g-active-filters",
+      "group": "E7G",
+      "title": "Op-amp active filters",
+      "body": [
+        "Adding capacitors to an op-amp's feedback network turns it into an active filter. For example, in the inverting amplifier of Figure E7-3, add a capacitor across (in parallel with) the feedback resistor RF. At low frequencies the capacitor's reactance is high and it has little effect. As frequency rises, its reactance falls, lowering the feedback impedance and therefore the gain. High frequencies are cut: a low-pass filter.",
+        "Active audio filters with too much gain or too high a Q (too sharp a peak) tend to ring (keep sounding after the signal stops) or even oscillate. To prevent ringing and instability, restrict both gain and Q."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7h-oscillator-types",
+      "group": "E7H",
+      "title": "Colpitts, Hartley, and Pierce oscillators",
+      "body": [
+        "An oscillator is an amplifier that feeds part of its output back to its input in phase (positive feedback), so it sustains its own signal at the frequency of its tuned circuit. Three common circuits are named after their inventors, and the way to tell them apart is how the feedback is taken:",
+        "• Colpitts: feedback through a capacitive divider (two capacitors in series across the tuned circuit).",
+        "• Hartley: feedback through a tapped coil (inductive divider).",
+        "• Pierce: feedback through a quartz crystal, which sets the frequency very precisely.",
+        "Memory aid: Colpitts and Capacitor both start with C; Hartley has a tap in the Henry (the unit of inductance)."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7h-crystal-stability",
+      "group": "E7H",
+      "title": "Keeping crystal oscillators on frequency",
+      "body": [
+        "A crystal is cut to oscillate at its marked frequency only when it sees a specified load capacitance in parallel with it (for example 20 or 32 pF), stated by the manufacturer. Provide that parallel capacitance and the oscillator runs on the specified frequency; a different capacitance pulls it slightly off.",
+        "Temperature changes cause drift, partly because ordinary capacitors change value with temperature. NP0 (also called C0G) ceramic capacitors have a near-zero temperature coefficient, so using them in the oscillator circuit reduces thermal drift. Toroids and resistor types do not address this."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7h-microphonics",
+      "group": "E7H",
+      "title": "Microphonics",
+      "body": [
+        "A microphonic is a change in oscillator frequency caused by mechanical vibration. Bumping the radio, a nearby fan, or even loud sound can make coils and capacitors flex slightly, changing their values and making the frequency wobble. You might hear it as a warble on your signal when you tap the rig.",
+        "The fix is mechanical: isolate the oscillator circuitry from the vibration of its enclosure (for example with rubber mounts) and build it rigidly. Electrical fixes like NP0 capacitors or a cleaner power supply address other problems."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7h-pll",
+      "group": "E7H",
+      "title": "Phase-locked loops",
+      "body": [
+        "A phase-locked loop (PLL) is an electronic servo loop that forces a voltage-controlled oscillator (VCO) to track a stable reference. Its parts:",
+        "• A stable reference oscillator.",
+        "• A phase detector that compares the VCO (often through a frequency divider) with the reference and puts out an error voltage.",
+        "• A low-pass (loop) filter that smooths the error voltage.",
+        "• A VCO whose frequency is steered by that voltage until it locks in step.",
+        "Put a programmable divider in the loop and the VCO locks to a multiple of the reference, so changing the divide ratio changes the frequency: that is frequency synthesis, how most radios tune. A PLL locked to an incoming FM signal also produces an error voltage that follows the modulation, so it can demodulate FM."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7h-dds",
+      "group": "E7H",
+      "title": "Direct digital synthesis",
+      "body": [
+        "A direct digital synthesizer (DDS) builds a waveform from numbers. Its parts:",
+        "• A phase accumulator: a counter that adds a fixed step on every clock tick, tracking where in the cycle the output should be. A bigger step gives a higher frequency.",
+        "• A lookup table: stored amplitude values that represent the desired waveform (usually a sine wave) at each phase.",
+        "• A digital-to-analog converter (DAC) that turns those amplitude values into a voltage.",
+        "• A low-pass anti-alias filter that smooths the stepped output.",
+        "A DDS tunes in very fine steps and changes frequency almost instantly. Its main weakness is spectral purity: rounding errors and DAC imperfections create spurious signals at discrete frequencies, rather than broad noise."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e7h-high-accuracy",
+      "group": "E7H",
+      "title": "High-accuracy references for microwaves",
+      "body": [
+        "At microwave frequencies, a tiny error in the reference is multiplied into a big frequency error. A 1 part-per-million error is 10 kHz at 10 GHz, enough to miss a narrow-band signal entirely. Microwave operators use very stable references, such as:",
+        "• A GPS-disciplined oscillator, which uses the atomic clocks aboard GPS satellites as its reference.",
+        "• A rubidium-stabilized reference oscillator, a small atomic frequency standard.",
+        "• A temperature-controlled high-Q dielectric resonator oscillator.",
+        "All of these are valid techniques."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "E7A01": {
+      "why": "A flip-flop has two stable states and stays in either one until told to change, which is what bistable means. AND and OR gates have no memory; their outputs simply follow their inputs.",
+      "concept": "e7a-flip-flops",
+      "status": "draft"
+    },
+    "E7A02": {
+      "why": "A decade counter counts ten input pulses and then starts over, giving one output pulse for every 10 input pulses. Decoding numbers for a seven-segment display is a different chip's job.",
+      "concept": "e7a-dividers-counters",
+      "status": "draft"
+    },
+    "E7A03": {
+      "why": "A flip-flop set to toggle changes state on each input pulse, so two input pulses make one full output cycle, dividing the frequency by 2. Gates and multiplexers have no memory of the previous pulse, so they cannot divide.",
+      "concept": "e7a-flip-flops",
+      "status": "draft"
+    },
+    "E7A04": {
+      "why": "Each flip-flop divides by 2, and chained stages multiply, so you need the number of stages that gives 16. Sixteen flip-flops is the tempting wrong answer; that would divide by 65,536.",
+      "work": [
+        "division ratio = 2^n",
+        "2^1 = 2, 2^2 = 4, 2^3 = 8, 2^4 = 16",
+        "n = 4 flip-flops"
+      ],
+      "concept": "e7a-dividers-counters",
+      "status": "draft"
+    },
+    "E7A05": {
+      "why": "An astable multivibrator has no stable state, so it keeps flipping back and forth by itself, needing no external clock. A monostable waits for a trigger, and J-K and T flip-flops change only when clocked.",
+      "concept": "e7a-multivibrators",
+      "status": "draft"
+    },
+    "E7A06": {
+      "why": "A monostable (one-shot) multivibrator has one stable state. When triggered, it switches to the other state for a set time and then returns on its own. A continuous square wave describes the astable type, and storing a bit describes a flip-flop.",
+      "concept": "e7a-multivibrators",
+      "status": "draft"
+    },
+    "E7A07": {
+      "why": "A NAND gate is an AND gate with its output flipped. AND gives a 1 only when all inputs are 1, so NAND gives a 0 only when all inputs are 1.",
+      "concept": "e7a-logic-gates",
+      "status": "draft"
+    },
+    "E7A08": {
+      "why": "An OR gate puts out a 1 if any of its inputs is 1. It gives 0 only when every input is 0.",
+      "concept": "e7a-logic-gates",
+      "status": "draft"
+    },
+    "E7A09": {
+      "why": "A two-input XOR gives a 1 when exactly one input is 1. XNOR is its opposite, so it gives a 0 when one and only one input is 1 (and a 1 when the inputs match). The choice saying it produces a 1 in that case describes XOR, not XNOR.",
+      "concept": "e7a-logic-gates",
+      "status": "draft"
+    },
+    "E7A10": {
+      "why": "A truth table lists every combination of inputs to a digital device alongside the output each one produces. Op-amps are analog parts, so the choices mentioning them are wrong.",
+      "concept": "e7a-logic-gates",
+      "status": "draft"
+    },
+    "E7A11": {
+      "why": "Positive logic is the convention where the higher voltage stands for a 1 and the lower voltage for a 0. It says nothing about noise immunity or whether both levels are positive voltages.",
+      "concept": "e7a-positive-logic",
+      "status": "draft"
+    },
+    "E7B01": {
+      "why": "In Class AB, each device conducts for more than half the cycle (180 degrees) but less than the full cycle (360 degrees). Exactly 180 degrees is Class B, the whole cycle is Class A, and less than 180 is Class C.",
+      "concept": "e7b-amplifier-classes",
+      "status": "draft"
+    },
+    "E7B02": {
+      "why": "A Class D amplifier drives its devices as on-off switches, which wastes very little power and gives high efficiency. The other choices describe made-up or unrelated designs.",
+      "concept": "e7b-switching-amps",
+      "status": "draft"
+    },
+    "E7B03": {
+      "why": "A switching amplifier's output is a square-ish wave rich in harmonics, so an RF switching amplifier needs a filter at its output to remove them before they reach the antenna.",
+      "concept": "e7b-switching-amps",
+      "status": "draft"
+    },
+    "E7B04": {
+      "why": "A Class A amplifier conducts over the whole cycle, so it is biased about halfway between saturation and cutoff. That leaves equal room for the signal to swing up and down without clipping.",
+      "concept": "e7b-amplifier-classes",
+      "status": "draft"
+    },
+    "E7B05": {
+      "why": "Parasitic suppressors add loss at the frequencies where parasitic oscillations occur, and neutralization cancels the internal feedback that causes self-oscillation. Tuning for maximum power or minimum loading does not fix instability.",
+      "concept": "e7b-parasitics",
+      "status": "draft"
+    },
+    "E7B06": {
+      "why": "In a grounded-grid amplifier the drive goes into the cathode, which carries the full tube current, so the input impedance is low. That is why it is easy to drive from a 50-ohm transceiver. Its power gain is only moderate, not high.",
+      "concept": "e7b-grounded-grid",
+      "status": "draft"
+    },
+    "E7B07": {
+      "why": "A Class C amplifier does not reproduce the signal's amplitude faithfully, and SSB carries its information in amplitude. The result is distortion and intermodulation products that make the signal far wider than it should be. It increases, not reduces, intermodulation.",
+      "concept": "e7b-linearity",
+      "status": "draft"
+    },
+    "E7B08": {
+      "why": "Power lost in a transistor is voltage across it times current through it. A switching device spends nearly all its time at saturation (little voltage) or cutoff (no current), so it wastes little power either way.",
+      "concept": "e7b-switching-amps",
+      "status": "draft"
+    },
+    "E7B09": {
+      "why": "An emitter follower (common collector) takes its output from the emitter, which follows the base, so the output is in phase with the input. It has high input impedance and no phase inversion, which rules out the first choice.",
+      "concept": "e7b-transistor-configs",
+      "status": "draft"
+    },
+    "E7B10": {
+      "why": "R1 runs from the supply to the base and R2 from the base to ground, forming a voltage divider that sets the base voltage. That is voltage divider bias; they are not load resistors or feedback.",
+      "concept": "e7b-figure-e7-1",
+      "status": "draft"
+    },
+    "E7B11": {
+      "why": "R3 is the emitter resistor. The voltage across it rises as emitter current rises, which reduces the base-to-emitter voltage and holds the current steady. That is self bias. The emitter bypass is capacitor C3, not R3.",
+      "concept": "e7b-figure-e7-1",
+      "status": "draft"
+    },
+    "E7B12": {
+      "why": "The input goes to the base and the output is taken from the collector, while the emitter is bypassed to ground by C3. That makes it a common emitter amplifier. An emitter follower would take its output from the emitter.",
+      "concept": "e7b-figure-e7-1",
+      "status": "draft"
+    },
+    "E7C01": {
+      "why": "A low-pass Pi network has a capacitor from the input to ground, another from the output to ground, and an inductor in series between them. The series inductor passes low frequencies while the shunt capacitors bleed high frequencies to ground.",
+      "concept": "e7c-pi-and-t",
+      "status": "draft"
+    },
+    "E7C02": {
+      "why": "Series capacitors pass high frequencies and block low ones, and the shunt inductor sends low frequencies to ground. Together they make a high-pass network.",
+      "concept": "e7c-pi-and-t",
+      "status": "draft"
+    },
+    "E7C03": {
+      "why": "The extra series inductor adds another low-pass section, giving greater harmonic suppression than a plain Pi network. It does not remove a capacitor.",
+      "concept": "e7c-pi-l",
+      "status": "draft"
+    },
+    "E7C04": {
+      "why": "A matching network adds opposite reactance to cancel the load's reactive part, and transforms the remaining resistance to the desired value, such as 50 ohms. It uses low-loss reactive parts rather than dissipating power in resistors.",
+      "concept": "e7c-matching",
+      "status": "draft"
+    },
+    "E7C05": {
+      "why": "A Chebyshev filter accepts some ripple in the passband in exchange for a sharper cutoff. A Butterworth has a flat passband with no ripple but a gentler rolloff.",
+      "concept": "e7c-filter-families",
+      "status": "draft"
+    },
+    "E7C06": {
+      "why": "An elliptical filter gets an extremely sharp cutoff by placing one or more deep notches in the stop band just past the cutoff. An extremely flat passband with gradual corners describes a Butterworth instead.",
+      "concept": "e7c-filter-families",
+      "status": "draft"
+    },
+    "E7C07": {
+      "why": "A Pi-L network is a Pi network with one more inductor added in series at the output. The name has nothing to do with phase inverters, and it does connect parts to ground.",
+      "concept": "e7c-pi-l",
+      "status": "draft"
+    },
+    "E7C08": {
+      "why": "Helical filters are compact, shielded, high-Q resonators that work well at VHF and UHF, so they are the usual band-pass or notch filter in VHF and UHF transceivers.",
+      "concept": "e7c-special-filters",
+      "status": "draft"
+    },
+    "E7C09": {
+      "why": "A crystal lattice filter uses several quartz crystals to make a sharp filter for low-level signals, such as a receiver's IF filter. 'Lattice' refers to how the circuit is connected, not to the crystals' shape, and it is not a power supply filter.",
+      "concept": "e7c-special-filters",
+      "status": "draft"
+    },
+    "E7C10": {
+      "why": "A 2-meter repeater duplexer must keep a strong transmitter out of a receiver only 600 kHz away while handling transmitter power. Large, very high-Q cavity filters do that job.",
+      "concept": "e7c-special-filters",
+      "status": "draft"
+    },
+    "E7C11": {
+      "why": "Shape factor compares a filter's width far down its skirts (usually 60 dB) to its width near the top (usually 6 dB). The closer it is to 1, the steeper the skirts and the better the filter rejects adjacent-channel signals.",
+      "concept": "e7c-shape-factor",
+      "status": "draft"
+    },
+    "E7D01": {
+      "why": "A linear regulator smoothly varies how much its control element conducts to keep the output voltage constant. Varying a duty cycle describes a switching regulator instead.",
+      "concept": "e7d-linear-regulators",
+      "status": "draft"
+    },
+    "E7D02": {
+      "why": "A switchmode regulator switches fully on and off and controls the output by varying the duty cycle of the pulses feeding its filter. Varying the conductivity of a pass element describes a linear regulator.",
+      "concept": "e7d-switchmode",
+      "status": "draft"
+    },
+    "E7D03": {
+      "why": "A Zener diode, operated in reverse breakdown, holds a nearly constant voltage over a wide range of current, making it a simple, stable voltage reference.",
+      "concept": "e7d-zener-reference",
+      "status": "draft"
+    },
+    "E7D04": {
+      "why": "Three-terminal regulator chips put their pass transistor in series between the input and the load, so they are series regulators.",
+      "concept": "e7d-linear-regulators",
+      "status": "draft"
+    },
+    "E7D05": {
+      "why": "A shunt regulator sits in parallel with the load and draws whatever current is needed to hold the voltage steady, so it works by loading the unregulated source. A series regulator instead sits between the source and the load.",
+      "concept": "e7d-linear-regulators",
+      "status": "draft"
+    },
+    "E7D06": {
+      "why": "Q1 is the series pass transistor: all the load current flows through it, and it varies its conduction to control the current and keep the output voltage constant. It does not switch or chop; this is a linear circuit.",
+      "concept": "e7d-figure-e7-2",
+      "status": "draft"
+    },
+    "E7D07": {
+      "why": "C2 sits in parallel with Zener diode D1, from the base line to ground. It bypasses leftover rectifier ripple around D1 so the reference voltage, and so the output, stays clean. The output filter is C3, not C2.",
+      "concept": "e7d-figure-e7-2",
+      "status": "draft"
+    },
+    "E7D08": {
+      "why": "A series pass transistor, with its base held by a Zener reference, smoothly adjusts its conduction to hold the output at 12 V. Nothing switches, so it is a linear voltage regulator, not a switching one.",
+      "concept": "e7d-figure-e7-2",
+      "status": "draft"
+    },
+    "E7D09": {
+      "why": "Amp-hours are current multiplied by time, so dividing the capacity in amp-hours by the average current gives the hours of operation. For example, 100 Ah at 5 A is about 20 hours. Dividing the other way gives a meaningless number.",
+      "concept": "e7d-batteries-solar",
+      "status": "draft"
+    },
+    "E7D10": {
+      "why": "A switcher's inverter runs at a high frequency, and transformers and filter parts can be much smaller at high frequency for the same power. That saves weight and cost. A switcher still needs an output filter.",
+      "concept": "e7d-switchmode",
+      "status": "draft"
+    },
+    "E7D11": {
+      "why": "A solar panel produces DC. An inverter converts that DC to AC for ordinary AC equipment or the grid. Blocking discharge at night and regulating charge are jobs for diodes and charge controllers.",
+      "concept": "e7d-batteries-solar",
+      "status": "draft"
+    },
+    "E7D12": {
+      "why": "Dropout voltage is the minimum difference between input and output a linear regulator needs to keep regulating. If the input falls closer to the output than that, regulation is lost.",
+      "concept": "e7d-dropout-dissipation",
+      "status": "draft"
+    },
+    "E7D13": {
+      "why": "The regulator drops the voltage difference between input and output while the full output current flows through it, so its dissipation is that voltage difference times the output current. Output voltage times output current is the power delivered to the load, not the heat in the regulator.",
+      "concept": "e7d-dropout-dissipation",
+      "status": "draft"
+    },
+    "E7D14": {
+      "why": "Resistors across series filter capacitors do all three jobs: they equalize the voltage across each capacitor, bleed the capacitors down after power is removed, and provide a minimum load on the supply.",
+      "concept": "e7d-hv-supplies",
+      "status": "draft"
+    },
+    "E7D15": {
+      "why": "Empty filter capacitors draw a huge inrush current at switch-on. A step-start circuit puts a resistor in series for a moment so the capacitors charge gradually, then shorts it out.",
+      "concept": "e7d-hv-supplies",
+      "status": "draft"
+    },
+    "E7E01": {
+      "why": "FM can be made by using a reactance modulator to vary the frequency of a low-level oscillator, such as the local oscillator. Balanced modulators make SSB, and modulating the final amplifier's reactance is not how FM is generated.",
+      "concept": "e7e-fm-generation",
+      "status": "draft"
+    },
+    "E7E02": {
+      "why": "A reactance modulator varies a capacitance (for example a varactor) in an oscillator's tuned circuit, which shifts the frequency to produce FM or PM. Varying a resistance would change amplitude, not frequency.",
+      "concept": "e7e-fm-generation",
+      "status": "draft"
+    },
+    "E7E03": {
+      "why": "A frequency discriminator turns changes in frequency into changes in voltage, so it detects (demodulates) FM signals. It does not generate FM.",
+      "concept": "e7e-detectors",
+      "status": "draft"
+    },
+    "E7E04": {
+      "why": "A balanced modulator produces double sideband with the carrier suppressed, and a following filter removes one sideband, leaving SSB. A product detector is a receiving circuit, and reactance modulators make FM.",
+      "concept": "e7e-ssb-generation",
+      "status": "draft"
+    },
+    "E7E05": {
+      "why": "A pre-emphasis network in the transmitter boosts the higher audio frequencies before modulation. De-emphasis is the matching cut in the receiver.",
+      "concept": "e7e-emphasis",
+      "status": "draft"
+    },
+    "E7E06": {
+      "why": "Phase modulation naturally boosts higher audio frequencies, acting like built-in pre-emphasis, and many amateur transmitters use PM. De-emphasis in the receiver cuts the highs back down so those signals sound natural, which also reduces high-frequency noise.",
+      "concept": "e7e-emphasis",
+      "status": "draft"
+    },
+    "E7E07": {
+      "why": "Baseband is the frequency range of the message signal itself, such as voice audio, before it is modulated onto a carrier. It is not the lowest band a radio covers.",
+      "concept": "e7e-baseband",
+      "status": "draft"
+    },
+    "E7E08": {
+      "why": "A mixer's principal outputs are the two input frequencies plus their sum and their difference. A filter then selects the one that is wanted.",
+      "concept": "e7e-mixers",
+      "status": "draft"
+    },
+    "E7E09": {
+      "why": "Driving a mixer with signals that are too strong overloads it, and it generates spurious mixing products that show up as unwanted signals.",
+      "concept": "e7e-mixers",
+      "status": "draft"
+    },
+    "E7E10": {
+      "why": "A diode envelope detector rectifies the RF signal and then filters out the RF, leaving a voltage that follows the signal's envelope, which is the audio. Zener breakdown plays no part.",
+      "concept": "e7e-detectors",
+      "status": "draft"
+    },
+    "E7E11": {
+      "why": "A product detector mixes the SSB signal with a locally generated carrier from the BFO to recover the audio. A discriminator is for FM.",
+      "concept": "e7e-detectors",
+      "status": "draft"
+    },
+    "E7F01": {
+      "why": "In a direct-sampling SDR, the incoming RF goes straight into the analog-to-digital converter without first being mixed with a local oscillator. Tuning and demodulation then happen in software.",
+      "concept": "e7f-direct-sampling",
+      "status": "draft"
+    },
+    "E7F02": {
+      "why": "DSP noise reduction uses an adaptive filter that keeps adjusting itself to pass predictable signals like speech and suppress random noise. A crystal-lattice filter is analog hardware, and a Hilbert-transform filter is used for generating SSB.",
+      "concept": "e7f-dsp-modes",
+      "status": "draft"
+    },
+    "E7F03": {
+      "why": "A Hilbert-transform filter shifts every audio frequency by 90 degrees, creating the quadrature signal the phasing method needs to generate SSB. Adaptive filters are for noise reduction.",
+      "concept": "e7f-dsp-modes",
+      "status": "draft"
+    },
+    "E7F04": {
+      "why": "DSP makes SSB by the phasing method: two copies of the signal 90 degrees apart are combined in quadrature so that one sideband adds and the other cancels.",
+      "concept": "e7f-dsp-modes",
+      "status": "draft"
+    },
+    "E7F05": {
+      "why": "By the Nyquist rule, a signal must be sampled at least twice as fast as its highest frequency component to be accurately reproduced. Sampling slower causes aliasing.",
+      "concept": "e7f-sampling-rate",
+      "status": "draft"
+    },
+    "E7F06": {
+      "why": "Resolving 1 millivolt steps over a 1 volt range takes 1000 levels. The smallest power of 2 that is at least 1000 is 2^10 = 1024, so 10 bits are needed. Eight bits gives only 256 levels, about 3.9 mV per step.",
+      "work": [
+        "levels needed = range ÷ resolution = 1 V ÷ 0.001 V = 1000",
+        "2^9 = 512 (too few)",
+        "2^10 = 1024 (enough)",
+        "minimum = 10 bits"
+      ],
+      "concept": "e7f-resolution",
+      "status": "draft"
+    },
+    "E7F07": {
+      "why": "A Fast Fourier Transform converts a series of samples from the time domain (voltage over time) to the frequency domain (strength at each frequency), which is how an SDR draws its spectrum display. It does not convert between analog and digital.",
+      "concept": "e7f-fft",
+      "status": "draft"
+    },
+    "E7F08": {
+      "why": "Decimation reduces the effective sample rate by discarding samples, for example keeping only every tenth one. It has nothing to do with decimal number formats.",
+      "concept": "e7f-decimation",
+      "status": "draft"
+    },
+    "E7F09": {
+      "why": "Lowering the sample rate lowers the highest frequency that can be represented. Components above that would fold down and appear as false lower-frequency signals (aliases), so an anti-aliasing filter removes them first.",
+      "concept": "e7f-decimation",
+      "status": "draft"
+    },
+    "E7F10": {
+      "why": "By the Nyquist rule, an SDR can capture frequencies up to half its sample rate, so the sample rate sets its maximum receive bandwidth. The number of bits affects precision and dynamic range, not bandwidth.",
+      "concept": "e7f-sampling-rate",
+      "status": "draft"
+    },
+    "E7F11": {
+      "why": "The smallest change an ADC can register is one step, which equals its reference voltage divided by 2 raised to the number of bits. So with no outside noise, the reference voltage and sample width in bits set the smallest detectable signal.",
+      "concept": "e7f-resolution",
+      "status": "draft"
+    },
+    "E7F12": {
+      "why": "FIR filters can delay all frequency components by the same amount (linear phase), which keeps signal waveforms from being smeared. The 'all these choices' option is tempting but wrong: IIR filters usually meet a given rolloff with less computing.",
+      "concept": "e7f-fir-taps",
+      "status": "draft"
+    },
+    "E7F13": {
+      "why": "Taps are points along the filter's chain of delays, providing the incremental signal delays whose outputs are weighted and summed by the filter algorithm.",
+      "concept": "e7f-fir-taps",
+      "status": "draft"
+    },
+    "E7F14": {
+      "why": "More taps let a digital filter consider a longer stretch of the signal, allowing a sharper response. A higher data rate or double-precision math does not by itself sharpen the filter.",
+      "concept": "e7f-fir-taps",
+      "status": "draft"
+    },
+    "E7G01": {
+      "why": "An op-amp's output impedance is very low, so it can drive a load without its output voltage sagging.",
+      "concept": "e7g-op-amp-basics",
+      "status": "draft"
+    },
+    "E7G02": {
+      "why": "A capacitor across the feedback resistor has falling reactance as frequency rises, which lowers the feedback impedance and so the gain. High frequencies are cut, giving a low-pass filter.",
+      "concept": "e7g-active-filters",
+      "status": "draft"
+    },
+    "E7G03": {
+      "why": "An op-amp's input impedance is very high, so it draws almost no current from the circuit feeding it.",
+      "concept": "e7g-op-amp-basics",
+      "status": "draft"
+    },
+    "E7G04": {
+      "why": "Because a real op-amp's inputs are not perfectly matched, a small differential voltage must be applied between the inputs to bring the open-loop output to zero. That voltage is the input offset voltage.",
+      "concept": "e7g-offset-gbw",
+      "status": "draft"
+    },
+    "E7G05": {
+      "why": "Too much gain or too high a Q makes an active filter ring or even oscillate. Restricting both gain and Q keeps it stable.",
+      "concept": "e7g-active-filters",
+      "status": "draft"
+    },
+    "E7G06": {
+      "why": "Gain-bandwidth is the frequency at which an op-amp's open-loop gain falls to one (unity). It is a property of the op-amp itself, not of a filter's cutoff.",
+      "concept": "e7g-offset-gbw",
+      "status": "draft"
+    },
+    "E7G07": {
+      "why": "In the inverting amplifier of Figure E7-3, the gain magnitude is the feedback resistor divided by the input resistor: 470 ÷ 10 = 47. Dividing the other way gives the wrong answer of 0.21.",
+      "work": [
+        "gain = RF ÷ R1",
+        "gain = 470 Ω ÷ 10 Ω = 47"
+      ],
+      "concept": "e7g-inverting-amp",
+      "status": "draft"
+    },
+    "E7G08": {
+      "why": "An ideal op-amp is a model with infinite, perfectly flat gain, so its gain does not vary with frequency. Real op-amps roll off, but the question asks about the ideal one.",
+      "concept": "e7g-op-amp-basics",
+      "status": "draft"
+    },
+    "E7G09": {
+      "why": "The gain is -RF ÷ R1 = -10, and 0.23 V times -10 is -2.3 V. The circuit is an inverting amplifier, so a positive input gives a negative output; +2.3 V misses the sign.",
+      "work": [
+        "gain = -RF ÷ R1 = -10,000 Ω ÷ 1,000 Ω = -10",
+        "V out = gain × V in = -10 × 0.23 V",
+        "V out = -2.3 V"
+      ],
+      "concept": "e7g-inverting-amp",
+      "status": "draft"
+    },
+    "E7G10": {
+      "why": "The absolute gain is RF ÷ R1. With RF converted to 68,000 ohms, 68,000 ÷ 1,800 is about 37.8, which rounds to 38.",
+      "work": [
+        "RF = 68 kΩ = 68,000 Ω",
+        "gain = RF ÷ R1 = 68,000 Ω ÷ 1,800 Ω",
+        "gain ≈ 37.8, or about 38"
+      ],
+      "concept": "e7g-inverting-amp",
+      "status": "draft"
+    },
+    "E7G11": {
+      "why": "The absolute gain is RF ÷ R1. With RF converted to 47,000 ohms, 47,000 ÷ 3,300 is about 14.2, which rounds to 14.",
+      "work": [
+        "RF = 47 kΩ = 47,000 Ω",
+        "gain = RF ÷ R1 = 47,000 Ω ÷ 3,300 Ω",
+        "gain ≈ 14.2, or about 14"
+      ],
+      "concept": "e7g-inverting-amp",
+      "status": "draft"
+    },
+    "E7G12": {
+      "why": "An op-amp is a high-gain, direct-coupled differential amplifier with very high input impedance and very low output impedance. It is an analog building block, not a digital audio amp or an RF power amplifier.",
+      "concept": "e7g-op-amp-basics",
+      "status": "draft"
+    },
+    "E7H01": {
+      "why": "Colpitts, Hartley, and Pierce are three common oscillator circuits, each named for its inventor. The other lists include made-up names.",
+      "concept": "e7h-oscillator-types",
+      "status": "draft"
+    },
+    "E7H02": {
+      "why": "A microphonic is a change in oscillator frequency caused by mechanical vibration flexing its parts. It is not a microphone amplifier or RF pickup on a mic cable.",
+      "concept": "e7h-microphonics",
+      "status": "draft"
+    },
+    "E7H03": {
+      "why": "A phase-locked loop is a servo loop made of a phase detector, a low-pass filter, a voltage-controlled oscillator, and a stable reference oscillator. The phase detector compares the VCO with the reference and steers it into lock.",
+      "concept": "e7h-pll",
+      "status": "draft"
+    },
+    "E7H04": {
+      "why": "A Colpitts oscillator takes its feedback from a capacitive divider, two capacitors in series across the tuned circuit. Feedback through a tapped coil describes the Hartley.",
+      "concept": "e7h-oscillator-types",
+      "status": "draft"
+    },
+    "E7H05": {
+      "why": "A Pierce oscillator supplies its feedback through a quartz crystal, which also sets its frequency precisely.",
+      "concept": "e7h-oscillator-types",
+      "status": "draft"
+    },
+    "E7H06": {
+      "why": "A PLL with a programmable divider synthesizes frequencies, and a PLL locked to an FM signal produces a control voltage that follows the modulation, demodulating it. Power amplification and optical coupling are unrelated.",
+      "concept": "e7h-pll",
+      "status": "draft"
+    },
+    "E7H07": {
+      "why": "Microphonics come from mechanical vibration, so the cure is mechanical: isolate the oscillator circuitry from its enclosure. NP0 capacitors address temperature drift, not vibration.",
+      "concept": "e7h-microphonics",
+      "status": "draft"
+    },
+    "E7H08": {
+      "why": "NP0 (C0G) capacitors hardly change value with temperature, so using them in the oscillator reduces thermal drift. The inductor and resistor types listed do not address it.",
+      "concept": "e7h-crystal-stability",
+      "status": "draft"
+    },
+    "E7H09": {
+      "why": "A phase accumulator, a lookup table, a DAC, and a low-pass anti-alias filter are the building blocks of a direct digital synthesizer. A PLL synthesizer uses a VCO and phase detector instead.",
+      "concept": "e7h-dds",
+      "status": "draft"
+    },
+    "E7H10": {
+      "why": "A DDS lookup table holds amplitude values that represent the desired waveform, usually a sine wave, at each point in its cycle. The DAC turns those values into a voltage.",
+      "concept": "e7h-dds",
+      "status": "draft"
+    },
+    "E7H11": {
+      "why": "Rounding errors and DAC imperfections make a DDS produce spurious signals at discrete frequencies. Those spurs, rather than broadband noise, are its main spectral impurity.",
+      "concept": "e7h-dds",
+      "status": "draft"
+    },
+    "E7H12": {
+      "why": "A crystal is cut to run on its marked frequency when it sees a specified load capacitance in parallel with it. Providing that parallel capacitance puts it on the specified frequency.",
+      "concept": "e7h-crystal-stability",
+      "status": "draft"
+    },
+    "E7H13": {
+      "why": "A GPS-disciplined reference, a rubidium-stabilized oscillator, and a temperature-controlled high-Q dielectric resonator are all ways to get the accuracy and stability microwave work demands.",
+      "concept": "e7h-high-accuracy",
+      "status": "draft"
+    }
+  }
+}

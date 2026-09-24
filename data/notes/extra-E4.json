@@ -1,0 +1,700 @@
+{
+  "subelement": "E4",
+  "concepts": [
+    {
+      "id": "e4a-spectrum-analyzer",
+      "group": "E4A",
+      "title": "The spectrum analyzer: amplitude versus frequency",
+      "body": [
+        "An oscilloscope draws a signal's amplitude against time. A spectrum analyzer draws amplitude on the vertical axis against frequency on the horizontal axis. Each signal shows up as a spike at its own frequency, with its height showing its strength.",
+        "That makes it the tool for seeing what a transmitter puts out besides the signal you want: harmonics, spurious signals, and intermodulation distortion products from an SSB transmitter all appear as extra spikes beside or away from the main one.",
+        "Keep the other analyzers straight. A logic analyzer watches digital logic states over time. A network analyzer measures how a circuit or antenna responds to a test signal (impedance, SWR, filter response). Neither is the usual tool for viewing a transmitter's spurious output."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4a-digital-scope",
+      "group": "E4A",
+      "title": "Digital oscilloscopes: sampling rate and aliasing",
+      "body": [
+        "A digital oscilloscope does not draw the signal directly. An analog-to-digital converter (ADC) takes snapshots (samples) of the voltage at a fixed rate, and the screen connects the dots. The sampling rate therefore limits the highest frequency the scope can show accurately.",
+        "To capture a waveform faithfully, the scope must sample at more than twice its highest frequency (the Nyquist rule). Sample too slowly and the dots line up into a false wave at a much lower frequency. This is called aliasing, and it shows up as a false, jittery, low-frequency version of the real waveform.",
+        "If a fast signal suddenly looks slow and unstable on a digital scope, suspect aliasing and raise the sample rate (use a faster time base setting)."
+      ],
+      "formula": "Sampling rate must be more than 2 × highest signal frequency",
+      "status": "draft"
+    },
+    {
+      "id": "e4a-scope-probes",
+      "group": "E4A",
+      "title": "Using and compensating oscilloscope probes",
+      "body": [
+        "A 10:1 scope probe has a small adjustable capacitor that must be matched to the scope's input. This is called compensation. To do it, clip the probe to the scope's built-in square-wave calibrator and adjust the probe until the flat tops and bottoms of the square wave are as flat as possible. Rounded corners mean under-compensated; spiky overshoot means over-compensated.",
+        "Keep the probe's ground lead as short as possible. A long ground wire acts like a small inductor and antenna, adding ringing and picking up stray signals, especially on fast or RF waveforms.",
+        "It is fine to use a high-impedance probe on a low-impedance circuit (it barely loads it), and a DC-coupled probe can measure AC. Those are not rules to avoid."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4a-line-trigger",
+      "group": "E4A",
+      "title": "Line trigger for power supply ripple",
+      "body": [
+        "The trigger tells an oscilloscope when to start each sweep, so repeated sweeps line up into a steady picture. Common modes include edge or level (start when the signal crosses a set voltage) and single-shot (capture one event).",
+        "Line trigger starts each sweep in step with the AC power line. Ripple on the output of a linear power supply comes from rectifying that same AC line, so it is locked to the line frequency (120 Hz for a full-wave supply on 60 Hz power). Triggering on the line gives a rock-steady ripple display, even when the ripple is too small or noisy to trigger on by itself."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4a-prescaler",
+      "group": "E4A",
+      "title": "Frequency counter prescalers",
+      "body": [
+        "A frequency counter can only count cycles up to some top frequency. A prescaler is a divider placed ahead of the counter. It divides the incoming frequency by a fixed number (such as 10 or 100), bringing it down within the counter's operating range. The counter then scales the reading back up for display.",
+        "A prescaler does not amplify the signal or multiply the frequency. It reduces it."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4a-antenna-analyzer",
+      "group": "E4A",
+      "title": "Antenna analyzers and other SWR instruments",
+      "body": [
+        "SWR can be measured several ways: a directional wattmeter (from forward and reflected power), an SWR bridge, a vector network analyzer, or an antenna analyzer.",
+        "An antenna analyzer has its own low-power signal generator, so you do not need to transmit. It sweeps frequency and computes SWR and impedance (resistance and reactance) automatically. A plain SWR bridge needs a transmitter and only shows SWR. The analyzer does not tune your antenna for you, and it does not show modulation (that is an oscilloscope's job).",
+        "Because it measures impedance versus frequency, an antenna analyzer can also find the resonant frequency of a tuned circuit, and by testing an open or shorted piece of coax it can find the cable's velocity factor or its length."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4b-counter-accuracy",
+      "group": "E4B",
+      "title": "Frequency counter accuracy depends on the time base",
+      "body": [
+        "A frequency counter counts how many cycles arrive during a precisely timed window called the gate. The gate timing comes from the counter's internal reference oscillator, the time base.",
+        "If the time base is off by some fraction, every reading is off by the same fraction. So time base accuracy matters most. Better counters use a temperature-controlled crystal oven or lock to GPS or another frequency standard."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4b-ohms-per-volt",
+      "group": "E4B",
+      "title": "Analog voltmeter sensitivity in ohms per volt",
+      "body": [
+        "An analog voltmeter draws a little current from the circuit to move its needle. Its sensitivity is given in ohms per volt. Multiply that rating by the full-scale reading of the range you are using to get the meter's input resistance on that range.",
+        "Example: a 20,000 Ω/V meter on its 10-volt range has an input resistance of 20,000 × 10 = 200,000 Ω. The higher the input resistance, the less the meter loads the circuit and upsets the reading, so higher ohms per volt is better."
+      ],
+      "formula": "Input resistance = ohms-per-volt rating × full-scale volts",
+      "status": "draft"
+    },
+    {
+      "id": "e4b-power-to-load",
+      "group": "E4B",
+      "title": "Power actually delivered to the load",
+      "body": [
+        "A directional wattmeter reads forward power (going toward the load) and reflected power (bouncing back). The power the load actually absorbs is the difference between them.",
+        "Example: 100 W forward and 25 W reflected means 75 W is absorbed. Do not add the two, and do not average them."
+      ],
+      "formula": "Power to load = forward power − reflected power",
+      "status": "draft"
+    },
+    {
+      "id": "e4b-measuring-q",
+      "group": "E4B",
+      "title": "Measuring Q from bandwidth",
+      "body": [
+        "Q describes how sharp a tuned circuit's response is. A high-Q circuit responds strongly over a narrow range of frequencies; a low-Q circuit responds over a wider range.",
+        "To measure Q, find the resonant frequency and the bandwidth between the half-power (−3 dB) points of the response. Q equals the resonant frequency divided by that bandwidth. So the bandwidth of the circuit's frequency response is what lets you determine Q. The resonant frequency alone, or the ratio of the two reactances (which is 1 at resonance), is not enough."
+      ],
+      "formula": "Q = resonant frequency ÷ −3 dB bandwidth",
+      "status": "draft"
+    },
+    {
+      "id": "e4b-s-parameters",
+      "group": "E4B",
+      "title": "S parameters: what the numbers mean",
+      "body": [
+        "S (scattering) parameters describe how a two-port device, such as an amplifier or filter, reflects and passes signals. The two subscript numbers name the ports: the first is the port where the signal is measured, the second is the port where it was applied.",
+        "• S11: in at port 1, measured at port 1. Input reflection: reflection coefficient, return loss, and so SWR at the input.",
+        "• S21: in at port 1, measured at port 2. Forward transmission, which is forward gain (or loss, for a filter).",
+        "• S12: in at port 2, measured at port 1. Reverse transmission (reverse isolation).",
+        "• S22: output reflection at port 2.",
+        "Memory aid: equal numbers mean a reflection; S21 reads as 'to 2 from 1', the forward direction."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4b-vna",
+      "group": "E4B",
+      "title": "Vector network analyzers and their calibration",
+      "body": [
+        "A vector network analyzer (VNA) sends a test signal into a device and measures both the magnitude and the phase of what comes back or passes through. From that it computes S parameters, input and output impedance, reflection coefficient, SWR, and, with two ports, the frequency response of a filter or amplifier.",
+        "Before use, a VNA is calibrated at the end of its test cables using three known standards: a short circuit, an open circuit, and a 50-ohm load (often called SOL calibration). This removes the effects of the cables and connectors from later measurements.",
+        "A VNA is not the tool for phase noise, pulse rise time (an oscilloscope job), or transmitter forward power (a wattmeter job)."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4b-two-tone-test",
+      "group": "E4B",
+      "title": "The two-tone test for SSB intermodulation",
+      "body": [
+        "To check an SSB transmitter's linearity, feed two audio tones into the microphone input at the same time. The tones must not be harmonically related (for example 700 Hz and 1900 Hz, rather than 1000 Hz and 2000 Hz), so their mixing products do not land on top of harmonics and hide.",
+        "Watch the RF output on a spectrum analyzer. A clean transmitter shows just two spikes. Intermodulation distortion shows up as extra spikes spaced out on either side by the difference between the tones. The inputs are audio (AF) tones, not RF signals, because that is how an SSB transmitter is normally driven."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4c-noise-floor",
+      "group": "E4C",
+      "title": "Noise floor, noise figure, and MDS",
+      "body": [
+        "Every resistor (and every antenna and receiver input) produces thermal noise. At room temperature, a perfect receiver in a 1 Hz bandwidth would have a noise floor of −174 dBm. That is the theoretical minimum; no receiver can do better.",
+        "Real receivers add some noise of their own. Noise figure is the ratio, in dB, of the noise a receiver generates compared with that theoretical minimum. A noise figure of 3 dB means the receiver's noise is 3 dB above ideal.",
+        "Noise power grows with bandwidth: a wider filter lets in more noise. The increase in dB is 10 × log of the bandwidth ratio. The MDS (minimum discernible signal) is the weakest signal the receiver can detect, roughly a signal equal to its noise floor in the bandwidth being used."
+      ],
+      "formula": "Noise floor change (dB) = 10 × log10(new bandwidth ÷ old bandwidth)",
+      "status": "draft"
+    },
+    {
+      "id": "e4c-bandwidth-and-filters",
+      "group": "E4C",
+      "title": "Choosing bandwidth, IF shift, and roofing filters",
+      "body": [
+        "Set the receive bandwidth to match the signal: roughly 2.4 kHz for SSB voice, a few hundred hertz for CW. A filter wider than the signal only lets in extra noise and neighboring stations; one narrower than the signal cuts off part of it. Matching the two gives the best signal-to-noise ratio and the least interference.",
+        "IF shift slides the receiver's filter passband up or down relative to the signal without changing the tuned frequency. You use it to move an interfering station on an adjacent frequency out of the passband.",
+        "A roofing filter is a narrow filter placed early in the receiver, right after the first mixer. It keeps strong signals near the receive frequency out of the later amplifier and mixer stages, which improves blocking dynamic range. It does not lower the receiver's noise or improve sensitivity."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4c-front-end-and-images",
+      "group": "E4C",
+      "title": "Front-end filtering and image rejection",
+      "body": [
+        "Strong signals from outside the band you are using (such as a nearby broadcast station) can overload a receiver's first stages. A front-end filter or preselector ahead of the first amplifier removes them before they cause trouble. Narrow IF filters and notch filters act later, after the damage is done.",
+        "A superheterodyne receiver also responds to an image frequency, which sits twice the IF away from the desired signal. With a high IF, the image lands far from the desired signal, so the front-end filters can easily reject it. With a low IF, the image is close and hard to filter. That is a main reason to choose a high IF."
+      ],
+      "formula": "Image frequency is 2 × IF away from the desired signal",
+      "status": "draft"
+    },
+    {
+      "id": "e4c-attenuator-low-bands",
+      "group": "E4C",
+      "title": "Why an attenuator costs little on the low HF bands",
+      "body": [
+        "On 160, 80, and 40 meters, the atmospheric noise coming in from the antenna is much stronger than the noise the receiver makes internally. An attenuator lowers the signal and the atmospheric noise by the same amount, so their ratio stays the same. As long as the atmospheric noise is still above the receiver's own noise after attenuation, the signal-to-noise ratio hardly changes.",
+        "Meanwhile the attenuator lowers strong signals and helps prevent overload. On the higher bands, where band noise is lower, an attenuator is more likely to cost you weak signals."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4c-phase-noise",
+      "group": "E4C",
+      "title": "Phase noise and reciprocal mixing",
+      "body": [
+        "No oscillator is perfectly pure. Phase noise is a spread of random noise on either side of the oscillator's frequency. In a superhet it lives on the local oscillator; in an SDR it lives on the master clock that drives the converter.",
+        "Reciprocal mixing happens when that noise mixes with a strong signal on a nearby frequency. The strong signal gets copied onto the noise sidebands, and some of that noise lands in your passband. You hear it as a rise in noise or interference whenever the strong neighbor is on, even though the neighbor's own signal is clean."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4c-sdr-overload",
+      "group": "E4C",
+      "title": "SDR overload at the ADC",
+      "body": [
+        "In a direct-sampling SDR, the analog-to-digital converter (ADC) turns the antenna voltage into numbers. The ADC's reference voltage sets the largest voltage it can represent. When the input goes above the reference voltage, the ADC can only output its top count, so the waveform is clipped. That clipping spreads distortion products across the spectrum.",
+        "So an SDR overloads when input signals exceed the ADC's reference voltage. The maximum count is just what the ADC outputs once that happens; the sample rate and buffer size are unrelated to overload."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4c-capture-effect",
+      "group": "E4C",
+      "title": "FM capture effect",
+      "body": [
+        "When two FM signals are on the same frequency, an FM receiver tends to lock onto the stronger one and almost completely suppress the weaker one. This is the capture effect. It is why you often hear only the nearer station when two people key up on the same simplex channel.",
+        "Do not confuse it with desensitization (a strong signal on a nearby frequency reducing sensitivity) or cross-modulation (one signal's modulation appearing on another)."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4d-dynamic-range",
+      "group": "E4D",
+      "title": "Dynamic range, blocking, and desensitization",
+      "body": [
+        "Dynamic range is the span of signal levels a receiver can handle at once, from the weakest it can hear to the strongest it can tolerate. Blocking dynamic range runs from the noise floor up to the level of an incoming signal that causes 1 dB of gain compression.",
+        "Gain compression from a strong signal near the frequency you are receiving lowers the receiver's sensitivity. This is desensitization: weak signals fade or vanish while the strong neighbor transmits. Poor dynamic range also leads to cross-modulation and spurious signals.",
+        "The cure is to keep the strong signal from overdriving the first stages: add attenuation before the first RF stage. Turning up front-end gain makes it worse, and AGC speed or a higher IF does not solve it."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4d-intermod-basics",
+      "group": "E4D",
+      "title": "Intermodulation and why odd orders matter",
+      "body": [
+        "Intermodulation (IMD) is caused by nonlinear circuits or devices. A perfectly linear circuit passes signals without mixing them. Any nonlinearity (an overdriven amplifier, a mixer, even a diode junction) makes signals combine into new frequencies at sums and differences of multiples of the originals.",
+        "The order of a product is the total of the multipliers. Third-order products, such as 2f1 − f2 and 2f2 − f1, fall very close to the original signals. Example: signals at 14.070 and 14.080 MHz produce third-order products at 14.060 and 14.090 MHz, right in the same band.",
+        "That is why odd-order products are of special interest: if two signals are inside the band you are receiving, their odd-order products are likely to be inside it too, where no filter can remove them. Even-order products (like f1 + f2 or f2 − f1) usually land far away."
+      ],
+      "formula": "Third-order products: 2f1 − f2 and 2f2 − f1",
+      "status": "draft"
+    },
+    {
+      "id": "e4d-intercept-point",
+      "group": "E4D",
+      "title": "Third-order intercept point",
+      "body": [
+        "As input signals get stronger, third-order products grow three times as fast in dB: raise both input signals 1 dB and the products rise 3 dB. If you extended both lines on a graph, the product would eventually catch up to the desired signal. The input level where the two lines would meet is the third-order intercept point (IP3).",
+        "A third-order intercept of 40 dBm means a pair of 40 dBm input signals would, in theory, produce a third-order product as strong at the output as either input signal. Real receivers overload before that, so the point is found by extending lines measured at lower levels. The higher the intercept, the better the receiver handles strong signals."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4d-repeater-imd",
+      "group": "E4D",
+      "title": "Intermod between nearby repeaters and the circulator cure",
+      "body": [
+        "When two repeater transmitters are close together, each antenna picks up the other's strong signal and feeds it back down into the transmitter. There the two output signals mix in the nonlinear final amplifier, and the mixing products are radiated as new, unwanted signals, which can land on someone else's input frequency.",
+        "A circulator (or isolator) at the transmitter output fixes this. It passes power from the transmitter out to the antenna, but routes anything coming back down the line into a third port that is properly terminated in a dummy load. The outside signal never reaches the final amplifier, so there is nothing to mix."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4d-preselector",
+      "group": "E4D",
+      "title": "The preselector",
+      "body": [
+        "A preselector is a tunable band-pass filter at the very front of a receiver. It passes the band you are receiving and increases rejection of signals outside that band before they reach the RF amplifier and mixer. That reduces overload, intermod, and image responses.",
+        "It is a selective filter, not a broadband attenuator, and it has nothing to do with memory channels or choosing the amplifier device."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4d-link-budget",
+      "group": "E4D",
+      "title": "Link budgets and link margin in dBm",
+      "body": [
+        "dBm means decibels relative to 1 milliwatt: 0 dBm = 1 mW, +40 dBm = 10 W, −100 dBm = 0.0000000001 mW (0.1 picowatt). Every 10 dB is a factor of 10.",
+        "Working in dB turns the path into simple addition. Start with transmit power in dBm, add antenna gains, and subtract cable losses and path loss. The result is the received signal level in dBm.",
+        "The signal you need is the receiver's MDS plus the signal-to-noise ratio your mode requires. Link margin is how far the received level sits above that requirement. Positive margin means the link works with room to spare; negative means it falls short."
+      ],
+      "formula": "Link margin = received level − (MDS + required SNR)",
+      "status": "draft"
+    },
+    {
+      "id": "e4e-dsp-filters",
+      "group": "E4E",
+      "title": "DSP noise reduction and automatic notch filters",
+      "body": [
+        "Digital noise reduction (DNR) analyzes the received audio and suppresses what looks like noise while keeping what looks like signal. It can help with many kinds of noise: broadband white noise (hiss), ignition noise, and power line noise.",
+        "An automatic notch filter (ANF) finds steady tones, such as a carrier tuning up on your frequency, and notches them out. The catch on CW: a CW signal is also a steady tone, so the ANF may remove the CW signal you are trying to copy along with the interfering carrier. Turn the ANF off for CW and use a narrow filter instead."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4e-noise-blanker",
+      "group": "E4E",
+      "title": "Noise blankers: great on pulses, rough on strong signals",
+      "body": [
+        "A noise blanker is designed for impulse noise: short, sharp pulses such as auto ignition or electric fence clicks. It detects each pulse and briefly shuts off (blanks) the receiver for that instant, so the pulse is never heard. It does not help with steady hiss, hum, or buzz.",
+        "The downside: the blanker works on a wide slice of spectrum before the narrow filters. Strong signals nearby can trigger it or be chopped by it, so they sound distorted and seem to throw off spurious signals across the band. If the band sounds full of splatter, try turning the blanker off."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4e-vehicle-and-motor",
+      "group": "E4E",
+      "title": "Taming alternator and motor noise",
+      "body": [
+        "In a vehicle, the alternator and charging system create whine and hash that travel along the wiring. Ferrite chokes (clamp-on ferrite cores) on the charging system leads block the RF noise from traveling down those wires into the radio.",
+        "A line-driven AC motor (drill, mixer, fan) makes RF noise from the arcing at its brushes. A brute-force AC-line filter, a heavy low-pass filter of chokes and capacitors, installed in series with the motor's power leads stops that noise from reaching the house wiring, where it would radiate.",
+        "Filters that carry power go in series with the power leads. Capacitors placed in series with alternator leads, or high-pass filters on power leads, would block the power or pass the noise."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4e-digital-noise-sources",
+      "group": "E4E",
+      "title": "Computers, network gear, and switch-mode supplies",
+      "body": [
+        "Computer network equipment (routers, switches, Ethernet cables) runs on clock signals and data at fixed rates. The interference usually shows up as unstable signals, modulated or unmodulated, at specific frequencies: the familiar 'birdies' that wander or warble.",
+        "A switch-mode power supply chops current on and off tens or hundreds of thousands of times a second. Its sharp switching creates harmonics at every multiple of the switching frequency, so you hear a series of carriers at regular intervals across a wide frequency range, often drifting as the load changes. Wall-wart chargers and LED drivers are common culprits."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4e-line-noise",
+      "group": "E4E",
+      "title": "Arcing, line noise, and the rusty bolt effect",
+      "body": [
+        "Any small electrical arc makes broadband RF noise. Intermittent loud roaring or buzzing can come from arcing contacts in a thermostat-controlled device (heater, aquarium, electric blanket), a defective doorbell or doorbell transformer, or a malfunctioning lighted sign. Power line hardware can do the same.",
+        "A corroded metal connection, such as a rusty joint in a gutter, fence, or tower, can act like a crude diode. It mixes strong nearby signals, like local AM broadcast stations, and reradiates the mixing products as spurious signals on the MF and HF bands. This is often called the rusty bolt effect."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4e-common-mode",
+      "group": "E4E",
+      "title": "Common-mode current on cables",
+      "body": [
+        "Differential-mode current is the normal signal current: it flows out on one conductor and back on the other, equal and opposite, so the fields cancel and the cable does not radiate.",
+        "Common-mode current flows equally, in the same direction, on all the conductors of a cable, or on the outside of a coax shield. Nothing cancels it, so the cable becomes an antenna: it radiates interference and picks it up. Common-mode currents on the shield and conductors are what make shielded cables radiate or receive interference.",
+        "The usual cure is a common-mode choke, such as ferrite cores on the cable or turns of the cable wound through a ferrite toroid."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e4e-single-point-ground",
+      "group": "E4E",
+      "title": "Single point ground panels and surge protectors",
+      "body": [
+        "A single point ground panel is a metal plate or bulkhead where every cable entering the station (coax, rotator control, AC power, telephone, data) passes through a protector, and all the protectors are bonded to one common point tied to the station's ground system.",
+        "Because they share one point, a lightning surge raises everything together, and all the protectors activate at the same time. No large voltage difference can build up between one cable and another inside the shack, which is what destroys equipment.",
+        "For the same reason, the station's AC surge protector belongs on the single point ground panel with the other protectors, not at a separate outlet, the service panel, or a separate ground rod."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "E4A01": {
+      "why": "A digital scope builds the display from samples taken by its analog-to-digital converter, so the sampling rate sets the highest frequency it can show accurately. It must sample at more than twice the highest frequency in the signal.",
+      "concept": "e4a-digital-scope",
+      "status": "draft"
+    },
+    "E4A02": {
+      "why": "A spectrum analyzer plots signal amplitude vertically against frequency horizontally. Amplitude against time is what an oscilloscope shows.",
+      "concept": "e4a-spectrum-analyzer",
+      "status": "draft"
+    },
+    "E4A03": {
+      "why": "A spectrum analyzer shows every signal a transmitter produces as a spike at its frequency, so spurious signals and intermodulation products are easy to see. A network analyzer measures a circuit's response to a test signal, and a logic analyzer watches digital logic.",
+      "concept": "e4a-spectrum-analyzer",
+      "status": "draft"
+    },
+    "E4A04": {
+      "why": "Compensation matches the probe's capacitance to the scope input. You display a square wave (usually the scope's built-in calibrator) and adjust the probe until the flat tops and bottoms are as flat as possible, with no rounding or overshoot.",
+      "concept": "e4a-scope-probes",
+      "status": "draft"
+    },
+    "E4A05": {
+      "why": "A prescaler divides the input frequency by a fixed amount so it falls within the range the counter can handle. It reduces the frequency; it does not multiply it or amplify the signal.",
+      "concept": "e4a-prescaler",
+      "status": "draft"
+    },
+    "E4A06": {
+      "why": "When a digital scope samples too slowly for the signal, the samples line up into a false wave at a much lower frequency. That aliased display looks like a jittery, low-frequency version of the real waveform.",
+      "concept": "e4a-digital-scope",
+      "status": "draft"
+    },
+    "E4A07": {
+      "why": "An antenna analyzer has its own signal source and calculates both SWR and impedance for you, where an SWR bridge shows only SWR and needs a transmitter. It does not tune the antenna, and it does not display the modulation envelope.",
+      "concept": "e4a-antenna-analyzer",
+      "status": "draft"
+    },
+    "E4A08": {
+      "why": "All three can measure SWR: a directional wattmeter from forward and reflected power, and a vector network analyzer or antenna analyzer from the measured impedance or reflection.",
+      "concept": "e4a-antenna-analyzer",
+      "status": "draft"
+    },
+    "E4A09": {
+      "why": "A long probe ground lead adds inductance and picks up stray signals, causing ringing and false readings, so keep it as short as possible. The other statements are not real rules: high-impedance probes work fine on low-impedance circuits, and DC-coupled probes can measure AC.",
+      "concept": "e4a-scope-probes",
+      "status": "draft"
+    },
+    "E4A10": {
+      "why": "Ripple from a linear power supply comes from rectifying the AC power line, so it is locked to the line frequency. Line trigger starts each sweep in step with the power line, giving a steady ripple display even when the ripple is tiny or noisy.",
+      "concept": "e4a-line-trigger",
+      "status": "draft"
+    },
+    "E4A11": {
+      "why": "Because an antenna analyzer measures impedance across frequency, it can find the resonant frequency of a tuned circuit, and from tests on an open or shorted piece of coax it can find the cable's velocity factor and length. All of them can be measured.",
+      "concept": "e4a-antenna-analyzer",
+      "status": "draft"
+    },
+    "E4B01": {
+      "why": "A counter counts cycles during a gate period set by its time base oscillator. Any error in the time base shows up directly as the same fractional error in every reading, so time base accuracy matters most.",
+      "concept": "e4b-counter-accuracy",
+      "status": "draft"
+    },
+    "E4B02": {
+      "why": "Multiplying the ohms-per-volt rating by the full-scale reading of the range in use gives the meter's input resistance on that range. For example, 20,000 Ω/V on a 10-volt range is 200,000 Ω.",
+      "concept": "e4b-ohms-per-volt",
+      "status": "draft"
+    },
+    "E4B03": {
+      "why": "S21 is the signal measured at port 2 when applied at port 1, the forward direction through the device, which is its forward gain. S11 and S22 are reflections, and S12 is the reverse direction.",
+      "concept": "e4b-s-parameters",
+      "status": "draft"
+    },
+    "E4B04": {
+      "why": "S11 is the signal reflected back out of port 1 when applied to port 1, so it is the input reflection coefficient or return loss, which is equivalent to SWR. S22 is the same thing at the output port.",
+      "concept": "e4b-s-parameters",
+      "status": "draft"
+    },
+    "E4B05": {
+      "why": "A VNA is calibrated with three known standards: a short circuit, an open circuit, and a 50-ohm load. These let it subtract out the effects of the test cables and connectors.",
+      "concept": "e4b-vna",
+      "status": "draft"
+    },
+    "E4B06": {
+      "why": "The power absorbed by the load is forward power minus reflected power. Adding them, or splitting the difference, gives a wrong answer.",
+      "work": [
+        "Power to load = forward − reflected",
+        "100 W − 25 W = 75 W"
+      ],
+      "concept": "e4b-power-to-load",
+      "status": "draft"
+    },
+    "E4B07": {
+      "why": "The two subscripts name ports: the first is where the signal is measured and the second is where it is applied. S21, for example, is measured at port 2 with the signal applied at port 1.",
+      "concept": "e4b-s-parameters",
+      "status": "draft"
+    },
+    "E4B08": {
+      "why": "Q equals the resonant frequency divided by the −3 dB bandwidth, so measuring the bandwidth of the circuit's frequency response lets you determine Q. The resonant frequency alone is not enough, and the ratio of the two reactances is simply 1 at resonance.",
+      "concept": "e4b-measuring-q",
+      "status": "draft"
+    },
+    "E4B09": {
+      "why": "A two-port VNA sends a signal in one port and measures what comes out the other across a range of frequencies, which is exactly a filter's frequency response. Phase noise, pulse rise time, and forward power call for other instruments.",
+      "concept": "e4b-vna",
+      "status": "draft"
+    },
+    "E4B10": {
+      "why": "The standard two-tone test drives the SSB transmitter with two audio tones that are not harmonically related and looks at the RF output on a spectrum analyzer, where IMD products appear as extra spikes. The inputs are audio tones, not RF, and a wattmeter or logic analyzer cannot show the products.",
+      "concept": "e4b-two-tone-test",
+      "status": "draft"
+    },
+    "E4B11": {
+      "why": "A VNA measures the magnitude and phase of reflected and transmitted signals, so it can give input impedance, output impedance, and reflection coefficient. All of them can be measured.",
+      "concept": "e4b-vna",
+      "status": "draft"
+    },
+    "E4C01": {
+      "why": "Phase noise on the master clock acts like noise sidebands on the receiver's oscillator. Those sidebands mix with strong signals on nearby frequencies and put noise and interference into the passband (reciprocal mixing).",
+      "concept": "e4c-phase-noise",
+      "status": "draft"
+    },
+    "E4C02": {
+      "why": "Strong out-of-band signals have to be stopped before they reach and overload the first amplifier and mixer, which is the job of a front-end filter or preselector. IF and notch filters come later in the receiver, after overload has already happened.",
+      "concept": "e4c-front-end-and-images",
+      "status": "draft"
+    },
+    "E4C03": {
+      "why": "An FM receiver tends to lock onto the stronger of two signals on the same frequency and suppress the weaker one. This is the capture effect. Desensitization and cross-modulation involve signals on other frequencies.",
+      "concept": "e4c-capture-effect",
+      "status": "draft"
+    },
+    "E4C04": {
+      "why": "Noise figure compares, in dB, the noise a receiver generates with the theoretical minimum noise of a perfect receiver. It has nothing to do with atmospheric noise.",
+      "concept": "e4c-noise-floor",
+      "status": "draft"
+    },
+    "E4C05": {
+      "why": "−174 dBm is the thermal noise a perfect, noiseless receiver would see in a 1 Hz bandwidth at room temperature. It is the theoretical floor that real receivers are compared against.",
+      "concept": "e4c-noise-floor",
+      "status": "draft"
+    },
+    "E4C06": {
+      "why": "Noise power rises in proportion to bandwidth. Going from 50 Hz to 1000 Hz lets in 20 times as much noise, which is about 13 dB.",
+      "work": [
+        "Bandwidth ratio = 1000 Hz ÷ 50 Hz = 20",
+        "Increase = 10 × log10(20)",
+        "10 × 1.301 = 13.0 dB ≈ 13 dB"
+      ],
+      "concept": "e4c-noise-floor",
+      "status": "draft"
+    },
+    "E4C07": {
+      "why": "MDS stands for minimum discernible signal, the weakest signal the receiver can detect above its own noise.",
+      "concept": "e4c-noise-floor",
+      "status": "draft"
+    },
+    "E4C08": {
+      "why": "The ADC's reference voltage sets the largest input it can represent. Signals above that level are clipped, which overloads the SDR. Hitting the maximum count is the result of exceeding the reference voltage, not the input limit itself, and sample rate and buffer size are unrelated.",
+      "concept": "e4c-sdr-overload",
+      "status": "draft"
+    },
+    "E4C09": {
+      "why": "The image frequency is twice the IF away from the desired signal. A high IF puts the image far away, where the front-end filters can easily reject it.",
+      "concept": "e4c-front-end-and-images",
+      "status": "draft"
+    },
+    "E4C10": {
+      "why": "Matching the receive bandwidth to the signal's bandwidth lets in all of the signal but no more noise or neighboring signals than necessary. That gives the best signal-to-noise ratio and the least interference.",
+      "concept": "e4c-bandwidth-and-filters",
+      "status": "draft"
+    },
+    "E4C11": {
+      "why": "On the low HF bands, atmospheric noise from the antenna is far above the receiver's internal noise, even after attenuation. The attenuator lowers signal and band noise equally, so the signal-to-noise ratio barely changes while strong signals are cut back enough to avoid overload.",
+      "concept": "e4c-attenuator-low-bands",
+      "status": "draft"
+    },
+    "E4C12": {
+      "why": "A narrow roofing filter early in the receiver keeps strong signals near the receive frequency out of the later stages, which improves blocking dynamic range. It does not reduce front-end noise or improve sensitivity.",
+      "concept": "e4c-bandwidth-and-filters",
+      "status": "draft"
+    },
+    "E4C13": {
+      "why": "Reciprocal mixing is the local oscillator's phase noise mixing with strong signals on nearby frequencies, which puts noise and interference on top of the signal you want. Two outside signals mixing to make an in-band signal is intermodulation, not reciprocal mixing.",
+      "concept": "e4c-phase-noise",
+      "status": "draft"
+    },
+    "E4C14": {
+      "why": "IF shift moves the filter passband up or down relative to the signal without changing the tuned frequency, so you can push an interfering station on an adjacent frequency outside the passband. Listening off your transmit frequency is what RIT does.",
+      "concept": "e4c-bandwidth-and-filters",
+      "status": "draft"
+    },
+    "E4D01": {
+      "why": "Blocking dynamic range runs from the noise floor up to the level of an incoming signal that causes 1 dB of gain compression. The span from the noise floor to the point where third-order products appear describes a different figure, the IMD dynamic range.",
+      "concept": "e4d-dynamic-range",
+      "status": "draft"
+    },
+    "E4D02": {
+      "why": "A receiver with poor dynamic range is overwhelmed by strong nearby signals, causing cross-modulation, spurious signals, and desensitization. Oscillator stability and LO injection are separate problems.",
+      "concept": "e4d-dynamic-range",
+      "status": "draft"
+    },
+    "E4D03": {
+      "why": "Each repeater's antenna picks up the other's strong signal and feeds it back into its transmitter, where the two output signals mix in the nonlinear final amplifier and the products are radiated. It is mixing, not feedback or harmonic relationships.",
+      "concept": "e4d-repeater-imd",
+      "status": "draft"
+    },
+    "E4D04": {
+      "why": "A circulator at the transmitter output passes the transmitter's power to the antenna but sends the incoming signal from the other transmitter into a terminated load, so it never reaches the final amplifier to mix. It must be properly terminated for that to work.",
+      "concept": "e4d-repeater-imd",
+      "status": "draft"
+    },
+    "E4D06": {
+      "why": "Desensitization is the loss of receiver sensitivity caused by a strong signal near the received frequency pushing the front end into compression. Cross-modulation instead puts one signal's modulation on another.",
+      "concept": "e4d-dynamic-range",
+      "status": "draft"
+    },
+    "E4D07": {
+      "why": "Attenuation before the first RF stage lowers the strong signal so it no longer drives the front end into compression. Adding front-end gain does the opposite, and changing the IF or AGC speed does not address the overload.",
+      "concept": "e4d-dynamic-range",
+      "status": "draft"
+    },
+    "E4D08": {
+      "why": "Intermodulation happens when signals pass through a nonlinear circuit or device, which mixes them into new frequencies. A perfectly linear circuit would not create them.",
+      "concept": "e4d-intermod-basics",
+      "status": "draft"
+    },
+    "E4D09": {
+      "why": "A preselector is a tunable filter at the receiver's input that increases rejection of signals outside the band being received. It is selective, not a broadband attenuator.",
+      "concept": "e4d-preselector",
+      "status": "draft"
+    },
+    "E4D10": {
+      "why": "The third-order intercept is the theoretical input level at which the third-order product would grow to the same output level as the desired signals. So a 40 dBm intercept means two 40 dBm input signals would, in theory, produce a product equal to either signal.",
+      "concept": "e4d-intercept-point",
+      "status": "draft"
+    },
+    "E4D11": {
+      "why": "Odd-order products such as 2f1 − f2 fall close to the original signals, so two signals inside the band being received make products that are likely also inside it, where filters cannot remove them. Even-order products usually land far away.",
+      "concept": "e4d-intermod-basics",
+      "status": "draft"
+    },
+    "E4D12": {
+      "why": "Add up the gains and losses to find the received level, then compare it with what the receiver needs: its MDS plus the required signal-to-noise ratio. The signal arrives 8 dB stronger than needed, so the margin is +8 dB.",
+      "work": [
+        "Received level = 40 dBm + 10 dB − 3 dB − 136 dB = −89 dBm",
+        "Level needed = MDS + SNR = −103 dBm + 6 dB = −97 dBm",
+        "Link margin = −89 dBm − (−97 dBm) = +8 dB"
+      ],
+      "concept": "e4d-link-budget",
+      "status": "draft"
+    },
+    "E4D13": {
+      "why": "Start with transmit power in dBm, add both antenna gains, and subtract the path loss.",
+      "work": [
+        "Received level = transmit power + transmit gain + receive gain − path loss",
+        "40 dBm + 6 dB + 3 dB − 100 dB = −51 dBm"
+      ],
+      "concept": "e4d-link-budget",
+      "status": "draft"
+    },
+    "E4D14": {
+      "why": "−100 dBm is 100 dB, or a factor of 10 billion, below 1 milliwatt. That works out to 0.1 picowatt.",
+      "work": [
+        "P (mW) = 10^(dBm ÷ 10) = 10^(−100 ÷ 10) = 10^−10 mW",
+        "10^−10 mW = 10^−13 W",
+        "1 picowatt = 10^−12 W, so 10^−13 W = 0.1 pW"
+      ],
+      "concept": "e4d-link-budget",
+      "status": "draft"
+    },
+    "E4E01": {
+      "why": "An automatic notch filter removes steady tones, and a CW signal is itself a steady tone. So the ANF can remove the CW signal you want along with the interfering carrier.",
+      "concept": "e4e-dsp-filters",
+      "status": "draft"
+    },
+    "E4E02": {
+      "why": "Digital noise reduction separates signal from noise by its characteristics, and it can often reduce broadband white noise, ignition noise, and power line noise. All of them apply.",
+      "concept": "e4e-dsp-filters",
+      "status": "draft"
+    },
+    "E4E03": {
+      "why": "A noise blanker works by briefly muting the receiver during short, sharp pulses, so it removes impulse noise. It does not help with steady hiss, hum, or buzz.",
+      "concept": "e4e-noise-blanker",
+      "status": "draft"
+    },
+    "E4E04": {
+      "why": "Ferrite chokes on the charging system leads block the RF noise from traveling along the wiring while letting the DC charging current pass. Capacitors in series with the alternator leads would block the charging current itself.",
+      "concept": "e4e-vehicle-and-motor",
+      "status": "draft"
+    },
+    "E4E05": {
+      "why": "A brute-force AC-line filter in series with the motor's power leads stops the RF noise from brush arcing before it gets onto the house wiring. A high-pass filter would pass the RF noise, and the other choices wire parts the wrong way.",
+      "concept": "e4e-vehicle-and-motor",
+      "status": "draft"
+    },
+    "E4E06": {
+      "why": "Network equipment runs on clocks and data at fixed rates, so its interference appears as unstable modulated or unmodulated signals at specific frequencies. Hum, clicking, and pulsing whine point to other sources.",
+      "concept": "e4e-digital-noise-sources",
+      "status": "draft"
+    },
+    "E4E07": {
+      "why": "Common-mode current flows the same way on the shield and conductors, so nothing cancels its field and the cable acts as an antenna, both radiating and receiving interference. Low-inductance shield grounds help prevent this rather than cause it.",
+      "concept": "e4e-common-mode",
+      "status": "draft"
+    },
+    "E4E08": {
+      "why": "Common-mode current flows equally, in the same direction, on all the conductors of a cable. Differential-mode current is the normal signal current, going out on one conductor and back on another.",
+      "concept": "e4e-common-mode",
+      "status": "draft"
+    },
+    "E4E09": {
+      "why": "A noise blanker acts on a wide slice of spectrum, so strong signals nearby can trigger or be chopped by it. They then sound distorted and seem to produce spurious signals across the band.",
+      "concept": "e4e-noise-blanker",
+      "status": "draft"
+    },
+    "E4E10": {
+      "why": "Any small electrical arc makes broadband noise. Arcing thermostat contacts, a defective doorbell or its transformer, and a malfunctioning lighted sign can all produce intermittent roaring or buzzing, so all of them are correct.",
+      "concept": "e4e-line-noise",
+      "status": "draft"
+    },
+    "E4E11": {
+      "why": "Corroded metal joints can act like crude diodes that mix strong local AM broadcast signals and reradiate the products on the MF and HF bands, the rusty bolt effect. Overmodulation or an overloaded IF would not explain signals being generated outside your receiver.",
+      "concept": "e4e-line-noise",
+      "status": "draft"
+    },
+    "E4E12": {
+      "why": "A switch-mode power supply generates harmonics at every multiple of its switching frequency, which you hear as a series of carriers at regular intervals across a wide range. Radar and electric fences produce pulses instead.",
+      "concept": "e4e-digital-noise-sources",
+      "status": "draft"
+    },
+    "E4E13": {
+      "why": "The AC surge protector goes on the single point ground panel with the other protectors, so every cable entering the station is protected from the same common point.",
+      "concept": "e4e-single-point-ground",
+      "status": "draft"
+    },
+    "E4E14": {
+      "why": "Bonding every protector to one common point means a surge raises everything together and all the lightning protectors activate at the same time. That prevents damaging voltage differences between cables inside the station.",
+      "concept": "e4e-single-point-ground",
+      "status": "draft"
+    }
+  }
+}

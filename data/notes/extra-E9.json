@@ -1,0 +1,887 @@
+{
+  "subelement": "E9",
+  "concepts": [
+    {
+      "id": "e9a-isotropic-dbi-dbd",
+      "group": "E9A",
+      "title": "Reference antennas: isotropic and dipole",
+      "body": [
+        "Antenna gain is always measured against a reference. The most basic reference is the isotropic radiator: an imaginary, perfectly lossless point antenna that sends out exactly the same strength in every direction. It cannot be built, but it makes a clean yardstick. Gain compared with it is written dBi.",
+        "The other common reference is a half-wave dipole in free space, which is a real antenna. A dipole already concentrates its energy broadside to the wire, so it has 2.15 dB of gain over isotropic. Gain compared with a dipole is written dBd.",
+        "To convert, add or subtract 2.15 dB. An antenna with 6 dBi of gain has 6 - 2.15 = 3.85 dBd. The same antenna always looks 2.15 dB better on paper when rated in dBi, so watch which unit an advertisement uses."
+      ],
+      "formula": "dBd = dBi - 2.15",
+      "status": "draft"
+    },
+    {
+      "id": "e9a-erp-eirp",
+      "group": "E9A",
+      "title": "ERP and EIRP: the power that actually goes out",
+      "body": [
+        "Effective radiated power (ERP) is the power your station seems to radiate in its best direction, once every gain and loss between the transmitter and the sky is counted. Feed line loss, duplexer loss, and circulator loss subtract; antenna gain adds.",
+        "ERP uses a dipole as the reference, so it goes with antenna gain in dBd. EIRP (effective isotropic radiated power) uses the isotropic reference, so it goes with gain in dBi.",
+        "Step 1: Add all the losses in dB. Step 2: Subtract that total from the antenna gain to get the system net gain in dB. Step 3: Turn the net dB into a power ratio with 10 raised to the (dB ÷ 10) power. Step 4: Multiply the transmitter output by that ratio. Quick check: 1 dB is about 1.26 times, 2 dB about 1.58 times, 3 dB about 2 times."
+      ],
+      "formula": "ERP = TX power × 10^((antenna gain - total losses) ÷ 10)",
+      "status": "draft"
+    },
+    {
+      "id": "e9a-efficiency",
+      "group": "E9A",
+      "title": "Radiation resistance and antenna efficiency",
+      "body": [
+        "An antenna's feed point resistance has two parts. Radiation resistance stands for the power that actually leaves as radio waves. Loss resistance stands for power turned into heat in the wire, loading coils, insulators, and especially the ground.",
+        "Efficiency is the share of the power that gets radiated: radiation resistance divided by the total resistance. Example: a short vertical with 10 Ω of radiation resistance and 10 Ω of ground and coil losses is only 10 ÷ 20 = 50% efficient.",
+        "For a ground-mounted quarter-wave vertical, most of the loss is in the earth right around the base, and it depends mainly on soil conductivity. Laying out a system of ground radials gives the return current a low-resistance path instead of lossy dirt, which raises efficiency. Shortening the radiator makes things worse, not better, because its radiation resistance drops."
+      ],
+      "formula": "efficiency = R radiation ÷ (R radiation + R loss)",
+      "status": "draft"
+    },
+    {
+      "id": "e9a-ground-effects",
+      "group": "E9A",
+      "title": "The ground changes impedance and adds gain",
+      "body": [
+        "An antenna does not live in free space. The earth below acts partly like a mirror, and the reflected wave interacts with the antenna. That is why the feed point impedance of a dipole changes as you raise or lower it: antenna height matters. Feed line length, tuner settings, and power level do not change the antenna's own feed point impedance (a tuner only changes what the transmitter sees).",
+        "Ground reflections also add to the direct wave at some elevation angles, making the signal stronger there than it would be in free space. That boost is called ground gain. Over good ground it can be up to about 6 dB."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e9a-fresnel",
+      "group": "E9A",
+      "title": "The Fresnel zone on microwave paths",
+      "body": [
+        "A radio beam between two points is not a thin line. It fills a football-shaped region around the direct path, called the first Fresnel zone. Trees, roofs, or hills poking into that zone weaken the signal even if you can see the other antenna.",
+        "The zone's width depends on wavelength: the shorter the wavelength (the higher the frequency), the skinnier the zone. So of common microwave bands, 5.8 GHz has the smallest first Fresnel zone and 900 MHz the largest."
+      ],
+      "formula": "Fresnel zone radius ∝ √(wavelength)",
+      "status": "draft"
+    },
+    {
+      "id": "e9b-reading-patterns",
+      "group": "E9B",
+      "title": "Reading an azimuth pattern plot",
+      "body": [
+        "A radiation pattern plot shows relative signal strength around the antenna. The outer ring is the strongest point (0 dB) and the inner rings are labeled in negative dB. An azimuth pattern looks down from above, like a compass; an elevation pattern is a side view, a half-circle from the horizon (0 degrees) up to straight overhead (90 degrees) and down to the horizon behind (180 degrees).",
+        "Beamwidth: find the two points on each side of the main lobe where the trace drops to the -3 dB ring (half power). The angle between them is the 3 dB beamwidth.",
+        "Front-to-back ratio: compare the main lobe (0 dB) with the strength straight behind at 180 degrees. Front-to-side ratio: compare the main lobe with the strength at 90 degrees to the side.",
+        "Figure E9-1 is a free-space azimuth pattern of a beam pointing toward 0 degrees. Its trace crosses the -3 dB ring at about 25 degrees on each side, for a 50 degree beamwidth. The rear lobe at 180 degrees sits at about -18 dB, and the side lobes at 90 degrees at about -14 dB."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e9b-elevation-pattern",
+      "group": "E9B",
+      "title": "Reading an elevation pattern (Figure E9-2)",
+      "body": [
+        "Figure E9-2 is a half-circle labeled 0 to 180 degrees with the note Over Real Ground. A half-circle plot like this is an elevation pattern: it shows how strongly the antenna radiates at each angle above the horizon, in one direction (forward on the right, backward on the left).",
+        "Its rings are marked 0 dB at the outside, then -10, -20, -30, and -40 dB. The biggest lobe peaks very low, at about 7.5 degrees above the horizon toward the front, which is great for long-distance HF. Higher lobes appear above it.",
+        "Toward the back (the left side, near 180 degrees) the pattern is shrunk to a small lobe around -28 dB, so the front-to-back ratio is about 28 dB."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e9b-gain-and-far-field",
+      "group": "E9B",
+      "title": "Gain moves power, it does not create it",
+      "body": [
+        "A lossless directional antenna and an isotropic radiator fed with the same power radiate exactly the same total power. Gain only means the beam squeezes that power into some directions and takes it away from others, like a flashlight reflector focusing a bulb. Total radiated power is the same.",
+        "Patterns are measured in the far field. Close to an antenna (the near field) the fields are tangled and the pattern shape changes with distance. Far enough out, the shape of the pattern stops changing; only the overall strength keeps dropping with distance. That region is the far field."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e9b-antenna-modeling",
+      "group": "E9B",
+      "title": "Computer modeling: the Method of Moments",
+      "body": [
+        "Antenna modeling programs such as NEC and its many front ends (EZNEC, 4nec2, MMANA) use a technique called the Method of Moments. The program chops every wire into short segments and assumes each segment carries one uniform value of current. It then solves for all those currents at once and calculates the pattern, gain, and feed point impedance from them.",
+        "More segments means a closer match to the real smooth current. A common rule is at least 10 segments per half wavelength. With too few, the results get rough, and the computed feed point impedance in particular may be wrong."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e9c-phased-verticals",
+      "group": "E9C",
+      "title": "Two phased verticals: spacing plus phase shapes the pattern",
+      "body": [
+        "When two quarter-wave verticals are fed together, their signals add in some directions and cancel in others. The result depends on how far apart they are and the phase difference of their feeds.",
+        "• 1/2 wavelength apart, fed in phase: signals add broadside (at right angles to the line joining the antennas) and cancel along the line. Figure-eight broadside to the array.",
+        "• 1/2 wavelength apart, fed 180 degrees out of phase: signals cancel broadside and add along the line. Figure-eight end-fire, oriented along the axis of the array.",
+        "• 1/4 wavelength apart, fed 90 degrees out of phase: signals add in one direction along the line and cancel in the other. Cardioid (heart-shaped, one strong direction and one deep null).",
+        "The same idea is why multiple driven elements joined by phasing lines are used: choosing the phasing lets you steer the pattern."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e9c-long-wires",
+      "group": "E9C",
+      "title": "Long wires, rhombics, and termination",
+      "body": [
+        "A long wire antenna is a straight wire many wavelengths long. As the wire is made longer, the pattern breaks into more and more lobes, and the biggest lobes swing closer to the direction of the wire itself.",
+        "An unterminated long wire or rhombic is bidirectional: waves travel down the wire, reflect off the open far end, and come back, so it radiates both ways. Putting a terminating resistor (roughly equal to the wire's impedance) at the far end absorbs the wave instead of reflecting it. The antenna then becomes unidirectional, favoring the direction toward the resistor end."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e9c-folded-dipole",
+      "group": "E9C",
+      "title": "The folded dipole",
+      "body": [
+        "A folded dipole is a half-wave dipole with a second parallel wire connecting its two ends, making a long narrow loop. It is fed in the middle of one of the wires.",
+        "The current divides between the two conductors, so for the same power the feed point sees half the current, and impedance goes up by 2 squared, or 4 times. An ordinary dipole's roughly 73 Ω becomes about 300 Ω, a good match for 300 Ω twin lead. The pattern and gain are the same as a regular dipole."
+      ],
+      "formula": "Z folded ≈ 4 × 73 Ω ≈ 300 Ω",
+      "status": "draft"
+    },
+    {
+      "id": "e9c-multiband-wires",
+      "group": "E9C",
+      "title": "Named wire antennas: OCFD, G5RV, and Zepps",
+      "body": [
+        "• Off-center-fed dipole (OCFD): the feed point is moved from the center toward one end, often about a third of the way along. At that spot the feed point impedance is similar (a few hundred ohms) on several harmonically related bands, so one balun and coax can serve all of them.",
+        "• G5RV: a wire dipole center-fed through a specific length of open-wire (ladder) line. At the bottom of that line a balun connects to ordinary coax running to the shack. The ladder line section acts as a matching section on several bands; a tuner is usually still needed.",
+        "• Zepp: short for Zeppelin, where it trailed below airships. It is an end-fed half-wave dipole, fed with tuned open-wire line.",
+        "• Extended double Zepp: a center-fed wire with two 5/8-wavelength halves, 1.25 wavelengths total. The extra length gives a bit more gain broadside than a plain dipole or a 1-wavelength double Zepp."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e9c-ground-and-height",
+      "group": "E9C",
+      "title": "How the ground shapes the elevation pattern",
+      "body": [
+        "Horizontal antennas: the ground reflection combines with the direct wave. As a horizontal antenna goes higher, the lowest lobe gets lower (its takeoff angle decreases), which helps long-distance contacts. Low dipoles send most of their signal nearly straight up.",
+        "If the ground under the antenna slopes, what counts is the ground's angle relative to the signal. Looking downhill, the ground falls away, so the antenna is effectively higher: the main lobe's takeoff angle decreases in the downhill direction. Uphill it increases.",
+        "Vertical antennas: the low-angle signal depends heavily on how conductive the ground is out to a long distance. Seawater is an almost perfect conductor, so a vertical over saltwater gains a lot more radiation at low angles than the same antenna over ordinary soil."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e9d-yagi-basics",
+      "group": "E9D",
+      "title": "Yagi elements and phase",
+      "body": [
+        "A Yagi has one driven element, about 1/2 wavelength long and fed by the feed line, plus parasitic elements that are not connected to the feed line. They pick up energy and re-radiate it.",
+        "Making a parasitic element slightly longer than resonance makes it a reflector; making it slightly shorter makes it a director. The length controls the phase of the current induced in it, and that phase shift decides whether its re-radiated signal adds in front and cancels behind.",
+        "With normal spacing, a two-element Yagi made of a driven element and a reflector gives somewhat higher gain than one made of a driven element and a director, so most two-element beams use a reflector."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e9d-circular-and-dish",
+      "group": "E9D",
+      "title": "Circular polarization and dish gain",
+      "body": [
+        "Circular polarization, handy for satellites, can be made from two ordinary Yagis. Mount them on the same boom axis at right angles to each other (one horizontal, one vertical, often as a plus-sign crossed Yagi), with their driven elements at the same point on the boom, and feed them 90 degrees out of phase.",
+        "A parabolic dish's gain depends on how big it is compared with the wavelength. Gain goes up with the square of (dish diameter ÷ wavelength). Doubling the frequency halves the wavelength, which makes the same dish look twice as big, so gain goes up 4 times, or 6 dB."
+      ],
+      "formula": "dish gain ∝ (diameter ÷ λ)², so 2 × frequency = 4 × gain = 6 dB",
+      "status": "draft"
+    },
+    {
+      "id": "e9d-short-antennas",
+      "group": "E9D",
+      "title": "Electrically short antennas and loading coils",
+      "body": [
+        "A vertical shorter than a quarter wave (or operated below its resonant frequency) looks capacitive at the feed point, and its radiation resistance falls, often to just a few ohms. Every ohm of loss then steals a larger share of the power.",
+        "A loading coil adds inductive reactance that cancels the antenna's capacitive reactance, bringing it to resonance. The coil should have a high ratio of reactance to resistance (a high-Q coil) so it wastes little power: that maximizes efficiency.",
+        "Where you put the coil matters. A coil at the base leaves the whip above it carrying little current. Placing it near the center of the radiator keeps more current on the lower part, which is the most efficient spot for a whip. Top loading (a capacitance hat or horizontal wires on top) does the same thing even better: it keeps current high along the whole vertical section and improves radiation efficiency."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e9d-antenna-q",
+      "group": "E9D",
+      "title": "Antenna Q and SWR bandwidth",
+      "body": [
+        "Q compares the energy an antenna stores in its reactance with the energy it gets rid of each cycle through radiation and loss. A physically small antenna with a loading coil stores a lot and radiates little, so it has high Q.",
+        "High Q means a sharp, narrow resonance. As Q goes up, the SWR bandwidth goes down. That is why a coil-loaded mobile whip on 40 or 80 meters has a very narrow usable range, while a full-size dipole covers much more of the band."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e9d-rf-grounding",
+      "group": "E9D",
+      "title": "Why loss resistance matters so much on short antennas",
+      "body": [
+        "Efficiency is radiation resistance divided by total resistance. On a full-size quarter-wave vertical, radiation resistance is around 36 Ω, so a few ohms of loss hardly matter. On a short loaded whip the radiation resistance might be 2 or 3 Ω, so the same few ohms of coil or ground loss can waste most of the power.",
+        "That is why short antennas need low-loss coils, good RF ground connections, and as much of the radiator as possible carrying high current. Anything that lowers Q by adding loss widens the bandwidth, but only by burning up power."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e9e-yagi-matching",
+      "group": "E9E",
+      "title": "Matching Yagi driven elements: gamma and hairpin",
+      "body": [
+        "A Yagi's driven element often has a feed point impedance well below 50 Ω, so a matching system is needed.",
+        "Gamma match: the driven element stays in one piece and can be bolted straight to the metal boom. The coax shield connects to the center of the element, and the center conductor goes through a series capacitor to a rod (the gamma arm) that clamps onto the element a short distance to one side. The rod adds inductive reactance, and the series capacitor cancels it. Because it only needs one grounded point, a gamma match is also used to shunt feed a grounded tower as a vertical.",
+        "Beta or hairpin match: the driven element is split in the middle and must be insulated from the boom. A U-shaped hairpin of wire (an inductor) goes across the split. It only works when the element is made a little shorter than a half wave so its feed point is capacitive; the hairpin's inductance cancels that and raises the impedance to 50 Ω."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e9e-stub-and-qsection",
+      "group": "E9E",
+      "title": "Stubs and quarter-wave Q-sections",
+      "body": [
+        "A stub match uses a short length of transmission line connected in parallel with the feed line, at or near the feed point. The stub's length sets the reactance it adds, cancelling the load's reactance.",
+        "A quarter-wave Q-section (quarter-wave transformer) is a quarter-wavelength piece of line with a different characteristic impedance, placed in series between the load and the main feed line. The right impedance for it is the geometric mean (square root of the product) of the two impedances it joins. To match 100 Ω to 50 Ω: √(100 × 50) = 70.7 Ω, so common 75 Ω coax is the closest practical choice."
+      ],
+      "formula": "Z Q-section = √(Z load × Z line)",
+      "status": "draft"
+    },
+    {
+      "id": "e9e-reflection-coefficient",
+      "group": "E9E",
+      "title": "Reflection coefficient",
+      "body": [
+        "When a feed line's characteristic impedance does not match the load, part of the wave bounces back. The reflection coefficient describes that interaction between the load and the line: it is the ratio of the reflected voltage to the forward voltage, from 0 (perfect match) to 1 (everything reflected, as with an open or short).",
+        "SWR is calculated from the reflection coefficient. Characteristic impedance, velocity factor, and dielectric constant describe the line alone, not how it interacts with a particular load."
+      ],
+      "formula": "reflection coefficient = (ZL - Z0) ÷ (ZL + Z0), SWR = (1 + ρ) ÷ (1 - ρ)",
+      "status": "draft"
+    },
+    {
+      "id": "e9e-dividers-phasing",
+      "group": "E9E",
+      "title": "Power dividers and phasing lines",
+      "body": [
+        "A Wilkinson divider splits power equally between two 50 Ω loads while the input still looks like 50 Ω. It uses two quarter-wave line sections and a resistor between the outputs that keeps the two outputs isolated from each other. Hams use it to feed two antennas in a stacked array or combine two amplifiers. It has nothing to do with dividing frequency.",
+        "When an array has several driven elements, phasing lines are lengths of feed line that deliver the signal to each element with a chosen phase delay. The purpose is to control the array's radiation pattern: where it has gain and where it has nulls."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e9f-velocity-factor",
+      "group": "E9F",
+      "title": "Velocity factor and electrical length",
+      "body": [
+        "Radio waves travel at the speed of light in a vacuum (and almost that in air). Inside a feed line they slow down, because the insulating dielectric between the conductors holds them back. The velocity factor is the speed of the wave in the line divided by the speed of light.",
+        "The dielectric material has the biggest effect. Solid polyethylene coax is about 0.66, foam coax about 0.80 to 0.88, and air-insulated open-wire or ladder line about 0.95 to nearly 1.",
+        "Because the wave moves more slowly, a wavelength inside the line is shorter than in free space. So a piece of coax is electrically longer than its physical length. To cut a line to an electrical length: find the free-space length, then multiply by the velocity factor."
+      ],
+      "formula": "physical length = free-space length × VF, λ in meters = 300 ÷ f in MHz",
+      "status": "draft"
+    },
+    {
+      "id": "e9f-line-types",
+      "group": "E9F",
+      "title": "Open-wire line, foam coax, and microstrip",
+      "body": [
+        "Parallel conductor (open-wire, ladder) line has much lower loss than coax with a plastic dielectric, because most of the space between its wires is air and the wires are far apart. That makes it a favorite for multiband antennas with high SWR.",
+        "Foam dielectric coax, compared with solid dielectric coax of the same size, has lower loss per foot and a higher velocity factor, because foam is mostly air. The trade-off is a lower safe maximum voltage, since the thin foam can break down sooner under high RF voltage.",
+        "Microstrip is a precise printed circuit trace running over a ground plane on the other side of the board. Its width and the board material set a constant characteristic impedance, so it acts as a transmission line for interconnects at microwave frequencies."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e9f-stub-impedances",
+      "group": "E9F",
+      "title": "What open and shorted lines look like",
+      "body": [
+        "A transmission line changes impedance along its length, repeating every half wavelength. A shorted or open line section (a stub) acts like a circuit part whose value depends on its length.",
+        "• 1/2 wave: repeats whatever is at the far end. Shorted = very low impedance. Open = very high impedance.",
+        "• 1/4 wave: inverts what is at the far end. Shorted = very high impedance (like a parallel resonant circuit). Open = very low impedance (like a series resonant circuit).",
+        "• 1/8 wave (less than 1/4): shorted = inductive reactance (the short acts like a coil). Open = capacitive reactance (the open ends act like capacitor plates).",
+        "Memory aid: a short up close is a short; move a quarter wave away and it flips to an open. Shorter-than-quarter-wave stubs look like what a short or open is closest to: shorted gives an L, open gives a C."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e9g-smith-chart-purpose",
+      "group": "E9G",
+      "title": "What a Smith chart is for",
+      "body": [
+        "The Smith chart is a graphical calculator for transmission lines. Plot a load impedance on it, then move around the chart to see what that impedance becomes at any point along the line.",
+        "It is used to find impedance along a feed line, find SWR, and design matching networks, such as working out the length and position of a matching stub. It does not handle radiation patterns, antenna gain, propagation, or line loss from physical construction."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e9g-smith-chart-layout",
+      "group": "E9G",
+      "title": "The parts of a Smith chart (Figure E9-3)",
+      "body": [
+        "A Smith chart is built from two families: constant-resistance circles and constant-reactance arcs. Its coordinate system is resistance circles and reactance arcs.",
+        "• Resistance circles: all touch at the far right edge. Every point on one circle has the same resistance.",
+        "• Reactance arcs: curve out from the right edge. Every point on one arc has the same reactance. Arcs above the center line are inductive, below are capacitive.",
+        "• Resistance axis: the only straight line on the chart, running horizontally through the middle. Points on it are pure resistance (zero reactance), from 0 at the left edge to infinity at the right.",
+        "• Reactance axis: the large outer circle where the reactance arcs end. Points on it are pure reactance with zero resistance.",
+        "In Figure E9-3, notice the horizontal line with 0, 0.2, 0.5, 1.0, 2.0, 5.0 and 20 marked along it, and the big outer circle with the arcs ending on it."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e9g-normalizing-swr",
+      "group": "E9G",
+      "title": "Normalizing, SWR circles, and wavelength scales",
+      "body": [
+        "The center of the chart, the prime center, is marked 1.0. To use the chart for a real system you normalize it: assign the prime center's impedance to your line's characteristic impedance, usually 50 Ω. Then divide every impedance by 50 before plotting it.",
+        "When designing matching networks, a third family is often drawn: constant-SWR circles, centered on the prime center. Moving along a lossless line keeps you on the same SWR circle; only the impedance changes.",
+        "Around the outside are wavelength scales, marked in fractions of the transmission line's electrical wavelength. One full trip around the chart equals a half wavelength of line."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e9h-low-band-receiving",
+      "group": "E9H",
+      "title": "Why 160 and 80 meter receiving antennas are different",
+      "body": [
+        "On 160 and 80 meters, atmospheric and man-made noise is very high. Even a lossy antenna hears plenty of noise, so losses barely hurt the signal-to-noise ratio. What helps is directivity: hearing the desired direction while rejecting noise from everywhere else.",
+        "The figure of merit for this is receiving directivity factor (RDF): the antenna's peak gain compared with its average gain over the whole hemisphere around and above it. A high RDF means the antenna hears much more from the direction you want than from all the rest of the sky."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e9h-beverage",
+      "group": "E9H",
+      "title": "The Beverage antenna",
+      "body": [
+        "A Beverage is a long, low wire, just a few feet or so above ground, pointed toward the area you want to hear. It should be at least one wavelength long for good directivity; longer ones are more directive.",
+        "The receiver connects at the near end, and the far end (toward the target) goes to ground through a terminating resistor. Signals from the front travel along the wire toward the receiver. Signals from the rear travel the other way and are absorbed in the terminating resistor, so the antenna becomes unidirectional.",
+        "The right resistor value is the one that absorbs the backward wave with no reflection. You can tell you have it when the SWR at the feed end changes the least across the desired frequency range."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e9h-loops-df",
+      "group": "E9H",
+      "title": "Small loops for direction finding",
+      "body": [
+        "A small loop (much smaller than a wavelength) has a figure-eight pattern with sharp nulls off the flat sides, along the loop's axis. Nulls are sharper than peaks, so DF work uses the null. The catch is that there are two nulls 180 degrees apart, so the loop alone cannot tell front from back.",
+        "An electrostatic shield (a metal tube around the loop with a small gap) blocks unbalanced capacitive coupling between the loop and its surroundings. Without it, that stray coupling fills in the nulls; with it, the nulls are deeper and bearings are more accurate.",
+        "The voltage a receiving loop delivers goes up with the number of turns and with the area the loop encloses, so more turns or a bigger loop gives more output."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e9h-cardioid-sense",
+      "group": "E9H",
+      "title": "Cardioids and sense antennas",
+      "body": [
+        "A cardioid pattern has only one null. That single null makes it useful for direction finding, because it points to just one direction.",
+        "A sense antenna is a small vertical whose signal is added to a DF loop's signal. The combination turns the loop's two-null figure-eight into a cardioid with a null in only one direction, resolving the front-to-back confusion.",
+        "A single-turn loop with a terminating resistor, such as a pennant or flag antenna, also produces a cardioid pattern on its own, which makes it a popular compact low-band receiving antenna."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "E9A01": {
+      "why": "An isotropic radiator is an imaginary, lossless antenna that radiates equally in every direction. It cannot be built, which is why it is only used as a reference (dBi) for comparing antenna gain.",
+      "concept": "e9a-isotropic-dbi-dbd",
+      "status": "draft"
+    },
+    "E9A02": {
+      "why": "Subtract the feed line and duplexer losses from the antenna gain to get a net gain of 2.8 dB, then turn that into a power ratio. Gain in dBd gives ERP.",
+      "work": [
+        "Losses: 2 dB + 2.2 dB = 4.2 dB",
+        "Net gain: 7 dBd - 4.2 dB = 2.8 dB",
+        "Ratio: 10^(2.8 ÷ 10) = 10^0.28 ≈ 1.905",
+        "ERP: 150 W × 1.905 ≈ 286 W"
+      ],
+      "concept": "e9a-erp-eirp",
+      "status": "draft"
+    },
+    "E9A03": {
+      "why": "Effective radiated power is the transmitter power after all feed line and component losses and the antenna gain are counted. Apparent power and power factor are AC circuit terms, not antenna terms.",
+      "concept": "e9a-erp-eirp",
+      "status": "draft"
+    },
+    "E9A04": {
+      "why": "The ground reflection interacts with the antenna, so its feed point impedance changes with height above ground. Feed line length and tuner settings only change what the transmitter sees, not the antenna's own impedance.",
+      "concept": "e9a-ground-effects",
+      "status": "draft"
+    },
+    "E9A05": {
+      "why": "Ground gain is the extra signal strength at some elevation angles when waves reflected from the ground add to the direct wave. It has nothing to do with electrically grounding the antenna.",
+      "concept": "e9a-ground-effects",
+      "status": "draft"
+    },
+    "E9A06": {
+      "why": "Add up all three losses (8 dB) and subtract from the 10 dBd antenna gain for a net 2 dB gain. Gain in dBd gives ERP.",
+      "work": [
+        "Losses: 4 dB + 3.2 dB + 0.8 dB = 8 dB",
+        "Net gain: 10 dBd - 8 dB = 2 dB",
+        "Ratio: 10^(2 ÷ 10) = 10^0.2 ≈ 1.585",
+        "ERP: 200 W × 1.585 ≈ 317 W"
+      ],
+      "concept": "e9a-erp-eirp",
+      "status": "draft"
+    },
+    "E9A07": {
+      "why": "The losses total 6 dB, leaving a net 1 dB gain from the 7 dBi antenna. Because the antenna gain is in dBi, the result is EIRP.",
+      "work": [
+        "Losses: 2 dB + 2.8 dB + 1.2 dB = 6 dB",
+        "Net gain: 7 dBi - 6 dB = 1 dB",
+        "Ratio: 10^(1 ÷ 10) = 10^0.1 ≈ 1.259",
+        "EIRP: 200 W × 1.259 ≈ 252 W"
+      ],
+      "concept": "e9a-erp-eirp",
+      "status": "draft"
+    },
+    "E9A08": {
+      "why": "The Fresnel zone gets narrower as wavelength gets shorter, so the highest frequency listed, 5.8 GHz, has the smallest first Fresnel zone. 900 MHz has the largest.",
+      "concept": "e9a-fresnel",
+      "status": "draft"
+    },
+    "E9A09": {
+      "why": "Efficiency is the fraction of power actually radiated, which is radiation resistance divided by total resistance (radiation plus loss). The upside-down version would give a number larger than 1.",
+      "concept": "e9a-efficiency",
+      "status": "draft"
+    },
+    "E9A10": {
+      "why": "Ground radials give the return current a low-resistance path instead of lossy soil, cutting ground loss and raising efficiency. Shortening the radiator lowers its radiation resistance and makes efficiency worse.",
+      "concept": "e9a-efficiency",
+      "status": "draft"
+    },
+    "E9A11": {
+      "why": "Ground losses come from RF current flowing through the earth near the antenna, so they depend on how well the soil conducts. SWR and takeoff angle do not set how much power the ground turns into heat.",
+      "concept": "e9a-efficiency",
+      "status": "draft"
+    },
+    "E9A12": {
+      "why": "A half-wave dipole has 2.15 dB of gain over isotropic, so subtract 2.15 dB from the dBi figure to get gain over a dipole.",
+      "work": [
+        "dBd = dBi - 2.15",
+        "6 dBi - 2.15 dB = 3.85 dBd"
+      ],
+      "concept": "e9a-isotropic-dbi-dbd",
+      "status": "draft"
+    },
+    "E9B01": {
+      "why": "In Figure E9-1 the main lobe drops to the -3 dB ring at about 25 degrees on each side of 0 degrees. From one half-power point to the other is 50 degrees.",
+      "work": [
+        "Half-power points: about +25 and -25 degrees",
+        "Beamwidth: 25 + 25 = 50 degrees"
+      ],
+      "concept": "e9b-reading-patterns",
+      "status": "draft"
+    },
+    "E9B02": {
+      "why": "The main lobe is at 0 dB, and the trace straight behind at 180 degrees is at about -18 dB, so the front-to-back ratio is 18 dB.",
+      "concept": "e9b-reading-patterns",
+      "status": "draft"
+    },
+    "E9B03": {
+      "why": "The side lobes at 90 degrees reach about -14 dB compared with the 0 dB main lobe, so the front-to-side ratio is 14 dB.",
+      "concept": "e9b-reading-patterns",
+      "status": "draft"
+    },
+    "E9B04": {
+      "why": "In Figure E9-2 the main lobe reaches the 0 dB outer ring, while the response toward the back near 180 degrees is at about -28 dB. That difference is the front-to-back ratio.",
+      "concept": "e9b-elevation-pattern",
+      "status": "draft"
+    },
+    "E9B05": {
+      "why": "Figure E9-2 is a half-circle running from the horizon at 0 degrees up through 90 degrees overhead to 180 degrees, over real ground. It shows radiation at angles above the horizon, which is an elevation pattern.",
+      "concept": "e9b-elevation-pattern",
+      "status": "draft"
+    },
+    "E9B06": {
+      "why": "The strongest lobe in Figure E9-2 hugs the horizon, peaking about 7.5 degrees above it. The other lobes at higher angles are weaker.",
+      "concept": "e9b-elevation-pattern",
+      "status": "draft"
+    },
+    "E9B07": {
+      "why": "With no losses, both antennas radiate all the power they are given, so the totals are the same. A gain antenna only redirects that power toward some directions and away from others.",
+      "concept": "e9b-gain-and-far-field",
+      "status": "draft"
+    },
+    "E9B08": {
+      "why": "The far field is the region far enough from the antenna that the shape of the radiation pattern stops changing with distance. Field strength still drops as you move away, so it is not constant.",
+      "concept": "e9b-gain-and-far-field",
+      "status": "draft"
+    },
+    "E9B09": {
+      "why": "Antenna modeling programs such as NEC and EZNEC are built on the Method of Moments.",
+      "concept": "e9b-antenna-modeling",
+      "status": "draft"
+    },
+    "E9B10": {
+      "why": "The Method of Moments splits each wire into short segments and treats the current as uniform along each one. It solves for currents, not voltages across the segments.",
+      "concept": "e9b-antenna-modeling",
+      "status": "draft"
+    },
+    "E9B11": {
+      "why": "With too few segments the model cannot follow the real current along the wire, and the computed feed point impedance may be wrong. The real antenna's mechanics and harmonics are not affected by the model.",
+      "concept": "e9b-antenna-modeling",
+      "status": "draft"
+    },
+    "E9C01": {
+      "why": "At half-wave spacing with 180 degree phasing, the signals cancel broadside and add along the line joining the antennas. That gives a figure-eight end-fire along the array axis.",
+      "concept": "e9c-phased-verticals",
+      "status": "draft"
+    },
+    "E9C02": {
+      "why": "Quarter-wave spacing plus a 90 degree phase difference makes the signals add in one direction along the array and cancel in the other, producing a cardioid.",
+      "concept": "e9c-phased-verticals",
+      "status": "draft"
+    },
+    "E9C03": {
+      "why": "Fed in phase at half-wave spacing, the signals add broadside and cancel along the line between the antennas, giving a figure-eight broadside to the array. Feeding them out of phase would flip it to end-fire.",
+      "concept": "e9c-phased-verticals",
+      "status": "draft"
+    },
+    "E9C04": {
+      "why": "As a long wire gets longer, more lobes form and the main lobes swing closer to the direction of the wire itself. They move away from broadside, not toward it.",
+      "concept": "e9c-long-wires",
+      "status": "draft"
+    },
+    "E9C05": {
+      "why": "Moving the feed point off center finds a spot where the impedance is about the same on several harmonically related bands, so one balun and coax work on all of them.",
+      "concept": "e9c-multiband-wires",
+      "status": "draft"
+    },
+    "E9C06": {
+      "why": "The terminating resistor absorbs the wave that reaches the far end instead of letting it reflect back. With no reflected wave, the antenna radiates in one direction instead of two.",
+      "concept": "e9c-long-wires",
+      "status": "draft"
+    },
+    "E9C07": {
+      "why": "Splitting the current between two conductors raises the feed point impedance about four times a regular dipole's 73 Ω, to about 300 Ω.",
+      "work": [
+        "Impedance step-up = (number of conductors)² = 2² = 4",
+        "4 × 73 Ω ≈ 292 Ω, about 300 Ω"
+      ],
+      "concept": "e9c-folded-dipole",
+      "status": "draft"
+    },
+    "E9C08": {
+      "why": "A folded dipole is a half-wave dipole with a second parallel wire joining its two ends, making a narrow loop. Its pattern and gain are the same as a regular dipole.",
+      "concept": "e9c-folded-dipole",
+      "status": "draft"
+    },
+    "E9C09": {
+      "why": "The G5RV is a wire antenna center-fed through a set length of open-wire line, which then connects through a balun to coax. It uses no traps.",
+      "concept": "e9c-multiband-wires",
+      "status": "draft"
+    },
+    "E9C10": {
+      "why": "The Zepp is an end-fed half-wave dipole, named for its use trailing from Zeppelin airships. The other choices describe phased arrays or satellite antennas.",
+      "concept": "e9c-multiband-wires",
+      "status": "draft"
+    },
+    "E9C11": {
+      "why": "Seawater is a far better conductor than soil, so the ground reflection works better and a vertical gains radiation at low angles.",
+      "concept": "e9c-ground-and-height",
+      "status": "draft"
+    },
+    "E9C12": {
+      "why": "An extended double Zepp is center fed, with two 5/8-wave halves making 1.25 wavelengths in all. A plain double Zepp is two half waves, 1 wavelength total.",
+      "work": [
+        "2 × 5/8 λ = 10/8 λ = 1.25 λ"
+      ],
+      "concept": "e9c-multiband-wires",
+      "status": "draft"
+    },
+    "E9C13": {
+      "why": "Raising a horizontal antenna higher lowers the takeoff angle of its lowest lobe, which helps DX. The horizontal beamwidth is not what height mainly changes.",
+      "concept": "e9c-ground-and-height",
+      "status": "draft"
+    },
+    "E9C14": {
+      "why": "Looking downhill, the ground falls away, so the antenna acts as if it were higher. The main lobe's takeoff angle decreases in the downhill direction.",
+      "concept": "e9c-ground-and-height",
+      "status": "draft"
+    },
+    "E9D01": {
+      "why": "Dish gain goes up with the square of diameter divided by wavelength. Doubling the frequency halves the wavelength, which quadruples the gain, and 4 times is 6 dB.",
+      "work": [
+        "Gain ∝ (D ÷ λ)²",
+        "λ halves, so gain × 2² = × 4",
+        "10 × log10(4) ≈ 6 dB"
+      ],
+      "concept": "e9d-circular-and-dish",
+      "status": "draft"
+    },
+    "E9D02": {
+      "why": "Mount two Yagis on the same axis at right angles to each other, driven elements at the same point on the boom, and feed them 90 degrees apart. The two linear signals combine into circular polarization. Parallel elements would just stack the same polarization.",
+      "concept": "e9d-circular-and-dish",
+      "status": "draft"
+    },
+    "E9D03": {
+      "why": "A loading coil near the center of the whip keeps high current flowing in the lower half, where most of the radiation happens. At the base, the whip above the coil carries little current.",
+      "concept": "e9d-short-antennas",
+      "status": "draft"
+    },
+    "E9D04": {
+      "why": "A high reactance-to-resistance ratio means the coil does its job (adding reactance) with very little resistance to waste power as heat. That maximizes efficiency. It raises Q rather than lowering it.",
+      "concept": "e9d-short-antennas",
+      "status": "draft"
+    },
+    "E9D05": {
+      "why": "A Yagi's driven element is basically a half-wave dipole, about 1/2 wavelength long. The 234 formula is for a quarter-wave vertical.",
+      "concept": "e9d-yagi-basics",
+      "status": "draft"
+    },
+    "E9D06": {
+      "why": "Loading coils raise the antenna's Q, and higher Q means a narrower SWR bandwidth, no matter where the coil is placed.",
+      "concept": "e9d-antenna-q",
+      "status": "draft"
+    },
+    "E9D07": {
+      "why": "Top loading keeps current high along the whole vertical section, which raises radiation resistance and improves radiation efficiency.",
+      "concept": "e9d-short-antennas",
+      "status": "draft"
+    },
+    "E9D08": {
+      "why": "Higher Q means a sharper resonance, so the SWR bandwidth decreases.",
+      "concept": "e9d-antenna-q",
+      "status": "draft"
+    },
+    "E9D09": {
+      "why": "A short antenna looks capacitive. The loading coil adds inductive reactance that cancels it, bringing the antenna to resonance. It raises Q and adds some loss, rather than lowering them.",
+      "concept": "e9d-short-antennas",
+      "status": "draft"
+    },
+    "E9D10": {
+      "why": "Below its resonant frequency the whip is electrically shorter, and radiation resistance drops as an antenna gets electrically shorter.",
+      "concept": "e9d-short-antennas",
+      "status": "draft"
+    },
+    "E9D11": {
+      "why": "With normal spacing, a driven element plus a reflector gives a little more gain than a driven element plus a director, so most two-element Yagis use a reflector.",
+      "concept": "e9d-yagi-basics",
+      "status": "draft"
+    },
+    "E9D12": {
+      "why": "Making a parasitic element longer or shorter than resonance sets the phase of its current. That phase shift makes it act as a reflector or a director.",
+      "concept": "e9d-yagi-basics",
+      "status": "draft"
+    },
+    "E9E01": {
+      "why": "A beta or hairpin match connects across a split driven element, so the two halves must be insulated from the boom. A gamma match works with a one-piece element bolted to the boom.",
+      "concept": "e9e-yagi-matching",
+      "status": "draft"
+    },
+    "E9E02": {
+      "why": "In a gamma match the coax shield goes to the center of the element and the center conductor goes, through a capacitor, to a rod that taps the element partway out to one side.",
+      "concept": "e9e-yagi-matching",
+      "status": "draft"
+    },
+    "E9E03": {
+      "why": "A stub match is a short piece of transmission line connected in parallel with the feed line near the feed point. Its reactance cancels the load's reactance.",
+      "concept": "e9e-stub-and-qsection",
+      "status": "draft"
+    },
+    "E9E04": {
+      "why": "The gamma rod adds inductive reactance, and the series capacitor cancels it so the feed line sees a resistive load.",
+      "concept": "e9e-yagi-matching",
+      "status": "draft"
+    },
+    "E9E05": {
+      "why": "The hairpin is an inductor, so it needs a capacitive feed point to work against. That means the driven element is made a little shorter than a half wave.",
+      "concept": "e9e-yagi-matching",
+      "status": "draft"
+    },
+    "E9E06": {
+      "why": "A quarter-wave matching section needs an impedance equal to the square root of the two impedances multiplied together. That is 70.7 Ω, and 75 Ω line is the closest choice.",
+      "work": [
+        "Z = √(Z load × Z line)",
+        "Z = √(100 Ω × 50 Ω) = √5000 ≈ 70.7 Ω",
+        "Closest practical line: 75 Ω"
+      ],
+      "concept": "e9e-stub-and-qsection",
+      "status": "draft"
+    },
+    "E9E07": {
+      "why": "The reflection coefficient describes how much of the wave the load sends back up the line, so it depends on both the load and the line. Characteristic impedance and velocity factor describe the line alone.",
+      "concept": "e9e-reflection-coefficient",
+      "status": "draft"
+    },
+    "E9E08": {
+      "why": "A Wilkinson divider splits power equally between two 50 Ω loads while keeping a 50 Ω input. It divides power, not frequency.",
+      "concept": "e9e-dividers-phasing",
+      "status": "draft"
+    },
+    "E9E09": {
+      "why": "A gamma match only needs to tap onto the conductor partway up, so it can feed a tower whose base is grounded. A hairpin needs a split, insulated element.",
+      "concept": "e9e-yagi-matching",
+      "status": "draft"
+    },
+    "E9E11": {
+      "why": "Phasing lines deliver the signal to each driven element with a chosen phase, which controls where the array's signals add and cancel: its radiation pattern.",
+      "concept": "e9e-dividers-phasing",
+      "status": "draft"
+    },
+    "E9F01": {
+      "why": "Velocity factor is the speed of a wave in the line divided by the speed of light in a vacuum, so it is always less than 1.",
+      "concept": "e9f-velocity-factor",
+      "status": "draft"
+    },
+    "E9F02": {
+      "why": "The insulating dielectric between the conductors is what slows the wave, so it sets the velocity factor. Length and conductor resistance do not change the wave's speed.",
+      "concept": "e9f-velocity-factor",
+      "status": "draft"
+    },
+    "E9F03": {
+      "why": "Waves travel more slowly in coax than in air, so more wavelengths fit in the same physical length. That makes the cable electrically longer than it is physically.",
+      "concept": "e9f-velocity-factor",
+      "status": "draft"
+    },
+    "E9F04": {
+      "why": "A half-wave line repeats whatever is at its far end. A short at the far end looks like a very low impedance at the input.",
+      "concept": "e9f-stub-impedances",
+      "status": "draft"
+    },
+    "E9F05": {
+      "why": "Microstrip is a precise printed circuit trace over a ground plane that works as a constant-impedance transmission line at microwave frequencies. It is not coax at all.",
+      "concept": "e9f-line-types",
+      "status": "draft"
+    },
+    "E9F06": {
+      "why": "Find the free-space half wavelength at 14.10 MHz. Air-insulated line has a velocity factor so close to 1 that its physical length is almost exactly that, about 10.6 meters.",
+      "work": [
+        "λ = 300 ÷ 14.10 MHz ≈ 21.28 m",
+        "1/2 λ = 21.28 ÷ 2 ≈ 10.64 m",
+        "With a velocity factor near 1: about 10.6 m"
+      ],
+      "concept": "e9f-velocity-factor",
+      "status": "draft"
+    },
+    "E9F07": {
+      "why": "Parallel conductor line has mostly air between widely spaced wires, so it has lower loss than plastic-dielectric coax. It also has a higher velocity factor, not a lower one.",
+      "concept": "e9f-line-types",
+      "status": "draft"
+    },
+    "E9F08": {
+      "why": "All three differences are true: foam coax has lower loss and a higher velocity factor because foam is mostly air, but a lower safe voltage rating.",
+      "concept": "e9f-line-types",
+      "status": "draft"
+    },
+    "E9F09": {
+      "why": "A quarter-wave line inverts what is at its far end, so a short at the far end looks like a very high impedance at the input.",
+      "concept": "e9f-stub-impedances",
+      "status": "draft"
+    },
+    "E9F10": {
+      "why": "A shorted line less than a quarter wave long acts like an inductor, so a shorted 1/8-wave line presents an inductive reactance.",
+      "concept": "e9f-stub-impedances",
+      "status": "draft"
+    },
+    "E9F11": {
+      "why": "An open line less than a quarter wave long acts like a capacitor, so an open 1/8-wave line presents a capacitive reactance.",
+      "concept": "e9f-stub-impedances",
+      "status": "draft"
+    },
+    "E9F12": {
+      "why": "A quarter-wave line inverts what is at its far end, so an open at the far end looks like a very low impedance at the input.",
+      "concept": "e9f-stub-impedances",
+      "status": "draft"
+    },
+    "E9G01": {
+      "why": "The Smith chart is a transmission line calculator that shows how impedance changes along a line. It cannot find radiation patterns or propagation.",
+      "concept": "e9g-smith-chart-purpose",
+      "status": "draft"
+    },
+    "E9G02": {
+      "why": "A Smith chart's coordinates are resistance circles and reactance arcs. It has no voltage or current families.",
+      "concept": "e9g-smith-chart-layout",
+      "status": "draft"
+    },
+    "E9G03": {
+      "why": "Smith charts are used to find impedance and SWR along transmission lines. Beam headings and propagation are not on it.",
+      "concept": "e9g-smith-chart-purpose",
+      "status": "draft"
+    },
+    "E9G04": {
+      "why": "The two families on a Smith chart are resistance (circles) and reactance (arcs).",
+      "concept": "e9g-smith-chart-layout",
+      "status": "draft"
+    },
+    "E9G05": {
+      "why": "A common Smith chart job is working out the length and position of an impedance matching stub. It cannot find line impedance from physical dimensions, antenna gain, or line loss.",
+      "concept": "e9g-smith-chart-purpose",
+      "status": "draft"
+    },
+    "E9G06": {
+      "why": "The large outer circle, where every reactance arc ends, is the reactance axis. Points on it are pure reactance with zero resistance.",
+      "concept": "e9g-smith-chart-layout",
+      "status": "draft"
+    },
+    "E9G07": {
+      "why": "The horizontal line through the middle of the chart is the only straight line. It is the resistance axis, where reactance is zero.",
+      "concept": "e9g-smith-chart-layout",
+      "status": "draft"
+    },
+    "E9G08": {
+      "why": "You normalize a Smith chart by assigning the prime center an impedance, usually the line's 50 Ω, and dividing every other impedance by that value.",
+      "concept": "e9g-normalizing-swr",
+      "status": "draft"
+    },
+    "E9G09": {
+      "why": "Constant-SWR circles, centered on the prime center, are often added when designing matching networks. Moving along a lossless line stays on one SWR circle.",
+      "concept": "e9g-normalizing-swr",
+      "status": "draft"
+    },
+    "E9G10": {
+      "why": "Each arc joins points with the same reactance. The circles are the ones that show constant resistance.",
+      "concept": "e9g-smith-chart-layout",
+      "status": "draft"
+    },
+    "E9G11": {
+      "why": "The scales around the edge are in fractions of the transmission line's electrical wavelength. One full trip around the chart is a half wavelength of line.",
+      "concept": "e9g-normalizing-swr",
+      "status": "draft"
+    },
+    "E9H01": {
+      "why": "A Beverage needs to be at least one wavelength long for good directivity, and it is strung low, not high. Longer is better, not a quarter wave or less.",
+      "concept": "e9h-beverage",
+      "status": "draft"
+    },
+    "E9H02": {
+      "why": "On 160 and 80 meters atmospheric noise is so high that losses hardly change the signal-to-noise ratio. Directivity, rejecting noise from other directions, matters much more.",
+      "concept": "e9h-low-band-receiving",
+      "status": "draft"
+    },
+    "E9H03": {
+      "why": "Receiving directivity factor compares an antenna's peak gain with its average gain over the hemisphere around and above it. Front-to-back ratio is a different measure.",
+      "concept": "e9h-low-band-receiving",
+      "status": "draft"
+    },
+    "E9H04": {
+      "why": "The electrostatic shield removes unbalanced capacitive coupling between the loop and nearby objects, which would otherwise fill in the nulls. Deeper nulls give sharper bearings.",
+      "concept": "e9h-loops-df",
+      "status": "draft"
+    },
+    "E9H05": {
+      "why": "A small loop has two nulls 180 degrees apart, so it cannot tell by itself which of the two directions the signal comes from. Its nulls are actually quite sharp.",
+      "concept": "e9h-loops-df",
+      "status": "draft"
+    },
+    "E9H06": {
+      "why": "When the terminating resistor matches the wire, no wave reflects from the far end, so the SWR at the feed end changes the least across the frequency range.",
+      "concept": "e9h-beverage",
+      "status": "draft"
+    },
+    "E9H07": {
+      "why": "Signals from the rear travel along the wire toward the far end and are soaked up in the termination resistor, which makes the Beverage unidirectional.",
+      "concept": "e9h-beverage",
+      "status": "draft"
+    },
+    "E9H08": {
+      "why": "Adding a sense antenna's signal to a DF loop turns the two-null figure-eight into a cardioid with a null in only one direction, so the true bearing is clear.",
+      "concept": "e9h-cardioid-sense",
+      "status": "draft"
+    },
+    "E9H09": {
+      "why": "A terminated single-turn loop like a pennant or flag produces a cardioid pattern: strong one way, with a null in the opposite direction.",
+      "concept": "e9h-cardioid-sense",
+      "status": "draft"
+    },
+    "E9H10": {
+      "why": "A receiving loop's output voltage goes up with more turns and with a larger enclosed area.",
+      "concept": "e9h-loops-df",
+      "status": "draft"
+    },
+    "E9H11": {
+      "why": "A cardioid has a single null, so the null points to only one direction and removes the two-way uncertainty of a plain loop.",
+      "concept": "e9h-cardioid-sense",
+      "status": "draft"
+    }
+  }
+}

@@ -1,0 +1,463 @@
+{
+  "subelement": "T8",
+  "concepts": [
+    {
+      "id": "t8a-modulation-families",
+      "group": "T8A",
+      "title": "Modulation: how voice and data ride on a radio wave",
+      "body": [
+        "A plain radio wave carries no information. Modulation means changing something about that wave so it carries your voice or data. The two big families to know change either the wave's strength or its timing.",
+        "• Amplitude modulation (AM) varies the strength of the signal. Regular AM, single sideband (SSB), and even CW (switching the carrier on and off) all belong to this family.",
+        "• Frequency modulation (FM) and phase modulation (PM) keep the strength steady and instead nudge the frequency or phase back and forth. FM and PM sound the same on a normal FM receiver, so the pool often lumps them together as \"FM or PM.\"",
+        "Single sideband is AM with the parts you do not need trimmed away: the steady carrier and one of the two mirror-image sidebands are removed, leaving one sideband that holds all the voice information. Terms like spread spectrum, packet radio, and phase shift keying describe other techniques or data systems, not forms of AM."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t8a-where-modes-used",
+      "group": "T8A",
+      "title": "Which mode goes where",
+      "body": [
+        "Hams pick a mode to suit the job, and on VHF and UHF two patterns stand out.",
+        "• FM (or PM) is the standard for voice repeaters and for traditional VHF packet radio. It is simple to use, quiet between transmissions, and sounds clear when the signal is strong enough.",
+        "• SSB is the favorite for long-distance, weak-signal voice work on VHF and UHF. Because it packs all its power into a narrow slice of spectrum, it can be copied at signal levels where FM would be lost in the noise.",
+        "Other modes you may see as wrong answers, such as AM, PSK, or DRM (a digital broadcast system), are not the usual choices for these jobs."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t8a-ssb-vs-fm",
+      "group": "T8A",
+      "title": "SSB and FM: trade-offs",
+      "body": [
+        "SSB's big advantage over FM is its narrow bandwidth, about a fifth of an FM voice signal. That concentrates transmitter power and lets more stations share a band.",
+        "SSB is not easier to live with in every way. It must be tuned carefully or voices sound high or low pitched, while an FM signal is easy to tune in. Neither mode is especially bothered by SWR, and neither is automatically immune to interference.",
+        "FM has a well-known quirk called the capture effect: when two FM signals are on the same frequency, the receiver locks onto the stronger one and mostly suppresses the weaker. That makes FM sound clean, but it also means you can hear only one signal at a time. On SSB you can often hear two overlapping stations at once and pick out the one you want."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t8a-sideband-choice",
+      "group": "T8A",
+      "title": "Upper or lower sideband?",
+      "body": [
+        "An SSB signal uses either the upper sideband (USB), just above the carrier frequency, or the lower sideband (LSB), just below it. Both work, but hams follow a convention so everyone's radios match.",
+        "On 10 meters, and on all the VHF and UHF bands, SSB voice uses upper sideband. (By custom, the lower HF bands such as 160, 80, and 40 meters use lower sideband.) If your radio is on the wrong sideband, other stations sound like garbled nonsense.",
+        "\"Suppressed\" sideband and \"inverted\" sideband are not the names of normal operating choices."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t8a-bandwidth-ladder",
+      "group": "T8A",
+      "title": "How much spectrum each mode uses",
+      "body": [
+        "Bandwidth is how wide a slice of frequencies a signal occupies. More information per second generally needs more bandwidth. Learn this ladder from narrowest to widest:",
+        "• CW (Morse code): about 150 Hz",
+        "• SSB voice: about 3 kHz",
+        "• FM voice on a VHF repeater: about 10 to 15 kHz",
+        "• AM fast-scan television: about 6 MHz",
+        "CW is the narrowest because it only turns a single tone on and off. Speech needs roughly 300 to 3000 Hz of audio, so an SSB signal is about 3 kHz wide. FM spreads that audio out further, and full-motion TV carries so much picture information that it needs thousands of times more room. Slow-scan TV, by contrast, sends still pictures slowly and fits in about the same space as an SSB voice signal."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t8b-satellite-basics",
+      "group": "T8B",
+      "title": "Amateur satellites and low Earth orbit",
+      "body": [
+        "Amateur radio satellites act as repeaters in space. Most of them fly in low Earth orbit (LEO), a few hundred kilometers up. At that height a satellite circles the Earth in roughly 100 minutes, so a single pass over your station lasts only a few minutes to about fifteen minutes.",
+        "Different satellites use different modes. Some are FM voice repeaters that work with a handheld radio; others carry linear transponders that relay a whole slice of spectrum, where hams use SSB and CW; and many send data. So SSB, FM, and CW/data are all common.",
+        "A satellite's mode is often named with two band letters, uplink first and downlink second. V means the 2-meter band and U means the 70-centimeter band, so U/V mode means you transmit up on 70 cm and listen on 2 m. The letters have nothing to do with ultraviolet light."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t8b-beacons-telemetry",
+      "group": "T8B",
+      "title": "Beacons and telemetry",
+      "body": [
+        "A satellite beacon is a transmission from the satellite that carries information about the satellite itself. It is a signal, not an antenna, a light, or a reflector.",
+        "The data a beacon sends is called telemetry: the health and status of the spacecraft, such as battery voltage, temperatures, and solar panel currents. Ground stations use it to see how the satellite is doing.",
+        "Amateur telemetry is not secret. Anyone may receive and decode it, and many students and hams do just that. Only the command signals that control a satellite are allowed to be encrypted, to keep strangers from taking it over."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t8b-uplink-power",
+      "group": "T8B",
+      "title": "Uplink power: use only what you need",
+      "body": [
+        "A linear transponder shares one small transmitter among everyone using the satellite. If one station sends up a much stronger signal than needed, it grabs a large share of that limited downlink power and can crowd out or block other users.",
+        "So use only enough power to be heard. A handy check is to listen to your own signal on the downlink and compare it with the satellite's beacon. When your signal is about the same strength as the beacon, your uplink power is about right. Much weaker means too little; much stronger means you are hogging the transponder.",
+        "Too much power does not threaten the satellite's batteries or computer; the problem is unfairness to other users."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t8b-tracking",
+      "group": "T8B",
+      "title": "Satellite tracking programs",
+      "body": [
+        "Because a LEO satellite is above your horizon only briefly, hams use tracking software (on a computer, phone, or website) to know when and where to point.",
+        "The key input is a set of Keplerian elements, a short list of numbers that describes a satellite's orbit. They are published regularly and should be updated, because orbits slowly change.",
+        "From those elements the program predicts:",
+        "• A map showing the satellite's real-time position and ground track over Earth",
+        "• The time, azimuth (compass direction), and elevation (angle above the horizon) at the start of a pass, its highest point, and its end",
+        "• The apparent frequency you will hear, corrected for Doppler shift"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t8b-doppler-spin",
+      "group": "T8B",
+      "title": "Doppler shift and spin fading",
+      "body": [
+        "Doppler shift is an apparent change in frequency caused by motion between the transmitter and receiver, the same effect that makes a passing siren drop in pitch. As a satellite approaches, its signals arrive a little higher in frequency than normal; as it moves away they arrive lower. You have to retune during a pass, and tracking software can do it for you. Doppler shift has nothing to do with the satellite's orbit changing or its band plan.",
+        "Spin fading is a regular rise and fall in signal strength caused by the satellite and its antennas rotating as it travels. As the antennas turn, their pattern and polarization sweep past your station, so the signal pulses up and down."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t8c-direction-finding",
+      "group": "T8C",
+      "title": "Radio direction finding and fox hunts",
+      "body": [
+        "Radio direction finding (RDF) is the skill of figuring out where a signal is coming from. Hams use it to track down sources of noise, interference, or deliberate jamming.",
+        "The most important tool is a directional antenna, such as a small handheld Yagi or a loop, which hears best in one direction. Turn it until the signal peaks (or sometimes until it nulls out), take bearings from a few places, and see where the lines cross.",
+        "A hidden transmitter hunt, or fox hunt, turns RDF into a game: someone hides a transmitter and everyone tries to find it. SWR meters and wattmeters measure your own transmitter and feed line, so they do not help you find someone else's signal."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t8c-contesting",
+      "group": "T8C",
+      "title": "Contesting",
+      "body": [
+        "Contesting is an operating activity where the goal is to contact as many stations as possible (often in as many places as possible) within a set time period, such as a weekend.",
+        "Speed and clarity matter. Good contest practice is to send only what is needed: your full call sign and the required exchange, such as a signal report and location. Do not shorten your call to a couple of letters, do not work the same station twice just to be safe, and skip extra words like \"please copy.\""
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t8c-grid-locator",
+      "group": "T8C",
+      "title": "Grid locators",
+      "body": [
+        "A grid locator (also called a Maidenhead grid square) is a short letter-number code for a geographic location. For example, Lake City, Florida is in grid square EM80. It divides the Earth's surface into rectangles so stations can quickly describe where they are.",
+        "Grid squares are widely used on VHF and UHF, in contests, and in digital modes like FT8, where the exchange often includes your grid. It describes a place on the map, not an antenna direction, and it is not a piece of test equipment."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t8c-internet-linking",
+      "group": "T8C",
+      "title": "Linking radio over the internet: VoIP, IRLP, EchoLink",
+      "body": [
+        "Voice over Internet Protocol (VoIP) means sending voice as digital data over the internet. Several ham systems use it to link radios across long distances.",
+        "• IRLP (Internet Radio Linking Project) connects amateur radio systems, such as repeaters, through the internet. You reach it over the air from your radio by sending DTMF tones (the touch-tone keypad tones) to tell the node which other node to connect to.",
+        "• EchoLink also links stations over the internet, but it lets you connect from a computer or smartphone app, with no radio at all, and be heard through a distant repeater. Before using it you must register your call sign and provide proof that you hold a license. Any class of license works and the software is free.",
+        "An amateur station that connects other amateur stations to the internet is called a gateway. A repeater retransmits signals on another frequency, a digipeater relays digital packets, and a beacon simply transmits for others to observe."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t8d-digital-modes",
+      "group": "T8D",
+      "title": "Digital modes: a quick tour",
+      "body": [
+        "A digital mode sends information as coded data rather than as a continuous voice waveform. Hams use many of them, including packet radio, FT8, PSK (phase shift keying, which sends data by shifting the phase of the signal), and even IEEE 802.11, the Wi-Fi standard, adapted for ham use.",
+        "CW is simply another name for sending Morse code; the letters stand for continuous wave, the carrier that is switched on and off to form the dots and dashes.",
+        "Not every picture mode is digital. NTSC is the analog standard for fast-scan color television that was used for U.S. broadcast TV, and hams still use it for amateur TV."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t8d-weak-signal",
+      "group": "T8D",
+      "title": "FT8 and the WSJT-X suite",
+      "body": [
+        "FT8 is a digital mode designed to work at very low signal-to-noise ratios, meaning it can decode signals that are too weak to hear by ear. It sends short, structured messages in timed 15-second cycles.",
+        "FT8 is part of WSJT-X, a free software suite built for weak-signal work. Its other modes support activities such as Earth-Moon-Earth (bouncing signals off the Moon), weak signal propagation beacons that reveal band openings, and meteor scatter (bouncing signals off the ionized trails of meteors)."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t8d-packet-arq",
+      "group": "T8D",
+      "title": "Packet radio and error correction",
+      "body": [
+        "Packet radio breaks data into small bundles called packets. Each packet includes a header with call signs, including the station the data is going to, and a checksum, a calculated value that lets the receiver detect whether the data was damaged along the way.",
+        "When the receiver finds an error, it asks for that packet again. This is called ARQ (automatic repeat request): the receiving station detects errors and requests a retransmission until the data arrives intact. ARQ is not encryption, compression, or a video format."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t8d-aprs",
+      "group": "T8D",
+      "title": "APRS: stations on a map",
+      "body": [
+        "APRS (Automatic Packet Reporting System) uses packet radio to share information that can be shown on a map in real time. It is popular for tracking vehicles, balloons, and hikers, and for tactical communications at public service events, where organizers can see where each station is.",
+        "APRS can carry GPS position data, short text messages, and weather station data, among other things."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t8d-dmr",
+      "group": "T8D",
+      "title": "DMR digital voice",
+      "body": [
+        "DMR (Digital Mobile Radio) is a digital voice system widely used on ham repeaters. It uses time-division multiplexing: the channel is split into two alternating time slots that take turns many times a second.",
+        "Because of this, one 12.5 kHz DMR repeater channel can carry two separate conversations at the same time, one in each slot."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t8d-mesh",
+      "group": "T8D",
+      "title": "Amateur radio mesh networks",
+      "body": [
+        "An amateur radio mesh network is a data network built from ordinary commercial Wi-Fi equipment loaded with modified firmware so it can operate under amateur rules on ham frequencies that overlap the Wi-Fi bands.",
+        "Each node links to its neighbors, and data finds its own path through the network. Groups use mesh networks to carry cameras, messaging, and other data services, especially for emergency and event support. It is a data network, not a digital voice mode, satellite system, or repeater-linking protocol."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "T8A01": {
+      "why": "Single sideband is a form of amplitude modulation with the carrier and one sideband removed. Spread spectrum, packet radio, and phase shift keying are other techniques or systems, not forms of AM.",
+      "concept": "t8a-modulation-families",
+      "status": "draft"
+    },
+    "T8A02": {
+      "why": "Traditional VHF packet radio sends its data tones over an ordinary FM (or PM) voice radio. SSB, AM, and PSK are not the usual choice for VHF packet.",
+      "concept": "t8a-where-modes-used",
+      "status": "draft"
+    },
+    "T8A03": {
+      "why": "SSB concentrates its power in a narrow bandwidth, so it can be copied at weaker signal levels than FM. That makes it the favorite voice mode for long-distance, weak-signal work on VHF and UHF.",
+      "concept": "t8a-where-modes-used",
+      "status": "draft"
+    },
+    "T8A04": {
+      "why": "VHF and UHF voice repeaters almost all use FM or PM, which is simple to tune and quiet between transmissions. SSB and AM are not used on typical repeaters.",
+      "concept": "t8a-where-modes-used",
+      "status": "draft"
+    },
+    "T8A05": {
+      "why": "CW only switches a single tone on and off, so it needs about 150 Hz, far less than SSB voice (about 3 kHz), FM voice, or slow-scan TV.",
+      "concept": "t8a-bandwidth-ladder",
+      "status": "draft"
+    },
+    "T8A06": {
+      "why": "By convention, SSB on 10 meters and on all VHF and UHF bands uses upper sideband. Lower sideband is the custom on the lower HF bands, and suppressed or inverted sideband are not normal operating choices.",
+      "concept": "t8a-sideband-choice",
+      "status": "draft"
+    },
+    "T8A07": {
+      "why": "An SSB voice signal is about 3 kHz wide, much narrower than an FM voice signal. SSB is actually harder to tune in than FM, and it is not especially better against interference or high SWR.",
+      "concept": "t8a-ssb-vs-fm",
+      "status": "draft"
+    },
+    "T8A08": {
+      "why": "Speech needs audio up to about 3000 Hz, and SSB sends just one sideband of it, so a typical SSB voice signal is about 3 kHz wide.",
+      "concept": "t8a-bandwidth-ladder",
+      "status": "draft"
+    },
+    "T8A09": {
+      "why": "An FM voice signal on a VHF repeater occupies roughly 10 to 15 kHz. Less than 500 Hz fits CW, and 50 kHz or more is far wider than a repeater channel.",
+      "concept": "t8a-bandwidth-ladder",
+      "status": "draft"
+    },
+    "T8A10": {
+      "why": "Fast-scan TV sends full-motion pictures, which takes a lot of spectrum: about 6 MHz, the same width as an analog broadcast TV channel.",
+      "concept": "t8a-bandwidth-ladder",
+      "status": "draft"
+    },
+    "T8A11": {
+      "why": "A CW signal is a single on-off tone and needs only about 150 Hz. The 2.4 kHz choice is closer to an SSB voice signal, and 15 kHz is FM voice territory.",
+      "concept": "t8a-bandwidth-ladder",
+      "status": "draft"
+    },
+    "T8A12": {
+      "why": "Because of the capture effect, an FM receiver locks onto the strongest signal on the frequency and suppresses weaker ones, so you hear only one at a time. FM voice quality is usually good and FM is easier, not harder, to tune.",
+      "concept": "t8a-ssb-vs-fm",
+      "status": "draft"
+    },
+    "T8B01": {
+      "why": "Beacon telemetry reports the health and status of the satellite, such as battery voltage and temperatures. It does not report the strength of signals received from users or broadcast precise time.",
+      "concept": "t8b-beacons-telemetry",
+      "status": "draft"
+    },
+    "T8B02": {
+      "why": "A linear transponder shares its limited power among all users, so an overly strong uplink signal takes more than its share and can block other stations from using the satellite. It does not harm the satellite's batteries or computer.",
+      "concept": "t8b-uplink-power",
+      "status": "draft"
+    },
+    "T8B03": {
+      "why": "Tracking programs provide real-time maps of the satellite's position, the time, azimuth, and elevation for the start, peak, and end of each pass, and the Doppler-corrected frequency. All of the listed items are correct.",
+      "concept": "t8b-tracking",
+      "status": "draft"
+    },
+    "T8B04": {
+      "why": "Different amateur satellites use FM voice, SSB and CW through linear transponders, and various data modes, so all of the listed modes are common.",
+      "concept": "t8b-satellite-basics",
+      "status": "draft"
+    },
+    "T8B05": {
+      "why": "A satellite beacon is a transmission from the satellite that carries status (telemetry) information. It is not an antenna, an indicator light, or a reflector.",
+      "concept": "t8b-beacons-telemetry",
+      "status": "draft"
+    },
+    "T8B06": {
+      "why": "Keplerian elements are the set of numbers describing a satellite's orbit, and they are what a tracking program uses to predict passes. Transmitted power and Doppler observations are not the inputs it needs.",
+      "concept": "t8b-tracking",
+      "status": "draft"
+    },
+    "T8B07": {
+      "why": "Doppler shift is the apparent change in a signal's frequency caused by the satellite moving toward or away from your station. It is not an orbit change, a band mode, or a digital mode.",
+      "concept": "t8b-doppler-spin",
+      "status": "draft"
+    },
+    "T8B08": {
+      "why": "Satellite mode letters list the uplink band first and the downlink band second; U stands for 70 centimeters and V for 2 meters. So U/V means you transmit up on 70 cm and receive the downlink on 2 m. It has nothing to do with ultraviolet light.",
+      "concept": "t8b-satellite-basics",
+      "status": "draft"
+    },
+    "T8B09": {
+      "why": "Spin fading comes from the satellite and its antennas rotating, which makes the signal strength rise and fall regularly as the antenna pattern turns past you. Doppler shift changes frequency, not strength.",
+      "concept": "t8b-doppler-spin",
+      "status": "draft"
+    },
+    "T8B10": {
+      "why": "LEO stands for low Earth orbit. Satellites at that height circle the Earth in roughly 100 minutes.",
+      "concept": "t8b-satellite-basics",
+      "status": "draft"
+    },
+    "T8B11": {
+      "why": "Amateur satellite telemetry is open for anyone to receive and decode; no license or encryption key is needed. Only command signals to the satellite may be encrypted.",
+      "concept": "t8b-beacons-telemetry",
+      "status": "draft"
+    },
+    "T8B12": {
+      "why": "The satellite's beacon is a handy reference: if your signal on the downlink is about as strong as the beacon, your uplink power is about right. Much stronger means you are using more than your share of the transponder.",
+      "concept": "t8b-uplink-power",
+      "status": "draft"
+    },
+    "T8C01": {
+      "why": "Radio direction finding is the technique of determining where a signal comes from, so it is used to track down noise sources and jammers. Echolocation and Doppler radar work by bouncing out your own signal, not by locating someone else's transmitter.",
+      "concept": "t8c-direction-finding",
+      "status": "draft"
+    },
+    "T8C02": {
+      "why": "A directional antenna hears best in one direction, so turning it shows which way the hidden transmitter lies. SWR meters and wattmeters only measure your own station, so they do not help find another signal.",
+      "concept": "t8c-direction-finding",
+      "status": "draft"
+    },
+    "T8C03": {
+      "why": "Contesting is the activity of contacting as many stations as possible within a set time period. Nets, emergency exercises, and fox hunts have different goals.",
+      "concept": "t8c-contesting",
+      "status": "draft"
+    },
+    "T8C04": {
+      "why": "Good contest practice is to send only what is needed: your full call sign and the required exchange. Partial call signs, duplicate contacts, and extra words like \"please copy\" slow everyone down.",
+      "concept": "t8c-contesting",
+      "status": "draft"
+    },
+    "T8C05": {
+      "why": "A grid locator is a letter-number code, such as EM80 for Lake City, that identifies a geographic location. It is not an antenna direction or a piece of test equipment.",
+      "concept": "t8c-grid-locator",
+      "status": "draft"
+    },
+    "T8C06": {
+      "why": "IRLP nodes are controlled over the air with DTMF (touch-tone) signals from your radio's keypad. CTCSS tones only open a repeater's squelch and cannot select a destination node.",
+      "concept": "t8c-internet-linking",
+      "status": "draft"
+    },
+    "T8C07": {
+      "why": "VoIP is a way of carrying voice over the internet as digital data. It is not an identification rule, a DX spotting method, or a way to measure modulation.",
+      "concept": "t8c-internet-linking",
+      "status": "draft"
+    },
+    "T8C08": {
+      "why": "IRLP links amateur radio systems, such as repeaters, to one another through the internet. It does not provide web access over the air or spot DX.",
+      "concept": "t8c-internet-linking",
+      "status": "draft"
+    },
+    "T8C09": {
+      "why": "EchoLink lets a licensed ham connect from a computer or smartphone, with no radio, and be heard through a linked repeater. IRLP requires a radio to access its nodes, and D-STAR and DMR are digital radio modes.",
+      "concept": "t8c-internet-linking",
+      "status": "draft"
+    },
+    "T8C10": {
+      "why": "EchoLink only lets licensed amateurs connect, so you must register your call sign and provide proof of license first. The software is free, no training is required, and any license class qualifies.",
+      "concept": "t8c-internet-linking",
+      "status": "draft"
+    },
+    "T8C11": {
+      "why": "A gateway is an amateur station that connects other amateur stations to the internet. A repeater, digipeater, or beacon relays or transmits on the air but is not defined by an internet connection.",
+      "concept": "t8c-internet-linking",
+      "status": "draft"
+    },
+    "T8D01": {
+      "why": "Packet radio, IEEE 802.11 (Wi-Fi, used in ham mesh networks), and FT8 all send information as digital data, so all of the listed choices are digital modes.",
+      "concept": "t8d-digital-modes",
+      "status": "draft"
+    },
+    "T8D02": {
+      "why": "FT8 is a digital mode built to decode signals at very low signal-to-noise ratios, often too weak to hear. It is not FM voice, a repeater multiplex scheme, or a TV mode.",
+      "concept": "t8d-weak-signal",
+      "status": "draft"
+    },
+    "T8D03": {
+      "why": "APRS can carry GPS position reports, text messages, and weather station data, so all of the listed choices are correct.",
+      "concept": "t8d-aprs",
+      "status": "draft"
+    },
+    "T8D04": {
+      "why": "NTSC is the analog standard for fast-scan color television, the system long used for U.S. broadcast TV. It is not digital, encrypted, or a compression scheme.",
+      "concept": "t8d-digital-modes",
+      "status": "draft"
+    },
+    "T8D05": {
+      "why": "APRS is used for real-time tactical communications, showing each station's location on a map. It does not count PACTOR packets, link repeaters by VoIP, or report repeater sign-ins.",
+      "concept": "t8d-aprs",
+      "status": "draft"
+    },
+    "T8D06": {
+      "why": "PSK stands for phase shift keying, which sends data by shifting the phase of the signal.",
+      "concept": "t8d-digital-modes",
+      "status": "draft"
+    },
+    "T8D07": {
+      "why": "DMR uses two alternating time slots, so one 12.5 kHz repeater channel can carry two digital voice signals at once. It is not a position-tracking, logging, or dual-input system.",
+      "concept": "t8d-dmr",
+      "status": "draft"
+    },
+    "T8D08": {
+      "why": "Packet transmissions include a header with the destination call sign, a checksum to detect errors, and automatic repeat request (ARQ) to resend damaged packets. All of the listed items are included.",
+      "concept": "t8d-packet-arq",
+      "status": "draft"
+    },
+    "T8D09": {
+      "why": "CW is another name for Morse code transmission, made by switching a continuous-wave carrier on and off. It is not a propagation type, an FM digital mode, or an error-correction scheme.",
+      "concept": "t8d-digital-modes",
+      "status": "draft"
+    },
+    "T8D10": {
+      "why": "The WSJT-X suite includes modes for Earth-Moon-Earth, weak signal propagation beacons, and meteor scatter, so all of the listed activities are supported.",
+      "concept": "t8d-weak-signal",
+      "status": "draft"
+    },
+    "T8D11": {
+      "why": "With ARQ, the receiving station checks each block for errors and asks the sender to retransmit any that arrive damaged. It is not encryption, compression, or a video format.",
+      "concept": "t8d-packet-arq",
+      "status": "draft"
+    },
+    "T8D12": {
+      "why": "An amateur mesh network is a data network built from commercial Wi-Fi equipment running modified firmware. It is not a DMR voice mode, a satellite network, or a repeater-linking protocol.",
+      "concept": "t8d-mesh",
+      "status": "draft"
+    }
+  }
+}

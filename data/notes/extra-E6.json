@@ -1,0 +1,438 @@
+{
+  "subelement": "E6",
+  "concepts": [
+    {
+      "id": "e6a-doping",
+      "group": "E6A",
+      "title": "Doping: making N-type and P-type material",
+      "body": [
+        "Pure silicon is a poor conductor because every outer electron is locked into a bond with a neighboring atom. Manufacturers add tiny amounts of impurity atoms, called doping, to give it charge carriers that can move.",
+        "• Donor impurity: an atom with one extra outer electron (phosphorus or arsenic, for example). It donates a free electron. The result is N-type material, with excess free electrons as its majority carriers. N for negative.",
+        "• Acceptor impurity: an atom with one outer electron too few (boron or gallium, for example). It accepts an electron from the crystal and leaves a hole, a missing electron that behaves like a positive charge. The result is P-type material, with holes as majority carriers.",
+        "Silicon is not the only choice. Gallium arsenide (GaAs) is a compound semiconductor in which electrons move much more easily than in silicon, so GaAs devices keep working at far higher frequencies. That is why GaAs shows up in microwave circuits."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6a-pn-junction",
+      "group": "E6A",
+      "title": "The PN junction and its depletion region",
+      "body": [
+        "Where P-type and N-type material meet, some electrons and holes near the boundary cancel each other out. That leaves a thin zone with no free carriers, the depletion region, which acts like an insulator.",
+        "Forward bias (positive on the P side) pushes carriers toward the junction, the depletion region shrinks, and current flows once the voltage passes about 0.6 to 0.7 V for silicon.",
+        "Reverse bias does the opposite. The applied voltage pulls the holes in the P material and the electrons in the N material away from the junction, toward the battery terminals. The depletion region widens, and with no carriers left in the middle, almost no current can cross. Both P and N material conduct fine on their own; it is the widened carrier-free zone between them that blocks the current."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6a-bjt",
+      "group": "E6A",
+      "title": "Bipolar transistors: beta, alpha, and turn-on voltage",
+      "body": [
+        "A bipolar junction transistor (BJT) uses a small base current to control a much larger collector current.",
+        "• Beta is the common-emitter current gain: the change in collector current divided by the change in base current that caused it. A beta of 100 means 1 mA more base current gives 100 mA more collector current.",
+        "• Alpha is the common-base (grounded-base) current gain: collector current compared with emitter current. It is always just under 1.",
+        "Gain drops as frequency rises. The alpha cutoff frequency is where the grounded-base current gain has fallen to about 0.7 (0.707) of its value at 1 kHz. Beta cutoff is the same idea for the common-emitter gain, so do not mix them up.",
+        "The base-emitter junction is simply a silicon PN junction. When an NPN silicon transistor is biased on, you will measure about 0.6 to 0.7 volts from base to emitter. It is a voltage you measure, not a resistance, and 6 or 7 volts would be ten times too much."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6a-fet",
+      "group": "E6A",
+      "title": "Field-effect transistors: high input impedance, depletion and enhancement",
+      "body": [
+        "A field-effect transistor (FET) controls the current in a channel between source and drain with the voltage on its gate. The gate works through an electric field, so it draws almost no DC current. In a junction FET (JFET) the gate is a reverse-biased junction; in a MOSFET the gate is insulated from the channel by a thin layer of oxide.",
+        "Because the gate draws next to no current, an FET has a much higher DC input impedance than a bipolar transistor, whose forward-biased base-emitter junction must draw base current.",
+        "FETs come in two operating styles:",
+        "• Depletion mode: the channel already conducts with zero gate voltage. Gate voltage is used to deplete (narrow) the channel and reduce the current. All JFETs work this way.",
+        "• Enhancement mode: no current flows with zero gate voltage. Gate voltage has to create (enhance) the channel before current flows."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6a-mosfet-protection",
+      "group": "E6A",
+      "title": "Protecting a MOSFET gate from static",
+      "body": [
+        "A MOSFET's gate insulation is an extremely thin oxide layer. The same thinness that gives it very high input impedance makes it fragile: a static spark from your fingers can punch a hole through it and ruin the device.",
+        "To guard against this, many MOSFETs have Zener diodes built in (or added externally) between the gate and the source or drain. In normal operation the Zeners do nothing. If a static charge pushes the gate voltage past their breakdown point, they conduct and drain the charge away before the oxide is damaged. They are protection, not a bias reference or a heat control."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6a-fet-symbols",
+      "group": "E6A",
+      "title": "Reading the FET symbols in Figure E6-1",
+      "body": [
+        "Figure E6-1 shows six FETs in circles, each with gate (G), drain (D), and source (S) leads. Two details identify each one.",
+        "JFET or MOSFET? In a JFET the gate lead runs straight into the channel line and the arrow sits on the gate lead itself (symbols 1 and 6). In a MOSFET the gate is drawn as a separate line with a small gap between it and the channel, showing the insulation, and the arrow is on a small inner lead tied to the source (symbols 2 through 5). Two gate leads labeled G1 and G2 mean a dual-gate MOSFET (symbols 4 and 5).",
+        "N or P channel? Look at which way the arrow points. Arrow pointing in toward the channel means N-channel; arrow pointing out, away from the channel, means P-channel. Memory aid: N-channel arrows point iN.",
+        "• Symbol 1: arrow on the gate lead pointing out toward G, so a P-channel JFET.",
+        "• Symbol 6: arrow on the gate lead pointing in toward the channel, so an N-channel JFET.",
+        "• Symbol 4: two gates, with the inner arrow pointing in toward the channel, so an N-channel dual-gate MOSFET. Symbol 5 is the same shape with the arrow pointing out (P-channel).",
+        "• Symbols 2 and 3 are single-gate MOSFETs, N-channel and P-channel respectively."
+      ],
+      "status": "draft"
+    },
+
+    {
+      "id": "e6b-junction-diodes",
+      "group": "E6B",
+      "title": "Ordinary junction diodes and point-contact diodes",
+      "body": [
+        "A silicon junction diode drops about 0.6 to 0.7 V when conducting. The current through that drop turns into heat right at the junction. Too much current means too much heat, and it is the excessive junction temperature that destroys the diode. Too much reverse voltage is a different way to kill a diode (breakdown), not the cause of an overcurrent failure.",
+        "A point-contact diode uses a fine metal wire touching a small piece of semiconductor, much like the 'cat's whisker' of an old crystal set. The contact area is tiny, so the diode has very little capacitance and responds well at radio frequencies. It cannot handle much current or voltage, so its usual job is as an RF detector, not as a rectifier or a regulator."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6b-zener-varactor",
+      "group": "E6B",
+      "title": "Zener and varactor diodes: using reverse bias on purpose",
+      "body": [
+        "Both of these diodes are designed to be operated with reverse bias.",
+        "Zener diode: once the reverse voltage reaches its rated breakdown voltage, the Zener conducts and holds that voltage nearly constant even as the current through it changes a lot. That constant voltage drop over varying current is what makes it useful as a voltage reference or simple regulator.",
+        "Varactor diode: the depletion region of a reverse-biased junction is an insulator between two conducting regions, which is exactly a capacitor. More reverse voltage widens the depletion region and lowers the capacitance. A varactor is built to exploit this as a voltage-controlled capacitor, for electronic tuning and automatic frequency control.",
+        "Do not confuse these with the tunnel diode, whose special feature is a negative resistance region, or the silicon-controlled rectifier (SCR), which is a switch."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6b-schottky",
+      "group": "E6B",
+      "title": "Schottky diodes: metal meets semiconductor",
+      "body": [
+        "A Schottky barrier diode is not a PN junction. It is a junction between a metal and a semiconductor.",
+        "That construction gives two advantages:",
+        "• Lower forward voltage drop, typically around 0.2 to 0.4 V instead of 0.6 to 0.7 V. In a power supply rectifier, less voltage lost means less power wasted as heat.",
+        "• Very fast switching, because little stored charge has to be cleared out when the diode turns off. That makes Schottky diodes common as mixers and detectors at VHF and UHF.",
+        "Schottky diodes generally have lower reverse breakdown voltage than silicon junction diodes, so high reverse voltage is not their strength."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6b-pin",
+      "group": "E6B",
+      "title": "PIN diodes: RF switches and attenuators",
+      "body": [
+        "A PIN diode has a layer of undoped (intrinsic) silicon sandwiched between the P and N layers. That thick middle layer spreads the 'plates' apart, so the diode has very low junction capacitance. With reverse or zero bias, very little RF leaks through, which is why PIN diodes make good RF switches, for example in transmit/receive switching.",
+        "When forward DC bias current flows, carriers flood the intrinsic layer and its RF resistance drops. The more DC bias current, the lower the resistance. So the forward DC bias current is what controls how much a PIN diode attenuates an RF signal, letting it act as a switch or a smoothly variable attenuator."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6b-led",
+      "group": "E6B",
+      "title": "LEDs: band gap sets the voltage and color",
+      "body": [
+        "In an LED, electrons crossing the junction drop across an energy gap in the material, the band gap, and give off that energy as light.",
+        "A wider band gap means each electron must be pushed up a bigger energy step, so the forward voltage drop is higher and the light has more energy per photon (bluer color). Red LEDs drop roughly 1.8 to 2 V; blue and white ones about 3 V. The band gap of the semiconductor material is what sets the forward voltage."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6b-diode-symbols",
+      "group": "E6B",
+      "title": "Reading the diode symbols in Figure E6-2",
+      "body": [
+        "Every diode symbol in Figure E6-2 is a triangle pointing at a bar. The triangle is the anode side; the bar is the cathode. The special diode types are told apart mainly by the shape of that bar:",
+        "• Symbol 4: a plain straight bar. An ordinary rectifier diode.",
+        "• Symbol 3: the bar has a tail bent off at an angle, making it look a bit like a Z. A Zener diode.",
+        "• Symbol 6: both ends of the bar are bent over into small square hooks, making it look like a squared-off letter S. A Schottky diode. Memory aid: S-shaped bar, Schottky.",
+        "• Symbol 5: two small arrows leaving the diode. Light going out means an LED.",
+        "• Symbols 7 and 8 are drawn inside circles with an extra gate lead; these are thyristors (an SCR and a TRIAC), not simple diodes."
+      ],
+      "status": "draft"
+    },
+
+    {
+      "id": "e6c-comparator",
+      "group": "E6C",
+      "title": "Comparators and hysteresis",
+      "body": [
+        "A comparator compares an input voltage with a threshold (reference) voltage. Its output is either high or low; when the input crosses the threshold, the output changes state.",
+        "Problem: if the input creeps slowly across the threshold with a little noise on it, the noise can carry it back and forth across the line many times, and the output chatters.",
+        "Hysteresis fixes this. A bit of positive feedback gives the comparator two thresholds: a higher one the input must pass going up, and a lower one it must pass going down. Small noise wiggles are not big enough to cross back, so the output switches once, cleanly. The purpose is stability, not more sensitivity."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6c-logic-families",
+      "group": "E6C",
+      "title": "Logic families: CMOS, TTL, ECL, BiCMOS",
+      "body": [
+        "CMOS (complementary MOS) logic uses pairs of P-channel and N-channel MOSFETs stacked so that one is always off. When the output is sitting still at high or low, almost no current flows; power is used mainly while switching. That makes CMOS the lowest-power family, well below TTL, ECL, or NMOS. ECL is the fastest but the most power-hungry.",
+        "CMOS inputs switch at about half the supply voltage. With a 5 V supply, the switching point is about 2.5 V, so noise on the input or supply has to swing about half the supply voltage before it can cause a false change. That wide margin gives CMOS good noise immunity.",
+        "BiCMOS combines the two technologies on one chip: CMOS transistors at the inputs for high input impedance, and bipolar transistors at the outputs for low output impedance and strong drive. It is more complex, not cheaper, and it is still sensitive to static."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6c-tristate-pullup",
+      "group": "E6C",
+      "title": "Tri-state outputs and pull-up resistors",
+      "body": [
+        "A tri-state output has three possible states: 0 (low), 1 (high), and high impedance, where the output is effectively disconnected. The third state lets several chips share one set of wires (a bus); only the one that is talking drives the line while the rest step aside. It is not three-valued math.",
+        "When nothing is driving a line, for example an open switch, an open-collector output, or a tri-state output that is off, the line floats and can pick up noise. A pull-up resistor (to the positive supply) or pull-down resistor (to ground or the negative supply) gives the line a known voltage in that open-circuit condition. Anything actively driving the line easily overrides the resistor."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6c-fpga",
+      "group": "E6C",
+      "title": "Programmable logic: FPGAs",
+      "body": [
+        "A field-programmable gate array (FPGA) is a chip containing thousands of logic blocks with programmable connections between them. After manufacture, the user loads a configuration that wires them into whatever digital circuit is wanted, for example the signal processing in many software defined radios.",
+        "Designers do not draw every gate by hand. They describe what the circuit should do in a hardware description language (HDL), such as VHDL or Verilog, and software turns that description into the FPGA's configuration. Karnaugh maps are a pencil-and-paper method for simplifying small logic, and assembly language programs a processor, not an FPGA's wiring."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6c-gate-symbols",
+      "group": "E6C",
+      "title": "Reading the logic gate symbols in Figure E6-3",
+      "body": [
+        "Logic gate symbols are built from a few shapes:",
+        "• AND: a D shape, with a flat back where the inputs enter and a rounded front. Symbol 1.",
+        "• OR: a curved, scooped-in back and a front that comes to a point, like a shield or arrowhead. Symbol 3.",
+        "• A small circle (a bubble) at the output means the result is inverted.",
+        "Add a bubble to AND and you get NAND (not-AND), symbol 2. Add a bubble to OR and you get NOR (not-OR), symbol 4.",
+        "The NOT gate, or inverter, is a triangle with a single input and a bubble at its tip. It simply flips 1 to 0 and 0 to 1. That is symbol 5. Symbol 6 has two inputs and no bubble, so it is not an inverter."
+      ],
+      "status": "draft"
+    },
+
+    {
+      "id": "e6d-piezo",
+      "group": "E6D",
+      "title": "Piezoelectricity",
+      "body": [
+        "Some crystals, quartz being the best known, are piezoelectric. The effect works both ways:",
+        "• Squeeze or bend the crystal and it produces a voltage.",
+        "• Apply a voltage and the crystal physically flexes (a mechanical deformation).",
+        "Because a slab of quartz has a very precise natural vibration frequency, driving it with a voltage makes it ring mechanically at that frequency, and its vibration feeds a voltage back. That is how crystal oscillators and filters work. Piezoelectricity is about mechanical stress and voltage; it has nothing to do with light, magnetic fields, or incoming radio waves."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6d-crystal-circuit",
+      "group": "E6D",
+      "title": "The equivalent circuit of a quartz crystal",
+      "body": [
+        "Electrically, a quartz crystal behaves like a small network of ordinary parts:",
+        "• A series R, L, and C (the 'motional' arm). The crystal's mass acts like the inductance, its springiness like the capacitance, and its internal friction like the resistance.",
+        "• In parallel with that whole series arm, a shunt capacitance from the metal electrodes, the holder, and stray wiring.",
+        "This is why a crystal has two resonant frequencies close together: a series resonance of the RLC arm, and a slightly higher parallel resonance where the shunt capacitance comes into play."
+      ],
+      "formula": "series R-L-C, all in parallel with shunt C",
+      "status": "draft"
+    },
+    {
+      "id": "e6d-permeability-cores",
+      "group": "E6D",
+      "title": "Permeability and core materials",
+      "body": [
+        "Permeability is how easily a material carries magnetic flux. The inductance of a coil goes up in proportion to the permeability of its core, so permeability is the core property that sets inductance. (Permittivity is the matching property for electric fields and capacitors, so do not confuse the two.)",
+        "• Ferrite: high permeability, so it takes fewer turns to reach a given inductance. The trade-off is that its magnetic properties drift more with temperature.",
+        "• Powdered iron: lower permeability, so more turns are needed, but it has the best temperature stability of the common core materials. It is a favorite for tuned circuits and oscillators.",
+        "• Brass, the traditional non-magnetic slug metal: an RF current is induced in the metal slug, and that current sets up a field opposing the coil's own field. The result is less inductance. A brass slug is used to tune a coil downward, while a ferrite or powdered-iron slug raises inductance."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6d-core-losses",
+      "group": "E6D",
+      "title": "Eddy currents, laminations, and saturation",
+      "body": [
+        "A solid iron core is a conductor sitting inside a changing magnetic field, so currents are induced to swirl around inside it. These eddy currents waste power as heat. Building the core from thin layers (laminations) insulated from each other breaks up those current paths and cuts the loss. That is why power transformers have stacks of thin steel sheets.",
+        "A core can only carry so much magnetic flux. Push it past that limit with too much current or too many volts per turn and the core saturates: its permeability collapses, inductance drops sharply, current rises, and the waveform distorts. Saturation is caused by excessive magnetic flux, not by frequency."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6d-toroids-beads",
+      "group": "E6D",
+      "title": "Toroids and ferrite beads",
+      "body": [
+        "A toroid is a doughnut-shaped core with the wire wound around the ring. Nearly all of the magnetic field stays inside the core material instead of spilling out the ends as it does from a straight (solenoidal) coil. That means a toroidal inductor barely couples to nearby parts, so it can be mounted close to other components without shielding.",
+        "A ferrite bead is a small ferrite sleeve slipped over a wire or component lead. It is lossy at VHF and UHF, so it soaks up energy there while having little effect at HF. Placed on the input and output leads of a transistor HF amplifier, ferrite beads suppress parasitic oscillations at VHF and UHF."
+      ],
+      "status": "draft"
+    },
+
+    {
+      "id": "e6e-gaas-gan",
+      "group": "E6E",
+      "title": "Materials for UHF and microwave devices",
+      "body": [
+        "How fast electrons can move through a semiconductor, its electron mobility, sets how high in frequency a device can work. Gallium arsenide (GaAs) has much higher electron mobility than silicon, so GaAs transistors work well at UHF and microwaves and add little noise.",
+        "Gallium nitride (GaN) goes further still. It handles both very high frequencies and high power, and of the common choices it supports the highest operating frequency in MMICs.",
+        "Silicon nitride and silicon dioxide are insulators. They are used on chips as protective coatings and capacitor dielectrics, not as the active semiconductor."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6e-mmic",
+      "group": "E6E",
+      "title": "MMICs: amplifier building blocks",
+      "body": [
+        "A monolithic microwave integrated circuit (MMIC) is a complete RF amplifier, with its transistors, feedback, and matching, on one tiny chip. Designers like them because they offer controlled gain, a low noise figure, and a constant input and output impedance across a wide frequency range. You can drop one into a circuit like a building block.",
+        "That standard impedance is almost always 50 ohms in and out. MMICs are usually connected with microstrip: a circuit board trace running over a ground plane on the other side of the board, with a width chosen to form a 50 ohm transmission line.",
+        "The most common MMICs have no separate power pin. DC is fed into the output lead through a resistor and/or an RF choke, which lets the DC in while keeping the RF out of the power supply. Coupling capacitors on the input and output keep that DC out of the neighboring stages."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6e-noise-figure",
+      "group": "E6E",
+      "title": "Noise figure of a preamplifier",
+      "body": [
+        "Every amplifier adds some noise of its own. Noise figure, in dB, says how much it degrades the signal-to-noise ratio. A perfect, noiseless amplifier would have a noise figure of 0 dB, so real values are always positive.",
+        "A good low-noise UHF preamplifier has a noise figure of about 0.5 dB, and GaAs and similar devices can do even better. A negative noise figure is impossible, and dBm is a power level, not a noise figure."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6e-packages",
+      "group": "E6E",
+      "title": "IC and component packages",
+      "body": [
+        "Through-hole parts have leads that go through holes in the board. Surface-mount parts sit on pads on the board's surface.",
+        "• DIP (dual in-line package): the classic rectangular IC with two rows of pins along opposite sides. It is a through-hole package.",
+        "• PLCC, BGA (ball grid array), and SOT (small outline transistor) are all surface-mount packages.",
+        "• TO-220 is a through-hole power transistor or regulator package with a metal tab for a heat sink. Axial-lead parts have a lead out each end; radial-lead parts have both leads out one end."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6e-smt-rf",
+      "group": "E6E",
+      "title": "Why surface mount wins at VHF and above",
+      "body": [
+        "At VHF and higher, every bit of wire counts. A lead a few millimeters long has enough inductance to matter, and leads running side by side add stray capacitance. These unwanted parasitic effects detune circuits and cause instability.",
+        "A DIP's long leads are exactly the problem, which is why DIP ICs are not usually used at UHF and higher. Surface-mount parts have tiny leads or none at all, so they have the least parasitic inductance and capacitance of any package style. They also take up less board area and allow shorter traces, all of which help at RF."
+      ],
+      "status": "draft"
+    },
+
+    {
+      "id": "e6f-photoconductive",
+      "group": "E6F",
+      "title": "Photoconductivity",
+      "body": [
+        "In a photoconductive material, light knocks electrons loose from their bonds, creating extra free charge carriers. More carriers means the material conducts better, so its resistance decreases when light shines on it.",
+        "Photoconductive devices, such as the photocells in automatic night lights, are made from crystalline semiconductors. Cadmium sulfide is a classic example."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6f-photovoltaic",
+      "group": "E6F",
+      "title": "Photovoltaic cells (solar cells)",
+      "body": [
+        "The photovoltaic effect is the direct conversion of light into electrical energy. Light arrives as photons; electrons in the semiconductor absorb their energy and break free, and the built-in field of a PN junction sweeps them out as current.",
+        "• Material: silicon is by far the most common for power-generating cells.",
+        "• Voltage: a fully lit silicon cell produces about 0.5 V with no load connected. Panels wire many cells in series; about 36 cells gives the roughly 18 V of a '12 V' panel.",
+        "• Efficiency: the fraction of the light falling on the cell that is converted into electrical output. Typical silicon panels convert around 20 percent."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6f-optoisolator",
+      "group": "E6F",
+      "title": "Optoisolators and solid-state relays",
+      "body": [
+        "An optoisolator (optocoupler) is usually an LED and a phototransistor sealed facing each other in one package. The input current lights the LED, and the light turns on the phototransistor. The signal crosses as light, with no electrical connection between the two sides.",
+        "That gap provides electrical isolation. A low-voltage control circuit, and the person touching it, stays safely separated from a 120 VAC circuit being switched, and ground loops between the two sides are broken.",
+        "A solid-state relay uses semiconductors (such as a TRIAC or MOSFETs, often driven through an optoisolator) to do the job of an electromechanical relay. There are no moving contacts to wear, arc, or bounce."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e6f-encoder",
+      "group": "E6F",
+      "title": "Optical shaft encoders",
+      "body": [
+        "An optical shaft encoder senses rotation. A wheel with a pattern of slots or marks turns with the shaft, passing between a light source and a light sensor. Each time the pattern interrupts the light, the sensor puts out a pulse. Counting pulses tells how far the shaft turned, and a second offset sensor tells which direction.",
+        "The tuning knob on most modern transceivers is an optical encoder: it sends pulses to the radio's processor rather than turning a variable capacitor."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "E6A01": { "why": "Electrons move much more easily in gallium arsenide than in silicon, so GaAs devices keep working at microwave frequencies. It is not chosen for high-current rectifiers, audio power, or very low frequencies.", "concept": "e6a-doping", "status": "draft" },
+    "E6A02": { "why": "N-type material is doped with donor atoms that each contribute a free electron, so it has excess free electrons. P-type material has excess holes instead.", "concept": "e6a-doping", "status": "draft" },
+    "E6A03": { "why": "Reverse bias pulls the holes in the P side and the electrons in the N side away from the junction. The carrier-free depletion region widens and blocks current. Both P and N material conduct on their own, and the diode as a whole does not turn into an insulator.", "concept": "e6a-pn-junction", "status": "draft" },
+    "E6A04": { "why": "An acceptor impurity has one outer electron too few, so it accepts an electron from the crystal and leaves a hole. A donor impurity does the opposite and adds free electrons.", "concept": "e6a-doping", "status": "draft" },
+    "E6A05": { "why": "An FET's gate is either a reverse-biased junction or insulated by oxide, so it draws almost no DC current and has a much higher input impedance. A bipolar transistor's forward-biased base draws current, which makes its input impedance low.", "concept": "e6a-fet", "status": "draft" },
+    "E6A06": { "why": "Beta is the common-emitter current gain: the change in collector current divided by the change in base current. The frequency where gain falls to 0.707 is a cutoff frequency, not beta.", "concept": "e6a-bjt", "status": "draft" },
+    "E6A07": { "why": "The base-emitter junction is a silicon PN junction, which drops about 0.6 to 0.7 volts when forward biased and conducting. The test is a voltage, not a resistance, and 6 to 7 volts would be far too high.", "concept": "e6a-bjt", "status": "draft" },
+    "E6A08": { "why": "Grounded-base current gain is alpha, so the frequency where it falls to about 0.7 of its 1 kHz value is the alpha cutoff frequency. Beta cutoff refers to the common-emitter gain instead.", "concept": "e6a-bjt", "status": "draft" },
+    "E6A09": { "why": "A depletion-mode FET's channel conducts with no gate voltage applied; gate voltage is used to reduce the current. An FET with no current at zero gate voltage is enhancement mode.", "concept": "e6a-fet", "status": "draft" },
+    "E6A10": { "why": "Symbol 4 has two separate gate leads (G1 and G2) drawn with a gap from the channel, marking a dual-gate MOSFET, and its arrow points in toward the channel, marking N-channel. Symbol 5 is the P-channel version with the arrow pointing out.", "concept": "e6a-fet-symbols", "status": "draft" },
+    "E6A11": { "why": "Symbol 1 has its gate lead running straight into the channel with the arrow on the gate lead, which marks a JFET, and the arrow points out, which marks P-channel. Symbol 6 is the N-channel JFET with the arrow pointing in.", "concept": "e6a-fet-symbols", "status": "draft" },
+    "E6A12": { "why": "The thin gate oxide of a MOSFET is easily punctured by static. Zener diodes from gate to source or drain conduct when the voltage gets too high and drain the charge away, protecting the gate. They are not a bias reference or a heat control.", "concept": "e6a-mosfet-protection", "status": "draft" },
+
+    "E6B01": { "why": "A Zener diode holds a nearly constant voltage across itself while the current through it varies, which makes it a voltage reference or regulator. A voltage-variable capacitance describes a varactor, and negative resistance describes a tunnel diode.", "concept": "e6b-zener-varactor", "status": "draft" },
+    "E6B02": { "why": "A Schottky diode's forward voltage drop is lower than a silicon junction diode's, so less power is lost as heat when rectifying. Schottky diodes generally have lower, not higher, reverse breakdown voltage.", "concept": "e6b-schottky", "status": "draft" },
+    "E6B03": { "why": "The band gap of an LED's semiconductor material sets the energy each electron gives up as light, and therefore both the color and the forward voltage drop. Wider band gap means higher forward voltage.", "concept": "e6b-led", "status": "draft" },
+    "E6B04": { "why": "A varactor diode uses the depletion region of a reverse-biased junction as a capacitor whose value changes with the reverse voltage. A Zener regulates voltage, a tunnel diode has negative resistance, and an SCR is a switch.", "concept": "e6b-zener-varactor", "status": "draft" },
+    "E6B05": { "why": "The wide intrinsic layer of a PIN diode gives it very low junction capacitance, so little RF leaks through when it is switched off. That makes it a good RF switch. Power dissipation and breakdown voltage are not the key feature.", "concept": "e6b-pin", "status": "draft" },
+    "E6B06": { "why": "Schottky diodes switch very quickly and have low capacitance, so they are common as mixers and detectors at VHF and UHF. The other uses listed belong to tunnel diodes, varactors, and Zeners.", "concept": "e6b-schottky", "status": "draft" },
+    "E6B07": { "why": "Excess current means excess heat at the junction, and it is the excessive junction temperature that destroys the diode. Too much reverse voltage is a separate failure mode.", "concept": "e6b-junction-diodes", "status": "draft" },
+    "E6B08": { "why": "A Schottky barrier diode is formed by a junction between a metal and a semiconductor, not by a PN junction. A PIN diode has a PN junction with an intrinsic layer, and a thermionic diode is a vacuum tube.", "concept": "e6b-schottky", "status": "draft" },
+    "E6B09": { "why": "The tiny contact area of a point-contact diode gives it very low capacitance, so it works well as an RF detector. It cannot handle the current or voltage needed for rectifiers or regulators.", "concept": "e6b-junction-diodes", "status": "draft" },
+    "E6B10": { "why": "Symbol 6 has a cathode bar with both ends bent into small square hooks, forming an S shape, which marks a Schottky diode. Symbol 3, with its Z-like bent bar, is a Zener.", "concept": "e6b-diode-symbols", "status": "draft" },
+    "E6B11": { "why": "Forward DC bias current fills a PIN diode's intrinsic layer with carriers and lowers its RF resistance. Varying that bias current varies how much the diode attenuates the RF signal.", "concept": "e6b-pin", "status": "draft" },
+
+    "E6C01": { "why": "Hysteresis gives the comparator separate rising and falling thresholds, so noise on a slowly changing input cannot flip the output back and forth. It makes the output stable; it does not make the comparator more sensitive.", "concept": "e6c-comparator", "status": "draft" },
+    "E6C02": { "why": "A comparator's job is to signal which side of the threshold the input is on, so when the input crosses the threshold, the output changes state. Nothing is damaged and the reference does not appear at the output.", "concept": "e6c-comparator", "status": "draft" },
+    "E6C03": { "why": "Tri-state logic outputs can be 0, 1, or high impedance (effectively disconnected), which lets several devices share a bus. It has nothing to do with base-3 math or selectable output impedances.", "concept": "e6c-tristate-pullup", "status": "draft" },
+    "E6C04": { "why": "BiCMOS pairs CMOS inputs, with their high input impedance, and bipolar outputs, with their low output impedance and strong drive. It is not cheaper than CMOS and not immune to static, so 'all these choices' is wrong.", "concept": "e6c-logic-families", "status": "draft" },
+    "E6C05": { "why": "In CMOS one transistor of each pair is always off, so almost no current flows except while switching. That gives CMOS the lowest power consumption. ECL is fast but draws the most power.", "concept": "e6c-logic-families", "status": "draft" },
+    "E6C06": { "why": "CMOS inputs switch at about half the supply voltage, so noise must swing roughly half the supply before it can cause a false change. A threshold of twice the supply voltage would be impossible to reach.", "concept": "e6c-logic-families", "status": "draft" },
+    "E6C07": { "why": "A pull-up or pull-down resistor ties a line to the positive or negative supply so it has a known voltage when the input or output driving it is an open circuit. Anything actively driving the line easily overrides it.", "concept": "e6c-tristate-pullup", "status": "draft" },
+    "E6C08": { "why": "Symbol 2 is the D-shaped AND gate with a small inverting bubble at its output, which makes it NAND (not-AND). Symbol 1 is the plain AND gate without the bubble.", "concept": "e6c-gate-symbols", "status": "draft" },
+    "E6C09": { "why": "FPGA designs are written in a hardware description language such as VHDL or Verilog, and software converts that into the chip's configuration. Karnaugh maps are hand simplification, and assembly language programs processors.", "concept": "e6c-fpga", "status": "draft" },
+    "E6C10": { "why": "Symbol 4 is the OR gate shape, with a curved back and pointed front, plus an inverting bubble at the output, which makes it NOR. Symbol 3 is the plain OR gate.", "concept": "e6c-gate-symbols", "status": "draft" },
+    "E6C11": { "why": "Symbol 5 is a triangle with one input and a bubble at its tip, the NOT gate or inverter. Symbols 2 and 4 are NAND and NOR, which have two inputs.", "concept": "e6c-gate-symbols", "status": "draft" },
+
+    "E6D01": { "why": "Piezoelectric materials such as quartz produce a voltage when mechanically stressed and flex when a voltage is applied. The other choices describe effects involving light or radio waves, which are unrelated.", "concept": "e6d-piezo", "status": "draft" },
+    "E6D02": { "why": "A quartz crystal acts like a series R, L, and C representing its mechanical vibration, with a shunt capacitance from the electrodes and stray wiring connected in parallel across it. That combination gives it both a series and a parallel resonance.", "concept": "e6d-crystal-circuit", "status": "draft" },
+    "E6D03": { "why": "One half of the piezoelectric effect is that applying a voltage mechanically deforms the material. Magnetic fields and light are not involved; light-driven effects are photovoltaic and photoconductive.", "concept": "e6d-piezo", "status": "draft" },
+    "E6D04": { "why": "Changing magnetic flux induces eddy currents in a solid core, wasting power as heat. Thin insulated layers break up the current paths and reduce that loss.", "concept": "e6d-core-losses", "status": "draft" },
+    "E6D05": { "why": "Ferrite generally has higher permeability than powdered iron, so it takes fewer turns to reach a given inductance. Powdered iron, not ferrite, has the better temperature stability.", "concept": "e6d-permeability-cores", "status": "draft" },
+    "E6D06": { "why": "Inductance rises in proportion to the permeability of the core, the material's ability to carry magnetic flux. Permittivity is the matching property for electric fields and capacitors.", "concept": "e6d-permeability-cores", "status": "draft" },
+    "E6D08": { "why": "Powdered iron has the best temperature stability of its magnetic properties among common core materials. Ferrite's permeability drifts more with temperature, and brass and aluminum are not magnetic materials at all.", "concept": "e6d-permeability-cores", "status": "draft" },
+    "E6D09": { "why": "Ferrite beads on a transistor amplifier's leads are lossy at VHF and UHF, so they absorb parasitic oscillations there while hardly affecting the HF signal.", "concept": "e6d-toroids-beads", "status": "draft" },
+    "E6D10": { "why": "A toroid keeps most of its magnetic field inside the ring-shaped core, so it couples very little to nearby components. Easier coupling to other parts is the opposite of its advantage.", "concept": "e6d-toroids-beads", "status": "draft" },
+    "E6D11": { "why": "Brass is a non-magnetic conductor. RF currents induced in a brass slug create a field that opposes the coil's own field, lowering inductance. Ferrite raises inductance.", "concept": "e6d-permeability-cores", "reviewNote": "Aluminum, also offered as a choice, is likewise a non-magnetic conductor and would also lower inductance at RF by the same eddy-current effect. The pool keys brass (the traditional tuning-slug material), so the explanation teaches brass. Elmers may want to warn learners that aluminum is a trap here.", "status": "draft" },
+    "E6D12": { "why": "A core can only carry so much magnetic flux. Excessive flux, from too much current or too many volts per turn, saturates it and the inductance collapses. Frequency and permittivity are not the cause.", "concept": "e6d-core-losses", "status": "draft" },
+
+    "E6E01": { "why": "Electrons move faster through gallium arsenide than through silicon, and that higher electron mobility lets GaAs devices work at UHF and above. A higher noise figure or lower transconductance would be drawbacks, not advantages.", "concept": "e6e-gaas-gan", "status": "draft" },
+    "E6E02": { "why": "A DIP (dual in-line package) has two rows of pins that go through holes in the circuit board. PLCC, BGA, and SOT are surface-mount packages.", "concept": "e6e-packages", "status": "draft" },
+    "E6E03": { "why": "Gallium nitride supports the highest operating frequency of the materials listed. Silicon is slower, and silicon nitride and silicon dioxide are insulators, not the active semiconductor.", "concept": "e6e-gaas-gan", "status": "draft" },
+    "E6E04": { "why": "MMICs are designed as 50 ohm building blocks, matching standard coax and RF equipment. 75 ohms is common for TV cable but not typical for MMICs.", "concept": "e6e-mmic", "status": "draft" },
+    "E6E05": { "why": "A good low-noise UHF preamp adds very little noise, about 0.5 dB noise figure. Noise figure cannot be negative, and dBm is a power level, not a noise figure.", "concept": "e6e-noise-figure", "status": "draft" },
+    "E6E06": { "why": "MMICs are popular because they give controlled gain, low noise figure, and a constant input and output impedance across their rated frequency range. Nearly infinite gain and very high input impedance describe an op-amp.", "concept": "e6e-mmic", "status": "draft" },
+    "E6E07": { "why": "MMICs are usually wired with microstrip, a board trace over a ground plane sized to act as a 50 ohm transmission line. Coax, waveguide, and parallel wire are not practical for connecting to a tiny chip on a circuit board.", "concept": "e6e-mmic", "status": "draft" },
+    "E6E08": { "why": "The most common MMICs have no separate supply pin. DC is fed into the output lead through a resistor and/or RF choke, which keeps the RF out of the power supply.", "concept": "e6e-mmic", "status": "draft" },
+    "E6E09": { "why": "Surface-mount parts have tiny leads or none, so they have the least parasitic inductance and capacitance above HF. TO-220, axial, and radial parts all have longer leads.", "concept": "e6e-smt-rf", "status": "draft" },
+    "E6E10": { "why": "Surface-mount parts take less board area, allow shorter traces, and have less parasitic inductance and capacitance. All three help at RF, so all the choices are correct.", "concept": "e6e-smt-rf", "status": "draft" },
+    "E6E11": { "why": "DIP stands for dual in-line package: two rows of pins on opposite sides of the package. It does not mean two chips, double insulation, or dielectric isolation.", "concept": "e6e-packages", "status": "draft" },
+    "E6E12": { "why": "A DIP's long leads add inductance and stray capacitance that become a real problem at UHF and above. The epoxy does not become conductive, and dielectric loss is not the main issue.", "concept": "e6e-smt-rf", "status": "draft" },
+
+    "E6F01": { "why": "Electrons in the cell's semiconductor absorb the energy of incoming light and break free, producing current. Photons are the light itself, the carriers of the energy, not what absorbs it.", "concept": "e6f-photovoltaic", "status": "draft" },
+    "E6F02": { "why": "Light frees extra charge carriers in a photoconductive material, so it conducts better and its resistance decreases. Reflectivity is not what changes.", "concept": "e6f-photoconductive", "status": "draft" },
+    "E6F03": { "why": "Most optoisolators pair an LED with a phototransistor in one package, so the signal crosses as light. Lasers and photomultipliers are not used in these common parts.", "concept": "e6f-optoisolator", "status": "draft" },
+    "E6F04": { "why": "The photovoltaic effect is the direct conversion of light into electrical energy, as in a solar cell. A diode that emits light when voltage is applied is an LED, a different effect.", "concept": "e6f-photovoltaic", "status": "draft" },
+    "E6F05": { "why": "An optical shaft encoder detects rotation by passing a patterned wheel between a light and a sensor, producing pulses as the light is interrupted. It is what sits behind the tuning knob of most modern radios.", "concept": "e6f-encoder", "status": "draft" },
+    "E6F06": { "why": "Photoconductive devices are made from crystalline semiconductors, where light can free charge carriers. Argon is an inert gas, and polyphenol acetate is not a photoconductor, so 'all these choices' is wrong.", "concept": "e6f-photoconductive", "status": "draft" },
+    "E6F07": { "why": "A solid-state relay uses semiconductors to do the job of an electromechanical relay, with no moving contacts. A transistor driving a relay coil is still a mechanical relay.", "concept": "e6f-optoisolator", "status": "draft" },
+    "E6F08": { "why": "An optoisolator passes the control signal as light, so there is no electrical connection between the control circuit and the 120 VAC circuit being switched. That isolation protects the equipment and the operator.", "concept": "e6f-optoisolator", "status": "draft" },
+    "E6F09": { "why": "A photovoltaic cell's efficiency is the fraction of the light falling on it that gets converted into electrical current. RF power and lumens have nothing to do with it.", "concept": "e6f-photovoltaic", "status": "draft" },
+    "E6F10": { "why": "Silicon is by far the most common material in power-generating solar cells. Selenium and cadmium sulfide are used in light sensors, not most power cells.", "concept": "e6f-photovoltaic", "status": "draft" },
+    "E6F11": { "why": "A fully illuminated silicon photovoltaic cell produces about 0.5 volts open circuit. 0.7 volts is the familiar forward drop of a silicon diode, a tempting mix-up.", "concept": "e6f-photovoltaic", "status": "draft" }
+  }
+}

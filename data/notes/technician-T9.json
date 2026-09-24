@@ -1,0 +1,228 @@
+{
+  "subelement": "T9",
+  "concepts": [
+    {
+      "id": "t9a-directivity-gain",
+      "group": "T9A",
+      "title": "Directional antennas and what gain really means",
+      "body": [
+        "An antenna cannot create power. All it can do is decide where the transmitter's power goes. An antenna that squeezes most of the signal into one direction, and sends little elsewhere, is called a beam or directional antenna. The Yagi, with its row of parallel elements on a boom, is the classic ham beam.",
+        "Antenna gain is the increase in signal strength in a chosen direction compared with a reference antenna, such as an imaginary isotropic antenna that radiates equally in every direction, or a simple dipole. Gain in one direction is always paid for by weaker signal in other directions.",
+        "Of the common antennas you will meet, a Yagi beam has the most gain because it focuses energy the most. A 5/8-wave vertical and a J-pole have modest gain spread all around the horizon, and the isotropic antenna is the zero-gain yardstick everything else is measured against."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t9a-polarization",
+      "group": "T9A",
+      "title": "Polarization: which way the electric field points",
+      "body": [
+        "A radio wave has an electric field and a magnetic field at right angles to each other. By convention, polarization is named after the electric field. If the electric field is vertical, the wave is vertically polarized.",
+        "For a simple wire or whip, the electric field lines up with the element, so a vertical whip gives vertical polarization and a horizontal dipole gives horizontal polarization.",
+        "Stations on VHF and UHF work best when both ends use the same polarization. FM and repeater work is normally vertical; weak-signal SSB and CW work is normally horizontal."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t9a-dipole-resonance",
+      "group": "T9A",
+      "title": "The dipole: length, resonance, and pattern",
+      "body": [
+        "A half-wave dipole is a wire about half a wavelength long, fed in the middle. It is resonant at the frequency where its length matches that half wavelength. Wavelength and frequency go opposite ways, so a shorter antenna is resonant at a higher frequency and a longer antenna at a lower frequency. Trimming a dipole raises its resonant frequency.",
+        "A dipole radiates best broadside, meaning out from the sides of the wire at right angles to it. Very little signal goes off the ends.",
+        "Sometimes an antenna must be physically shorter than resonance calls for. Loading fixes that: a coil (inductor) inserted in the element makes it act electrically longer, and a capacitance 'hat' on the ends does the same thing. Both lower the resonant frequency. A resistor does not make an antenna resonant; it just wastes power as heat.",
+        "Useful approximations: half-wave dipole length in feet ≈ 468 ÷ frequency in MHz; quarter-wave vertical length in feet ≈ 234 ÷ frequency in MHz."
+      ],
+      "formula": "Half-wave (feet) ≈ 468 ÷ MHz; quarter-wave (feet) ≈ 234 ÷ MHz",
+      "status": "draft"
+    },
+    {
+      "id": "t9a-mobile-verticals",
+      "group": "T9A",
+      "title": "Vertical whips for VHF and UHF mobile",
+      "body": [
+        "The simplest mobile antenna is a quarter-wave whip standing over a metal car roof, which acts as the other half of the antenna. On the 2 meter band a quarter wavelength is about 19 inches, which is why 19-inch whips are so common there. It is resonant, not a gain antenna.",
+        "A 5/8-wavelength whip is longer and usually has a matching coil at its base. It concentrates more energy toward the horizon, at a lower angle, so it has more gain than a quarter-wave whip. That low angle is where the repeaters and other stations are."
+      ],
+      "formula": "Quarter-wave (feet) ≈ 234 ÷ MHz",
+      "status": "draft"
+    },
+    {
+      "id": "t9a-handheld-antennas",
+      "group": "T9A",
+      "title": "Handheld antennas and the car problem",
+      "body": [
+        "The short, flexible 'rubber duck' on a handheld is a compromise for convenience. It is much shorter than a full quarter wave, so it relies on loading, and much of the power is lost as heat instead of being radiated. The result is low efficiency: less signal out and weaker reception than a full-size antenna.",
+        "A car body is a metal box that blocks radio signals. Using a handheld inside a vehicle with no outside antenna greatly reduces signal strength both ways. Connecting the handheld to an antenna mounted outside the car fixes this."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t9b-coax-basics",
+      "group": "T9B",
+      "title": "Coaxial cable: the everyday feed line",
+      "body": [
+        "A feed line carries RF between the radio and the antenna. Coaxial cable (coax) is a center conductor inside an insulator, surrounded by a braided or foil shield and a plastic jacket.",
+        "Coax is the favorite of hams because it is easy to work with. The shield keeps the signal inside, so coax can be taped to a tower, run near metal, or buried with few special precautions. It is not the lowest-loss or cheapest line; it is simply the most convenient.",
+        "Most amateur coax, and the output of nearly every ham transceiver, is 50 ohms. (75-ohm coax is common for cable TV.) This impedance is set by the cable's construction, not its length, and it does not change with frequency."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t9b-feedline-loss",
+      "group": "T9B",
+      "title": "Feed line loss: where your watts go",
+      "body": [
+        "Every feed line turns some of your signal into heat. For coax, the loss gets larger as the frequency goes up, so a run that is fine on HF may waste a lot of power on UHF.",
+        "Thicker cable has less loss. RG-213 is about half an inch thick and has noticeably less loss than the thin RG-58 at the same frequency; it also handles more power. Air-insulated hardline, with a solid metal outer shield and mostly air inside, has the lowest loss of all and is used for long runs at VHF and up.",
+        "Other things add loss: water that seeps into connectors and cable, a high SWR (the reflected power travels up and down the line and loses a little more each trip), and every extra connector or adapter in the line."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t9b-swr-matching",
+      "group": "T9B",
+      "title": "SWR, matching, and antenna tuners",
+      "body": [
+        "Standing wave ratio (SWR) tells you how well the load, usually your antenna, is matched to the feed line. A perfect match is 1:1, meaning all the power goes into the antenna. A mismatch sends some power back toward the radio, and the SWR rises.",
+        "An antenna tuner (also called an antenna coupler) sits between the radio and the feed line. It transforms whatever impedance the antenna system presents into the 50 ohms the transmitter wants to see. It does not fix the antenna itself; it just keeps the radio happy.",
+        "SWR that jumps around for no obvious reason usually points to a loose or intermittent connection in the antenna or feed line. Check connectors and joints first."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t9b-connectors",
+      "group": "T9B",
+      "title": "RF connectors and weatherproofing",
+      "body": [
+        "• PL-259 (the plug that mates with an SO-239 jack): a threaded connector very common on HF and VHF radios. It is not waterproof and is not a good choice at UHF and microwave frequencies.",
+        "• Type N: a larger threaded connector that keeps a steady impedance and low loss well above 400 MHz, so it is the choice for UHF and microwave. It can be made weather-resistant, but still needs care outside.",
+        "• BNC: a small bayonet connector (push and twist) common on handhelds and test equipment.",
+        "Any connector used outdoors, whether PL-259, BNC, or Type N, should be carefully sealed and taped. Water inside a connector raises loss and corrodes the cable. Names like DB-25 belong to computer data connectors, not RF feed lines."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "T9A01": {
+      "why": "A beam antenna focuses signal in one direction, which is what gives it gain that way. The name has nothing to do with aluminum beams or an inventor, and it does not split the signal into two rays.",
+      "concept": "t9a-directivity-gain",
+      "status": "draft"
+    },
+    "T9A02": {
+      "why": "Loading means making an antenna act electrically longer than it physically is, most often by adding a coil (inductor) in the radiating element. A resistor only wastes power as heat, and springs or stronger elements are mechanical, not electrical.",
+      "concept": "t9a-dipole-resonance",
+      "status": "draft"
+    },
+    "T9A03": {
+      "why": "Polarization is defined by the direction of the wave's electric field. The magnetic field is at right angles to it, so using it would give the opposite answer.",
+      "concept": "t9a-polarization",
+      "status": "draft"
+    },
+    "T9A04": {
+      "why": "A short flexible handheld antenna is much shorter than a quarter wave, so it loses a good share of the power as heat and radiates less. That low efficiency is its main drawback; it works fine with digital signals and is not circularly polarized.",
+      "concept": "t9a-handheld-antennas",
+      "status": "draft"
+    },
+    "T9A05": {
+      "why": "Resonant frequency goes up as the antenna gets shorter, because a higher frequency has a shorter wavelength. Lengthening it, adding series coils, or adding capacitive end loading all lower the resonant frequency instead.",
+      "concept": "t9a-dipole-resonance",
+      "status": "draft"
+    },
+    "T9A06": {
+      "why": "A Yagi is a directional beam that concentrates energy in one direction, giving it the most gain of this group. The isotropic antenna is the zero-gain reference, and the 5/8-wave vertical and J-pole spread their signal all around the horizon.",
+      "concept": "t9a-directivity-gain",
+      "status": "draft"
+    },
+    "T9A07": {
+      "why": "The metal body of a car blocks much of the radio signal, so a handheld used inside with no outside antenna has reduced signal strength in and out. It does not overheat or change bandwidth because of this.",
+      "concept": "t9a-handheld-antennas",
+      "status": "draft"
+    },
+    "T9A08": {
+      "why": "On 2 meters, a quarter wavelength works out to about 19 inches, so a 19-inch whip is a resonant quarter-wave antenna. A half wave would be about twice as long, and a quarter-wave whip has no special gain.",
+      "work": [
+        "2 meter band: about 146 MHz",
+        "Quarter wave ≈ 234 ÷ 146 ≈ 1.60 feet",
+        "1.60 feet × 12 ≈ 19.2 inches, about 19 inches"
+      ],
+      "concept": "t9a-mobile-verticals",
+      "status": "draft"
+    },
+    "T9A09": {
+      "why": "A 5/8-wave whip pushes more of its energy toward the horizon, giving it more gain than a quarter-wave whip. It radiates at a lower angle, not a higher one, and it is not chosen for lower SWR or impedance.",
+      "concept": "t9a-mobile-verticals",
+      "status": "draft"
+    },
+    "T9A10": {
+      "why": "A half-wave dipole radiates most strongly broadside, at right angles to the wire. Very little goes off the ends, and it is not equal in all directions.",
+      "concept": "t9a-dipole-resonance",
+      "status": "draft"
+    },
+    "T9A11": {
+      "why": "Antenna gain is the increase in signal strength in a specified direction compared with a reference antenna. It is not extra power added to the transmitter; the antenna only redistributes the power it is given.",
+      "concept": "t9a-directivity-gain",
+      "status": "draft"
+    },
+    "T9B01": {
+      "why": "None of the common RF connectors, including PL-259, BNC, and Type N, is reliably watertight on its own, so all of them should be sealed and taped outdoors. Water inside a connector increases loss and causes corrosion.",
+      "concept": "t9b-connectors",
+      "status": "draft"
+    },
+    "T9B02": {
+      "why": "Most ham transceivers and the coax used with them are 50 ohms. 75-ohm cable is used for TV, and 8 or 12 ohms are nowhere near normal coax values.",
+      "concept": "t9b-coax-basics",
+      "status": "draft"
+    },
+    "T9B03": {
+      "why": "Coax is popular because it is easy to use: its shield lets it run near metal or be taped and buried with few special precautions. It is not the lowest-loss, highest-power, or cheapest feed line.",
+      "concept": "t9b-coax-basics",
+      "status": "draft"
+    },
+    "T9B04": {
+      "why": "An antenna tuner transforms the impedance of the antenna system into the impedance the transceiver expects, usually 50 ohms. It does not tune in stations, switch antennas, or handle transmit and receive switching.",
+      "concept": "t9b-swr-matching",
+      "status": "draft"
+    },
+    "T9B05": {
+      "why": "Coax loses more of the signal as the frequency goes up. The characteristic impedance is set by the cable's construction and stays the same.",
+      "concept": "t9b-feedline-loss",
+      "status": "draft"
+    },
+    "T9B06": {
+      "why": "Type N connectors keep low loss and a steady impedance well above 400 MHz, so they are preferred for UHF and microwave. PL-259s become lossy up there, and DB-25 is a computer data connector; RS-213 is not a connector at all.",
+      "concept": "t9b-connectors",
+      "status": "draft"
+    },
+    "T9B07": {
+      "why": "PL-259 connectors are the everyday threaded connector on HF and VHF gear. They are not watertight, not favored for microwaves, and they screw on rather than using a bayonet lock like a BNC.",
+      "concept": "t9b-connectors",
+      "status": "draft"
+    },
+    "T9B08": {
+      "why": "Water in the connectors, a high SWR, and a string of extra connectors all add loss to a coax run, so every listed choice is a source of loss.",
+      "concept": "t9b-feedline-loss",
+      "status": "draft"
+    },
+    "T9B09": {
+      "why": "A loose or intermittent connection in the antenna or feed line makes the match change from moment to moment, so the SWR jumps around. Over-modulation and a strong nearby station affect the signal, not the antenna match.",
+      "concept": "t9b-swr-matching",
+      "status": "draft"
+    },
+    "T9B10": {
+      "why": "RG-213 is a thicker cable than RG-58, so it has less loss at the same frequency (and handles more power too). They are both single-shield 50-ohm cables, but they are not interchangeable in performance.",
+      "concept": "t9b-feedline-loss",
+      "status": "draft"
+    },
+    "T9B11": {
+      "why": "Air-insulated hardline has a solid outer conductor and mostly air as insulation, which gives it the lowest loss of these choices. Flexible coax of either impedance loses more.",
+      "concept": "t9b-feedline-loss",
+      "status": "draft"
+    },
+    "T9B12": {
+      "why": "SWR measures how well a load, such as an antenna, is matched to the feed line. It says nothing directly about amplifier gain, transmitter efficiency, or station grounding.",
+      "concept": "t9b-swr-matching",
+      "status": "draft"
+    }
+  }
+}

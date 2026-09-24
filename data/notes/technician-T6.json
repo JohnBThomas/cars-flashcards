@@ -1,0 +1,501 @@
+{
+  "subelement": "T6",
+  "concepts": [
+    {
+      "id": "t6a-resistor",
+      "group": "T6A",
+      "title": "Resistors: parts that oppose current",
+      "body": [
+        "A resistor is a part made on purpose to oppose the flow of current. In a DC circuit it limits how much current flows for a given voltage, turning the extra energy into a little heat. Resistance is measured in ohms.",
+        "Resistors come in many kinds. A fixed resistor has one value that never changes. A power resistor is simply a larger fixed resistor built to get rid of more heat. Neither can be adjusted.",
+        "Do not confuse the resistor with its neighbors: an inductor is a coil that stores energy in a magnetic field, a transformer changes AC voltage levels, and an inverter turns DC into AC. Only the resistor's main job is to oppose current."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t6a-potentiometer",
+      "group": "T6A",
+      "title": "Potentiometers: adjustable resistors",
+      "body": [
+        "A potentiometer (often called a pot) is a resistor you can adjust. It has a strip of resistive material and a sliding contact, called the wiper, that moves along the strip when you turn a knob or push a slider.",
+        "Moving the wiper changes how much of the strip the current must pass through, so what a potentiometer controls is resistance. It does not change inductance, capacitance, or anything else.",
+        "The classic use is a volume control. Turning the knob changes the resistance, which changes how much of the audio signal reaches the speaker."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t6a-capacitor",
+      "group": "T6A",
+      "title": "Capacitors: energy in an electric field",
+      "body": [
+        "A capacitor is built from two conductive surfaces (called plates) with an insulator between them. The insulator keeps current from flowing straight across.",
+        "When voltage is applied, extra electrons pile up on one plate and leave the other. The two oppositely charged plates create an electric field in the insulator, and that field is where the capacitor stores its energy.",
+        "A handy memory pair: capacitor goes with electric field, inductor goes with magnetic field. Capacitance is measured in farads."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t6a-inductor",
+      "group": "T6A",
+      "title": "Inductors: energy in a magnetic field",
+      "body": [
+        "An inductor is usually just a coil of wire, sometimes wound around a core of iron or ferrite. Current flowing through the coil creates a magnetic field around it.",
+        "That magnetic field is where the inductor stores its energy. When the current tries to change, the field pushes back, which is why inductors resist quick changes in current.",
+        "If a question describes a coil of wire, think inductor. Transistors and diodes are semiconductor parts, and a capacitor is plates with an insulator, not a coil. Inductance is measured in henries."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t6a-switches",
+      "group": "T6A",
+      "title": "Switch names: poles and throws",
+      "body": [
+        "Switch names describe two things. The number of poles is how many separate circuits the switch controls at once. The number of throws is how many positions each pole can connect to.",
+        "• SPST (single-pole single-throw): one circuit, simply on or off, like a light switch",
+        "• SPDT (single-pole double-throw): one circuit that can be connected to either of two other circuits",
+        "• DPST (double-pole single-throw): two circuits turned on or off together",
+        "• DPDT (double-pole double-throw): two circuits, each switched between two other circuits",
+        "On a schematic, a simple SPST switch looks like a gap between two small circles (the contacts) with a short line tilted up from one circle, like a drawbridge left open. With only one blade and one contact to land on, it is single-pole single-throw."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t6a-batteries",
+      "group": "T6A",
+      "title": "Rechargeable and non-rechargeable batteries",
+      "body": [
+        "Some battery chemistries can be recharged hundreds of times, which is why hams use them in handhelds, go-kits, and emergency power setups:",
+        "• Nickel-metal hydride (NiMH)",
+        "• Nickel-cadmium (NiCd)",
+        "• Lithium-ion (Li-ion), including lithium iron phosphate (LiFePO4)",
+        "• Lead-acid, such as car batteries and sealed gel or AGM batteries",
+        "Carbon-zinc cells, the cheap basic flashlight batteries, are not rechargeable. Common alkaline cells are also meant to be used once. Trying to recharge a single-use cell can make it leak or burst."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t6b-diode",
+      "group": "T6B",
+      "title": "Diodes: one-way valves for current",
+      "body": [
+        "A diode is a semiconductor part that lets current flow in only one direction, like a check valve in a water pipe. That one-way behavior is what lets diodes turn AC into DC.",
+        "A diode has two electrodes. The anode is the side current flows in; the cathode is the side it flows out. The cathode end of a diode package is usually marked with a painted or printed band, a stripe, around the body.",
+        "Resistors and fuses pass current in both directions, and a driven element is part of an antenna, so none of them are one-way devices."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t6b-forward-drop",
+      "group": "T6B",
+      "title": "Forward voltage drop",
+      "body": [
+        "Even when a diode is conducting, it does not pass current for free. A small, fairly steady voltage is lost across it, called the forward voltage drop. For an ordinary silicon diode it is about 0.6 to 0.7 volts.",
+        "The drop depends on the type of diode. Schottky and germanium diodes drop less, roughly 0.2 to 0.3 volts, which is why designers choose them when every bit of voltage counts. LEDs drop more, often 2 to 3 volts.",
+        "The drop is normal, not a sign of a bad diode, and it does reduce the voltage that reaches the load. It has nothing to do with the peak inverse voltage rating, which is how much reverse voltage the diode can block."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t6b-led",
+      "group": "T6B",
+      "title": "Light-emitting diodes (LEDs)",
+      "body": [
+        "An LED is a diode made from materials that give off light when current flows through them in the forward direction, from anode to cathode.",
+        "Reverse current does not light an LED; like any diode it blocks current that way. RF signals nearby do not make it glow either. It takes forward current.",
+        "Because they are small, cheap, cool, and long-lived, LEDs are the go-to part for indicator lights such as power-on and transmit lights."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t6b-transistor-types",
+      "group": "T6B",
+      "title": "Transistors: BJTs and FETs",
+      "body": [
+        "A transistor is a semiconductor part that lets a small signal control a larger current. There are two main families, and each names its three leads differently.",
+        "The bipolar junction transistor (BJT) is a sandwich of three regions of semiconductor material, either NPN or PNP. Its leads are the emitter, the base, and the collector. A small current into the base controls a much larger current from collector to emitter.",
+        "The field-effect transistor (FET) has leads called the gate, the drain, and the source. A voltage on the gate controls the current flowing between drain and source. FET stands for Field Effect Transistor.",
+        "Watch for distractors: a triode and a pentode are vacuum tubes, not semiconductors, and a varistor or Hall-effect device is a different kind of part altogether."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t6b-switch-amplifier",
+      "group": "T6B",
+      "title": "Transistors as switches and amplifiers",
+      "body": [
+        "Because a small input controls a large output, a transistor can do two big jobs. Used as an electronic switch, it turns a larger current fully on or fully off with no moving parts. Used as an amplifier, it makes a weak signal stronger.",
+        "Gain is how much bigger the output is than the input. It can be measured as a ratio of output voltage to input voltage, output current to input current, or output power to input power. All three are valid ways to talk about gain.",
+        "A transistor can provide real power gain because it draws the extra energy from the power supply. A transformer can step voltage up but never delivers more power than it receives, and resistors or reactors only use up or store energy."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t6c-schematics",
+      "group": "T6C",
+      "title": "What a schematic shows",
+      "body": [
+        "A schematic is an electrical diagram that uses standard symbols for each component, joined by lines that stand for wires. Anyone who knows the symbols can read it, no matter what the real parts look like.",
+        "A schematic accurately shows how components are connected: which lead goes to which. It does not show wire lengths, where parts sit on a circuit board, or what the parts physically look like. For that you would need a layout drawing or a photo.",
+        "Where lines cross with a dot, the wires are joined. Components are often labeled with numbers so they can be referred to, as in the exam figures."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t6c-symbols-basic",
+      "group": "T6C",
+      "title": "Recognizing resistor, battery, ground, lamp, and transistor symbols",
+      "body": [
+        "• Resistor: a zigzag line, like a row of sharp mountain peaks, in the middle of a wire.",
+        "• Battery: a stack of parallel lines that alternate long and short. The longer line is the positive side. One long-short pair is a single cell; several pairs make a battery.",
+        "• Ground: a wire ending in a short flat line with a few slanted lines hanging below it like the teeth of a rake (another common version is three stacked lines getting shorter, like an upside-down triangle).",
+        "• Lamp: a rounded dome or bulb outline with a small loop inside it for the filament, sitting on the wire.",
+        "• Bipolar transistor: a circle with a thick straight bar inside. One lead meets the bar straight on (the base), and two slanted lines leave the bar; the one with an arrowhead is the emitter and the other is the collector."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t6c-symbols-coils-plates",
+      "group": "T6C",
+      "title": "Recognizing capacitor, inductor, and transformer symbols",
+      "body": [
+        "• Capacitor: two short plates side by side across a wire gap, with a space between them. Often one plate is a straight line and the other is a curved line, like a straight bar next to a shallow bowl. This matches how a capacitor is built: two surfaces with an insulator between.",
+        "• Inductor: a row of loops or humps, like a spring or a line of cursive e's. It is a picture of a coil of wire.",
+        "• Transformer: two of those coil symbols facing each other, often with two straight parallel lines drawn between them to show an iron core. Energy passes from one coil to the other through the shared magnetic field."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t6c-symbols-variable",
+      "group": "T6C",
+      "title": "Variable components: look for the arrow",
+      "body": [
+        "Adding an arrow to a symbol means the part can be adjusted. Identify the base symbol first, then the arrow tells you it is variable.",
+        "• Variable resistor: a zigzag with an arrow pointing into its middle (the sliding wiper). If the wiper is also wired back to one end, the part acts as a simple adjustable resistance.",
+        "• Variable capacitor: the two capacitor plates with a long diagonal arrow drawn right through them.",
+        "• Variable inductor: the row of coil humps with an arrow touching the coil partway along, showing a sliding tap or adjustable connection."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t6c-symbols-semiconductor",
+      "group": "T6C",
+      "title": "Recognizing diode, LED, and Zener symbols",
+      "body": [
+        "• Diode: a solid triangle pointing at a short straight bar across the wire. The triangle points the way current can flow, and the bar is the cathode, matching the stripe on a real diode.",
+        "• LED: the same triangle-and-bar diode symbol with two small arrows pointing away from it, showing light leaving the part.",
+        "• Zener diode: a diode symbol whose bar has small bent tips at the ends, making it look like a stretched letter Z. Zeners hold a steady voltage in simple regulators."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t6c-symbols-other",
+      "group": "T6C",
+      "title": "Recognizing antenna, fuse, switch, and connector symbols",
+      "body": [
+        "• Antenna: a single wire running up to an upside-down triangle or a V shape at the top, like a small funnel or a TV aerial.",
+        "• Fuse: a small narrow rectangle drawn in the wire.",
+        "• Switch: a short line lifted at an angle off one contact circle, leaving a gap to the next contact.",
+        "• Connector: a small open circle, a sideways V shape, or a wavy break at the end of a wire, showing where the circuit plugs into something else."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t6d-power-supply",
+      "group": "T6D",
+      "title": "Inside a power supply: transformer, rectifier, regulator",
+      "body": [
+        "A basic power supply turns wall power into the steady DC a radio needs, in three steps.",
+        "• Transformer: two coils sharing a magnetic core. It changes 120 V AC to a lower (or higher) AC voltage. It only works on AC.",
+        "• Rectifier: one or more diodes that let current through in only one direction. This turns AC into a bumpy, varying DC.",
+        "• Regulator: a circuit that holds the output voltage steady at the desired value, even as the load or the input changes. That is the circuit that controls how much voltage the supply puts out.",
+        "Oscillators generate signals, filters smooth or select frequencies, and phase inverters flip a signal; none of those sets the output voltage."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t6d-control-current",
+      "group": "T6D",
+      "title": "Relays and transistors: controlling current",
+      "body": [
+        "A relay is an electrically controlled switch. A small current through a coil creates a magnetic field that pulls a set of metal contacts open or closed. This lets a small, low-power circuit switch a separate, heavier one, such as a transmit/receive changeover in an amplifier.",
+        "A transistor can do the same job electronically with no moving parts. In a circuit like figure T-1, a small signal through the resistor into the transistor's base controls the larger current that flows from the battery through the lamp. The transistor's job there is to control the flow of current; the lamp gives off light and the battery supplies the energy."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t6d-indicators-meters",
+      "group": "T6D",
+      "title": "Indicators and meters",
+      "body": [
+        "A visual indicator tells you at a glance that something is on or happening. LEDs are the most common choice because they are small, efficient, and last a very long time. A FET or a Zener diode does not light up, so neither works as an indicator.",
+        "A meter measures an electrical quantity, such as voltage, current, or power, and displays it. A digital meter shows the reading as a number; an analog meter uses a needle on a scale.",
+        "Potentiometers, transistors, and relays control or switch circuits; they do not display anything."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t6d-shielded-wire",
+      "group": "T6D",
+      "title": "Why use shielded wire",
+      "body": [
+        "Shielded wire has a layer of braid or foil wrapped around the inner conductor, connected to ground. Coaxial cable is a familiar example.",
+        "The shield keeps unwanted signals from getting into the wire, and keeps signals inside from leaking out and causing interference. In short, it prevents unwanted coupling to or from the wire.",
+        "A shield does not lower DC resistance or let the wire carry more current; that is a job for thicker wire. It also does not fix receiver overload, which comes from strong signals arriving through the antenna."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t6d-resonant-circuit",
+      "group": "T6D",
+      "title": "Resonant (tuned) circuits",
+      "body": [
+        "Put an inductor and a capacitor together, either in series or in parallel, and you get a resonant circuit, also called a tuned circuit or LC circuit.",
+        "Inductors and capacitors react to frequency in opposite ways. At one particular frequency their effects balance out; that is the resonant frequency. The circuit responds strongly to that frequency and much less to others, which is how radios pick one station out of many.",
+        "Changing either the inductor or the capacitor retunes the circuit. A resistor, a Zener diode, or a potentiometer cannot stand in for the capacitor, and regulators or audio circuits are not tuned circuits."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t6d-integrated-circuit",
+      "group": "T6D",
+      "title": "Integrated circuits",
+      "body": [
+        "An integrated circuit (IC, or chip) packs many transistors, diodes, resistors, and other components into a single package. One small IC can replace a whole board of separate parts.",
+        "Examples range from a three-lead voltage regulator to the microprocessor in a modern radio. A transducer (which changes one form of energy into another), a relay, and a transformer are single-purpose parts, not collections of semiconductors."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "T6A01": {
+      "why": "A resistor is the part whose job is to oppose current in a DC circuit. An inductor stores energy in a magnetic field, a transformer changes AC voltage, and an inverter turns DC into AC.",
+      "concept": "t6a-resistor",
+      "status": "draft"
+    },
+    "T6A02": {
+      "why": "A potentiometer is an adjustable resistor, and turning its knob to change how much signal reaches the speaker is the classic volume control. Fixed and power resistors cannot be adjusted.",
+      "concept": "t6a-potentiometer",
+      "status": "draft"
+    },
+    "T6A03": {
+      "why": "A potentiometer's sliding wiper changes how much resistive material the current passes through, so it controls resistance. It has no effect on inductance or capacitance.",
+      "concept": "t6a-potentiometer",
+      "status": "draft"
+    },
+    "T6A04": {
+      "why": "A capacitor stores energy in the electric field between its charged plates. The inductor is the one that uses a magnetic field.",
+      "concept": "t6a-capacitor",
+      "status": "draft"
+    },
+    "T6A05": {
+      "why": "Two conductive surfaces separated by an insulator is exactly how a capacitor is built. A potentiometer is an adjustable resistor, and an oscillator is a circuit, not a single component.",
+      "concept": "t6a-capacitor",
+      "status": "draft"
+    },
+    "T6A06": {
+      "why": "An inductor stores energy in the magnetic field created by current flowing through its coil. A capacitor stores energy in an electric field instead.",
+      "concept": "t6a-inductor",
+      "status": "draft"
+    },
+    "T6A07": {
+      "why": "An inductor is typically just a coil of wire, sometimes around an iron or ferrite core. Capacitors are plates with an insulator, and transistors and diodes are semiconductor parts.",
+      "concept": "t6a-inductor",
+      "status": "draft"
+    },
+    "T6A08": {
+      "why": "Single-pole means one circuit; double-throw means it can be connected to either of two positions. So an SPDT switch connects one circuit to one of two other circuits. Switching two circuits at once would take a double-pole switch.",
+      "concept": "t6a-switches",
+      "status": "draft"
+    },
+    "T6A09": {
+      "why": "Component 3 in figure T-2 is a single blade lifted off one contact with only one other contact to close onto: one circuit, on or off. That makes it single-pole single-throw.",
+      "concept": "t6a-switches",
+      "status": "draft"
+    },
+    "T6A10": {
+      "why": "Nickel-metal hydride, lithium-ion, and lead-acid batteries can all be recharged many times, so every listed choice is correct.",
+      "concept": "t6a-batteries",
+      "status": "draft"
+    },
+    "T6A11": {
+      "why": "Carbon-zinc cells are single-use and should not be recharged. Nickel-cadmium, lead-acid, and lithium-ion are all rechargeable chemistries.",
+      "concept": "t6a-batteries",
+      "status": "draft"
+    },
+    "T6B01": {
+      "why": "Forward voltage drop depends on the diode type: Schottky and germanium diodes drop less voltage than ordinary silicon diodes. The drop is normal, not a defect, and it does reduce the voltage reaching the load.",
+      "concept": "t6b-forward-drop",
+      "status": "draft"
+    },
+    "T6B02": {
+      "why": "A diode acts like a one-way valve, letting current flow in only one direction. Resistors and fuses pass current either way.",
+      "concept": "t6b-diode",
+      "status": "draft"
+    },
+    "T6B03": {
+      "why": "A transistor lets a small input turn a larger current fully on or off, so it works as an electronic switch. A potentiometer is a manual adjustment, and varistors and thermistors change resistance with voltage or temperature.",
+      "concept": "t6b-switch-amplifier",
+      "status": "draft"
+    },
+    "T6B04": {
+      "why": "A bipolar transistor is a sandwich of three semiconductor regions, NPN or PNP. A triode and a pentode are vacuum tubes, and an alternator is a rotating generator.",
+      "concept": "t6b-transistor-types",
+      "status": "draft"
+    },
+    "T6B05": {
+      "why": "Gate, drain, and source are the names of a field-effect transistor's leads. A bipolar junction transistor uses emitter, base, and collector instead.",
+      "concept": "t6b-transistor-types",
+      "status": "draft"
+    },
+    "T6B06": {
+      "why": "The cathode end of a diode is usually marked with a stripe or band printed around the body. Printing letters or words on such a tiny part would be impractical.",
+      "concept": "t6b-diode",
+      "status": "draft"
+    },
+    "T6B07": {
+      "why": "An LED gives off light when current flows through it in the forward direction. Like any diode it blocks reverse current, and nearby RF does not make it glow.",
+      "concept": "t6b-led",
+      "status": "draft"
+    },
+    "T6B08": {
+      "why": "FET stands for Field Effect Transistor: a voltage on the gate creates an electric field that controls current between drain and source.",
+      "concept": "t6b-transistor-types",
+      "status": "draft"
+    },
+    "T6B09": {
+      "why": "A diode's two electrodes are the anode, where current enters, and the cathode, where it leaves. Source and drain belong to FETs, and base belongs to bipolar transistors.",
+      "concept": "t6b-diode",
+      "status": "draft"
+    },
+    "T6B10": {
+      "why": "A transistor can deliver more power out than the signal put in, drawing the extra energy from its power supply. A transformer can raise voltage but never raises power, and resistors only use up energy.",
+      "concept": "t6b-switch-amplifier",
+      "status": "draft"
+    },
+    "T6B11": {
+      "why": "Gain compares output to input, and it can be stated for voltage, current, or power, so all the listed choices are correct.",
+      "concept": "t6b-switch-amplifier",
+      "status": "draft"
+    },
+    "T6B12": {
+      "why": "A bipolar junction transistor's three leads are the emitter, the base, and the collector. The other choices are made-up descriptions, not standard electrode names.",
+      "concept": "t6b-transistor-types",
+      "status": "draft"
+    },
+    "T6C01": {
+      "why": "A diagram built from standard component symbols is called a schematic. A flow chart shows steps in a process, not electrical connections.",
+      "concept": "t6c-schematics",
+      "status": "draft"
+    },
+    "T6C02": {
+      "why": "Component 1 in figure T-1 is a zigzag line in the wire, the symbol for a resistor.",
+      "concept": "t6c-symbols-basic",
+      "status": "draft"
+    },
+    "T6C03": {
+      "why": "Component 2 in figure T-1 is a circle holding a thick bar with slanted lines leaving it, one with an arrowhead. That is the symbol for a bipolar transistor.",
+      "concept": "t6c-symbols-basic",
+      "status": "draft"
+    },
+    "T6C04": {
+      "why": "Component 3 in figure T-1 is a rounded bulb shape with a loop inside for the filament, the symbol for a lamp. The ground symbols in the drawing are the rake-like slanted lines at the bottom of wires.",
+      "concept": "t6c-symbols-basic",
+      "status": "draft"
+    },
+    "T6C05": {
+      "why": "Component 4 in figure T-1 is a stack of parallel lines alternating long and short, the symbol for a battery. The longer line marks the positive side.",
+      "concept": "t6c-symbols-basic",
+      "status": "draft"
+    },
+    "T6C06": {
+      "why": "Component 6 in figure T-2 is two short plates across a gap, one straight and one curved, which is the capacitor symbol. It sits right after the rectifier diode to smooth the bumpy DC.",
+      "concept": "t6c-symbols-coils-plates",
+      "status": "draft"
+    },
+    "T6C07": {
+      "why": "Component 8 in figure T-2 is a diode symbol (triangle pointing at a bar) with two small arrows pointing away from it, showing emitted light. That makes it a light-emitting diode.",
+      "concept": "t6c-symbols-semiconductor",
+      "status": "draft"
+    },
+    "T6C08": {
+      "why": "Component 9 in figure T-2 is a zigzag resistor symbol with an arrow pointing into it, which marks a variable resistor. A variable capacitor would show two plates with an arrow through them.",
+      "concept": "t6c-symbols-variable",
+      "status": "draft"
+    },
+    "T6C09": {
+      "why": "Component 4 in figure T-2 is two coil symbols facing each other with parallel lines between them for the iron core, the symbol for a transformer. Here it lowers the AC line voltage before the diode.",
+      "concept": "t6c-symbols-coils-plates",
+      "status": "draft"
+    },
+    "T6C10": {
+      "why": "Component 3 in figure T-3 is a row of coil humps with an arrow touching it partway along, the symbol for a variable inductor. The variable capacitors in that figure show two plates with a diagonal arrow through them.",
+      "concept": "t6c-symbols-variable",
+      "status": "draft"
+    },
+    "T6C11": {
+      "why": "Component 4 in figure T-3 is a wire rising to an upside-down triangle at the top, the symbol for an antenna. The ground symbol in that figure is the rake-like slanted lines at the bottom.",
+      "concept": "t6c-symbols-other",
+      "status": "draft"
+    },
+    "T6C12": {
+      "why": "A schematic accurately shows how components are connected to each other. It does not show real wire lengths or what the parts physically look like.",
+      "concept": "t6c-schematics",
+      "status": "draft"
+    },
+    "T6D01": {
+      "why": "A rectifier uses diodes to let current through in only one direction, turning AC into a varying DC. A transformer changes AC voltage but its output is still AC.",
+      "concept": "t6d-power-supply",
+      "status": "draft"
+    },
+    "T6D02": {
+      "why": "A relay is an electrically controlled switch: current through its coil makes a magnet that moves the switch contacts. It does not amplify a signal.",
+      "concept": "t6d-control-current",
+      "status": "draft"
+    },
+    "T6D03": {
+      "why": "A grounded shield keeps unwanted signals from coupling into the wire and keeps signals inside from leaking out. It does not lower resistance or increase current capacity.",
+      "concept": "t6d-shielded-wire",
+      "status": "draft"
+    },
+    "T6D04": {
+      "why": "A meter measures an electrical quantity such as voltage or current and displays it; a digital meter shows it as a number. Potentiometers, transistors, and relays do not display anything.",
+      "concept": "t6d-indicators-meters",
+      "status": "draft"
+    },
+    "T6D05": {
+      "why": "A regulator holds a power supply's output voltage steady at the set value. Oscillators create signals and filters smooth or select frequencies, but neither controls the output voltage.",
+      "concept": "t6d-power-supply",
+      "status": "draft"
+    },
+    "T6D06": {
+      "why": "A transformer uses two coils on a shared core to change 120 V AC into a lower AC voltage. A diode would turn AC into DC rather than just lowering its voltage.",
+      "concept": "t6d-power-supply",
+      "status": "draft"
+    },
+    "T6D07": {
+      "why": "An LED gives off light and is the usual choice for indicator lights. A FET and a Zener diode do not emit light, so 'all these choices' is wrong.",
+      "concept": "t6d-indicators-meters",
+      "status": "draft"
+    },
+    "T6D08": {
+      "why": "An inductor and a capacitor together form a resonant circuit, because their opposite responses to frequency balance out at one frequency. A resistor or potentiometer cannot do that.",
+      "concept": "t6d-resonant-circuit",
+      "status": "draft"
+    },
+    "T6D09": {
+      "why": "An integrated circuit packs many semiconductors and other components into one package. A relay and a transformer are single components, and a transducer converts one form of energy into another.",
+      "concept": "t6d-integrated-circuit",
+      "status": "draft"
+    },
+    "T6D10": {
+      "why": "Component 2 in figure T-1 is a transistor, and its job is to control the flow of current: a small base signal turns the lamp current on and off. The lamp gives off light and the battery supplies the energy.",
+      "concept": "t6d-control-current",
+      "status": "draft"
+    },
+    "T6D11": {
+      "why": "A resonant or tuned circuit is an inductor and a capacitor connected in series or in parallel. A voltage regulator, a resistor network, or a hi-fi audio circuit is not tuned to a single frequency.",
+      "concept": "t6d-resonant-circuit",
+      "status": "draft"
+    }
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "subelement": "T4",
+  "concepts": [
+    {
+      "id": "t4a-power-supply",
+      "group": "T4A",
+      "title": "Powering a mobile radio: 13.8 volts and enough amps",
+      "body": [
+        "Mobile and base transceivers are built to run from a car's electrical system. A car battery with the engine running sits at about 13.8 volts, so that is the standard supply voltage for ham gear. A \"12-volt\" radio is really a 13.8-volt radio. A 24-volt supply would be far too high and could damage it.",
+        "The supply must also deliver enough current. A transmitter is not 100 percent efficient: to put out 50 watts of RF, a typical mobile FM radio pulls roughly twice that much power from the supply while transmitting. At 13.8 volts that works out to somewhere around 8 to 10 amps, so a supply rated for about 12 amps gives a safe margin. A 4-amp supply would sag or shut down as soon as you keyed up.",
+        "Rule of thumb: pick the voltage the radio is designed for (13.8 V), then pick a current rating comfortably above the radio's maximum transmit draw listed in its manual."
+      ],
+      "formula": "Current needed ≈ DC input power ÷ supply voltage",
+      "status": "draft"
+    },
+    {
+      "id": "t4a-dc-wiring",
+      "group": "T4A",
+      "title": "DC power wiring and mobile installation",
+      "body": [
+        "Every wire has a little resistance, and when current flows through it, some voltage is lost along the way (Ohm's law: voltage drop = current × resistance). A radio drawing 10 or more amps on transmit can lose enough voltage in a long, thin cable that it no longer works properly. Short, heavy-gauge (thick) wire has less resistance, so the voltage drop stays small. The reason is voltage drop, not RF interference or impedance matching.",
+        "In a vehicle, run both the positive and the negative leads to the battery area. The negative (return) lead should connect at the point where the 12-volt battery's negative is grounded to the chassis, not to some random piece of metal, not just through the radio's mounting bracket, and not to the shell of a connector. Painted, bolted, or spot-welded body parts can make poor, noisy connections that cannot carry heavy current reliably.",
+        "Fuse the leads near the battery so a short circuit cannot start a fire."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t4a-battery-runtime",
+      "group": "T4A",
+      "title": "How long will the battery last?",
+      "body": [
+        "Battery capacity is rated in ampere-hours (Ah): how many amps it can supply for how many hours. A 20 Ah battery could, in theory, supply 1 amp for 20 hours or 2 amps for 10 hours.",
+        "To estimate run time, divide the ampere-hour rating by the equipment's average current draw. Use the average, not the peak: a radio draws heavy current only while transmitting and much less while listening, and most operating time is spent listening.",
+        "Real batteries deliver somewhat less than their label, especially when cold or when drained deeply, so treat the answer as a best-case estimate."
+      ],
+      "formula": "Run time (hours) = battery ampere-hours ÷ average current draw (amps)",
+      "status": "draft"
+    },
+    {
+      "id": "t4a-meters",
+      "group": "T4A",
+      "title": "RF power meters and SWR meters",
+      "body": [
+        "An RF power meter measures the radio energy flowing to the antenna, so it goes in the feed line (the coax) between the transmitter and the antenna. It does not go in the DC power cable; that cable carries DC, not RF. An SWR meter is connected the same way, in line with the coax.",
+        "Meters are designed for particular frequency ranges and power levels. A meter made for HF may read badly at UHF, and a meter rated for 100 watts can be damaged or give poor readings at much higher power (and may be too insensitive to read a 5-watt handheld). So when you choose an SWR meter, check that it covers the frequencies and power levels you will use.",
+        "A meter only measures. It cannot fix a poor match between the feed line and the antenna."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t4a-digital-station",
+      "group": "T4A",
+      "title": "Connecting a computer for digital modes, and hotspots",
+      "body": [
+        "Modes like FT8 use a computer as the modem. The software turns text into audio tones and decodes received tones back into text. So the radio and computer are connected audio to audio: the radio's receive audio goes into the computer, and the computer's transmit audio goes into the radio.",
+        "A computer-radio interface carries three things:",
+        "• Receive audio: radio speaker or data output into the computer's line in (or microphone) input",
+        "• Transmit audio: computer's line out into the radio's microphone or data input",
+        "• Transmitter keying: a push-to-talk (PTT) signal so the computer can switch the radio into transmit",
+        "Keep the direction straight: \"line in\" is an input to the computer, so it listens to the radio's speaker output. \"Line out\" is the computer's audio output, so it feeds the radio's audio input, never its speaker jack or its PTT line.",
+        "A digital mode hotspot is a small low-power radio linked to the internet. Your handheld talks to the hotspot over the air, and the hotspot connects you to a digital voice or data network such as DMR, D-STAR, or System Fusion when no repeater is in range."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t4a-bonding-keyer",
+      "group": "T4A",
+      "title": "RF bonding and electronic keyers",
+      "body": [
+        "Bonding means tying the metal cases of station equipment together electrically so they sit at the same potential. At radio frequencies, current flows mostly on the surface of a conductor (the skin effect), so a conductor with lots of surface area works best. That is why flat copper strap is preferred for RF bonding. It is wide, low in inductance, and does not corrode internally the way old coax braid can.",
+        "An electronic keyer helps you send Morse code by hand. You use a paddle: press one side and the keyer sends a string of perfectly timed dits, press the other side for dahs. The keyer does the timing; you do the spelling. It is not an antenna switch, a voice-operated transmit switch, or a security lock."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t4b-tuning-memory-scan",
+      "group": "T4B",
+      "title": "Setting the frequency, memories, and scanning",
+      "body": [
+        "Most transceivers let you set the operating frequency two ways: type it on the keypad, or turn the main tuning knob, which controls the VFO (variable frequency oscillator). Tone systems like CTCSS and DTMF have nothing to do with choosing the frequency.",
+        "Memory channels store frequencies, along with settings such as repeater offset and tone, so you can recall a favorite repeater with one button.",
+        "The scan function steps through a range of frequencies or memory channels and stops when it finds a signal. It is a quick way to check for activity. It does not measure your antenna's resonance or the deviation of other signals."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t4b-fm-squelch",
+      "group": "T4B",
+      "title": "FM squelch, and tuning FM signals",
+      "body": [
+        "With no signal present, an FM receiver produces loud hiss. Squelch mutes the speaker until a signal stronger than a set threshold arrives. The higher you set the threshold, the stronger a signal must be to open it.",
+        "A very weak signal may never be strong enough to open the squelch, so you miss it. To hear it, turn the squelch down until the audio is on all the time (you will hear the background hiss along with the weak station). Turning up the volume does not help, because squelch is still muting the audio.",
+        "FM signals need to be tuned accurately. If you are slightly off frequency, the FM audio becomes distorted. Its pitch does not change, unlike single sideband, where tuning off frequency shifts the voice pitch up or down."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t4b-ssb-controls",
+      "group": "T4B",
+      "title": "SSB controls: mic gain, RIT, AGC, and noise blanker",
+      "body": [
+        "Microphone gain sets how hard your voice drives the transmitter. On SSB, too much mic gain overdrives the audio and RF stages, which makes your transmitted audio distorted (and can spread interference onto nearby frequencies). Set it so voice peaks stay within the level the manual recommends, often watched on the ALC meter.",
+        "RIT (receiver incremental tuning), also called the clarifier, shifts only the receive frequency a little while leaving your transmit frequency where it is. If a station answering your CQ sounds too high or too low in pitch, they are slightly off your frequency. Adjust RIT to make them sound natural without moving your own signal.",
+        "AGC (automatic gain control) keeps receiver volume fairly steady as signals get stronger or weaker. A noise blanker cuts out short, sharp pulses such as ignition noise. Neither one corrects the pitch of an off-frequency SSB voice."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t4b-filter-bandwidth",
+      "group": "T4B",
+      "title": "Receiver filter bandwidth",
+      "body": [
+        "A receiver filter lets through only a slice of spectrum around the signal you are tuned to. Noise and interference are spread across every frequency, so the narrower the filter, the less noise and interference gets in. But the filter must still be wide enough to pass the whole signal you want.",
+        "That is why multimode radios offer a choice of bandwidths: you select one that matches the mode and reduce noise and interference. Typical choices:",
+        "• CW: about 500 Hz or narrower",
+        "• SSB voice: about 2400 Hz (around 2.4 kHz)",
+        "• AM and FM: wider still",
+        "For SSB, 2400 Hz gives the best signal-to-noise ratio. A 500 or 1000 Hz filter cuts off part of the voice so it becomes hard to understand, and 5000 Hz lets in extra noise with no benefit."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t4b-digital-voice-config",
+      "group": "T4B",
+      "title": "Setting up DMR and D-STAR radios",
+      "body": [
+        "Digital voice radios need more setup than analog FM. For DMR, the settings are bundled into a code plug: a configuration file, usually built with programming software on a computer and loaded into the radio. It holds repeater frequencies, color codes, time slots, your DMR ID, contacts, and talkgroups. Despite the name, it is data, not a physical plug or adapter.",
+        "A DMR talkgroup is a group of stations, often organized by region or interest. You select one by setting the radio to that group's identification number (talkgroup ID), usually from a channel stored in the code plug. It is chosen by digital ID, not by a CTCSS tone.",
+        "D-STAR radios send your call sign digitally with every transmission, so you must program your call sign into the radio before you transmit."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "T4A01": {
+      "why": "Mobile radios are designed for a car's 13.8-volt system, and a 50-watt transmitter draws on the order of 10 amps while transmitting, so a 12-amp supply leaves headroom. A 4-amp supply is too small, and 24 volts is the wrong voltage.",
+      "work": [
+        "RF output 50 W at roughly 50% efficiency means about 100 W of DC input",
+        "100 W ÷ 13.8 V ≈ 7.2 A, and real radios are often rated 10 A or more on transmit",
+        "Choose 13.8 V with a margin above that: 12 A"
+      ],
+      "concept": "t4a-power-supply",
+      "status": "draft"
+    },
+    "T4A02": {
+      "why": "SWR meters are built for specific frequency ranges and power levels, so you need one that reads accurately at the frequencies and power you will actually use. A meter only measures; it cannot compensate for a bad match.",
+      "concept": "t4a-meters",
+      "status": "draft"
+    },
+    "T4A03": {
+      "why": "A transmitting radio draws heavy current, and any wire resistance turns that current into a voltage drop. Short, thick wire has low resistance, so the radio keeps getting its full voltage. It has nothing to do with RF interference or impedance matching.",
+      "concept": "t4a-dc-wiring",
+      "status": "draft"
+    },
+    "T4A04": {
+      "why": "FT8 is generated and decoded by software on a computer, using audio tones. The radio's audio output goes to the computer's audio input and the computer's audio output goes to the radio's audio input; no special converter box, terminal node controller, or website is needed.",
+      "concept": "t4a-digital-station",
+      "status": "draft"
+    },
+    "T4A05": {
+      "why": "An RF power meter measures the radio energy traveling to the antenna, so it must sit in the feed line between the transmitter and the antenna. The power supply cable carries DC, not RF.",
+      "concept": "t4a-meters",
+      "status": "draft"
+    },
+    "T4A06": {
+      "why": "For digital modes the computer needs to hear the radio (receive audio), send tones to the radio (transmit audio), and switch the radio into transmit (keying, or PTT). Those three signals are what the interface carries.",
+      "concept": "t4a-digital-station",
+      "status": "draft"
+    },
+    "T4A07": {
+      "why": "The computer's line in is an audio input, so it listens to the transceiver's speaker (receive audio) output. Line out is an audio output and would feed the radio's audio input, not its speaker jack or its push-to-talk line.",
+      "concept": "t4a-digital-station",
+      "status": "draft"
+    },
+    "T4A08": {
+      "why": "RF current flows mostly on the surface of a conductor, so the wide surface of flat copper strap gives a low-impedance bond. Salvaged coax braid is tempting but it corrodes and loosens over time, and thin wire or twisted pair has far less surface area.",
+      "concept": "t4a-bonding-keyer",
+      "status": "draft"
+    },
+    "T4A09": {
+      "why": "Ampere-hours tell how much charge the battery holds, so dividing by the average current the equipment draws gives the hours it can run. Using peak draw would badly underestimate run time, since a radio draws peak current only while transmitting.",
+      "work": [
+        "Example: a 20 Ah battery powering a radio that averages 2 A",
+        "20 Ah ÷ 2 A = 10 hours (best case)"
+      ],
+      "concept": "t4a-battery-runtime",
+      "status": "draft"
+    },
+    "T4A10": {
+      "why": "A hotspot is a small radio linked to the internet that lets nearby digital transceivers reach a digital voice or data network, such as DMR, D-STAR, or System Fusion. It is not an FT8, RTTY, or meteor scatter device.",
+      "concept": "t4a-digital-station",
+      "status": "draft"
+    },
+    "T4A11": {
+      "why": "The negative return should go back to the point where the 12-volt battery is grounded to the chassis, giving a solid, low-resistance path for heavy transmit current. Random metal parts, the mounting bracket, or a connector shell can make poor or noisy connections.",
+      "concept": "t4a-dc-wiring",
+      "status": "draft"
+    },
+    "T4A12": {
+      "why": "An electronic keyer produces correctly timed dits and dahs as you work a paddle, helping you send Morse code by hand. It does not switch antennas, respond to your voice, or lock the radio.",
+      "concept": "t4a-bonding-keyer",
+      "status": "draft"
+    },
+    "T4B01": {
+      "why": "Too much microphone gain overdrives an SSB transmitter, so the transmitted audio becomes distorted. It does not change the frequency, the SWR, or which sideband is used.",
+      "concept": "t4b-ssb-controls",
+      "status": "draft"
+    },
+    "T4B02": {
+      "why": "You set the operating frequency by typing it on the keypad or turning the VFO tuning knob. CTCSS and DTMF are tone signaling systems, and automatic frequency control only fine-tunes a received signal, so not all the choices are correct.",
+      "concept": "t4b-tuning-memory-scan",
+      "status": "draft"
+    },
+    "T4B03": {
+      "why": "A weak signal may not be strong enough to open the squelch, so you set the threshold low enough that audio is on all the time and you hear everything, hiss included. Turning up the volume does not help while squelch is still muting the speaker.",
+      "concept": "t4b-fm-squelch",
+      "status": "draft"
+    },
+    "T4B04": {
+      "why": "An FM signal received slightly off frequency sounds distorted. A change in pitch is what happens with SSB, not FM.",
+      "concept": "t4b-fm-squelch",
+      "status": "draft"
+    },
+    "T4B05": {
+      "why": "Scanning steps through a range of frequencies (or memory channels) and stops on activity, so you can find who is on the air. It does not measure deviation or antenna resonance.",
+      "concept": "t4b-tuning-memory-scan",
+      "status": "draft"
+    },
+    "T4B06": {
+      "why": "RIT, also called the clarifier, shifts your receive frequency slightly without moving your transmit frequency, so you can correct the pitch of a station that answered a little off frequency. AGC, filter bandwidth, and tone squelch do not change pitch.",
+      "concept": "t4b-ssb-controls",
+      "status": "draft"
+    },
+    "T4B07": {
+      "why": "A code plug is configuration data (frequencies, talkgroups, contacts, and your ID) loaded into a DMR radio so it can use repeaters and talkgroups. Despite the name, it is not a cable, a software upgrade, or a codec.",
+      "concept": "t4b-digital-voice-config",
+      "status": "draft"
+    },
+    "T4B08": {
+      "why": "Choosing a filter bandwidth that just fits the mode in use keeps out extra noise and nearby interference. It does not let you monitor several modes at once, add memories, or change repeater offsets.",
+      "concept": "t4b-filter-bandwidth",
+      "status": "draft"
+    },
+    "T4B09": {
+      "why": "A DMR talkgroup is selected by its identification number, usually through a channel set up in the code plug. CTCSS tones are an analog FM feature, and a code plug is data, not a physical pin plug.",
+      "concept": "t4b-digital-voice-config",
+      "status": "draft"
+    },
+    "T4B10": {
+      "why": "An SSB voice signal is roughly 2.4 kHz wide, so a 2400 Hz filter passes the whole voice while keeping out as much noise as possible. Narrower filters (500 or 1000 Hz, meant for CW) chop up the voice, and 5000 Hz lets in extra noise.",
+      "concept": "t4b-filter-bandwidth",
+      "status": "draft"
+    },
+    "T4B11": {
+      "why": "D-STAR sends your call sign digitally with every transmission, so it must be programmed in before you transmit. Power level and codec are not required setup items, so not every choice is correct.",
+      "concept": "t4b-digital-voice-config",
+      "status": "draft"
+    }
+  }
+}

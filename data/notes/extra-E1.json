@@ -1,0 +1,735 @@
+{
+  "subelement": "E1",
+  "concepts": [
+    {
+      "id": "e1a-sideband-edges",
+      "group": "E1A",
+      "title": "Keep the whole sideband inside the band",
+      "body": [
+        "Section 97.307(b) says every part of a signal produced by modulation must stay inside the band or segment your license allows. It is not enough for the frequency on the radio's display to be legal.",
+        "On SSB, the radio displays the suppressed carrier frequency. A normal voice signal is about 3 kHz wide. Upper sideband (USB) sits above the displayed frequency, from the carrier up to about 3 kHz higher. Lower sideband (LSB) sits below it, from about 3 kHz lower up to the carrier.",
+        "• Near a top edge (USB): the displayed frequency must be at least 3 kHz below the edge.",
+        "• Near a bottom edge (LSB): the displayed frequency must be at least 3 kHz above the edge.",
+        "Two Extra class phone edges come up on the exam. On 20 meters, phone runs from 14.150 to 14.350 MHz, so 14.350 MHz is the top of the band. On 75 meters, the Extra phone segment starts at 3.600 MHz and runs to 4.000 MHz. An LSB signal displayed at 3.601 MHz reaches down to 3.598 MHz, which is below the phone segment, even though the display looks legal."
+      ],
+      "formula": "USB top = carrier + 3 kHz; LSB bottom = carrier − 3 kHz",
+      "status": "draft"
+    },
+    {
+      "id": "e1a-data-edges",
+      "group": "E1A",
+      "title": "Data signals near a segment edge",
+      "body": [
+        "Since the 2023 rule change, HF RTTY and data signals are limited by bandwidth rather than symbol rate: the authorized bandwidth is 2.8 kHz (97.307(f)(3)), except on 2200 and 630 meters.",
+        "On 20 meters, RTTY and data are allowed from 14.000 to 14.150 MHz. Above 14.150 MHz is the phone and image segment. A USB data signal occupies the space from its carrier frequency up to its bandwidth above it. So the highest legal carrier frequency is the segment's top edge minus the signal's bandwidth.",
+        "Example: a 2.8 kHz wide signal near the 14.150 MHz edge must have its carrier no higher than 14.150 − 0.0028 = 14.1472 MHz."
+      ],
+      "formula": "Highest USB carrier = segment top edge − signal bandwidth",
+      "status": "draft"
+    },
+    {
+      "id": "e1a-60m",
+      "group": "E1A",
+      "title": "60 meters: channels plus a small band",
+      "body": [
+        "60 meters is shared with government stations, and amateurs are secondary users. For years it was five fixed channels. A rule change that took effect in 2026 replaced one channel with a small band, 5351.5 to 5366.5 kHz, and kept four channels, centered on 5332, 5348, 5373, and 5405 kHz (97.303(h)).",
+        "On the channels, where you set the radio matters:",
+        "• CW: transmit on the channel's center frequency.",
+        "• USB phone, data, and RTTY: set the carrier 1.5 kHz below the center, so the signal fills the channel evenly (for example, a carrier of 5330.5 kHz for the 5332.0 kHz channel).",
+        "Everywhere on 60 meters, a signal may not be more than 2.8 kHz wide. The channels allow up to 100 W ERP; the new band is limited to 9.15 W ERP."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1a-lf-mf-power",
+      "group": "E1A",
+      "title": "Power on 2200 and 630 meters is counted as radiated power",
+      "body": [
+        "The 2200 meter (135.7 to 137.8 kHz) and 630 meter (472 to 479 kHz) bands are so low that practical antennas are tiny compared to a wavelength and very inefficient. So the key limit is on how much power actually leaves the antenna, measured as EIRP (equivalent isotropic radiated power), not just on transmitter output (97.313).",
+        "• 2200 meters: 1 W EIRP (transmitter output up to 1.5 kW PEP)",
+        "• 630 meters: 5 W EIRP (transmitter output up to 500 W PEP), except in Alaska within 800 km of Russia, where the limit is 1 W EIRP",
+        "An easy way to remember: the lower band gets the smaller number, 1 watt for 2200 meters and 5 watts for 630 meters."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1a-message-forwarding",
+      "group": "E1A",
+      "title": "Message forwarding: the originator is accountable",
+      "body": [
+        "In a message forwarding system (such as packet bulletin boards or Winlink), a message may pass through many automatic stations before it arrives. No forwarding station can read everything it relays.",
+        "So 97.219 puts primary accountability for a rule-breaking message on the control operator of the station that originated it. Forwarding stations that pass it along without knowing are not accountable, though they must stop relaying it once they become aware of it. The first forwarding station must either verify who it accepts traffic from or accept accountability for what it passes into the system."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1a-ships-aircraft",
+      "group": "E1A",
+      "title": "Operating from ships and aircraft",
+      "body": [
+        "FCC amateur rules follow US-documented or US-registered vessels and aircraft anywhere, including in international waters (97.5(a)). The station must be under the physical control of someone holding an FCC-issued amateur license, or a foreign ham authorized for reciprocal operation. Any class of FCC amateur license will do; no marine endorsement or commercial radiotelephone permit is needed.",
+        "Before operating, the installation and operation must be approved by the master of the ship or the pilot in command of the aircraft (97.11(a)). The amateur station must also be separate from the vessel's own radio gear and must not interfere with it, but the key condition the rule places first is the captain's or pilot's approval."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1b-spurious",
+      "group": "E1B",
+      "title": "What counts as a spurious emission",
+      "body": [
+        "Part 97 (97.3(a)(43)) defines a spurious emission as an emission on frequencies outside the necessary bandwidth of a transmission, whose level could be reduced without affecting the information being sent. Harmonics and parasitic oscillations are typical examples.",
+        "The key idea: the signal would carry exactly the same message without it, so there is no excuse for it. The definition is not about missing identification, secret signals, or a particular dB number."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1b-hf-image-bandwidth",
+      "group": "E1B",
+      "title": "Digital voice and SSTV on HF: about 3 kHz",
+      "body": [
+        "On the HF phone and image segments, 97.307(f)(2) says a non-phone emission may not be wider than a communications-quality phone emission of the same modulation type. A communications-quality SSB voice signal is about 3 kHz wide.",
+        "So digital voice and slow-scan TV on HF should fit in roughly 3 kHz, the same space as an SSB voice signal. Wider signals such as 10 to 20 kHz belong on VHF and higher bands."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1b-station-location",
+      "group": "E1B",
+      "title": "Places that need special protection",
+      "body": [
+        "Section 97.13 adds duties based on where a station is:",
+        "• FCC monitoring facilities: a station within 1600 meters (1 mile) of one must protect it from harmful interference, or the FCC may restrict the station's operation.",
+        "• Land of environmental or historic importance may require extra review before a station is placed there.",
+        "The National Radio Quiet Zone (97.3(a)(33)) is an area in Maryland, Virginia, and West Virginia surrounding the National Radio Astronomy Observatory at Green Bank, West Virginia. Sensitive radio telescopes operate there, so some amateur operations, such as setting up an automatic beacon, require notifying the observatory first."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1b-secondary-70cm",
+      "group": "E1B",
+      "title": "Radiolocation on 70 centimeters",
+      "body": [
+        "Amateurs share 70 centimeters with government radiolocation systems (radar), and amateurs are the secondary user. Under 97.303(b), amateur stations there must not cause harmful interference to those radars and must accept interference from them.",
+        "If a repeater interferes with a radiolocation system, its control operator must stop transmitting or change the repeater (frequency, power, antenna, and so on) so the interference ends. Filing aviation notices or simply lowering antenna height are not what the rule requires."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1b-antenna-structures",
+      "group": "E1B",
+      "title": "Antenna towers: airports and PRB-1",
+      "body": [
+        "Tall structures can endanger aircraft. Under 97.15(a), an antenna structure more than 200 feet (60.96 m) high, or one at or near a public use airport, may require notifying the Federal Aviation Administration and registering the structure with the FCC under Part 17 of the FCC rules.",
+        "PRB-1 is a 1985 FCC ruling, now reflected in 97.15(b), about state and local government rules such as zoning. Those rules may not ban amateur antennas outright. Instead they must reasonably accommodate amateur communications and be the minimum practicable regulation needed to achieve the local government's legitimate purpose.",
+        "PRB-1 does not mean there can be no limits at all, and it does not cover private agreements such as homeowners association rules or deed restrictions."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1b-broadcast-interference",
+      "group": "E1B",
+      "title": "Quiet hours for broadcast interference",
+      "body": [
+        "If an amateur station causes general interference to domestic broadcast reception, and the broadcast receivers are of good engineering design, the FCC can impose quiet hours (97.121(a)).",
+        "The station then may not transmit, on the frequencies causing the problem, from 8:00 to 10:30 p.m. local time every day, plus 10:30 a.m. to 1:00 p.m. local time on Sundays. It is a limit on certain hours and frequencies, not an order to shut down entirely or on a whole range of bands."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1b-races",
+      "group": "E1B",
+      "title": "RACES stations and frequencies",
+      "body": [
+        "RACES (Radio Amateur Civil Emergency Service) is amateur radio used by government civil defense and emergency management agencies. Under 97.407(a), any FCC-licensed amateur primary, club, or military recreation station may operate in RACES, if it is certified by the civil defense organization for the area as registered with it. License class does not matter.",
+        "RACES stations use the frequencies and emissions authorized to the control operator, shared with normal amateur use (97.407(b)). They do not get special government channels. Only if the President invokes War Emergency Powers are RACES stations limited to specific segments."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1c-remote-automatic",
+      "group": "E1C",
+      "title": "Remote and automatic control limits",
+      "body": [
+        "A station operated by remote control (telecommand) depends on its control link. If the link fails, the station must not keep transmitting on its own. Section 97.213(b) requires the station to stop within 3 minutes after a malfunction of the control link.",
+        "Automatic control means no control operator is watching at the control point. Section 97.115(c) says a station under automatic control may not send third-party communications, except when it is transmitting RTTY or data emissions. That exception is what allows automatic digital systems, like packet and Winlink stations, to carry messages for others."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1c-lf-mf-rules",
+      "group": "E1C",
+      "title": "Getting on 2200 and 630 meters",
+      "body": [
+        "Electric utilities use frequencies near these bands for power line carrier (PLC) systems that send control signals over power lines. To protect them, 97.303(g) sets these rules:",
+        "• Stations may operate only from fixed locations, not mobile.",
+        "• Before operating, you must notify the Utilities Technology Council (UTC) of your call sign, the band or bands you intend to use, and your antenna's coordinates. (The rule text still uses the council's older name, Utilities Telecom Council.)",
+        "• You may begin after 30 days, unless UTC tells you your station is within 1 kilometer of a PLC system using those frequencies. No approval letter is required.",
+        "Once on the air, the modes are generous: phone, image, RTTY, and data are all allowed across the entire 630 meter band and the entire 2200 meter band (97.305(c)). Antennas on these bands may not be more than 60 meters high."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1c-60m-bandwidth",
+      "group": "E1C",
+      "title": "60 meter bandwidth",
+      "body": [
+        "Every emission on 60 meters, whether phone, data, RTTY, or CW, must be no more than 2.8 kHz wide (97.303(h) and 97.307(f)(14)). That covers normal SSB voice and common digital modes, but not wider signals.",
+        "The smaller numbers you might see, such as 60 Hz or 170 Hz, describe particular RTTY or data signals, not the legal limit."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1c-emission-standards",
+      "group": "E1C",
+      "title": "Spurious emission limit and FM deviation on HF",
+      "body": [
+        "Spurious emissions: for a transmitter installed after January 1, 2003 and transmitting below 30 MHz, the mean power of any spurious emission must be at least 43 dB below the mean power of the fundamental emission (97.307(d)). Between 30 and 225 MHz the requirement is stricter, 60 dB below.",
+        "FM and PM on HF: these are angle modulation. The modulation index is the peak frequency deviation divided by the modulating audio frequency. On the HF phone segments below 29.0 MHz, the index may be no more than 1.0 at the highest modulation frequency (97.307(f)(1)). This keeps FM narrow on the crowded HF bands. From 29.0 to 29.7 MHz, wider FM repeater and simplex signals are allowed."
+      ],
+      "formula": "Modulation index = peak deviation ÷ highest modulating frequency (1.0 max below 29.0 MHz)",
+      "status": "draft"
+    },
+    {
+      "id": "e1c-international",
+      "group": "E1C",
+      "title": "Talking to, and operating in, other countries",
+      "body": [
+        "When talking to hams in other countries, 97.117 limits the content to communications related to the purposes of amateur radio plus remarks of a personal nature. English is not required, and there is no special rule reserving third-party traffic for relief agencies.",
+        "Two agreements let hams operate abroad without applying for a separate foreign license:",
+        "• CEPT: an arrangement of European telecommunications administrations. It lets US amateurs operate in many European countries, and hams from those countries operate in the US. A US operator must carry a copy of FCC Public Notice DA 16-1048, which explains the arrangement.",
+        "• IARP (International Amateur Radio Permit): a permit that lets US amateurs operate in certain countries of the Americas that are part of the Inter-American (CITEL) convention."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1d-definitions",
+      "group": "E1D",
+      "title": "Space station words",
+      "body": [
+        "Part 97 defines a family of terms for satellite and remote operation:",
+        "• Space station: an amateur station more than 50 km above the Earth's surface.",
+        "• Earth station: an amateur station within 50 km of the Earth's surface that is meant to communicate with space stations or with other Earth stations by means of space objects.",
+        "• Telemetry: a one-way transmission of measurements at a distance from the measuring instrument, like a satellite reporting battery voltage and temperature.",
+        "• Telecommand: a one-way transmission to start, change, or stop functions of a device at a distance.",
+        "• Space telecommand station: an amateur station that transmits communications to initiate, modify, or terminate functions of a space station. It is the ground station that controls the satellite."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1d-space-bands",
+      "group": "E1D",
+      "title": "Where space stations may transmit",
+      "body": [
+        "Only certain bands and segments are authorized for amateur space stations (97.207(c)):",
+        "• HF: 7.0 to 7.1 MHz (40 m), 14.00 to 14.25 MHz (20 m), and all of 17, 15, 12, and 10 meters",
+        "• VHF: 144 to 146 MHz (2 m) only. Not 6 meters and not 1.25 meters.",
+        "• UHF: 435 to 438 MHz (70 cm) and 2400 to 2450 MHz (13 cm). Not 33 cm.",
+        "• Several microwave segments above that",
+        "Note that 30 meters and 60 meters, 80 meters and 160 meters, 6 meters, 1.25 meters, and 33 centimeters have no space station allocation."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1d-who-may-operate",
+      "group": "E1D",
+      "title": "Who may be an Earth or telecommand station",
+      "body": [
+        "Any amateur station may be an Earth station, subject to the privileges of the control operator's license class (97.209). No special course, AMSAT approval, or higher license class is required; a Technician can work satellites on frequencies Technicians may use.",
+        "A telecommand station for a space station is any amateur station the space station's licensee designates (97.211(a)), again within the control operator's license privileges. AMSAT and the ITU do not make that choice.",
+        "Telecommand stations may send codes intended to hide the meaning of their commands (97.211(b)). This is one of the few exceptions to the ban on encrypted messages, because it keeps others from taking control of an expensive satellite. Commands to ordinary terrestrial repeaters, repeater audio links, and mesh network nodes do not get this exception."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1d-telecommand-earth",
+      "group": "E1D",
+      "title": "Telecommand on Earth, model craft, and balloons",
+      "body": [
+        "A station on the ground (or within 50 km of the surface) that is controlled by telecommand must have posted, in a conspicuous place at the station, a photocopy of the station license and a label with the name, address, and telephone number of the station licensee and of at least one designated control operator (97.213(d)).",
+        "Telecommand of model craft, such as radio-controlled planes, boats, and cars, is limited to 1 watt of transmitter power (97.215(c)).",
+        "A high-altitude balloon carrying a telemetry transmitter is an ordinary amateur station while below 50 km. It must identify with its call sign under 97.119(a), like any other station. Its power level or grid square may be useful data, but the rules require only the call sign."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1d-one-way",
+      "group": "E1D",
+      "title": "Stations that may transmit one-way",
+      "body": [
+        "Most amateur communication must be two-way. A few station types are specifically allowed to transmit one-way communications because of what they do:",
+        "• Space stations (97.207(e)), which often send telemetry nobody answers",
+        "• Beacon stations (97.203(g)), which transmit so others can study propagation",
+        "• Telecommand stations (97.211(d)), which send commands to a satellite",
+        "Repeaters and message forwarding or automatic digital stations relay two-way traffic between other hams, so they do not have this one-way permission."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1e-vec-ve",
+      "group": "E1E",
+      "title": "VECs and VEs: who does what",
+      "body": [
+        "Amateur exams are given by volunteers, not by the FCC.",
+        "• A Volunteer Examiner Coordinator (VEC) is an organization that has entered into a written agreement with the FCC to coordinate the efforts of volunteer examiners in preparing and administering exams (97.521). Examples include ARRL VEC, W5YI, and Laurel VEC.",
+        "• A Volunteer Examiner (VE) is a licensed amateur who gives exams. To become one, a person is accredited by a VEC, which confirms the applicant meets the FCC's requirements (97.525). A license does not make you a VE automatically, and the FCC does not accredit VEs directly.",
+        "The VECs, working together, maintain the question pools for all amateur exams (97.523). Each pool must have at least 10 times as many questions as an exam uses, and must be published before it is used."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1e-session-conduct",
+      "group": "E1E",
+      "title": "Running a fair exam session",
+      "body": [
+        "Each exam is given by a team of at least 3 VEs (97.509(a)). Each administering VE must observe the examinee throughout the whole exam, and each administering VE is responsible for proper conduct and necessary supervision. It is not left to the VEC, the session manager, or one designated monitor.",
+        "Examinees must follow the VEs' instructions (97.511). If a candidate fails to comply, the VEs must immediately end that candidate's exam, with no warning required. Other examinees are not affected.",
+        "To avoid conflicts of interest, a VE may not give an exam to close relatives listed in 97.509(d): spouse, children, grandchildren, stepchildren, parents, grandparents, stepparents, brothers, sisters, stepbrothers, stepsisters, aunts, uncles, nieces, nephews, and in-laws. Friends and employees are not on that list."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1e-after-exam",
+      "group": "E1E",
+      "title": "Paperwork after the exam",
+      "body": [
+        "The VEs grade each exam element right away.",
+        "• Pass: when the examinee has credit for every element needed for the license, 3 VEs must certify that the examinee is qualified and that the VEs followed the administering requirements (97.509(i)). The VEs then send the application to the coordinating VEC, following that VEC's instructions (97.509(m)). The VEC checks it and forwards the data to the FCC.",
+        "• Fail: the VEs return the application document to the examinee and tell them their grade (97.509(j)).",
+        "VEs never issue licenses themselves, and they do not send paperwork straight to the FCC."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1e-money-fraud",
+      "group": "E1E",
+      "title": "Reimbursement and fraud",
+      "body": [
+        "VEs and VECs may be reimbursed by examinees for out-of-pocket expenses of preparing, processing, administering, or coordinating an exam (97.527). That is the source of the small session fee. The rule does not cover teaching license classes or supplying study materials.",
+        "A VE who administers or certifies an exam fraudulently, or for payment beyond allowed reimbursement, may have their amateur station license revoked and their operator license suspended (97.509(e))."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1f-amplifiers",
+      "group": "E1F",
+      "title": "External RF power amplifiers",
+      "body": [
+        "To keep amateur amplifiers from being sold for illegal use, such as on CB near 27 MHz, amplifiers manufactured or imported for amateur use must be FCC certificated, and no amplifier capable of operation below 144 MHz may be built or modified by a non-amateur without certification (97.315(a)).",
+        "The big exception: an amplifier constructed or modified by an amateur radio operator for use at an amateur station does not need certification (97.315(b)(1)). Hams may build their own.",
+        "To be certified, an amplifier must (97.317(a)):",
+        "• Meet the spurious emission standards when operated at the lesser of 1500 W PEP or its full output power, and also when in standby or off while connected to the transmitter",
+        "• Have no more than 15 dB of gain",
+        "• Have no gain at all between 26 and 28 MHz"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1f-prohibited",
+      "group": "E1F",
+      "title": "Business, pay, and hidden meaning",
+      "body": [
+        "Section 97.113(a) sets several limits that apply on every band and every mode:",
+        "• No communications for hire or material compensation, direct or indirect, except as the rules specifically allow (such as a teacher using a station in class).",
+        "• No communications in which the station licensee or control operator has a pecuniary (money) interest, including on behalf of an employer. You may send a message to a business, such as ordering a pizza for a public service event, as long as neither you nor your employer has a financial interest in it. There is no dollar threshold.",
+        "• No messages encoded to obscure their meaning.",
+        "These rules apply to amateur mesh networks too. Email and third-party traffic are fine on a mesh network, but encryption that hides the content is not. Political or religious topics and non-English languages are not prohibited by these rules."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1f-spread-spectrum",
+      "group": "E1F",
+      "title": "Spread spectrum",
+      "body": [
+        "Spread spectrum (SS) spreads a signal over a much wider bandwidth than it needs. Because it takes up so much room, Part 97 allows it only on the 1.25 meter band (222 to 225 MHz) and higher bands, that is, only above 222 MHz (97.305(c)). It is not allowed on 6 or 2 meters.",
+        "SS transmitter output is limited to 10 W PEP (97.313(j))."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1f-line-a",
+      "group": "E1F",
+      "title": "Line A and the bottom of 70 centimeters",
+      "body": [
+        "Line A is a boundary defined in 97.3(a)(30) that runs roughly parallel to and south of the US-Canada border, from Washington state across the Great Lakes region to Maine.",
+        "The 420 to 430 MHz part of 70 centimeters is used by other services in Canada, so no amateur station north of Line A may transmit in the 420 to 430 MHz segment (97.303(m)(1)). The rest of 70 centimeters, 430 to 450 MHz, remains available there."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1f-auxiliary",
+      "group": "E1F",
+      "title": "Auxiliary station control operators",
+      "body": [
+        "An auxiliary station carries point-to-point links within a system of amateur stations, such as a link from a remote receiver to a repeater. Under 97.201(a), the control operator of an auxiliary station must hold a Technician, General, Advanced, or Amateur Extra license. The only class left out is Novice, which has no privileges on the VHF and UHF bands where auxiliary stations operate."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1f-canadians",
+      "group": "E1F",
+      "title": "Canadian amateurs in the US",
+      "body": [
+        "A Canadian ham does not need a US license to operate here. Under 97.107(a), a person holding a Canadian amateur license may operate in the US using the operating terms and conditions of their Canadian license, but never beyond the privileges of a US Amateur Extra license. Their privileges are not limited to certain bands, and they are not automatically given General privileges."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e1f-sta",
+      "group": "E1F",
+      "title": "Special Temporary Authority",
+      "body": [
+        "A Special Temporary Authority (STA), covered in section 1.931 of the FCC rules, lets a station operate temporarily in a way its normal license does not cover. For amateurs, the usual reason is experimental communications, such as testing a new mode or frequency not normally authorized.",
+        "Other situations already have their own rules, so no STA is needed. Special event call signs come from a coordinated database. A newly upgraded operator can use the new privileges right away with the upgrade CSCE, adding an indicator such as /AG or /AE. VE teams always need at least 3 VEs; an STA does not change that."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "E1A01": {
+      "why": "A USB signal extends upward from the displayed carrier. A 3 kHz signal at 14.348 MHz reaches 14.351 MHz, which is 1 kHz past the top of the 20 meter band at 14.350 MHz. The carrier frequency itself is inside the band, and USB is the normal sideband on 20 meters.",
+      "work": ["USB occupies carrier to carrier + 3 kHz", "14.348 MHz + 0.003 MHz = 14.351 MHz", "Band top edge = 14.350 MHz", "14.351 − 14.350 = 0.001 MHz = 1 kHz outside the band, at the upper end"],
+      "concept": "e1a-sideband-edges",
+      "status": "draft"
+    },
+    "E1A02": {
+      "why": "An LSB signal occupies about 3 kHz below the displayed carrier. To keep all of it above the lower band edge, the display must read at least 3 kHz above that edge. Anything closer, such as 300 Hz or 1 kHz, lets part of the signal fall outside.",
+      "work": ["LSB occupies carrier − 3 kHz to carrier", "Lowest point must be ≥ band edge", "Carrier − 3 kHz ≥ edge, so carrier ≥ edge + 3 kHz"],
+      "concept": "e1a-sideband-edges",
+      "status": "draft"
+    },
+    "E1A03": {
+      "why": "The 20 meter RTTY and data segment ends at 14.150 MHz. A 2.8 kHz wide USB signal extends 2.8 kHz above its carrier, so its carrier can be no higher than 14.1472 MHz.",
+      "work": ["Data segment top edge = 14.150 MHz", "Signal bandwidth = 2.8 kHz = 0.0028 MHz", "14.150 − 0.0028 = 14.1472 MHz"],
+      "concept": "e1a-data-edges",
+      "status": "draft"
+    },
+    "E1A04": {
+      "why": "The Extra class 75 meter phone segment starts at 3.600 MHz. An LSB signal displayed at 3.601 MHz spreads about 3 kHz below that, down to 3.598 MHz, so part of it would be outside the phone segment. The displayed frequency looking legal is not enough.",
+      "work": ["LSB bottom = carrier − 3 kHz", "3.601 MHz − 0.003 MHz = 3.598 MHz", "3.598 MHz is below the 3.600 MHz phone segment edge"],
+      "concept": "e1a-sideband-edges",
+      "status": "draft"
+    },
+    "E1A05": {
+      "why": "Section 97.5(a) requires the station on a US-documented or registered vessel or craft to be under the physical control of a person holding an FCC amateur license, or a foreign amateur authorized for reciprocal operation. A marine license or commercial radiotelephone permit is not what the rule asks for.",
+      "concept": "e1a-ships-aircraft",
+      "status": "draft"
+    },
+    "E1A06": {
+      "why": "For CW on a 60 meter channel, the rules say to transmit on the channel's center frequency. The 1.5 kHz offset below center applies to USB phone, data, and RTTY, not to CW.",
+      "concept": "e1a-60m",
+      "status": "draft"
+    },
+    "E1A07": {
+      "why": "Section 97.313(k) limits 2200 meter stations to 1 W EIRP of radiated power. The 5 W EIRP figure is the 630 meter limit, and PEP values describe transmitter output, not the radiated power limit.",
+      "concept": "e1a-lf-mf-power",
+      "status": "draft"
+    },
+    "E1A08": {
+      "why": "Under 97.219(b), the control operator of the station that originated the message is primarily accountable. Forwarding stations that pass along a violation without knowing it are not, though they must stop once they become aware of it.",
+      "concept": "e1a-message-forwarding",
+      "status": "draft"
+    },
+    "E1A09": {
+      "why": "Section 97.313(l) limits 630 meter stations to 5 W EIRP, except parts of Alaska close to Russia, where the limit is 1 W EIRP. The 1 W EIRP choice is the 2200 meter limit.",
+      "concept": "e1a-lf-mf-power",
+      "status": "draft"
+    },
+    "E1A10": {
+      "why": "Section 97.11(a) requires the installation and operation of an amateur station on a ship or aircraft to be approved by the master of the ship or the pilot in command. There is no rule about a fully separate power supply or special band segments.",
+      "concept": "e1a-ships-aircraft",
+      "status": "draft"
+    },
+    "E1A11": {
+      "why": "FCC rules follow a US-registered vessel into international waters, and any FCC-issued amateur license is enough. No marine endorsement, minimum license class, or commercial operator permit is required.",
+      "concept": "e1a-ships-aircraft",
+      "status": "draft"
+    },
+    "E1B01": {
+      "why": "Part 97 defines a spurious emission as one outside the signal's necessary bandwidth that could be reduced or removed without affecting the information sent. Failing to identify or hiding a signal are different violations, and the definition does not use a 40 dB threshold.",
+      "concept": "e1b-spurious",
+      "status": "draft"
+    },
+    "E1B02": {
+      "why": "On the HF phone and image segments, a digital voice or SSTV signal may not be wider than a communications-quality voice signal of the same modulation type, which is about 3 kHz. The wider choices would only be acceptable on VHF and higher bands.",
+      "concept": "e1b-hf-image-bandwidth",
+      "status": "draft"
+    },
+    "E1B03": {
+      "why": "Section 97.13(b) requires stations within 1600 meters, about 1 mile, of an FCC monitoring facility to protect it from harmful interference.",
+      "concept": "e1b-station-location",
+      "status": "draft"
+    },
+    "E1B04": {
+      "why": "Amateurs are secondary to government radiolocation on 70 centimeters and must not cause it harmful interference. The control operator must stop the repeater or change it enough to end the interference. Filing an aviation notice or only lowering antenna height does not meet the requirement.",
+      "concept": "e1b-secondary-70cm",
+      "status": "draft"
+    },
+    "E1B05": {
+      "why": "The National Radio Quiet Zone is an area in Maryland, Virginia, and West Virginia surrounding the National Radio Astronomy Observatory at Green Bank. It protects sensitive radio telescopes, not an FCC monitoring station, White Sands, or Cape Canaveral.",
+      "concept": "e1b-station-location",
+      "status": "draft"
+    },
+    "E1B06": {
+      "why": "Section 97.15(a) says antenna structures at or near a public use airport may require notifying the FAA and registering with the FCC under Part 17. There is no EPA impact statement or airport construction permit requirement in the amateur rules.",
+      "concept": "e1b-antenna-structures",
+      "status": "draft"
+    },
+    "E1B07": {
+      "why": "PRB-1 applies to state and local government regulation, such as zoning ordinances. It does not cover private homeowners association rules, and it has nothing to do with FAA height limits or vehicle device laws.",
+      "concept": "e1b-antenna-structures",
+      "status": "draft"
+    },
+    "E1B08": {
+      "why": "When an amateur station interferes with broadcast receivers of good design, 97.121(a) lets the FCC impose quiet hours: no transmitting on the offending frequencies during set evening hours, plus certain Sunday hours. It does not require shutting down entirely or on every frequency above or below 30 MHz.",
+      "concept": "e1b-broadcast-interference",
+      "status": "draft"
+    },
+    "E1B09": {
+      "why": "Any FCC-licensed amateur station may operate under RACES rules if it is certified by the civil defense organization for the area as registered with it. License class and club status do not matter.",
+      "concept": "e1b-races",
+      "status": "draft"
+    },
+    "E1B10": {
+      "why": "RACES stations use all the amateur frequencies authorized to the control operator, shared with normal amateur use. They do not get local government channels, and special segments apply only if the President invokes War Emergency Powers.",
+      "concept": "e1b-races",
+      "status": "draft"
+    },
+    "E1B11": {
+      "why": "PRB-1 requires state and local rules to reasonably accommodate amateur radio and to be the minimum practicable regulation for the local government's legitimate purpose. It does not ban all limits, and it does not depend on emergency use or an engineer's certification.",
+      "concept": "e1b-antenna-structures",
+      "status": "draft"
+    },
+    "E1C01": {
+      "why": "Every emission on 60 meters, including data, must be no more than 2.8 kHz wide. The 60 Hz and 170 Hz figures describe particular narrow modes, not the legal limit.",
+      "concept": "e1c-60m-bandwidth",
+      "status": "draft"
+    },
+    "E1C02": {
+      "why": "Section 97.117 limits international communications to things incidental to the purposes of amateur radio and remarks of a personal nature. English is not required, and third-party traffic is not limited to relief organizations.",
+      "concept": "e1c-international",
+      "status": "draft"
+    },
+    "E1C03": {
+      "why": "After notifying UTC, an operator may begin after 30 days unless UTC reports that the station is within 1 kilometer of a power line carrier system on those frequencies. No approval letter or test signal is required, and operation cannot begin immediately.",
+      "concept": "e1c-lf-mf-rules",
+      "status": "draft"
+    },
+    "E1C04": {
+      "why": "An IARP (International Amateur Radio Permit) lets US amateurs operate in certain countries of the Americas without applying for a separate license there. The other choices are made-up expansions of the letters.",
+      "concept": "e1c-international",
+      "status": "draft"
+    },
+    "E1C05": {
+      "why": "Section 97.115(c) bans third-party communications from automatically controlled stations, except when they transmit RTTY or data emissions. That is why automatic digital message systems may carry traffic for others, while automatically controlled voice or CW stations may not.",
+      "concept": "e1c-remote-automatic",
+      "status": "draft"
+    },
+    "E1C06": {
+      "why": "A US operator using the CEPT arrangement must have a copy of FCC Public Notice DA 16-1048, which documents the arrangement. There is no rule requiring embassy approval or identifying in the local language.",
+      "concept": "e1c-international",
+      "status": "draft"
+    },
+    "E1C07": {
+      "why": "Before transmitting on 2200 or 630 meters, you must notify the Utilities Technology Council of your call sign, intended bands, and your antenna's coordinates, so it can check for nearby power line carrier systems. No FCC endorsement, FAA notice, or environmental statement is required.",
+      "concept": "e1c-lf-mf-rules",
+      "status": "draft"
+    },
+    "E1C08": {
+      "why": "Section 97.213(b) requires a remotely controlled station to stop transmitting within 3 minutes if its control link malfunctions.",
+      "concept": "e1c-remote-automatic",
+      "status": "draft"
+    },
+    "E1C09": {
+      "why": "Section 97.307(f)(1) limits FM and PM signals on the HF phone segments below 29.0 MHz to a modulation index of 1.0 at the highest modulation frequency. This keeps angle-modulated signals narrow on crowded HF bands.",
+      "concept": "e1c-emission-standards",
+      "status": "draft"
+    },
+    "E1C10": {
+      "why": "For transmitters installed after January 1, 2003 and operating below 30 MHz, 97.307(d) requires every spurious emission to be at least 43 dB below the fundamental's mean power. The larger numbers are not the HF standard; 60 dB applies between 30 and 225 MHz.",
+      "concept": "e1c-emission-standards",
+      "status": "draft"
+    },
+    "E1C11": {
+      "why": "CEPT is the European arrangement that lets US licensees operate in many European countries and lets hams from those countries operate here. IARP covers countries in the Americas, not Europe.",
+      "concept": "e1c-international",
+      "status": "draft"
+    },
+    "E1C12": {
+      "why": "Section 97.305(c) authorizes phone, along with image, RTTY, and data, across the entire 630 meter band. There is no separate phone segment at the top or bottom.",
+      "concept": "e1c-lf-mf-rules",
+      "status": "draft"
+    },
+    "E1D01": {
+      "why": "Telemetry is a one-way transmission of measurements at a distance from the measuring instrument. Starting, changing, or stopping a device at a distance is telecommand, a different thing.",
+      "concept": "e1d-definitions",
+      "status": "draft"
+    },
+    "E1D02": {
+      "why": "Section 97.211(b) lets a space telecommand station send codes that hide the meaning of its commands, so no one else can take control of the satellite. Commands to ground repeaters, repeater audio links, and mesh nodes must not be encrypted.",
+      "concept": "e1d-who-may-operate",
+      "status": "draft"
+    },
+    "E1D03": {
+      "why": "A space telecommand station transmits communications to initiate, modify, or terminate functions of a space station. A station in orbit is the space station itself, and a station that only receives telemetry or talks through a satellite is not a telecommand station.",
+      "concept": "e1d-definitions",
+      "status": "draft"
+    },
+    "E1D04": {
+      "why": "A balloon-borne telemetry station is an ordinary amateur station and must identify with its call sign under 97.119(a). Output power and grid square are optional data, not identification requirements.",
+      "concept": "e1d-telecommand-earth",
+      "status": "draft"
+    },
+    "E1D05": {
+      "why": "Section 97.213(d) requires a photocopy of the station license plus a label with the name, address, and telephone number of the station licensee and at least one designated control operator. Every listed item is required, so all of them are correct.",
+      "concept": "e1d-telecommand-earth",
+      "status": "draft"
+    },
+    "E1D06": {
+      "why": "Section 97.215(c) limits transmitters used to control model craft to 1 watt.",
+      "concept": "e1d-telecommand-earth",
+      "status": "draft"
+    },
+    "E1D07": {
+      "why": "Space stations may use 40 meters (7.0 to 7.1 MHz), 20 meters (14.00 to 14.25 MHz), 15 meters, and 10 meters, so that choice is true. The rule also includes 17 and 12 meters, but no space allocation exists on 30 meters, so the choice listing 30 meters is wrong. Not every HF band has one, so 'all HF bands' is also wrong.",
+      "concept": "e1d-space-bands",
+      "status": "draft"
+    },
+    "E1D08": {
+      "why": "The only VHF space station allocation is on 2 meters, 144 to 146 MHz. Neither 6 meters nor 1.25 meters is authorized for space stations.",
+      "concept": "e1d-space-bands",
+      "status": "draft"
+    },
+    "E1D09": {
+      "why": "Space stations may use 435 to 438 MHz on 70 centimeters and 2400 to 2450 MHz on 13 centimeters. The 33 centimeter band has no space station allocation.",
+      "concept": "e1d-space-bands",
+      "status": "draft"
+    },
+    "E1D10": {
+      "why": "Section 97.211(a) says any amateur station designated by the space station's licensee may be its telecommand station, within the control operator's privileges. Neither AMSAT nor the ITU designates telecommand stations.",
+      "concept": "e1d-who-may-operate",
+      "status": "draft"
+    },
+    "E1D11": {
+      "why": "Section 97.209 lets any amateur station be an Earth station, subject to the privileges of the control operator's license class. No course or particular license class is required.",
+      "concept": "e1d-who-may-operate",
+      "status": "draft"
+    },
+    "E1D12": {
+      "why": "Space stations, beacon stations, and telecommand stations are each specifically allowed to transmit one-way communications. Repeaters and message forwarding or automatic digital stations relay two-way traffic and have no such permission.",
+      "concept": "e1d-one-way",
+      "status": "draft"
+    },
+    "E1E01": {
+      "why": "Section 97.527 allows VEs and VECs to be reimbursed for out-of-pocket expenses of preparing, processing, administering, and coordinating exams. Teaching classes and supplying study materials are not covered.",
+      "concept": "e1e-money-fraud",
+      "status": "draft"
+    },
+    "E1E02": {
+      "why": "Under 97.523, the VECs must cooperate to maintain one question pool for each exam element. The FCC and the ARRL do not maintain the pools, and individual VEs only write questions.",
+      "concept": "e1e-vec-ve",
+      "status": "draft"
+    },
+    "E1E03": {
+      "why": "A VEC is an organization that has entered into an agreement with the FCC to coordinate exams given by volunteer examiners. It is not an individual examiner or session manager, and VE teams do not pay it.",
+      "concept": "e1e-vec-ve",
+      "status": "draft"
+    },
+    "E1E04": {
+      "why": "A VE is accredited by a VEC, which confirms the applicant meets the FCC's requirements. Holding a General or higher license does not make someone a VE automatically, and the FCC does not accredit or test VEs directly.",
+      "concept": "e1e-vec-ve",
+      "status": "draft"
+    },
+    "E1E05": {
+      "why": "When an examinee fails an element, 97.509(j) requires the VEs to return the application document to the examinee and tell them their grade. It is not kept, destroyed, or sent to the FCC.",
+      "concept": "e1e-after-exam",
+      "status": "draft"
+    },
+    "E1E06": {
+      "why": "Section 97.509(c) makes each administering VE responsible for the proper conduct and necessary supervision of the exam. That responsibility is not handed to the VEC, the session manager, or one monitoring VE.",
+      "concept": "e1e-session-conduct",
+      "status": "draft"
+    },
+    "E1E07": {
+      "why": "The VEs must immediately terminate the exam of a candidate who does not follow their instructions. No warning is required, and other examinees' exams continue.",
+      "concept": "e1e-session-conduct",
+      "status": "draft"
+    },
+    "E1E08": {
+      "why": "Section 97.509(d) bars a VE from examining the relatives it lists, such as a spouse, children, parents, siblings, and in-laws. Friends and employees are not on that list, so 'all these choices' is wrong.",
+      "concept": "e1e-session-conduct",
+      "status": "draft"
+    },
+    "E1E09": {
+      "why": "Section 97.509(e) says a VE who administers or certifies an exam fraudulently may have their amateur station license revoked and operator license suspended. The rule does not set the fine or jail time given in the other choices.",
+      "concept": "e1e-money-fraud",
+      "status": "draft"
+    },
+    "E1E10": {
+      "why": "After a successful exam, the VEs submit the application document to the coordinating VEC, following that VEC's instructions. The VEs grade the exam themselves at the session and do not send papers directly to the FCC.",
+      "concept": "e1e-after-exam",
+      "status": "draft"
+    },
+    "E1E11": {
+      "why": "When an examinee has passed every required element, 3 VEs must certify that the person is qualified and that the VEs followed the rules. VEs cannot issue licenses, and paperwork goes to the VEC, not straight to the FCC.",
+      "concept": "e1e-after-exam",
+      "status": "draft"
+    },
+    "E1F01": {
+      "why": "Spread spectrum is authorized only on 1.25 meters (222 to 225 MHz) and higher bands, which is above 222 MHz. It is not allowed on 6 or 2 meters.",
+      "concept": "e1f-spread-spectrum",
+      "status": "draft"
+    },
+    "E1F02": {
+      "why": "Under 97.107(a), a Canadian licensee operates in the US under the terms of their Canadian license, but never beyond US Amateur Extra privileges. They do not need a US license, and their privileges are not limited to a list of HF bands.",
+      "concept": "e1f-canadians",
+      "status": "draft"
+    },
+    "E1F03": {
+      "why": "Section 97.315(b)(1) exempts an amplifier built or modified by an amateur radio operator for use at an amateur station from certification. Assembly from a kit by a dealer, a low gain figure, or foreign certification does not create an exemption.",
+      "concept": "e1f-amplifiers",
+      "status": "draft"
+    },
+    "E1F04": {
+      "why": "Line A runs roughly parallel to the US-Canada border and just south of it, from Washington state to Maine. It has nothing to do with the coasts or the Mexican border.",
+      "concept": "e1f-line-a",
+      "status": "draft"
+    },
+    "E1F05": {
+      "why": "Section 97.303(m)(1) bars amateur stations north of Line A from transmitting in the 420 to 430 MHz segment, which is used by other services in Canada. The other segments listed remain available there.",
+      "concept": "e1f-line-a",
+      "status": "draft"
+    },
+    "E1F06": {
+      "why": "An STA lets the FCC temporarily authorize operation beyond a normal license, such as experimental amateur communications. Special event calls, VE team size, and operating with new privileges after an upgrade are handled by other rules, so no STA applies.",
+      "concept": "e1f-sta",
+      "status": "draft"
+    },
+    "E1F07": {
+      "why": "You may send a message to a business when neither you nor your employer has a pecuniary interest in it. The rules set no dollar threshold, and messages to businesses are not banned outright.",
+      "concept": "e1f-prohibited",
+      "status": "draft"
+    },
+    "E1F08": {
+      "why": "Section 97.113(a)(2) prohibits communications for hire or material compensation, except where the rules allow. Political or religious content and languages other than English are not prohibited.",
+      "concept": "e1f-prohibited",
+      "reviewNote": "The pool cites 97.113(c) for this question, but the rule on communications for hire is 97.113(a)(2); 97.113(c) covers retransmitting non-amateur signals. The keyed answer is correct.",
+      "status": "draft"
+    },
+    "E1F09": {
+      "why": "Mesh networks follow the same rules as all amateur stations, so messages encoded to obscure their meaning are prohibited. Email and third-party traffic are allowed, so 'all these choices' is wrong.",
+      "concept": "e1f-prohibited",
+      "status": "draft"
+    },
+    "E1F10": {
+      "why": "Section 97.201(a) lets Technician, General, Advanced, and Amateur Extra operators control an auxiliary station. Novices are the only class excluded, so 'any licensed amateur' is too broad.",
+      "concept": "e1f-auxiliary",
+      "status": "draft"
+    },
+    "E1F11": {
+      "why": "To be certified, an amplifier must meet the spurious emission standards when operated at the lesser of 1500 W or its full output power. The current gain limit is 15 dB, so the 23 dB figure is not the standard, and UL or IEEE certification is not part of the rule.",
+      "concept": "e1f-amplifiers",
+      "status": "draft"
+    }
+  }
+}

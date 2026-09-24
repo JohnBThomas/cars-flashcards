@@ -1,0 +1,370 @@
+{
+  "subelement": "T3",
+  "concepts": [
+    {
+      "id": "t3a-multipath",
+      "group": "T3A",
+      "title": "Multipath: when echoes of your signal collide",
+      "body": [
+        "A radio signal rarely takes just one path from transmitter to receiver. Part of it goes straight across, while other parts bounce off buildings, hills, vehicles, and even the ground. All these copies arrive at your antenna a tiny fraction of a second apart. This is called multipath propagation.",
+        "Because the copies travel different distances, their waves may line up (peaks with peaks) and add together, or arrive out of step (peaks with valleys) and cancel. At VHF a wavelength is only a meter or two, so moving your antenna just a few feet can take you from a strong spot to a dead spot. That is why signal strength can change so much over such a short distance.",
+        "• Picket fencing: a rapid flutter on a mobile signal as the car drives through the pattern of strong and weak spots. It sounds like the signal is being chopped by a fence of pickets.",
+        "• Data modes: echoes arriving at slightly different times smear one bit or symbol into the next, so the receiver makes more mistakes. Expect higher error rates. Switching to FM does not cure this."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t3a-reflections",
+      "group": "T3A",
+      "title": "Using reflections to get around obstructions",
+      "body": [
+        "Reflections are not always the enemy. If a building or hill blocks the straight path to a distant repeater, a directional antenna (such as a small beam) lets you aim somewhere else. Try pointing at a large building, a hillside, or a water tower that might bounce your signal toward the repeater. Rotate the antenna and listen for the direction where the repeater comes in best.",
+        "Some things will not help: switching polarization does not remove the obstruction, a high SWR only wastes power, and the 'long path' is an HF idea about going the long way around the Earth. It has nothing to do with a local VHF repeater."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t3a-polarization",
+      "group": "T3A",
+      "title": "Antenna polarization and why it must match",
+      "body": [
+        "An antenna's polarization is set by how it is mounted. A vertical whip sends out vertically polarized waves; a horizontal element sends out horizontally polarized waves.",
+        "On direct line-of-sight VHF and UHF paths, the polarization stays the same from one end to the other, so both stations should use the same one. If one antenna is vertical and the other horizontal (cross-polarized), the received signal is much weaker, often by 20 dB or more. It does not cause echoes or flip sidebands; it just loses signal.",
+        "By custom, FM and repeater stations on VHF and UHF use vertical antennas (easy to put on cars and handhelds). Weak-signal operators working long distances on CW and SSB on those same bands use horizontal antennas. Everyone following the same convention is what keeps them matched."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t3a-ionosphere",
+      "group": "T3A",
+      "title": "The ionosphere: the HF mirror in the sky",
+      "body": [
+        "The ionosphere is a region of the upper atmosphere, from roughly 30 miles up to several hundred miles up, where sunlight knocks electrons loose from gas molecules. Those free electrons can bend HF radio waves back toward Earth, letting signals travel far beyond the horizon. The lower troposphere (where weather happens) and the stratosphere do not return HF signals this way.",
+        "A trip through the ionosphere twists and scrambles a signal's polarization, so it arrives elliptically polarized, a mix of vertical and horizontal. Good news: for sky-wave signals, a vertical antenna and a horizontal antenna can both transmit and receive. The two ends do not need to match.",
+        "The ionosphere is always shifting, and a signal usually reaches you by more than one route through it. Those copies combine at random, sometimes adding and sometimes canceling, which causes the irregular fading (signals slowly swelling and dropping) typical of HF."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t3a-absorption",
+      "group": "T3A",
+      "title": "Wavelength decides what absorbs a signal",
+      "body": [
+        "Whether rain, fog, or leaves weaken a signal depends mostly on the wavelength compared with the size of the objects in the way. Short wavelengths are affected much more than long ones.",
+        "• UHF and microwave: leaves and branches are full of water, which absorbs these signals. A path through trees can turn a weak signal into no signal.",
+        "• Microwave: raindrops, snow, and other precipitation are close to the size of a microwave wavelength (about 3 cm at 10 GHz), so they absorb and scatter the signal and shorten your range. Wind, air pressure, and temperature by themselves are not the problem.",
+        "• 10 meters and 6 meters: the wavelengths are many meters long, far larger than any raindrop, so fog and rain have little effect."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t3b-em-wave",
+      "group": "T3B",
+      "title": "What a radio wave is made of",
+      "body": [
+        "A radio wave is an electromagnetic wave. It has two parts that travel together: an electric field and a magnetic field. Each one keeps regenerating the other as the wave moves through space.",
+        "The two fields are always at right angles (90 degrees) to each other, and both are at right angles to the direction the wave is traveling. They move together at the same speed.",
+        "A wave's polarization is defined by the direction of its electric field. A vertical antenna produces a vertical electric field, so the wave is called vertically polarized, even though its magnetic field is horizontal."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t3b-speed",
+      "group": "T3B",
+      "title": "Radio waves travel at the speed of light",
+      "body": [
+        "Light is also an electromagnetic wave, so radio waves in free space travel at the speed of light: about 300,000,000 meters per second (roughly 186,000 miles per second).",
+        "The speed does not depend on frequency. HF, VHF, UHF, and microwave signals all travel at the same speed in free space. What differs between them is the wavelength."
+      ],
+      "formula": "c ≈ 300,000,000 m/s (3 × 10^8 m/s)",
+      "status": "draft"
+    },
+    {
+      "id": "t3b-wavelength-frequency",
+      "group": "T3B",
+      "title": "Wavelength and frequency go opposite ways",
+      "body": [
+        "Wavelength is the distance a wave travels during one cycle. Since every radio wave moves at the same speed, a wave that cycles more times per second (higher frequency) has less distance per cycle. So as frequency goes up, wavelength gets shorter, and as frequency goes down, wavelength gets longer.",
+        "To convert, divide the speed of light by the frequency. With frequency in megahertz the numbers simplify nicely: wavelength in meters equals 300 divided by the frequency in MHz. For example, 146 MHz gives 300 ÷ 146 ≈ 2.05 meters.",
+        "Check which number goes on top: it is 300 divided by the frequency, not the other way around, and the frequency must be in MHz, not Hz."
+      ],
+      "formula": "wavelength (meters) = 300 ÷ frequency (MHz)",
+      "status": "draft"
+    },
+    {
+      "id": "t3b-band-names",
+      "group": "T3B",
+      "title": "Naming bands by wavelength",
+      "body": [
+        "Hams usually name a band by its approximate wavelength in meters (or centimeters) instead of its frequency. The 2-meter band is 144 to 148 MHz, and 300 ÷ 146 is about 2 meters. The 70-centimeter band is 420 to 450 MHz, and 300 ÷ 440 is about 0.68 m, or roughly 70 cm.",
+        "Other familiar examples: 10 meters (about 28 to 29.7 MHz), 6 meters (50 to 54 MHz), 1.25 meters (222 to 225 MHz), and 23 centimeters (1240 to 1300 MHz). Amateur bands are not normally called by channel numbers or letter codes."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t3b-spectrum-ranges",
+      "group": "T3B",
+      "title": "HF, VHF, and UHF: the decade ranges",
+      "body": [
+        "The radio spectrum is divided into ranges that each span a factor of ten in frequency. Each one starts at a 3 and ends at the next 3 (a factor of ten higher):",
+        "• HF (high frequency): 3 to 30 MHz",
+        "• VHF (very high frequency): 30 to 300 MHz",
+        "• UHF (ultra high frequency): 300 to 3000 MHz",
+        "Below HF is MF (300 to 3000 kHz, the AM broadcast band), and below that is LF (30 to 300 kHz). Watch the units: the distractors often use the right digits with kHz instead of MHz.",
+        "So 10 meters (28 MHz) is HF, 6 meters (50 MHz) and 2 meters (146 MHz) are VHF, and 70 centimeters (440 MHz) is UHF."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t3c-radio-horizon",
+      "group": "T3C",
+      "title": "Line of sight and the radio horizon",
+      "body": [
+        "VHF and UHF signals normally pass straight through the ionosphere instead of bending back to Earth. So most of the time they travel in fairly straight lines, and their range is limited by the curve of the Earth. The farthest point they reach this way is the radio horizon. This is why a UHF simplex signal is rarely heard beyond it; it is not a power limit or an FCC rule.",
+        "The radio horizon is a bit farther than the visual horizon, often about 15 percent farther. The air gets thinner with height, and that change bends (refracts) radio waves slightly downward, so they follow the Earth's curve a little. Radio waves do not travel faster than light, and dust has nothing to do with it.",
+        "Raising your antenna pushes your radio horizon farther out, which is why height matters so much on VHF and UHF."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t3c-knife-edge",
+      "group": "T3C",
+      "title": "Knife-edge diffraction: bending over a ridge",
+      "body": [
+        "When a radio wave passes the sharp edge of an obstruction, such as a mountain ridge or the top of a building, part of it bends around the edge and continues into the shadow behind it. This is knife-edge diffraction.",
+        "It lets a signal reach a station hidden behind an obstruction, although the diffracted signal is weaker than a clear line-of-sight signal. Doppler shift, Faraday rotation, and quantum tunneling do not carry signals over obstructions."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t3c-f-region",
+      "group": "T3C",
+      "title": "F region skip on HF and 6 meters",
+      "body": [
+        "The F region is the highest part of the ionosphere. Signals that bend back to Earth from it can skip thousands of miles, and a signal can make several hops. This kind of long-distance ionospheric propagation is far more common on HF than on VHF and above, and it is the main advantage of HF. (HF antennas are larger, not smaller, HF has less room for wide signals, and HF has more static, not less.)",
+        "How high a frequency the F region can return depends on how strongly the Sun ionizes it. Sunspot activity rises and falls over an 11-year cycle. Near the peak, the F region can return signals on 10 meters and sometimes even 6 meters. The higher VHF and UHF bands, such as 1.25 meters, 70 centimeters, and 23 centimeters, go right through.",
+        "Because sunlight creates the ionization, 10-meter F region openings are best from about dawn until shortly after sunset, during years of high sunspot activity. At night the ionization fades and 10 meters usually goes quiet."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t3c-sporadic-e",
+      "group": "T3C",
+      "title": "Sporadic E: surprise openings on 10, 6, and 2 meters",
+      "body": [
+        "Sporadic E happens when dense patches of ionization form without warning in the E region, the lower part of the ionosphere. These patches can reflect signals that normally go straight through, especially on 10 meters, 6 meters, and sometimes 2 meters.",
+        "The result is occasional, strong signals from beyond the radio horizon, often from several hundred to about 1,400 miles away, that may last minutes or hours. Openings are most common in late spring and summer. Six meters is famous for them, earning it the nickname 'the magic band.'"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t3c-tropo-ducting",
+      "group": "T3C",
+      "title": "Tropospheric ducting",
+      "body": [
+        "Normally the air gets cooler as you go higher. Sometimes a layer of warm air sits on top of cooler air instead. This is a temperature inversion, and it creates a sharp boundary that bends VHF and UHF signals back down. Signals can become trapped between that layer and the ground, traveling along it like water through a pipe (a duct).",
+        "Tropospheric ducting regularly allows VHF and UHF contacts out to around 300 miles, and during strong events much farther. It happens in the lower atmosphere where weather occurs, not in the ionosphere, so it does not depend on sunspots, lightning, or storms."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t3c-meteor-aurora",
+      "group": "T3C",
+      "title": "Meteor scatter and auroral propagation",
+      "body": [
+        "Meteor scatter: when a meteor burns up in the upper atmosphere, it leaves a short-lived trail of ionized gas that can reflect radio signals, sometimes for less than a second. The 6-meter band works best for this, because its lower VHF frequencies reflect well from the trails and the reflections last longer than at higher frequencies. Operators use short, fast transmissions to take advantage of each trail.",
+        "Auroral propagation: during an aurora (northern lights), the charged, shifting curtains of the aurora can scatter VHF signals back. Stations in North America point their antennas north toward the aurora. The constantly moving aurora smears the signal, giving it a distorted, raspy or buzzing sound. That is why CW often works better than voice. Contacts are regional, not across 10,000 miles, and aurora can occur at any season or time of day."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "T3A01": {
+      "why": "Direct and reflected copies of the signal arrive by paths of different lengths, and at VHF a wavelength is only a meter or two. Moving the antenna a few feet changes whether those copies add together or cancel. Ionospheric paths, water vapor, and Doppler shift are not the cause.",
+      "concept": "t3a-multipath",
+      "status": "draft"
+    },
+    "T3A02": {
+      "why": "Leaves and branches contain water, which absorbs UHF and microwave energy, so weak signals passing through trees can disappear. Vegetation never amplifies a signal.",
+      "concept": "t3a-absorption",
+      "status": "draft"
+    },
+    "T3A03": {
+      "why": "By long-standing custom, weak-signal CW and SSB operators on VHF and UHF use horizontal antennas so everyone's polarization matches. Vertical is the custom for FM and repeaters, not long-distance CW and SSB.",
+      "concept": "t3a-polarization",
+      "status": "draft"
+    },
+    "T3A04": {
+      "why": "On a line-of-sight path the polarization does not change, so a vertical antenna talking to a horizontal one loses a large part of the signal. It weakens the signal; it does not create echoes or invert sidebands.",
+      "concept": "t3a-polarization",
+      "status": "draft"
+    },
+    "T3A05": {
+      "why": "A directional antenna can be aimed at a building, hill, or other surface that reflects the signal around the blockage to the repeater. Changing polarization or raising SWR does nothing about the obstruction, and the long path is an HF term for going the long way around the Earth.",
+      "concept": "t3a-reflections",
+      "status": "draft"
+    },
+    "T3A06": {
+      "why": "Picket fencing is the rapid flutter heard on a mobile signal as the vehicle moves through the strong and weak spots created by multipath. It has nothing to do with nets, ground systems, or cable TV carriers.",
+      "concept": "t3a-multipath",
+      "status": "draft"
+    },
+    "T3A07": {
+      "why": "Raindrops and other precipitation are close in size to microwave wavelengths, so they absorb and scatter the signal and shorten range. Wind, air pressure, and temperature alone do not have this effect.",
+      "concept": "t3a-absorption",
+      "status": "draft"
+    },
+    "T3A08": {
+      "why": "An ionospheric signal usually arrives by several routes at once, and the constantly changing ionosphere makes those copies add and cancel at random. That random combining produces irregular fading.",
+      "concept": "t3a-ionosphere",
+      "status": "draft"
+    },
+    "T3A09": {
+      "why": "Because a sky-wave signal arrives with a mixed, elliptical polarization, it has both vertical and horizontal parts. Either a vertical or a horizontal antenna works, and the two stations do not have to match.",
+      "concept": "t3a-ionosphere",
+      "status": "draft"
+    },
+    "T3A10": {
+      "why": "Echoes arriving at slightly different times blur one symbol into the next, so the receiver decodes more bits incorrectly and error rates rise. Using FM does not solve this, and there is no rule tying data rate to the number of paths.",
+      "concept": "t3a-multipath",
+      "status": "draft"
+    },
+    "T3A11": {
+      "why": "The ionosphere contains free electrons created by sunlight, and they can bend HF waves back to Earth. The troposphere and stratosphere do not return HF signals, and 'electrosphere' is not a propagation region.",
+      "concept": "t3a-ionosphere",
+      "status": "draft"
+    },
+    "T3A12": {
+      "why": "The wavelengths on 10 and 6 meters are many meters long, far larger than water droplets, so fog and rain have little effect on them. Absorption by rain is a microwave problem.",
+      "concept": "t3a-absorption",
+      "status": "draft"
+    },
+    "T3B01": {
+      "why": "The electric and magnetic fields of a radio wave are always perpendicular (at 90 degrees) to each other. They travel together at the same speed; they are not parallel.",
+      "concept": "t3b-em-wave",
+      "status": "draft"
+    },
+    "T3B02": {
+      "why": "Polarization is defined by the direction of the electric field. A vertical antenna makes a vertical electric field, so the wave is vertically polarized, even though its magnetic field is horizontal.",
+      "concept": "t3b-em-wave",
+      "status": "draft"
+    },
+    "T3B03": {
+      "why": "A radio wave is an electromagnetic wave made of an electric field and a magnetic field traveling together. Voltage and current exist in wires and circuits, not as the parts of a wave in space.",
+      "concept": "t3b-em-wave",
+      "status": "draft"
+    },
+    "T3B04": {
+      "why": "Radio waves are electromagnetic waves, just like light, so in free space they travel at the speed of light. The speed of sound is far slower and applies to pressure waves in air.",
+      "concept": "t3b-speed",
+      "status": "draft"
+    },
+    "T3B05": {
+      "why": "All radio waves move at the same speed, so the more cycles packed into each second, the shorter each cycle's length must be. Higher frequency means shorter wavelength.",
+      "concept": "t3b-wavelength-frequency",
+      "status": "draft"
+    },
+    "T3B06": {
+      "why": "Wavelength equals the speed of light divided by frequency, and with frequency in megahertz that simplifies to 300 divided by the MHz value. Putting the frequency on top, or using hertz, gives nonsense results.",
+      "work": [
+        "wavelength (m) = 300 ÷ frequency (MHz)",
+        "Example: 146 MHz → 300 ÷ 146 ≈ 2.05 m (the 2-meter band)"
+      ],
+      "concept": "t3b-wavelength-frequency",
+      "status": "draft"
+    },
+    "T3B07": {
+      "why": "Amateur bands are commonly named by their approximate wavelength, such as 2 meters or 70 centimeters. Channel numbers and letter codes are not how ham bands are identified, so not all the choices are correct.",
+      "work": [
+        "2-meter band: 300 ÷ 146 MHz ≈ 2.05 m ≈ 2 m",
+        "70-centimeter band: 300 ÷ 440 MHz ≈ 0.68 m ≈ 70 cm"
+      ],
+      "concept": "t3b-band-names",
+      "status": "draft"
+    },
+    "T3B08": {
+      "why": "VHF is the range from 30 MHz to 300 MHz, which includes the 6-meter and 2-meter bands. The range 300 to 3000 MHz is UHF.",
+      "concept": "t3b-spectrum-ranges",
+      "status": "draft"
+    },
+    "T3B09": {
+      "why": "UHF runs from 300 to 3000 MHz, which includes the 70-centimeter band. Be careful with units: 300 to 3000 kHz is the MF range, not UHF.",
+      "concept": "t3b-spectrum-ranges",
+      "status": "draft"
+    },
+    "T3B10": {
+      "why": "HF is 3 to 30 MHz, home of the classic shortwave bands including 10 meters. The range 30 to 300 MHz is VHF.",
+      "concept": "t3b-spectrum-ranges",
+      "status": "draft"
+    },
+    "T3B11": {
+      "why": "The speed of light, and therefore of radio waves in free space, is about 300,000,000 meters per second. The same number in miles per hour is far too slow; light actually travels about 670 million miles per hour.",
+      "work": [
+        "c ≈ 300,000 km per second = 300,000,000 m/s",
+        "In miles: about 186,000 miles per second"
+      ],
+      "concept": "t3b-speed",
+      "status": "draft"
+    },
+    "T3B12": {
+      "why": "In free space every electromagnetic wave travels at the speed of light, whatever its frequency. Microwave, UHF, and VHF differ in wavelength, not speed.",
+      "concept": "t3b-speed",
+      "status": "draft"
+    },
+    "T3C01": {
+      "why": "UHF signals pass through the ionosphere instead of being bent back to Earth, so they are mostly limited to line of sight out to the radio horizon. It is not a power or FCC limit, and the D region absorbs lower HF frequencies, not UHF.",
+      "concept": "t3c-radio-horizon",
+      "status": "draft"
+    },
+    "T3C02": {
+      "why": "HF signals are routinely returned to Earth by the ionosphere, so long-distance contacts are far more common on HF than on VHF and above. HF antennas are actually larger, HF has less room for wide signals, and HF has more static.",
+      "concept": "t3c-f-region",
+      "status": "draft"
+    },
+    "T3C03": {
+      "why": "The moving, shifting aurora smears the signals it scatters, giving them a distorted, raspy sound. Contacts are regional, antennas are aimed north rather than west, and aurora is not limited to winter nights.",
+      "concept": "t3c-meteor-aurora",
+      "status": "draft"
+    },
+    "T3C04": {
+      "why": "Sporadic E is caused by dense patches of ionization in the E region that pop up unpredictably and reflect 10, 6, and sometimes 2 meter signals. It produces occasional strong signals from beyond the radio horizon.",
+      "concept": "t3c-sporadic-e",
+      "status": "draft"
+    },
+    "T3C05": {
+      "why": "Knife-edge diffraction bends part of a wave around the sharp edge of an obstruction such as a ridge or rooftop, letting it reach stations behind it. Doppler shift and Faraday rotation change frequency and polarization, not the path around obstacles.",
+      "concept": "t3c-knife-edge",
+      "status": "draft"
+    },
+    "T3C06": {
+      "why": "Tropospheric ducting traps VHF and UHF signals in a layer of the lower atmosphere, regularly carrying them about 300 miles. F2 and D region effects involve the ionosphere and mostly affect HF.",
+      "concept": "t3c-tropo-ducting",
+      "status": "draft"
+    },
+    "T3C07": {
+      "why": "Six meters, at the low end of VHF, reflects best from meteor trails and gets longer-lasting reflections than the higher bands. At 2 meters and above the pings are shorter and weaker.",
+      "concept": "t3c-meteor-aurora",
+      "status": "draft"
+    },
+    "T3C08": {
+      "why": "A temperature inversion, warm air sitting over cooler air, forms a boundary that bends VHF and UHF signals back down and traps them in a duct. Lightning, sunspots, and storm updrafts do not create ducts.",
+      "concept": "t3c-tropo-ducting",
+      "status": "draft"
+    },
+    "T3C09": {
+      "why": "Sunlight creates the F region ionization that returns 10-meter signals, and high sunspot activity makes it strong enough. So the best time is daylight, from dawn to shortly after sunset, in years of high sunspot activity.",
+      "concept": "t3c-f-region",
+      "status": "draft"
+    },
+    "T3C10": {
+      "why": "Near the peak of the sunspot cycle the F region can return signals as high as 10 meters and even 6 meters. Higher bands such as 1.25 meters, 70 centimeters, and 23 centimeters pass through the ionosphere.",
+      "concept": "t3c-f-region",
+      "status": "draft"
+    },
+    "T3C11": {
+      "why": "Air density decreases with height, and that gradually bends radio waves slightly downward so they follow the curve of the Earth and reach a little beyond the visual horizon. Radio waves do not travel faster than light, and dust is not the reason.",
+      "concept": "t3c-radio-horizon",
+      "status": "draft"
+    }
+  }
+}

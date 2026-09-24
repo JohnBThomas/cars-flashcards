@@ -1,0 +1,282 @@
+{
+  "subelement": "G0",
+  "concepts": [
+    {
+      "id": "g0a-rf-heating",
+      "group": "G0A",
+      "title": "How RF energy affects the body",
+      "body": [
+        "Radio waves are non-ionizing radiation. Unlike X-rays or nuclear radiation, they do not have enough energy per photon to break chemical bonds or damage DNA directly. They do not cause radiation poisoning and do not wipe out your blood count.",
+        "What RF energy does do is heat body tissue. Absorbed RF makes molecules in the tissue move, and that motion shows up as heat, much the way a microwave oven warms food. Enough of it can cause burns or damage, especially in parts of the body that cannot easily carry heat away, such as the eyes.",
+        "The body absorbs RF differently at different frequencies. That is why the FCC exposure limits change with frequency, and are strictest in the VHF range where the human body absorbs RF most readily."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g0a-exposure-factors",
+      "group": "G0A",
+      "title": "What determines RF exposure: MPE and time averaging",
+      "body": [
+        "The FCC sets Maximum Permissible Exposure (MPE) limits in 47 CFR 1.1310. Whether a signal exceeds them depends on several things working together:",
+        "• Power density: how much RF power passes through a given area (for example, milliwatts per square centimeter). It rises with transmitter power and antenna gain and falls quickly with distance from the antenna.",
+        "• Frequency: the limits are different at different frequencies because the body absorbs some frequencies more than others.",
+        "• Duty cycle: how much of the time the transmitter is actually putting out power.",
+        "Exposure is judged by time averaging: the total RF exposure is averaged over a set period rather than measured at a single instant. A short burst above the limit can be acceptable if the average over the averaging period stays within it. The rules use shorter averaging periods for controlled environments (people who know about the exposure, such as you and your informed household) and longer ones for uncontrolled environments (the general public, including neighbors), where the limits are also stricter."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g0a-duty-cycle",
+      "group": "G0A",
+      "title": "Duty cycle and why it matters",
+      "body": [
+        "Duty cycle is the fraction of time a transmitter is producing full output. A mode with a steady full carrier, like FM or many digital modes, runs at a high duty cycle. SSB voice has a much lower average output, because power only comes out during speech peaks, and there are pauses between words and between transmissions.",
+        "Because exposure is time-averaged, a lower duty cycle means less average exposure at the same peak power. So a lower duty cycle permits greater power levels to be transmitted while staying within the limits.",
+        "Duty cycle is one of the inputs to an evaluation. It does not by itself exempt any transmitter, low or high duty cycle, from the RF exposure rules."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g0a-who-must-comply",
+      "group": "G0A",
+      "title": "Who the rules cover, and the exemption test",
+      "body": [
+        "The FCC RF exposure rules apply to amateur stations just as they do to commercial ones. Section 97.13(c) requires every licensee to make sure the station complies with the exposure rules in Part 1 (47 CFR 1.1307 and 1.1310).",
+        "The only blanket exemption is for very tiny sources: under 1.1307(b)(3)(i)(A), a transmitter with a time-averaged output of 1 milliwatt or less is exempt. In practice, that means essentially every station with a time-averaged transmission of more than one milliwatt is subject to the rules. There is no exemption based on antenna height or on staying under some PEP level like 500 watts.",
+        "Section 1.1307(b)(3) also gives exemption criteria based on power, frequency, and distance to people. If your station does not meet those exemption criteria, you must perform an RF exposure evaluation, and the FCC's guidance for that is OET Bulletin 65. You do not need FCC permission to transmit, and filters or weather-agency guidelines have nothing to do with it."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g0a-evaluation-methods",
+      "group": "G0A",
+      "title": "Ways to evaluate your station",
+      "body": [
+        "You can show compliance in any of these ways, and all are acceptable:",
+        "• Calculation using the formulas and tables in FCC OET Bulletin 65",
+        "• Calculation using computer modeling of your antenna and its fields",
+        "• Measurement of the actual field strength with calibrated equipment",
+        "For accurate measurement you need a calibrated field strength meter with a calibrated antenna, so the reading can be converted into real field strength or power density. Ordinary shack tools cannot do this: an SWR meter measures conditions on the feed line, a DSP receiver just reduces noise, and an oscilloscope marker generator is for checking frequency and waveforms."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g0a-fixing-problems",
+      "group": "G0A",
+      "title": "When exposure could be too high",
+      "body": [
+        "Section 97.13(c)(2) asks for a routine RF exposure evaluation and, if it finds areas where people could exceed the limits, action to keep people out of them. If RF levels exceed the permissible limits, you must take action to prevent human exposure, for example by lowering power, raising or moving the antenna, or preventing access to the high-exposure area. There is no environmental form to file, and neighbors cannot sign away the limits.",
+        "The rules do not require posting a copy of 97.13 in your shack or notifying neighbors within some radius. The required steps are the evaluation and keeping people out of high-exposure areas.",
+        "Directional antennas concentrate power in their main lobe. If a neighbor could be over the limit when the beam points at them, take precautions so the antenna cannot be pointed in their direction while they are present. Indoor antennas put RF right where people live, so make sure MPE limits are not exceeded in occupied areas of the house."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g0b-fuses-and-wire",
+      "group": "G0B",
+      "title": "Fuses, breakers, and wire size",
+      "body": [
+        "A fuse or circuit breaker protects the wiring. It opens the circuit before too much current can overheat the wire and start a fire. It goes only in the hot (ungrounded) wires. Never fuse or switch the neutral or the safety ground: if the neutral opened while the hot stayed connected, equipment could stay live and look safe.",
+        "A four-conductor 240 VAC circuit has two hot wires, a neutral, and an equipment ground. Only the two hot wires get fuses or breakers.",
+        "In the AWG wire system, a smaller gauge number means a thicker wire that can safely carry more current. Under the National Electrical Code (NEC), the common pairings are:",
+        "• AWG 14 copper: 15-ampere breaker or fuse",
+        "• AWG 12 copper: 20-ampere breaker or fuse (so 12 is the minimum size for a 20-ampere circuit)",
+        "Putting a bigger breaker on thin wire, such as 20 or 30 amperes on AWG 14, lets the wire overheat before the breaker trips."
+      ],
+      "formula": "AWG 14 → 15 A, AWG 12 → 20 A",
+      "status": "draft"
+    },
+    {
+      "id": "g0b-gfci-nec",
+      "group": "G0B",
+      "title": "GFCIs and the National Electrical Code",
+      "body": [
+        "A ground fault circuit interrupter (GFCI) compares the current going out on the hot wire with the current coming back on the neutral. Normally they are equal. If some current flows from a hot wire directly to ground instead, perhaps through a person, the two no longer match and the GFCI cuts the power in a fraction of a second.",
+        "Normal current from hot to neutral is just the load working, so it does not trip a GFCI. A GFCI also does not respond to overvoltage; that is not what it measures.",
+        "The National Electrical Code is a standard for the electrical safety of buildings and installations, including your station's wiring, grounding, and antenna installation. It says nothing about bandwidth or modulation limits (those are FCC Part 97 matters) or human RF exposure limits (those are in the FCC rules, 47 CFR 1.1310)."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g0b-interlocks",
+      "group": "G0B",
+      "title": "Power supply interlocks",
+      "body": [
+        "High-voltage equipment such as amplifiers and their power supplies can have lethal voltages inside. An interlock is a switch built into the cabinet so that opening the cover removes the dangerous voltages.",
+        "Its purpose is safety for the person opening the cabinet. It is not a warranty seal, and it is not an over-temperature or over-voltage shutdown; those are separate protective circuits.",
+        "An interlock is a backup, not permission to reach inside. Filter capacitors can hold a charge after power is removed, so follow the manufacturer's procedure for safely working inside."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g0b-lightning",
+      "group": "G0B",
+      "title": "Lightning protection: outside, at the entry, bonded together",
+      "body": [
+        "The goal of lightning protection is to give a strike's energy a path to earth outside the house, so it does not travel through your station and wiring. That is why the lightning protection ground system should be located outside the building, not next to your equipment.",
+        "Lightning arrestors belong where the feed lines enter the building. That way a surge on the coax is sent to the outdoor ground before it comes inside. They are not placed at the antenna, in series with ground leads, or at a utility pole.",
+        "All ground rods and grounding systems, including the station's lightning ground and the building's electrical service ground, must be bonded together. If they were separate, a strike could raise one ground far above another, and the difference in voltage could drive current right through your equipment. Keep ground leads as short and straight as possible; sharp bends such as right angles make it harder for the surge to follow the wire. Bonding is to the other grounding electrodes, not to buried gas lines, and not to ungrounded wiring."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g0b-tower-safety",
+      "group": "G0B",
+      "title": "Tower climbing safety",
+      "body": [
+        "Before trusting your life to a safety harness, confirm that it is rated for the weight of the climber (including what you carry) and that it is within its allowable service life. Harness materials age and wear out, and an old or overloaded harness can fail when it is needed most.",
+        "If the tower supports anything electrically powered, such as a rotator, lights, or a preamplifier, make sure all circuits that supply power to the tower are locked out and tagged before anyone climbs. Lockout-tagout means the circuit is switched off and locked, with a tag, so no one can turn it back on while you are up there.",
+        "You do not need to notify the electric company, and you should never unground the tower base; the ground is part of the protection. Keeping one hand on the tower at all times and hanging heavy tools on the harness are not the rules the exam is looking for."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g0b-generators",
+      "group": "G0B",
+      "title": "Emergency generator safety",
+      "body": [
+        "Gasoline and other fuel-burning generators produce carbon monoxide, a colorless, odorless gas that can kill. Always run a generator in a well-ventilated area, never in a closed space such as a house or garage.",
+        "Nothing requires a generator to be insulated from ground; follow the manufacturer's instructions and the electrical code for grounding it.",
+        "Do not store fuel next to a running or hot generator. Spilled or leaking fuel near a hot engine is a fire hazard, so keep the fuel supply at a safe distance."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g0b-solder",
+      "group": "G0B",
+      "title": "Lead in solder",
+      "body": [
+        "Traditional lead-tin solder contains lead, which is toxic if swallowed. The usual way it gets into the body is from your hands: handle solder, then eat without washing, and lead can contaminate your food.",
+        "Wash your hands carefully after soldering or handling solder. High voltage does not make solder disintegrate, RF does not turn lead into a gas, and cold flow of tin is not the hazard the exam asks about."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "G0A01": {
+      "why": "RF energy is absorbed by body tissue and turned into heat, which can cause damage if exposure is high enough. RF is non-ionizing, so it does not cause radiation poisoning or a low blood count, and it warms tissue rather than cooling it.",
+      "concept": "g0a-rf-heating",
+      "status": "draft"
+    },
+    "G0A02": {
+      "why": "Exposure depends on the power density of the field, the frequency (the limits vary with frequency), and the duty cycle (how much of the time the transmitter is on). All three are used, so all the choices are correct.",
+      "concept": "g0a-exposure-factors",
+      "status": "draft"
+    },
+    "G0A03": {
+      "why": "Compliance can be shown by calculation using OET Bulletin 65, by calculation with computer modeling, or by measuring the field strength with calibrated equipment. Any of these methods is acceptable, so all the choices are correct.",
+      "concept": "g0a-evaluation-methods",
+      "status": "draft"
+    },
+    "G0A04": {
+      "why": "Time averaging means the total RF exposure is averaged over a set period, so brief peaks are balanced against quieter times. It is not about the transmitter's output over a 24-hour day, and it is not just the total time of exposure.",
+      "concept": "g0a-exposure-factors",
+      "status": "draft"
+    },
+    "G0A05": {
+      "why": "If your evaluation shows the limits could be exceeded, you must act to keep people from being exposed to those excessive fields, for example by lowering power, moving the antenna, or restricting access. There is no environmental statement to file, and neighbors cannot give permission to exceed the limits.",
+      "concept": "g0a-fixing-problems",
+      "status": "draft"
+    },
+    "G0A06": {
+      "why": "A station that does not meet the exemption criteria in 1.1307(b)(3) must be evaluated, and the FCC's guidance for that evaluation is OET Bulletin 65. You do not need FCC permission to transmit, and neither weather-agency guidelines nor a filter satisfies the requirement.",
+      "concept": "g0a-who-must-comply",
+      "status": "draft"
+    },
+    "G0A07": {
+      "why": "Exposure is time-averaged, so a transmitter that is on for a smaller fraction of the time produces less average exposure. A lower duty cycle therefore permits more power. Duty cycle never exempts a transmitter from the exposure rules.",
+      "concept": "g0a-duty-cycle",
+      "status": "draft"
+    },
+    "G0A08": {
+      "why": "The rules require a routine RF exposure evaluation and keeping people out of any areas where exposure could be too high. Posting the rule in your shack or notifying neighbors within 100 feet is not required.",
+      "concept": "g0a-fixing-problems",
+      "status": "draft"
+    },
+    "G0A09": {
+      "why": "An accurate field strength measurement needs a calibrated field strength meter used with a calibrated antenna, so the reading can be converted to real field levels. An SWR meter, a DSP receiver, and an oscilloscope do not measure the RF field around you.",
+      "concept": "g0a-evaluation-methods",
+      "status": "draft"
+    },
+    "G0A10": {
+      "why": "The simplest fix is to make sure the beam cannot be pointed toward the neighbor while they are present. A higher-gain antenna would make the main lobe stronger, and a better front-to-back ratio only reduces radiation off the back, not the main lobe.",
+      "concept": "g0a-fixing-problems",
+      "status": "draft"
+    },
+    "G0A11": {
+      "why": "An indoor antenna radiates right where people live, so you must make sure the MPE limits are not exceeded in occupied areas. Putting it close to your operating position would move more RF toward you, not less, and shielding a transmitting antenna would stop it from working.",
+      "concept": "g0a-fixing-problems",
+      "status": "draft"
+    },
+    "G0A12": {
+      "why": "Only transmitters with a time-averaged output of 1 milliwatt or less are exempt, so any station transmitting more than that is subject to the RF exposure rules. Amateur stations are not exempt, and there is no exemption based on antenna height or a 500-watt PEP level.",
+      "concept": "g0a-who-must-comply",
+      "status": "draft"
+    },
+    "G0B01": {
+      "why": "Fuses and breakers go only in the hot wires, which in a four-wire 240 VAC circuit are the two ungrounded conductors. Opening the neutral or ground could leave equipment energized and would defeat the safety ground.",
+      "concept": "g0b-fuses-and-wire",
+      "status": "draft"
+    },
+    "G0B02": {
+      "why": "The National Electrical Code pairs a 20-ampere breaker with AWG 12 copper wire as the minimum size. AWG 16 and 20 are thinner wires (higher numbers mean thinner) and would overheat; AWG 8 is safe but much larger than the minimum.",
+      "concept": "g0b-fuses-and-wire",
+      "status": "draft"
+    },
+    "G0B03": {
+      "why": "AWG 14 wire is protected with a 15-ampere fuse or breaker. A 20, 25, or 30-ampere device would let AWG 14 wire overheat before it tripped.",
+      "concept": "g0b-fuses-and-wire",
+      "status": "draft"
+    },
+    "G0B04": {
+      "why": "The lightning ground should be outside the building so a strike's energy goes into the earth before it can reach the house and station. Putting it next to the equipment would invite the surge inside.",
+      "concept": "g0b-lightning",
+      "status": "draft"
+    },
+    "G0B05": {
+      "why": "A GFCI trips when current flows from a hot wire directly to ground, because the outgoing and returning currents no longer match. Hot-to-neutral current is normal load current, and a GFCI does not sense overvoltage.",
+      "concept": "g0b-gfci-nec",
+      "status": "draft"
+    },
+    "G0B06": {
+      "why": "The National Electrical Code covers electrical safety, including the station's wiring and grounding. Bandwidth and modulation limits are FCC Part 97 matters, and RF exposure limits are set by the FCC, not the NEC.",
+      "concept": "g0b-gfci-nec",
+      "status": "draft"
+    },
+    "G0B07": {
+      "why": "A harness must be rated for the climber's weight and still within its allowable service life, or it may fail in a fall. Keeping one hand on the tower and hanging heavy tools on the harness are not the safety checks being asked about, so not every choice is correct.",
+      "concept": "g0b-tower-safety",
+      "status": "draft"
+    },
+    "G0B08": {
+      "why": "Before climbing, all circuits that power devices on the tower must be locked out and tagged so no one can energize them while you are aloft. The power company does not need to be told, and the tower should never be ungrounded.",
+      "concept": "g0b-tower-safety",
+      "status": "draft"
+    },
+    "G0B09": {
+      "why": "Generators give off deadly carbon monoxide, so they must run in a well-ventilated area. Nothing requires the generator to be insulated from ground, and storing fuel next to it is a fire hazard.",
+      "concept": "g0b-generators",
+      "status": "draft"
+    },
+    "G0B10": {
+      "why": "Lead from the solder can get on your hands and then onto food, so wash your hands carefully after handling it. Voltage does not make solder disintegrate, and RF cannot turn lead into a poisonous gas.",
+      "concept": "g0b-solder",
+      "status": "draft"
+    },
+    "G0B11": {
+      "why": "Lightning ground rods must be bonded together with all other grounds so no large voltage difference can build up between them during a strike. Gas lines are not bonded as a ground, right-angle bends should be avoided, and ungrounded wiring is not connected to the lightning ground.",
+      "concept": "g0b-lightning",
+      "status": "draft"
+    },
+    "G0B12": {
+      "why": "An interlock makes sure dangerous voltages are removed when the cabinet is opened, protecting the person working on it. It is not a warranty seal, and over-temperature and over-voltage shutdowns are separate protective circuits.",
+      "concept": "g0b-interlocks",
+      "status": "draft"
+    },
+    "G0B13": {
+      "why": "Lightning arrestors go where the feed lines enter the building, so surges on the coax are diverted to the outside ground before they come indoors. They do not go on the antenna, in series with ground leads, or at a utility pole.",
+      "concept": "g0b-lightning",
+      "status": "draft"
+    }
+  }
+}

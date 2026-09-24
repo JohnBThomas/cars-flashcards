@@ -1,0 +1,421 @@
+{
+  "subelement": "E3",
+  "concepts": [
+    {
+      "id": "e3a-em-wave-structure",
+      "group": "E3A",
+      "title": "What a radio wave is made of",
+      "body": [
+        "A radio wave is an electromagnetic wave: an electric field and a magnetic field traveling together. The two fields are always at right angles to each other, like the two edges of a book's corner.",
+        "The wave travels at a right angle to both fields. Picture the electric field going up and down and the magnetic field going side to side; the wave then moves straight forward, out of the page toward you. It never travels along either field.",
+        "Do not confuse direction with phase. In a wave out in free space, the two fields rise and fall together (in phase). The 90 degrees that matters is their direction in space, not a timing difference."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e3a-refraction-index",
+      "group": "E3A",
+      "title": "Speed of a wave and the index of refraction",
+      "body": [
+        "Radio waves travel at the speed of light in a vacuum. In any other medium (air, water, glass, the ionosphere) they travel at a different speed, and the index of refraction of that medium sets how fast.",
+        "The index of refraction is simply the ratio of the speed in a vacuum to the speed in the medium. Air has an index just a hair above 1, so radio waves in air are only slightly slower than in space.",
+        "When a wave passes into a region with a different index, it bends. That bending, called refraction, is what curves signals back to Earth in the ionosphere and what bends VHF and microwave signals in the lower atmosphere."
+      ],
+      "formula": "speed in medium = speed of light ÷ index of refraction",
+      "status": "draft"
+    },
+    {
+      "id": "e3a-circular-polarization",
+      "group": "E3A",
+      "title": "Circular polarization",
+      "body": [
+        "Polarization describes the direction of a wave's electric field. With vertical or horizontal polarization, the field stays in one fixed plane.",
+        "In a circularly polarized wave, the electric and magnetic fields rotate as the wave moves along, making one full turn every wavelength, like the thread of a screw. The rotation can be clockwise or counterclockwise (right-hand or left-hand).",
+        "Hams use circular polarization mostly for satellite and space work, where a spinning satellite or the ionosphere would otherwise twist a fixed polarization out of line with the receiving antenna. The name describes rotating fields, not a bent wire, a loop antenna, or a signal that circles the globe."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e3a-eme",
+      "group": "E3A",
+      "title": "Earth-Moon-Earth (moonbounce)",
+      "body": [
+        "In EME, both stations point their antennas at the Moon and use it as a passive reflector. The only requirement for distance is that the Moon be above the horizon for both stations at the same time. That allows contacts up to about 12,000 miles apart, roughly halfway around the Earth.",
+        "The Moon's orbit is an ellipse. At perigee it is closest to Earth, and at apogee it is farthest. Because the signal makes a round trip and spreads out both ways, even the modest difference in distance changes the path loss by about 2 dB, so perigee gives the least loss. The Moon's phase (full, new) has nothing to do with it.",
+        "The Moon's surface is rough, so an echo is the sum of reflections from many spots. The Moon also seems to rock slightly as seen from Earth, an effect called libration. As it rocks, those reflections add and cancel in a constantly changing way, giving a fast, fluttery, irregular fading called libration fading."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e3a-meteor-scatter",
+      "group": "E3A",
+      "title": "Meteor scatter",
+      "body": [
+        "Every day, countless tiny meteors burn up high in the atmosphere, mostly around 50 to 75 miles up, which is the E region of the ionosphere. Each one leaves a thin, straight trail of ionized gas that can reflect radio signals for a fraction of a second to a few seconds.",
+        "These trails work best at roughly 28 MHz to 148 MHz, so 10 meters, 6 meters, and 2 meters are the meteor-scatter bands, with 6 meters the favorite. At lower frequencies the normal ionosphere dominates and meteor trails matter little. At higher frequencies the trails reflect too weakly and too briefly to be useful.",
+        "Because contacts come in short bursts, meteor-scatter operators use fast, structured digital modes and timed transmissions, and do best during major meteor showers."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e3a-tropo-ducting",
+      "group": "E3A",
+      "title": "Tropospheric ducting of microwaves",
+      "body": [
+        "Normally the air gets cooler as you go up. Sometimes a layer of warm air sits on top of cooler, moist air, which is called a temperature inversion. The sharp change in the index of refraction at that boundary can trap VHF, UHF, and microwave signals and guide them along like a pipe, called a duct.",
+        "These ducts form most often over large bodies of water, where cool, moist air lies next to the surface. Coastal areas, the Gulf of Mexico, and paths across the ocean are classic ducting spots.",
+        "A typical microwave duct carries signals about 100 to 300 miles, far beyond the normal line-of-sight range, though much shorter than HF skip."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e3a-aurora",
+      "group": "E3A",
+      "title": "Auroral propagation",
+      "body": [
+        "The aurora is caused by charged particles from the Sun pouring into the upper atmosphere near the poles. This happens during strong disturbances of Earth's magnetic field, so severe geomagnetic storms are what make auroral propagation possible. Quiet geomagnetic conditions produce no aurora to bounce off.",
+        "VHF signals, mostly on 6 and 2 meters, reflect off the moving, glowing curtains of ionization. Stations point their antennas roughly toward the aurora (north, for U.S. hams), not toward each other.",
+        "Because the auroral curtains are constantly moving, reflected signals are smeared and distorted, with a raspy, hissing sound. Voice becomes very hard to understand, and FM and RTTY suffer too, but a narrow CW signal remains readable as a buzzy tone. That makes CW the best mode for aurora."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e3a-daily-muf",
+      "group": "E3A",
+      "title": "Day and night changes in the MUF",
+      "body": [
+        "The maximum usable frequency (MUF) is the highest frequency the ionosphere will bend back to Earth over a given path. Sunlight ionizes the ionosphere, so the MUF climbs during the day and falls after dark as the ionization fades.",
+        "When darkness pushes the MUF below your operating frequency, your signal goes straight through the ionosphere and is lost. To keep the contact going, move down to a lower frequency band that is still below the new MUF. Moving up makes things worse, and changing antennas does not change what the ionosphere will return."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e3b-transequatorial",
+      "group": "E3B",
+      "title": "Transequatorial propagation (TEP)",
+      "body": [
+        "In the afternoon and early evening, the ionosphere on either side of the geomagnetic equator forms two dense bulges of ionization. A signal can glance off one bulge and then the other, crossing the equator in one long hop with little loss. This is transequatorial propagation.",
+        "TEP works best between stations about 2,000 to 3,000 miles apart on a path that crosses the geomagnetic equator at a right angle (roughly north-south), with the two stations about equally distant on either side. The maximum range is about 5,000 miles.",
+        "TEP can carry 6-meter and even 2-meter signals, well above the normal MUF. Remember the timing: afternoon or early evening, not morning, noon, or late night."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e3b-long-path-darkness",
+      "group": "E3B",
+      "title": "Long path and paths in darkness",
+      "body": [
+        "Radio signals normally travel the shortest way around the Earth, the short path. Sometimes the signal is stronger the long way around, the long path, which is the other 180 degrees of the great circle. You point your beam directly away from the station you are working.",
+        "Long-path openings are most frequent on 40 meters and 20 meters. These bands have a MUF high enough to hop well in daylight but low enough to survive at night, so they can often find a way around the far side of the globe.",
+        "The low bands are different. On 160 meters, sunlight builds up the D region, which soaks up low-frequency signals. Long-distance 160-meter contacts need a path that is entirely in darkness, from one end to the other."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e3b-hop-geometry",
+      "group": "E3B",
+      "title": "Takeoff angle and hop length",
+      "body": [
+        "In ordinary HF skip, a signal goes up, is bent back down by the ionosphere, bounces off the ground, and may go up again for another hop. The angle at which the signal leaves your antenna is its elevation or takeoff angle.",
+        "A low takeoff angle means the signal meets the ionosphere far away and comes back down far away, so each hop covers more distance. Fewer hops are needed to reach a distant station, and fewer hops means less loss. That is why DXers like antennas with low radiation angles.",
+        "Lowering the angle does not change the ionosphere itself: the critical frequency stays the same, and the MUF over a path actually rises rather than falls at lower angles."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e3b-chordal-hop",
+      "group": "E3B",
+      "title": "Chordal-hop propagation",
+      "body": [
+        "In chordal-hop propagation, a signal is refracted by the ionosphere several times in a row without coming down to the ground in between. Its path looks like a series of chords (straight lines) cut across the curve of the ionosphere.",
+        "Every ground bounce in normal multi-hop propagation costs signal strength. Chordal hop skips those ground reflections, so the signal arrives with less loss than a multi-hop path of the same length would have. It does not travel any faster, and it does not lower the MUF."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e3b-ordinary-extraordinary",
+      "group": "E3B",
+      "title": "Ordinary and extraordinary waves",
+      "body": [
+        "When a radio wave enters the ionosphere, Earth's magnetic field acting on the free electrons splits it into two separate waves. They are called the ordinary (O) wave and the extraordinary (X) wave.",
+        "Each of the two is elliptically polarized, and each travels independently: they bend by different amounts, follow slightly different paths, and suffer different amounts of absorption. When they arrive together at the receiver, they can add and cancel, which is one cause of fading.",
+        "The names are technical labels. They have nothing to do with long-skip versus short-skip, long path versus short path, or reflection versus refraction."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e3b-sporadic-e",
+      "group": "E3B",
+      "title": "Sporadic-E propagation",
+      "body": [
+        "Sporadic E is caused by thin, dense patches of ionization that form without warning in the E region. They can reflect 10-meter, 6-meter, and sometimes 2-meter signals over hops of several hundred to about 1,400 miles.",
+        "Sporadic E is most common around the solstices, especially the summer solstice, so in North America late spring and summer is peak season, with a smaller bump around midwinter.",
+        "It happens mostly in daylight, between sunrise and sunset, with evening openings sometimes lingering. Openings can last minutes or hours."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e3b-ground-wave",
+      "group": "E3B",
+      "title": "Ground-wave propagation",
+      "body": [
+        "A ground wave hugs the surface of the Earth, following its curve. This is how AM broadcast stations cover their local area in the daytime and how 160 and 80 meters provide steady local coverage.",
+        "Ground waves must be vertically polarized. A horizontally polarized wave has its electric field lying along the ground, and the ground shorts it out almost immediately.",
+        "The ground absorbs more energy as the frequency goes up. So the higher the frequency, the shorter the maximum ground-wave range. It works well on the low bands and hardly at all by the upper HF bands."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e3c-radio-horizon",
+      "group": "E3C",
+      "title": "The VHF/UHF radio horizon",
+      "body": [
+        "The geographic horizon is as far as you could see in a straight line from your antenna before the curve of the Earth gets in the way.",
+        "The air thins out with height, so its index of refraction drops slightly as you go up. This gently bends VHF and UHF signals downward, following the Earth's curve a little. As a result, the radio horizon is about 15 percent farther than the geographic horizon.",
+        "Engineers account for this by pretending the Earth is about four-thirds its real size when they figure line-of-sight paths."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e3c-solar-flares",
+      "group": "E3C",
+      "title": "Solar flares and radio blackouts",
+      "body": [
+        "A solar flare is a sudden, intense burst of energy from the Sun, including X-rays and ultraviolet light. That radiation travels at the speed of light and reaches Earth in about 8 minutes.",
+        "The X-rays sharply increase ionization in the D region on the sunlit side of Earth. The D region then absorbs HF signals, causing a short-term radio blackout that can wipe out HF for minutes to hours. A sudden jump in background noise across much of the HF spectrum is another sign that a flare has hit, or that a coronal mass ejection has arrived.",
+        "Flares are graded by X-ray strength with the letters A, B, C, M, and X. Each letter is ten times stronger than the one before, so Class X flares are the most intense. There is no Class Z."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e3c-geomagnetic-indices",
+      "group": "E3C",
+      "title": "A-index, K-index, and the G scale",
+      "body": [
+        "The K-index measures how disturbed Earth's magnetic field is over a 3-hour period, on a scale from 0 to 9. The A-index is a daily average of that disturbance, from 0 up to 400. For both, higher means a more disturbed geomagnetic field, and lower means quieter. They measure the magnetic field, not the Sun's UV output or the critical frequency.",
+        "When these indices rise, the worst effects are near the poles. Paths that pass through the auroral oval, the ring of aurora around each magnetic pole, suffer heavy absorption and can go completely dead.",
+        "NOAA also uses simple 1-to-5 scales for space weather. G stands for geomagnetic storms, S for solar radiation storms, and R for radio blackouts. G5 is the space-weather term for an extreme geomagnetic storm. Labels like X5 or M9 are flare classes, not storm levels."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e3c-bz-cme",
+      "group": "E3C",
+      "title": "Bz and coronal mass ejections",
+      "body": [
+        "The solar wind carries a magnetic field out from the Sun, called the interplanetary magnetic field (IMF). Bz is the north-south component of the IMF as it reaches Earth.",
+        "Earth's own magnetic field points northward where it meets the solar wind. When Bz points southward, the two fields connect, opening a door that lets charged particles and energy pour into Earth's magnetic field. A southward Bz therefore makes disturbed conditions and geomagnetic storms more likely. A northward Bz mostly keeps the door closed.",
+        "A coronal mass ejection (CME) is a huge cloud of solar material and magnetic field thrown out by the Sun. It takes a day or more to reach Earth. When it arrives, especially with a strongly southward Bz, it can trigger a geomagnetic storm, aurora, and poor HF conditions."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e3c-prediction-tools",
+      "group": "E3C",
+      "title": "Prediction and reporting tools",
+      "body": [
+        "Amateur propagation reporting networks, such as the Reverse Beacon Network, PSK Reporter, and WSPRnet, use receiving stations around the world that automatically decode digital-mode and CW signals and post what they hear, with time, frequency, and signal strength. You can see in real time where your signal is being heard. They report signals, not solar data or magnetic measurements.",
+        "VOACAP (Voice of America Coverage Analysis Program) is free software that models HF propagation. Given the stations, time, antennas, and solar conditions, it predicts which HF bands will open over a path and how strong signals will be.",
+        "The 304A parameter is the Sun's ultraviolet output at a wavelength of 304 angstroms. This UV helps ionize the F region, and it tracks closely with the solar flux index, so it is another measure of how well the higher HF bands should work."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "E3A01": {
+      "why": "EME only needs both stations to see the Moon at the same time, and that is possible for stations up to about 12,000 miles apart, roughly half the Earth's circumference. The shorter distances tied to perigee or apogee mix up path loss with range.",
+      "concept": "e3a-eme",
+      "status": "draft"
+    },
+    "E3A02": {
+      "why": "Libration fading is fast, fluttery, and irregular. As the Moon appears to rock, echoes from different parts of its rough surface keep adding and canceling. A steady frequency shift is Doppler, not libration.",
+      "concept": "e3a-eme",
+      "status": "draft"
+    },
+    "E3A03": {
+      "why": "At perigee the Moon is closest to Earth, so the round-trip distance and the path loss are smallest. The Moon's phase does not affect path loss, and the HF MUF has nothing to do with EME.",
+      "concept": "e3a-eme",
+      "status": "draft"
+    },
+    "E3A04": {
+      "why": "An electromagnetic wave moves at a right angle to both its electric and magnetic fields. It never travels along either field, and its direction does not depend on phase angle.",
+      "concept": "e3a-em-wave-structure",
+      "status": "draft"
+    },
+    "E3A05": {
+      "why": "The electric and magnetic fields are at right angles to each other in space. The tempting '90 degrees out of phase' describes a timing difference, which is not what the question is about; in free space the two fields are actually in phase.",
+      "concept": "e3a-em-wave-structure",
+      "status": "draft"
+    },
+    "E3A06": {
+      "why": "After dark the ionization fades and the MUF drops. To keep the signal coming back down, move to a lower-frequency band that is still under the new MUF. A higher band would go straight through the ionosphere.",
+      "concept": "e3a-daily-muf",
+      "status": "draft"
+    },
+    "E3A07": {
+      "why": "Microwave ducts often form over large bodies of water, where cool, moist air near the surface sits under warmer air and creates a temperature inversion.",
+      "concept": "e3a-tropo-ducting",
+      "status": "draft"
+    },
+    "E3A08": {
+      "why": "Meteors burn up about 50 to 75 miles high, which is the E region of the ionosphere, and leave their straight ionized trails there.",
+      "concept": "e3a-meteor-scatter",
+      "status": "draft"
+    },
+    "E3A09": {
+      "why": "Meteor trails reflect best from about 28 MHz to 148 MHz, covering 10, 6, and 2 meters. Lower frequencies are dominated by normal ionospheric propagation, and higher ones reflect too weakly.",
+      "concept": "e3a-meteor-scatter",
+      "status": "draft"
+    },
+    "E3A10": {
+      "why": "The index of refraction of a medium sets how fast electromagnetic waves travel through it: the speed of light divided by that index. The other choices are real terms but do not set wave speed.",
+      "concept": "e3a-refraction-index",
+      "status": "draft"
+    },
+    "E3A11": {
+      "why": "Tropospheric ducts typically carry microwave signals about 100 to 300 miles, well beyond line of sight but far short of HF skip distances.",
+      "concept": "e3a-tropo-ducting",
+      "status": "draft"
+    },
+    "E3A12": {
+      "why": "Auroral propagation comes from the aurora, and the aurora is driven by severe geomagnetic storms. Quiet geomagnetic conditions mean no aurora to reflect from.",
+      "concept": "e3a-aurora",
+      "status": "draft"
+    },
+    "E3A13": {
+      "why": "Aurora-reflected signals are smeared into a raspy hiss that makes voice and RTTY hard to copy. A narrow CW signal still comes through as a readable buzzy tone, so CW works best.",
+      "concept": "e3a-aurora",
+      "status": "draft"
+    },
+    "E3A14": {
+      "why": "In a circularly polarized wave, the electric and magnetic fields rotate as the wave travels. The name does not mean a curved field, a loop antenna, or a signal that circles the Earth.",
+      "concept": "e3a-circular-polarization",
+      "status": "draft"
+    },
+    "E3B01": {
+      "why": "TEP is most likely between stations about 2,000 to 3,000 miles apart on a path that crosses the geomagnetic equator at a right angle. It crosses the equator; it does not run along it.",
+      "concept": "e3b-transequatorial",
+      "status": "draft"
+    },
+    "E3B02": {
+      "why": "Transequatorial propagation can reach out to about 5,000 miles, though the most common paths are 2,000 to 3,000 miles.",
+      "concept": "e3b-transequatorial",
+      "status": "draft"
+    },
+    "E3B03": {
+      "why": "TEP peaks in the afternoon or early evening, when the ionized bulges on each side of the geomagnetic equator are strongest.",
+      "concept": "e3b-transequatorial",
+      "status": "draft"
+    },
+    "E3B04": {
+      "why": "Earth's magnetic field splits a wave entering the ionosphere into two elliptically polarized waves, the ordinary and extraordinary waves, which then travel independently. The names have nothing to do with skip distance or long and short paths.",
+      "concept": "e3b-ordinary-extraordinary",
+      "status": "draft"
+    },
+    "E3B05": {
+      "why": "In daylight the D region absorbs 160-meter signals, so long-distance 160-meter contacts need a path that is in darkness from end to end.",
+      "concept": "e3b-long-path-darkness",
+      "status": "draft"
+    },
+    "E3B06": {
+      "why": "Long-path openings are most frequent on 40 and 20 meters, which can hop well in both daylight and darkness. The low bands are absorbed in daylight, and 10 meters and up usually lack a high enough MUF around the whole path.",
+      "concept": "e3b-long-path-darkness",
+      "status": "draft"
+    },
+    "E3B07": {
+      "why": "A lower takeoff angle makes the signal reach the ionosphere and return to Earth farther away, so each hop covers more distance. It does not lower the MUF or change the critical frequency.",
+      "concept": "e3b-hop-geometry",
+      "status": "draft"
+    },
+    "E3B08": {
+      "why": "The ground absorbs more energy at higher frequencies, so raising the frequency shortens the maximum ground-wave range.",
+      "concept": "e3b-ground-wave",
+      "status": "draft"
+    },
+    "E3B09": {
+      "why": "Sporadic E is most common around the solstices, especially the summer solstice, which is why late spring and summer bring the big 6-meter openings.",
+      "concept": "e3b-sporadic-e",
+      "status": "draft"
+    },
+    "E3B10": {
+      "why": "Chordal hop skips the ground reflections that normal multi-hop paths need, and each ground bounce costs signal. So chordal-hop signals arrive with less loss. They do not travel faster.",
+      "concept": "e3b-chordal-hop",
+      "status": "draft"
+    },
+    "E3B11": {
+      "why": "Sporadic E happens mostly in daylight, between sunrise and sunset. The choices limited to nighttime hours miss its main period.",
+      "concept": "e3b-sporadic-e",
+      "status": "draft"
+    },
+    "E3B12": {
+      "why": "Chordal hop is a series of ionospheric refractions in a row, with no bounce off the ground in between. Signals going back toward the sender or off the great-circle bearing are other effects.",
+      "concept": "e3b-chordal-hop",
+      "status": "draft"
+    },
+    "E3B13": {
+      "why": "Ground waves must be vertically polarized. A horizontally polarized wave has its electric field along the ground, which shorts it out.",
+      "concept": "e3b-ground-wave",
+      "status": "draft"
+    },
+    "E3C01": {
+      "why": "Solar flares send out X-rays that reach Earth in minutes and flood the D region with ionization, which absorbs HF and causes short-term blackouts. Coronal mass ejections take a day or more to arrive and cause geomagnetic storms instead.",
+      "concept": "e3c-solar-flares",
+      "status": "draft"
+    },
+    "E3C02": {
+      "why": "The A-index and K-index measure how disturbed Earth's magnetic field is, so a rising value means increasing geomagnetic disturbance. They do not measure UV output or the critical frequency.",
+      "concept": "e3c-geomagnetic-indices",
+      "status": "draft"
+    },
+    "E3C03": {
+      "why": "Geomagnetic disturbances hit hardest near the poles, so paths through the auroral oval suffer the heaviest absorption when the A-index or K-index is high.",
+      "concept": "e3c-geomagnetic-indices",
+      "status": "draft"
+    },
+    "E3C04": {
+      "why": "Bz is the north-south component of the interplanetary magnetic field carried by the solar wind. It is a direction and strength of that field, not a critical frequency or a measure of stability.",
+      "concept": "e3c-bz-cme",
+      "status": "draft"
+    },
+    "E3C05": {
+      "why": "A southward Bz is opposite to Earth's northward-pointing field where the two meet, so the fields connect and let solar particles and energy in. That makes disturbed conditions more likely.",
+      "concept": "e3c-bz-cme",
+      "status": "draft"
+    },
+    "E3C06": {
+      "why": "The atmosphere bends VHF and UHF signals slightly downward, following the Earth's curve, so the radio horizon is about 15 percent farther than the geographic horizon.",
+      "concept": "e3c-radio-horizon",
+      "status": "draft"
+    },
+    "E3C07": {
+      "why": "Flares are ranked A, B, C, M, and X, each ten times stronger than the one before. Class X is the most intense, and there is no Class Z.",
+      "concept": "e3c-solar-flares",
+      "status": "draft"
+    },
+    "E3C08": {
+      "why": "On NOAA's space-weather scales, G stands for geomagnetic storms, and G5 is the top of the scale: an extreme storm. X5 and M9 are solar flare classes.",
+      "concept": "e3c-geomagnetic-indices",
+      "status": "draft"
+    },
+    "E3C09": {
+      "why": "Networks such as the Reverse Beacon Network, PSK Reporter, and WSPRnet report digital-mode and CW signals that their receivers decode. They do not report solar flux or magnetic measurements.",
+      "concept": "e3c-prediction-tools",
+      "status": "draft"
+    },
+    "E3C10": {
+      "why": "The 304A parameter measures the Sun's ultraviolet emissions at 304 angstroms, and it tracks closely with the solar flux index.",
+      "concept": "e3c-prediction-tools",
+      "status": "draft"
+    },
+    "E3C11": {
+      "why": "VOACAP models HF propagation, predicting which bands will open over a path and how strong signals will be. It is not a VHF tool or a circuit calculator.",
+      "concept": "e3c-prediction-tools",
+      "status": "draft"
+    },
+    "E3C12": {
+      "why": "A sudden rise in noise across a large part of the HF spectrum is a sign that a solar flare or the impact of a coronal mass ejection has disturbed the ionosphere. A temperature inversion affects VHF and up, not HF noise.",
+      "concept": "e3c-solar-flares",
+      "status": "draft"
+    }
+  }
+}

@@ -50,8 +50,8 @@ const decode = (s) => s
 // Turn document.xml into one line of plain text per paragraph.
 const xml = readZipEntry(readFileSync(docxPath), 'word/document.xml');
 const lines = xml.split('</w:p>').map((para) =>
-  (para.match(/<w:t[^>]*>[^<]*<\/w:t>|<w:tab\/>/g) || [])
-    .map((t) => (t === '<w:tab/>' ? '\t' : decode(t.replace(/<[^>]+>/g, ''))))
+  (para.match(/<w:t[^>]*>[^<]*<\/w:t>|<w:tab\/>|<w:noBreakHyphen\/>/g) || [])
+    .map((t) => (t === '<w:tab/>' ? '\t' : t === '<w:noBreakHyphen/>' ? '-' : decode(t.replace(/<[^>]+>/g, ''))))
     .join('')
     .replace(/ /g, ' ')
     .trim());
@@ -60,11 +60,18 @@ const subelements = [];
 const questions = [];
 let current = null;
 
-for (let i = 0; i < lines.length; i++) {
+// Errata notes at the top of the file repeat some headings and question
+// headers, so start at the syllabus title ("FCC Element 3 Question Pool Syllabus").
+const start = lines.findIndex((l) => /Question Pool Syllabus/i.test(l));
+if (start < 0) throw new Error('Could not find the "Question Pool Syllabus" heading');
+
+// Deleted questions ("G1A04  Question Deleted") have no answer key and are skipped.
+for (let i = start; i < lines.length; i++) {
   const line = lines[i];
 
   // "SUBELEMENT T1 - COMMISSION'S RULES [6 Exam Questions - 6 Groups]  68 Questions"
-  const sub = line.match(/^SUBELEMENT ([A-Z]\d) - (.+?) \[(\d+) Exam Questions/);
+  // (Extra's E0 is written "SAFETY - [1 exam question - 1 group]".)
+  const sub = line.match(/^SUBELEMENT ([A-Z]\d) [-–] (.+?)(?: [-–])? \[(\d+) Exam Questions?/i);
   if (sub) {
     if (!subelements.some((s) => s.id === sub[1])) {
       subelements.push({ id: sub[1], title: titleCase(sub[2]), examQuestions: +sub[3], groups: [] });
@@ -94,7 +101,8 @@ for (let i = 0; i < lines.length; i++) {
       if (!m) throw new Error(`${current.id}: expected answer ${letter}, got "${lines[j]}"`);
       current.a.push(m[1].trim());
     }
-    const fig = current.q.match(/figure ([A-Z]-\d+)/i);
+    // Usually "Figure E7-3", but at least one question just says "the circuit in E7-3".
+    const fig = current.q.match(/\b([TGE]\d?-\d)\b/);
     if (fig) current.fig = fig[1].toUpperCase();
     current.group = current.id.slice(0, 3);
     questions.push(current);
@@ -105,7 +113,8 @@ for (let i = 0; i < lines.length; i++) {
 function titleCase(s) {
   return s.toLowerCase().replace(/(^|[\s/-])([a-z])/g, (_, a, b) => a + b.toUpperCase())
     .replace(/’S\b/g, '’s').replace(/'S\b/g, "'s")
-    .replace(/ (And|Of|The|For|In|To) /g, (m) => m.toLowerCase());
+    .replace(/ (And|Of|The|For|In|To) /g, (m) => m.toLowerCase())
+    .replace(/\bRf\b/g, 'RF');
 }
 
 // Sanity checks: every group has questions, exam draws one question per group.

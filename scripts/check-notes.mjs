@@ -1,7 +1,7 @@
 // Checks every notes file listed in data/pools.json against its question pool.
 // Run after editing explanations or lesson cards:  node scripts/check-notes.mjs
 
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 
 const read = (p) => JSON.parse(readFileSync(new URL(`../${p}`, import.meta.url), 'utf8'));
 const { pools } = read('data/pools.json');
@@ -13,6 +13,8 @@ for (const entry of pools.filter((p) => p.file)) {
   const questions = new Map(pool.questions.map((q) => [q.id, q]));
   console.log(`${entry.name}:`);
   for (const file of entry.notes || []) {
+    // The app shows questions without explanations until a notes file exists.
+    if (!existsSync(new URL(`../${file}`, import.meta.url))) { console.log(`  - ${file}: not written yet`); continue; }
     const notes = read(file);
     const concepts = new Map(notes.concepts.map((c) => [c.id, c]));
     if (concepts.size !== notes.concepts.length) fail(`${file}: duplicate concept ids`);

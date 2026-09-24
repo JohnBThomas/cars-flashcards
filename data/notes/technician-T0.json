@@ -1,0 +1,396 @@
+{
+  "subelement": "T0",
+  "concepts": [
+    {
+      "id": "t0a-current-and-the-body",
+      "group": "T0A",
+      "title": "How electric current hurts the body",
+      "body": [
+        "Your body runs on tiny electrical signals: nerves use them to send messages, and your heart uses them to keep its rhythm. When outside current flows through you, it can harm you in several ways at once:",
+        "• Heating: current flowing through tissue warms it, and enough current causes burns, including deep burns inside the body.",
+        "• Disrupting cell signals: current can interfere with the normal electrical activity of nerve and heart cells, which can upset the heartbeat.",
+        "• Muscle contractions: current can make muscles clench on their own. A hand gripping a live wire may be unable to let go, and a sudden jerk can throw you off a ladder.",
+        "It is the current flowing through you that does the damage, and it takes surprisingly little. All of these effects are real hazards, which is why station safety focuses on keeping current from ever finding a path through a person."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t0a-ac-wiring-and-grounding",
+      "group": "T0A",
+      "title": "Household AC wiring and the safety ground",
+      "body": [
+        "In the United States, a standard three-wire 120 V AC cable uses color to show what each wire does:",
+        "• Black: the hot wire, which carries the full line voltage.",
+        "• White: the neutral, the return path that normally sits near ground potential.",
+        "• Green or bare copper: the equipment (safety) ground.",
+        "The safety ground connects the metal case of your equipment to earth. If a hot wire inside ever touches the case, the fault current flows through the ground wire instead of through you, and the fuse or breaker opens. That is why the pool recommends three-wire cords and plugs for all AC-powered gear, and connecting all station equipment to a common safety ground so every case sits at the same safe potential.",
+        "'Positive' and 'negative' are words for DC circuits like batteries. In an AC power cable, the terms are hot, neutral, and ground."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t0a-fuses-and-breakers",
+      "group": "T0A",
+      "title": "Fuses and circuit breakers protect against overloads",
+      "body": [
+        "A fuse or circuit breaker removes power when too much current flows, such as during a short circuit or overload. A fuse has a thin link that melts and opens the circuit; a breaker trips a switch that can be reset.",
+        "Its job is to protect the wiring and equipment from overheating and starting a fire. It does not prevent shocks: the current needed to blow a typical fuse is far more than enough to hurt a person. It also has nothing to do with power supply ripple.",
+        "Always replace a fuse with one of the same rating. The rating is chosen so the fuse opens before the wiring or device overheats. Putting a 20-ampere fuse where a 5-ampere fuse belongs lets up to four times the intended current flow before anything opens, so wires and parts can overheat and start a fire.",
+        "In a 120 V AC circuit the fuse or breaker goes in series with the hot conductor only. Series means all the current must pass through it, so opening it stops the flow. Placing it in the hot line means that when it opens, the equipment is cut off from the live side. A device in parallel would not interrupt anything, and a fuse in the neutral could open while leaving the equipment still connected to the hot wire."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t0a-stored-charge-and-meters",
+      "group": "T0A",
+      "title": "Stored charge and measuring high voltage",
+      "body": [
+        "Turning off a power supply does not make it instantly safe. Power supplies use large filter capacitors to smooth their output, and those capacitors can hold a dangerous charge for some time after the switch is off or the plug is pulled.",
+        "Before working inside equipment that uses high-voltage DC, make sure every such capacitor is fully discharged. Treat a capacitor as charged until you have confirmed it is not.",
+        "When you must measure a high voltage, use a voltmeter and test leads that are rated for the voltage you are measuring. A meter or leads used beyond their rating can break down and put that voltage in your hand. (A good voltmeter has a high input impedance, not a low one, and it should never be used as a ground path.)"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t0a-battery-safety",
+      "group": "T0A",
+      "title": "Battery hazards: shorts, heat, and gas",
+      "body": [
+        "A 12-volt storage battery, such as a car or deep-cycle battery, can deliver an enormous current. The main danger is not a shock from touching both terminals, since 12 volts is too low a push to drive much current through dry skin. The danger is a short circuit: a wrench, ring, or wire across the terminals can carry hundreds of amps and get red hot in seconds, causing burns, fire, or even an explosion.",
+        "Charging or discharging a battery too quickly is also hazardous, especially one without internal protection circuitry to limit current and temperature. Rapid charging or discharging can make it overheat and give off gas (out-gassing). Lead-acid batteries can release flammable hydrogen, and damaged or overheated lithium cells can vent gas and catch fire.",
+        "Nearby radio signals do not make battery electrolyte release poison gas; the hazards come from current and heat."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t0a-lightning-protection",
+      "group": "T0A",
+      "title": "Lightning arresters and bonding ground rods",
+      "body": [
+        "Lightning striking an antenna or tower, or even hitting nearby, can send a huge surge down the coaxial feed line toward your station. A lightning arrester gives that surge a path to ground.",
+        "The arrester belongs on a grounded panel near where the feed lines enter the building. That way the surge is diverted to ground before it gets indoors. An arrester at the radio's connector would let the surge travel through the house first, and one at the antenna feed point is far from a good ground connection.",
+        "Every external ground rod and earth connection at your station should be bonded together with heavy wire or conductive strap. Bonding keeps all the grounds at the same potential. If they were separate, a strike could raise one ground to a very different voltage than another, and the surge would flow through your equipment (or you) to get between them. Grounds are not tuned, and they are not deliberately kept far apart."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t0b-climbing-safety",
+      "group": "T0B",
+      "title": "Climbing a tower safely",
+      "body": [
+        "Falls are a leading cause of serious injury in antenna work. Climbing a tower requires all of these:",
+        "• Enough training in safe tower-climbing techniques.",
+        "• An approved climbing harness, worn every time.",
+        "• Tying off to the tower at all times, so you stay attached even while moving past obstacles.",
+        "Never climb without a helper or observer on the ground, no matter how low the work or what kind of job it is. The helper can pass up tools, watch for hazards, and call for help if something goes wrong.",
+        "A crank-up tower has sections that telescope up and down on cables. It must not be climbed unless it is fully retracted or mechanical safety locking devices have been installed, because a slipping cable or winch could drop the sections, and the climber, without warning."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t0b-power-lines",
+      "group": "T0B",
+      "title": "Stay far away from power lines",
+      "body": [
+        "Contact with overhead power lines is one of the deadliest mistakes an antenna builder can make. Before putting up any tower or antenna, look for overhead electrical wires and plan the whole job to stay clear of them, including while lifting and moving pieces into place.",
+        "The guideline for a minimum safe distance: place the antenna so that if it falls, no part of it can come within 10 feet of the power wires. Think about the full length of the antenna, mast, and tower as they would swing down, not just where they stand.",
+        "Never attach an antenna to a utility pole. The antenna, its supports, or its feed line could come into contact with the high-voltage lines on that pole."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t0b-guy-wires",
+      "group": "T0B",
+      "title": "Guy lines and turnbuckles",
+      "body": [
+        "Many towers and masts are held steady by guy lines anchored in the ground. A turnbuckle in each guy line lets you adjust its tension by turning a threaded body.",
+        "Wind makes towers and guy lines vibrate, and over time that vibration can slowly turn the turnbuckle and loosen the guy. A safety wire threaded through the turnbuckle keeps it from turning, so the tension stays where you set it. It is a locking device, not a backup cable, a lightning path, or a measuring tool."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t0b-lightning-ground-wires",
+      "group": "T0B",
+      "title": "Routing lightning ground wires: short, direct, gentle bends",
+      "body": [
+        "A lightning strike is an extremely fast, high-current pulse. For a pulse like that, every bit of extra wire length and every sharp bend adds opposition to the current, and the surge may jump off the wire at a sharp bend and arc to something nearby.",
+        "So lightning grounding conductors should be kept short and direct, and sharp bends must be avoided. Where the wire has to change direction, use a gradual sweep instead of a tight right angle.",
+        "Two tempting ideas are wrong. A drip loop (a deliberate downward loop that keeps rain from running along a cable into a building) adds length and bends to a ground wire, so it does not belong there. And common grounds are not something to avoid: station grounds should be bonded together."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t0b-tower-grounding",
+      "group": "T0B",
+      "title": "Grounding a tower, and who sets the rules",
+      "body": [
+        "A proper tower ground uses a separate eight-foot ground rod for each tower leg, with every rod bonded to the tower and to each other. Several long rods give lightning many low-resistance paths into the earth, and bonding keeps them at the same potential.",
+        "Weak or wrong choices include a single short rod near the base, a connection to a cold-water pipe (which may have plastic sections and would steer lightning current toward the house plumbing), or a ferrite RF choke (which impedes fast pulses rather than passing them to ground).",
+        "Grounding requirements for an amateur tower or antenna are set by local electrical codes, not by the FCC's Part 97 rules, FAA tower lighting rules, or UL. Check with your local building authority before you build."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t0c-non-ionizing",
+      "group": "T0C",
+      "title": "Radio waves are non-ionizing radiation",
+      "body": [
+        "'Radiation' just means energy traveling outward from a source. Radioactive materials give off ionizing radiation, such as alpha and gamma radiation, which carries enough energy to knock electrons off atoms. That can cause chemical changes in cells and damage DNA.",
+        "Radio signals are non-ionizing radiation. RF does not carry enough energy to cause chemical changes in cells or damage DNA. Its main known effect on the body is heating, much like a microwave oven warms food.",
+        "Non-ionizing does not mean perfectly safe. Strong RF fields can heat body tissue, which is why the FCC sets exposure limits. It also does not mean RF only travels a few feet or can only be detected with a special dosimeter."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t0c-mpe-and-frequency",
+      "group": "T0C",
+      "title": "Why exposure limits change with frequency",
+      "body": [
+        "The FCC sets Maximum Permissible Exposure (MPE) limits: the highest RF field strength or power density a person may be exposed to, averaged over time (47 CFR 1.1310).",
+        "These limits are not the same at every frequency, because the human body absorbs more RF energy at some frequencies than at others. Absorption is strongest when the body's size is a sizable fraction of the wavelength, so the body acts somewhat like a receiving antenna.",
+        "For people, that happens in the VHF range. The FCC limits are lowest (strictest) from 30 to 300 MHz, which includes the 6 meter (50 MHz) and 2 meter (144 MHz) amateur bands. Below and above that range the limits are higher, so 3.5 MHz, 440 MHz, and 1296 MHz all have higher MPE limits than 50 MHz.",
+        "The difference has nothing to do with lower frequencies having 'more energy'. It is about how well the body soaks up energy at each frequency."
+      ],
+      "formula": "Lowest MPE limits: 30 to 300 MHz",
+      "status": "draft"
+    },
+    {
+      "id": "t0c-exposure-factors",
+      "group": "T0C",
+      "title": "What sets how much RF a person receives",
+      "body": [
+        "How much RF exposure a person near your antenna receives depends on several things together:",
+        "• Frequency, since limits and body absorption vary with frequency.",
+        "• Power level: more power into the antenna means stronger fields.",
+        "• Distance: fields weaken quickly as you move away from the antenna.",
+        "• Radiation pattern: a directional antenna focuses energy in some directions, so a person in front of a beam gets more than someone behind or beside it.",
+        "• Duty cycle and time: how much of the time the transmitter is actually on."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t0c-reducing-exposure-rf-burns",
+      "group": "T0C",
+      "title": "Reducing exposure, and RF burns",
+      "body": [
+        "Because distance and the antenna's pattern matter so much, one of the most effective ways to reduce RF exposure is to relocate antennas, for example higher up or farther from where people spend time. Moving the transmitter does not help, because the radiation comes from the antenna, not the radio. Increasing the duty cycle would raise exposure, not lower it.",
+        "Touching an antenna while it is transmitting can cause an RF burn to the skin. RF current flows into your body where you make contact and heats the tissue there. These burns can be painful and deep. The hazard is heating, not ionizing radiation."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t0c-duty-cycle",
+      "group": "T0C",
+      "title": "Duty cycle and averaging time",
+      "body": [
+        "FCC exposure limits are based on average exposure over an averaging time: 6 minutes for controlled (occupational) exposure and 30 minutes for uncontrolled (general population) exposure.",
+        "Duty cycle is the percentage of that averaging time the transmitter is actually transmitting. A transmitter keyed for 3 minutes out of every 6 has a 50 percent duty cycle.",
+        "Duty cycle matters because it affects the average exposure. If the transmitter is on only half the time, the average is half what it would be if it were on continuously. So when duty cycle drops from 100 percent to 50 percent, the allowable power density during transmission doubles while the average stays within the same limit. Raising the duty cycle has the opposite effect."
+      ],
+      "formula": "Allowable power density = limit ÷ duty cycle",
+      "status": "draft"
+    },
+    {
+      "id": "t0c-evaluation-responsibility",
+      "group": "T0C",
+      "title": "Evaluating your station, and who is responsible",
+      "body": [
+        "Under FCC rules (47 CFR 97.13(c)), the station licensee is responsible for making sure no person is exposed to RF energy above the FCC limits. Not the FCC, not the zoning board, and not the people who happen to be nearby.",
+        "You can determine whether your station complies in any of these accepted ways:",
+        "• Calculations based on FCC OET Bulletin 65, the FCC's guide to RF exposure evaluation.",
+        "• Calculations based on computer modeling of your antenna.",
+        "• Measurement of field strength with calibrated equipment.",
+        "Compliance is not a one-time job. Re-evaluate whenever you change anything in the transmitter or antenna system, such as a new antenna, a new antenna location, a new band, or more power. You do not notify the FCC of these changes. Low SWR does not reduce exposure (it only means power is reaching the antenna efficiently), and using UL-approved equipment is not an RF exposure evaluation."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "T0A01": {
+      "why": "The real danger of a big 12-volt battery is a short circuit: it can drive a huge current through whatever bridges the terminals, causing burns, fire, or an explosion. Twelve volts is generally too low to push a dangerous shock current through your hands, and RF does not make electrolyte release poison gas.",
+      "concept": "t0a-battery-safety",
+      "status": "draft"
+    },
+    "T0A02": {
+      "why": "Current through the body can heat tissue, disrupt the electrical signals of nerve and heart cells, and cause involuntary muscle contractions. All three are real hazards.",
+      "concept": "t0a-current-and-the-body",
+      "status": "draft"
+    },
+    "T0A03": {
+      "why": "In U.S. three-wire 120 V AC cable, black insulation marks the hot wire. White is neutral, green or bare copper is the equipment ground, and 'negative' is a DC term.",
+      "concept": "t0a-ac-wiring-and-grounding",
+      "status": "draft"
+    },
+    "T0A04": {
+      "why": "A fuse opens the circuit and removes power when an overload draws too much current, protecting wiring and equipment from overheating. It does not prevent shocks, since it takes far more current to blow a fuse than to hurt a person.",
+      "concept": "t0a-fuses-and-breakers",
+      "status": "draft"
+    },
+    "T0A05": {
+      "why": "The fuse rating is chosen to open before the circuit overheats. A 20-ampere fuse in a 5-ampere circuit lets excessive current flow without blowing, so wiring or parts can overheat and start a fire.",
+      "concept": "t0a-fuses-and-breakers",
+      "status": "draft"
+    },
+    "T0A06": {
+      "why": "All three help: three-wire cords and a common safety ground give fault current a path that is not through you, and discharging high-voltage capacitors removes stored charge before you reach inside.",
+      "concept": "t0a-ac-wiring-and-grounding",
+      "status": "draft"
+    },
+    "T0A07": {
+      "why": "A lightning arrester goes on a grounded panel near where the feed lines enter the building, so a surge is sent to ground before it gets inside. At the radio it would be too late, and the antenna end has no good ground connection.",
+      "concept": "t0a-lightning-protection",
+      "status": "draft"
+    },
+    "T0A08": {
+      "why": "A fuse or breaker must be in series so all the current passes through it, and in the hot conductor only so that opening it disconnects the equipment from the live side. A fuse in the neutral could open and leave the equipment still connected to the hot wire.",
+      "concept": "t0a-fuses-and-breakers",
+      "status": "draft"
+    },
+    "T0A09": {
+      "why": "External ground rods and earth connections should be bonded together with heavy wire or conductive strap so they stay at the same potential during a lightning strike. Keeping them apart would let a surge flow through your equipment to get between them.",
+      "concept": "t0a-lightning-protection",
+      "status": "draft"
+    },
+    "T0A10": {
+      "why": "Charging or discharging an unprotected battery too fast can make it overheat and give off gas. With no protection circuitry, nothing limits the current or temperature.",
+      "concept": "t0a-battery-safety",
+      "status": "draft"
+    },
+    "T0A11": {
+      "why": "Filter capacitors in a power supply can hold a dangerous charge after the supply is turned off. That stored charge is the hazard, which is why capacitors should be discharged before you work inside.",
+      "concept": "t0a-stored-charge-and-meters",
+      "status": "draft"
+    },
+    "T0A12": {
+      "why": "The voltmeter and its test leads must be rated for the voltage being measured, or their insulation could break down and expose you to it. A voltmeter should have high impedance, not low, and should never be a ground path.",
+      "concept": "t0a-stored-charge-and-meters",
+      "status": "draft"
+    },
+    "T0B01": {
+      "why": "Lightning ground connections should be short and direct, giving the fast surge the easiest path to earth. Right-angle bends and drip loops add length and bends, which makes the ground less effective.",
+      "concept": "t0b-lightning-ground-wires",
+      "status": "draft"
+    },
+    "T0B02": {
+      "why": "Safe climbing needs all three: proper training, an approved climbing harness, and staying tied off to the tower at all times.",
+      "concept": "t0b-climbing-safety",
+      "status": "draft"
+    },
+    "T0B03": {
+      "why": "Never climb a tower without a helper or observer, no matter how low or what kind of work you are doing. Someone on the ground can pass tools, spot hazards, and get help if needed.",
+      "concept": "t0b-climbing-safety",
+      "status": "draft"
+    },
+    "T0B04": {
+      "why": "Overhead power lines can be deadly, so look for them and stay well clear when putting up a tower. A wrist ground strap is for protecting electronics from static, and a tower should be grounded, not insulated.",
+      "concept": "t0b-power-lines",
+      "status": "draft"
+    },
+    "T0B05": {
+      "why": "Wind vibration can slowly turn a turnbuckle and loosen the guy line. A safety wire through the turnbuckle locks it so it cannot turn.",
+      "concept": "t0b-guy-wires",
+      "status": "draft"
+    },
+    "T0B06": {
+      "why": "Place the antenna far enough away that if it falls, no part of it can come within 10 feet of the power wires. The other distances do not account for how the antenna would actually fall.",
+      "concept": "t0b-power-lines",
+      "status": "draft"
+    },
+    "T0B07": {
+      "why": "A crank-up tower must not be climbed unless it is fully retracted or mechanical safety locking devices are installed, because the telescoping sections could slip down. Crank-up towers can be painted and grounded like other towers.",
+      "concept": "t0b-climbing-safety",
+      "status": "draft"
+    },
+    "T0B08": {
+      "why": "A proper tower ground uses a separate eight-foot ground rod at each leg, bonded to the tower and to each other. A single short rod is inadequate, a cold-water pipe is not a proper tower ground, and a ferrite choke would impede the surge.",
+      "concept": "t0b-tower-grounding",
+      "status": "draft"
+    },
+    "T0B09": {
+      "why": "An antenna on a utility pole could come into contact with the high-voltage power lines on that pole, which could be fatal.",
+      "concept": "t0b-power-lines",
+      "status": "draft"
+    },
+    "T0B10": {
+      "why": "Sharp bends must be avoided in lightning grounding conductors, because they add opposition to the surge and can make it arc off the wire. Precise right angles are the opposite of what you want, and station grounds should be bonded in common, not kept separate.",
+      "concept": "t0b-lightning-ground-wires",
+      "status": "draft"
+    },
+    "T0B11": {
+      "why": "Grounding requirements for towers and antennas come from local electrical codes. Part 97 covers radio operation, not electrical grounding, and the FAA and UL do not set these requirements.",
+      "concept": "t0b-tower-grounding",
+      "status": "draft"
+    },
+    "T0C01": {
+      "why": "Radio signals are non-ionizing radiation: they do not carry enough energy to knock electrons off atoms. Gamma and alpha radiation are forms of ionizing radiation from radioactive materials.",
+      "concept": "t0c-non-ionizing",
+      "status": "draft"
+    },
+    "T0C02": {
+      "why": "FCC exposure limits are strictest from 30 to 300 MHz, where the human body absorbs RF energy most readily. Of the bands listed, only 50 MHz falls in that range.",
+      "concept": "t0c-mpe-and-frequency",
+      "status": "draft"
+    },
+    "T0C03": {
+      "why": "Exposure limits apply to the average over the averaging time. Halving the duty cycle halves the average, so the power density allowed while transmitting can double.",
+      "work": [
+        "Average exposure = power density while transmitting × duty cycle",
+        "At 100%: allowed × 1.0 = limit, so allowed = limit",
+        "At 50%: allowed × 0.5 = limit, so allowed = limit ÷ 0.5 = 2 × limit",
+        "The allowable power density increases by a factor of 2"
+      ],
+      "concept": "t0c-duty-cycle",
+      "status": "draft"
+    },
+    "T0C04": {
+      "why": "Exposure depends on the frequency and power of the RF field, how far the person is from the antenna, and the antenna's radiation pattern. All of these matter.",
+      "concept": "t0c-exposure-factors",
+      "status": "draft"
+    },
+    "T0C05": {
+      "why": "The body absorbs more RF energy at some frequencies than at others, mostly depending on how body size compares to the wavelength. Exposure limits are tighter where absorption is greatest.",
+      "concept": "t0c-mpe-and-frequency",
+      "status": "draft"
+    },
+    "T0C06": {
+      "why": "All of these are accepted ways to check compliance: calculations using FCC OET Bulletin 65, calculations from computer modeling, and measurements with calibrated equipment.",
+      "concept": "t0c-evaluation-responsibility",
+      "status": "draft"
+    },
+    "T0C07": {
+      "why": "Touching a transmitting antenna lets RF current flow into your skin, heating it and causing an RF burn. RF is non-ionizing, so ionizing radiation is not the hazard.",
+      "concept": "t0c-reducing-exposure-rf-burns",
+      "status": "draft"
+    },
+    "T0C08": {
+      "why": "RF radiates from the antenna, so relocating antennas farther from people reduces exposure. Moving the transmitter changes nothing about where the antenna radiates, and a higher duty cycle increases exposure.",
+      "concept": "t0c-reducing-exposure-rf-burns",
+      "status": "draft"
+    },
+    "T0C09": {
+      "why": "Re-evaluate your station whenever you change anything in the transmitter or antenna system, since the change can alter exposure. You do not notify the FCC, and low SWR or UL-approved equipment does not show RF exposure compliance.",
+      "concept": "t0c-evaluation-responsibility",
+      "status": "draft"
+    },
+    "T0C10": {
+      "why": "Exposure limits are based on the average over time, and duty cycle sets how much of that time the transmitter is on, so it directly affects the average exposure.",
+      "concept": "t0c-duty-cycle",
+      "status": "draft"
+    },
+    "T0C11": {
+      "why": "For RF exposure, duty cycle is the percentage of the averaging time that the transmitter is transmitting. It is not a difference in power levels, and not the time spent off the air.",
+      "concept": "t0c-duty-cycle",
+      "status": "draft"
+    },
+    "T0C12": {
+      "why": "RF radiation does not have enough energy to cause chemical changes in cells or damage DNA, unlike ionizing radiation from radioactive sources. That does not make RF perfectly safe, since strong fields can still heat tissue.",
+      "concept": "t0c-non-ionizing",
+      "status": "draft"
+    },
+    "T0C13": {
+      "why": "FCC rules make the station licensee responsible for making sure no one is exposed to RF above the FCC limits. The FCC sets the limits but does not check each station itself.",
+      "concept": "t0c-evaluation-responsibility",
+      "status": "draft"
+    }
+  }
+}

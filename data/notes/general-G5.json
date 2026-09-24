@@ -1,0 +1,421 @@
+{
+  "subelement": "G5",
+  "concepts": [
+    {
+      "id": "g5a-reactance",
+      "group": "G5A",
+      "title": "Reactance: how coils and capacitors oppose AC",
+      "body": [
+        "Resistance opposes any current and turns the lost energy into heat. Reactance is a different kind of opposition. It is the opposition that inductors (coils) and capacitors give to alternating current. Instead of burning up energy, they store it for part of each cycle and hand it back.",
+        "Reactance is measured in ohms, just like resistance, and it is written with the letter X. XL means inductive reactance and XC means capacitive reactance.",
+        "Some look-alike words show up as wrong answers. Conductance is the inverse of resistance, admittance is the inverse of impedance, susceptance is the inverse of reactance, and reluctance is opposition to magnetic flux in a core. None of them is the opposition to AC in a coil or capacitor. The siemens is the unit for conductance and admittance, not for reactance."
+      ],
+      "formula": "reactance: symbol X, unit Ω",
+      "status": "draft"
+    },
+    {
+      "id": "g5a-inductive-reactance",
+      "group": "G5A",
+      "title": "Inductors: reactance rises with frequency",
+      "body": [
+        "A coil fights any change in the current through it. The faster the current tries to change, the harder the coil pushes back. Higher frequency means faster changes, so an inductor's reactance goes up as frequency goes up.",
+        "At DC (zero frequency) a coil is just a piece of wire with almost no opposition. At very high frequencies it can nearly block the signal. That is why coils are used as RF chokes.",
+        "Only frequency and inductance matter. Turning up the amplitude (the size of the AC voltage) does not change the reactance."
+      ],
+      "formula": "XL = 2π × f × L",
+      "status": "draft"
+    },
+    {
+      "id": "g5a-capacitive-reactance",
+      "group": "G5A",
+      "title": "Capacitors: reactance falls with frequency",
+      "body": [
+        "A capacitor behaves the opposite way from a coil. It blocks DC completely, because no current can flow steadily across its insulator. But as the frequency goes up, the capacitor charges and discharges back and forth more easily, so its reactance goes down.",
+        "That is why capacitors are used to pass RF while blocking DC, and to bypass RF to ground.",
+        "As with coils, the amplitude of the AC has nothing to do with it. Memory aid: coil reactance climbs with frequency, capacitor reactance falls."
+      ],
+      "formula": "XC = 1 ÷ (2π × f × C)",
+      "status": "draft"
+    },
+    {
+      "id": "g5a-impedance",
+      "group": "G5A",
+      "title": "Impedance and its inverse, admittance",
+      "body": [
+        "Impedance, written Z, is the total opposition a circuit gives to AC. It combines resistance and reactance, and it is measured in ohms.",
+        "Like resistance in Ohm's Law, impedance is the ratio of voltage to current: Z = E ÷ I. Current divided by voltage would be upside down, and multiplying current by voltage gives power, not impedance.",
+        "The inverse of impedance (1 ÷ Z) is called admittance and is written Y. It tells how easily AC flows rather than how hard it is opposed. Letters to keep straight: Z is impedance, X is reactance, Y is admittance, and B is susceptance."
+      ],
+      "formula": "Z = E ÷ I   Y = 1 ÷ Z",
+      "status": "draft"
+    },
+    {
+      "id": "g5a-resonance",
+      "group": "G5A",
+      "title": "Resonance: when the reactances cancel",
+      "body": [
+        "Because a coil's reactance rises with frequency and a capacitor's falls, there is one frequency where the two are exactly equal. That is the resonant frequency of an LC circuit.",
+        "Inductive and capacitive reactance push in opposite directions, so at resonance they cancel each other out. Only the circuit's resistance is left. The resistance itself is not cancelled.",
+        "In a series LC circuit, cancelled reactance means the impedance drops to a very low value (just the small resistance), so current is at its maximum. In a parallel LC circuit it is the other way around: the impedance at resonance is very high. Exam questions about a series circuit want the low-impedance answer."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g5a-impedance-matching",
+      "group": "G5A",
+      "title": "Impedance matching at radio frequencies",
+      "body": [
+        "A transmitter delivers the most power when the load it sees matches its design impedance, usually 50 ohms. Antennas and other loads often have different impedances, so we use matching devices to transform one impedance into another.",
+        "• A transformer changes impedance by the square of its turns ratio.",
+        "• A pi-network (a coil with a capacitor to ground on each side, shaped like the Greek letter π) is used in many amplifier outputs and antenna tuners.",
+        "• A carefully chosen length of transmission line, such as a quarter-wave section, can also transform impedance.",
+        "All three of these work at radio frequencies."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g5b-decibels",
+      "group": "G5B",
+      "title": "Decibels at the General level",
+      "body": [
+        "A decibel expresses a power ratio. Doubling the power is about +3 dB and cutting it in half is about -3 dB. Ten times the power is +10 dB.",
+        "Small dB changes are worth knowing too. A 1 dB loss leaves about 79.4 percent of the power, which means about 20.6 percent was lost. That is more than many people guess, which is why a little feed line loss matters.",
+        "To turn dB back into a ratio, divide the dB by 10 and raise 10 to that power: ratio = 10^(dB ÷ 10). For -1 dB that is 10^(-0.1), which is 0.794."
+      ],
+      "formula": "dB = 10 × log10(P2 ÷ P1)   ratio = 10^(dB ÷ 10)",
+      "status": "draft"
+    },
+    {
+      "id": "g5b-dividers",
+      "group": "G5B",
+      "title": "Current and voltage dividers",
+      "body": [
+        "In a parallel circuit, every branch has the same voltage across it, and the total current splits among the branches. The branch currents always add up to the total current coming from the source. This is a current divider.",
+        "Adding more parallel branches gives the current more paths, so the total current goes up, not down. Each lower-resistance branch takes a larger share.",
+        "In a series circuit, the same current flows through everything and the voltage is shared out instead. The voltage drops add up to the source voltage. This is a voltage divider."
+      ],
+      "formula": "parallel: I total = I1 + I2 + I3 ...",
+      "status": "draft"
+    },
+    {
+      "id": "g5b-power-formulas",
+      "group": "G5B",
+      "title": "Three ways to calculate power",
+      "body": [
+        "The basic power formula is P = E × I (watts equal volts times amps). If you know only two of voltage, current, and resistance, combine it with Ohm's Law to get two more versions.",
+        "• If you know voltage and resistance, use P = E² ÷ R.",
+        "• If you know current and resistance, use P = I² × R.",
+        "• To find voltage from power and resistance, turn it around: E = √(P × R).",
+        "Watch the units. Milliamperes must be changed to amperes (divide by 1000) before squaring, and a result like 0.061 W is better written as 61 milliwatts."
+      ],
+      "formula": "P = E × I = E² ÷ R = I² × R",
+      "status": "draft"
+    },
+    {
+      "id": "g5b-rms-peak",
+      "group": "G5B",
+      "title": "RMS, peak, and peak-to-peak voltage",
+      "body": [
+        "A sine wave has several ways of stating its size. The peak value is the height from zero to the top of the wave. The peak-to-peak value is from the very bottom to the very top, which is twice the peak.",
+        "The RMS (root-mean-square) value is the one that matters for power. An AC voltage with a given RMS value heats a resistor exactly as much as a DC voltage of the same number. The 120 volts from a wall outlet is an RMS figure.",
+        "For a sine wave, peak = RMS × 1.414 (the square root of 2), and RMS = peak × 0.707. Always convert to RMS before using a power formula."
+      ],
+      "formula": "V peak = V RMS × 1.414   V RMS = V peak × 0.707   V p-p = 2 × V peak",
+      "status": "draft"
+    },
+    {
+      "id": "g5b-pep",
+      "group": "G5B",
+      "title": "Peak envelope power (PEP)",
+      "body": [
+        "PEP is the average power during one RF cycle at the very highest point of the signal's envelope (the crest of the modulation). It is how amateur transmitter power limits are stated.",
+        "To find PEP from a voltage measured across a dummy load: Step 1, halve the peak-to-peak voltage to get peak. Step 2, multiply by 0.707 to get RMS. Step 3, square the RMS voltage and divide by the load resistance.",
+        "An unmodulated carrier never changes in size, so its highest point is the same as its average. For a steady carrier, PEP equals average power and the ratio of PEP to average power is 1.00."
+      ],
+      "formula": "PEP = (V p-p ÷ 2 × 0.707)² ÷ R",
+      "status": "draft"
+    },
+    {
+      "id": "g5c-transformer-basics",
+      "group": "G5C",
+      "title": "How a transformer works",
+      "body": [
+        "A transformer is two coils (windings) sharing a magnetic path, often an iron core. AC in the primary winding creates a changing magnetic field that passes through the secondary winding and induces a voltage there. Coupling energy between coils this way is called mutual inductance.",
+        "The voltage ratio equals the turns ratio. A secondary with three times as many turns as the primary delivers three times the voltage. Fewer turns on the secondary gives a lower voltage (a step-down transformer).",
+        "A transformer works in either direction. If you feed a 4:1 step-down transformer backward, putting the signal into the secondary, it becomes a 1:4 step-up transformer and multiplies the voltage by 4."
+      ],
+      "formula": "E secondary = E primary × (N secondary ÷ N primary)",
+      "status": "draft"
+    },
+    {
+      "id": "g5c-transformer-current",
+      "group": "G5C",
+      "title": "Transformer current and wire size",
+      "body": [
+        "A transformer cannot create power. Apart from small losses, the power out of the secondary equals the power into the primary. So if the voltage goes up, the current must go down by the same factor, and the other way around.",
+        "In a step-up transformer the secondary has high voltage and low current, while the primary has low voltage and high current. The primary is therefore wound with thicker wire so it can carry that higher current without overheating."
+      ],
+      "formula": "E primary × I primary ≈ E secondary × I secondary",
+      "status": "draft"
+    },
+    {
+      "id": "g5c-impedance-ratio",
+      "group": "G5C",
+      "title": "Matching impedances with a transformer",
+      "body": [
+        "A transformer changes impedance by the square of its turns ratio. A 2:1 turns ratio gives a 4:1 impedance ratio, and a 3:1 turns ratio gives 9:1.",
+        "To go the other way and find the turns ratio needed for a match: Step 1, divide the larger impedance by the smaller. Step 2, take the square root. Example: matching 200 ohms to 50 ohms is a 4:1 impedance ratio, which needs a 2:1 turns ratio.",
+        "A common trap is to use the impedance ratio itself as the turns ratio. Remember to take the square root."
+      ],
+      "formula": "turns ratio = √(Z1 ÷ Z2)",
+      "status": "draft"
+    },
+    {
+      "id": "g5c-resistors-inductors",
+      "group": "G5C",
+      "title": "Combining resistors and inductors",
+      "body": [
+        "Resistors and inductors combine the same way. In series their values simply add, so the total is always larger than the largest one. To increase an inductance, add another inductor in series.",
+        "In parallel the total is always smaller than the smallest one. Use the reciprocal rule: add up 1 ÷ each value, then take 1 ÷ that sum.",
+        "Two shortcuts: for exactly two parts in parallel, total = (product) ÷ (sum). For N equal parts in parallel, total = one value ÷ N."
+      ],
+      "formula": "series: R = R1 + R2 + ...   parallel: R = 1 ÷ (1/R1 + 1/R2 + ...)",
+      "status": "draft"
+    },
+    {
+      "id": "g5c-capacitors",
+      "group": "G5C",
+      "title": "Combining capacitors: the rules flip",
+      "body": [
+        "Capacitors combine in the opposite way from resistors and inductors. In parallel, the plate areas effectively add up, so the capacitances add. To increase a capacitance, add another capacitor in parallel.",
+        "In series, the total capacitance is smaller than the smallest one, and you use the reciprocal rule (or product over sum for two, or one value ÷ N for N equal capacitors).",
+        "Before adding, put all the values in the same unit. For example, 750 pF is 0.75 nF.",
+        "Adding an inductor to a capacitor does not raise its capacitance; that just makes an LC circuit."
+      ],
+      "formula": "parallel: C = C1 + C2 + ...   series: C = 1 ÷ (1/C1 + 1/C2 + ...)",
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "G5A01": {
+      "why": "When the two reactances are equal in a series LC circuit, they cancel and only the small resistance remains, so the impedance is very low. Very high impedance at resonance describes a parallel LC circuit instead.",
+      "concept": "g5a-resonance",
+      "status": "draft"
+    },
+    "G5A02": {
+      "why": "Reactance is the opposition to alternating current caused by inductance or capacitance. Opposition caused by resistance is just resistance, and reactance never reinforces current.",
+      "concept": "g5a-reactance",
+      "status": "draft"
+    },
+    "G5A03": {
+      "why": "The opposition a coil gives to AC is called reactance (inductive reactance). Reluctance sounds close, but it describes opposition to magnetic flux, not to current.",
+      "concept": "g5a-reactance",
+      "status": "draft"
+    },
+    "G5A04": {
+      "why": "The opposition a capacitor gives to AC is called reactance (capacitive reactance). Conductance and admittance describe how easily current flows, the opposite idea.",
+      "concept": "g5a-reactance",
+      "status": "draft"
+    },
+    "G5A05": {
+      "why": "An inductor's reactance rises as frequency rises, because it resists faster changes in current more strongly. The amplitude of the AC does not change the reactance.",
+      "concept": "g5a-inductive-reactance",
+      "status": "draft"
+    },
+    "G5A06": {
+      "why": "A capacitor's reactance falls as frequency rises, which is why capacitors pass RF but block DC. The amplitude of the AC does not change the reactance.",
+      "concept": "g5a-capacitive-reactance",
+      "status": "draft"
+    },
+    "G5A07": {
+      "why": "The inverse of impedance is admittance. Conductance is the inverse of resistance and susceptance is the inverse of reactance, so both are close but not the whole impedance.",
+      "concept": "g5a-impedance",
+      "status": "draft"
+    },
+    "G5A08": {
+      "why": "Impedance is voltage divided by current, the AC version of Ohm's Law (Z = E ÷ I). Current divided by voltage is upside down, and current times voltage gives power.",
+      "concept": "g5a-impedance",
+      "status": "draft"
+    },
+    "G5A09": {
+      "why": "Reactance is a kind of opposition to current, so it is measured in ohms, like resistance and impedance. The farad measures capacitance and the siemens measures conductance or admittance.",
+      "concept": "g5a-reactance",
+      "status": "draft"
+    },
+    "G5A10": {
+      "why": "Transformers, pi-networks, and sections of transmission line can all transform one impedance into another at radio frequencies, so all of the choices are correct.",
+      "concept": "g5a-impedance-matching",
+      "status": "draft"
+    },
+    "G5A11": {
+      "why": "Reactance is written with the letter X (XL for inductive, XC for capacitive). Z stands for impedance, Y for admittance, and B for susceptance.",
+      "concept": "g5a-reactance",
+      "status": "draft"
+    },
+    "G5A12": {
+      "why": "At resonance the inductive and capacitive reactances are equal and opposite, so they cancel. The resistance is not cancelled; it is all that is left.",
+      "concept": "g5a-resonance",
+      "status": "draft"
+    },
+    "G5B01": {
+      "why": "Doubling or halving the power is a change of about 3 dB. 6 dB would be a factor of four.",
+      "work": ["dB = 10 × log10(2)", "dB = 10 × 0.301 = 3.01 dB ≈ 3 dB"],
+      "concept": "g5b-decibels",
+      "status": "draft"
+    },
+    "G5B02": {
+      "why": "In a parallel circuit the current splits among the branches, so the total is the sum of all the branch currents. Adding more branches increases the total current rather than decreasing it.",
+      "concept": "g5b-dividers",
+      "status": "draft"
+    },
+    "G5B03": {
+      "why": "With voltage and resistance known, square the voltage and divide by the resistance. Dividing 400 by 800 without squaring gives 0.5, which is the current in amps, not the power.",
+      "work": ["P = E² ÷ R", "P = 400² ÷ 800 = 160,000 ÷ 800", "P = 200 W"],
+      "concept": "g5b-power-formulas",
+      "status": "draft"
+    },
+    "G5B04": {
+      "why": "Multiply the voltage by the current to get the power.",
+      "work": ["P = E × I", "P = 12 V × 0.2 A", "P = 2.4 W"],
+      "concept": "g5b-power-formulas",
+      "status": "draft"
+    },
+    "G5B05": {
+      "why": "With current and resistance known, square the current (in amperes) and multiply by the resistance. The result is a small fraction of a watt, about 61 milliwatts.",
+      "work": ["I = 7.0 mA = 0.007 A", "P = I² × R = 0.007² × 1250", "P = 0.000049 × 1250 = 0.06125 W", "P ≈ 61 mW"],
+      "concept": "g5b-power-formulas",
+      "status": "draft"
+    },
+    "G5B06": {
+      "why": "Convert the peak-to-peak voltage to peak, then to RMS, and then use P = E² ÷ R. Skipping the RMS step gives an answer that is too large.",
+      "work": ["V peak = 200 V ÷ 2 = 100 V", "V RMS = 100 V × 0.707 = 70.7 V", "PEP = 70.7² ÷ 50 = 5000 ÷ 50", "PEP = 100 W"],
+      "concept": "g5b-pep",
+      "status": "draft"
+    },
+    "G5B07": {
+      "why": "The RMS value of an AC voltage is defined so it heats a resistor exactly as much as the same number of DC volts. Peak and peak-to-peak values are larger than the heating-equivalent value.",
+      "concept": "g5b-rms-peak",
+      "status": "draft"
+    },
+    "G5B08": {
+      "why": "Multiply the RMS voltage by 1.414 to get peak, then double it to get peak-to-peak. 169.7 volts is only the peak value, a common trap.",
+      "work": ["V peak = 120 V × 1.414 = 169.7 V", "V p-p = 2 × 169.7 V", "V p-p = 339.4 V"],
+      "concept": "g5b-rms-peak",
+      "status": "draft"
+    },
+    "G5B09": {
+      "why": "Multiply the peak voltage by 0.707 to get RMS. Dividing by 2 (to get 8.5) is the wrong factor for a sine wave.",
+      "work": ["V RMS = V peak × 0.707", "V RMS = 17 V × 0.707 = 12.02 V", "V RMS ≈ 12 V"],
+      "concept": "g5b-rms-peak",
+      "status": "draft"
+    },
+    "G5B10": {
+      "why": "A 1 dB loss leaves about 79.4 percent of the original power, so about 20.6 percent is lost.",
+      "work": ["ratio = 10^(-1 ÷ 10) = 10^(-0.1)", "ratio = 0.794, so 79.4 percent remains", "loss = 100 percent - 79.4 percent", "loss ≈ 20.6 percent"],
+      "concept": "g5b-decibels",
+      "status": "draft"
+    },
+    "G5B11": {
+      "why": "An unmodulated carrier stays the same size all the time, so its peak envelope power equals its average power. The ratio is exactly 1.00.",
+      "concept": "g5b-pep",
+      "status": "draft"
+    },
+    "G5B12": {
+      "why": "Rearrange P = E² ÷ R to solve for voltage: multiply power by resistance and take the square root. Because the power is dissipated as heat, this gives the RMS voltage.",
+      "work": ["E = √(P × R)", "E = √(1200 × 50) = √60,000", "E = 244.9 V ≈ 245 V"],
+      "concept": "g5b-power-formulas",
+      "status": "draft"
+    },
+    "G5B13": {
+      "why": "For an unmodulated carrier, PEP and average power are the same, so the PEP is also 1060 watts. There is no modulation peak to push the PEP any higher.",
+      "work": ["PEP ÷ average = 1.00 for a steady carrier", "PEP = 1060 W × 1.00 = 1060 W"],
+      "concept": "g5b-pep",
+      "status": "draft"
+    },
+    "G5B14": {
+      "why": "Convert the peak-to-peak voltage to peak, then to RMS, and then use P = E² ÷ R.",
+      "work": ["V peak = 500 V ÷ 2 = 250 V", "V RMS = 250 V × 0.707 = 176.8 V", "PEP = 176.8² ÷ 50 = 31,250 ÷ 50", "PEP = 625 W"],
+      "concept": "g5b-pep",
+      "status": "draft"
+    },
+    "G5C01": {
+      "why": "The changing magnetic field from the primary passes through the secondary and induces a voltage there. This coupling between two coils is called mutual inductance, not any kind of capacitive coupling.",
+      "concept": "g5c-transformer-basics",
+      "status": "draft"
+    },
+    "G5C02": {
+      "why": "A transformer works both ways. Feeding a 4:1 step-down transformer backward turns it into a 1:4 step-up transformer, so the input voltage is multiplied by 4.",
+      "concept": "g5c-transformer-basics",
+      "status": "draft"
+    },
+    "G5C03": {
+      "why": "Use the reciprocal rule for parallel resistors. The total must be smaller than the smallest resistor (10 ohms), which rules out 17 and 80 ohms. 0.17 is the sum of the reciprocals before the final flip.",
+      "work": ["1/R = 1/10 + 1/20 + 1/50", "1/R = 0.10 + 0.05 + 0.02 = 0.17", "R = 1 ÷ 0.17 = 5.88 Ω ≈ 5.9 Ω"],
+      "concept": "g5c-resistors-inductors",
+      "status": "draft"
+    },
+    "G5C04": {
+      "why": "For two resistors in parallel, divide the product by the sum. The total must be less than the smaller resistor, 100 ohms.",
+      "work": ["R = (R1 × R2) ÷ (R1 + R2)", "R = (100 × 200) ÷ (100 + 200) = 20,000 ÷ 300", "R = 66.7 Ω ≈ 67 Ω"],
+      "concept": "g5c-resistors-inductors",
+      "status": "draft"
+    },
+    "G5C05": {
+      "why": "In a step-up transformer the primary has the lower voltage, so it must carry the higher current to deliver the same power. Thicker wire handles that current without overheating.",
+      "concept": "g5c-transformer-current",
+      "status": "draft"
+    },
+    "G5C06": {
+      "why": "The secondary has three times as many turns as the primary, so it delivers three times the voltage.",
+      "work": ["turns ratio = 1500 ÷ 500 = 3", "E secondary = 120 V × 3", "E secondary = 360 V"],
+      "concept": "g5c-transformer-basics",
+      "status": "draft"
+    },
+    "G5C07": {
+      "why": "The impedance ratio is 12 to 1, and the turns ratio is the square root of that, about 3.5 to 1. Using 12 to 1 directly forgets the square root.",
+      "work": ["Z ratio = 600 Ω ÷ 50 Ω = 12", "turns ratio = √12 = 3.46", "turns ratio ≈ 3.5 to 1"],
+      "concept": "g5c-impedance-ratio",
+      "status": "draft"
+    },
+    "G5C08": {
+      "why": "Capacitors in parallel simply add. Convert 750 pF to 0.75 nF first so all the values are in the same unit.",
+      "work": ["750 pF = 0.75 nF", "C = 5.0 nF + 5.0 nF + 0.75 nF", "C = 10.75 nF"],
+      "concept": "g5c-capacitors",
+      "status": "draft"
+    },
+    "G5C09": {
+      "why": "For equal capacitors in series, divide one value by the number of capacitors. Adding them to get 300 microfarads would be the parallel rule.",
+      "work": ["C = one value ÷ N for N equal capacitors in series", "C = 100 µF ÷ 3", "C = 33.3 µF"],
+      "concept": "g5c-capacitors",
+      "status": "draft"
+    },
+    "G5C10": {
+      "why": "Inductors in parallel combine like resistors in parallel. For equal ones, divide one value by the number of inductors.",
+      "work": ["L = one value ÷ N for N equal inductors in parallel", "L = 10 mH ÷ 3", "L = 3.3 mH"],
+      "concept": "g5c-resistors-inductors",
+      "status": "draft"
+    },
+    "G5C11": {
+      "why": "Inductors in series simply add, like resistors in series.",
+      "work": ["L = L1 + L2", "L = 20 mH + 50 mH", "L = 70 mH"],
+      "concept": "g5c-resistors-inductors",
+      "status": "draft"
+    },
+    "G5C12": {
+      "why": "Capacitors in series combine like resistors in parallel. For two of them, divide the product by the sum. The total must be less than the smaller capacitor, 20 microfarads.",
+      "work": ["C = (C1 × C2) ÷ (C1 + C2)", "C = (20 × 50) ÷ (20 + 50) = 1000 ÷ 70", "C = 14.3 µF"],
+      "concept": "g5c-capacitors",
+      "status": "draft"
+    },
+    "G5C13": {
+      "why": "Capacitances add when capacitors are connected in parallel, so adding a capacitor in parallel raises the total. A capacitor in series would lower it.",
+      "concept": "g5c-capacitors",
+      "status": "draft"
+    },
+    "G5C14": {
+      "why": "Inductances add when inductors are connected in series, so adding an inductor in series raises the total. An inductor in parallel would lower it.",
+      "concept": "g5c-resistors-inductors",
+      "status": "draft"
+    }
+  }
+}

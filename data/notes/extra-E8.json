@@ -1,0 +1,312 @@
+{
+  "subelement": "E8",
+  "concepts": [
+    {
+      "id": "e8a-fourier-domains",
+      "group": "E8A",
+      "title": "Time domain, frequency domain, and Fourier analysis",
+      "body": [
+        "There are two ways to look at a signal. In the time domain you plot amplitude against time, which is what an oscilloscope shows. In the frequency domain you plot amplitude against frequency, which is what a spectrum analyzer shows. Same signal, two views.",
+        "Fourier analysis is the math that links the two views. It says any repeating waveform, however odd its shape, can be built by adding up sine waves: a fundamental plus harmonics at whole-number multiples of it.",
+        "The classic example is a square wave. It is made of the fundamental sine wave plus only the odd harmonics (3rd, 5th, 7th and so on), each weaker than the last. That is why a square-wave clock or a hard-keyed signal spreads energy far up the spectrum."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e8a-true-rms",
+      "group": "E8A",
+      "title": "True-RMS meters",
+      "body": [
+        "The RMS (root mean square) value of an AC voltage is the DC voltage that would heat a resistor by the same amount. It is the honest measure of how much power a waveform can deliver.",
+        "Many inexpensive meters do not really compute RMS. They measure the average or peak and multiply by a correction factor that is only right for a pure sine wave. Feed them a square wave, a pulse train, or a distorted waveform and the reading is off.",
+        "A true-RMS meter actually calculates the RMS value from the waveform itself, so it reads correctly for both sine waves and non-sine waves."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e8a-pep-average",
+      "group": "E8A",
+      "title": "PEP versus average power on SSB voice",
+      "body": [
+        "Peak envelope power (PEP) is the average power over one RF cycle at the very highest point of the modulation envelope. Average power is the power averaged over a longer stretch, including the quiet spots.",
+        "On an SSB voice signal there is no carrier, so the output follows your voice. Speech has short loud peaks, softer syllables, and gaps between words. For normal, unprocessed speech the PEP is roughly 2.5 times the average power.",
+        "That ratio is set by the speech itself (how peaky the voice is), not by the audio frequency, the carrier suppression, or the amplifier gain. A speech processor raises the average level and so lowers the ratio."
+      ],
+      "formula": "unprocessed SSB voice: PEP ÷ average ≈ 2.5",
+      "status": "draft"
+    },
+    {
+      "id": "e8a-adc-resolution",
+      "group": "E8A",
+      "title": "Sampling and resolution of a converter",
+      "body": [
+        "An analog-to-digital converter (ADC) measures a signal many times a second and turns each measurement into a binary number. The number of bits in that number is the resolution.",
+        "Each extra bit doubles the number of distinct levels the converter can report. An 8-bit converter can output 2 to the 8th power, or 256, different codes. A 16-bit converter gives 65,536.",
+        "The small error between the true voltage and the nearest available level is called quantization error, and it shows up as quantization noise. More bits means smaller steps and less of it. The gain of any amplifier ahead of the ADC changes what voltage each step stands for, but not how many steps there are."
+      ],
+      "formula": "number of levels = 2^(number of bits)",
+      "status": "draft"
+    },
+    {
+      "id": "e8a-adc-types",
+      "group": "E8A",
+      "title": "Kinds of analog-to-digital converters",
+      "body": [
+        "• Successive approximation: the converter makes a guess, compares it with the input, and refines the guess one bit at a time, most significant bit first. Accurate and common, but it takes one step per bit.",
+        "• Flash (direct) conversion: a bank of comparators checks every level at once, so a whole sample comes out in a single step. It is extremely fast, which is why it is used in software defined radios that digitize RF signals directly at high frequencies. The price is many parts and high power draw.",
+        "Terms like harmonic regeneration, level shifting, and phase reversal are not ADC methods."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e8a-converter-quality",
+      "group": "E8A",
+      "title": "Dither, distortion, and filtering converters",
+      "body": [
+        "Dither is a small amount of random noise deliberately added to an ADC input. It sounds backward, but it breaks up the regular pattern of quantization error, so the error behaves like smooth low-level noise instead of distinct distortion products. The net effect is cleaner, more accurate conversion of small signals.",
+        "Converter quality is judged by how faithfully it reproduces the input. Total harmonic distortion (THD) is one standard measure: how much harmonic energy the converter adds that was not in the original signal.",
+        "Going the other way, a digital-to-analog converter (DAC) outputs a stair-step waveform that carries spurious products related to the sampling rate. A low-pass filter at the DAC output smooths the steps and removes those sampling artifacts, leaving the intended signal."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e8b-fm-modulation-index",
+      "group": "E8B",
+      "title": "FM modulation index",
+      "body": [
+        "In FM, the carrier frequency swings up and down with the audio. How far it swings from center is the deviation. How fast it swings is the modulating (audio) frequency.",
+        "The modulation index is the deviation divided by the modulating frequency. It has no units, since it is hertz divided by hertz. A large index means many sidebands and a wide signal; a small index means few sidebands.",
+        "Always divide deviation by audio frequency, not the other way around, and keep both in the same units (both Hz or both kHz)."
+      ],
+      "formula": "modulation index = frequency deviation ÷ modulating frequency",
+      "status": "draft"
+    },
+    {
+      "id": "e8b-deviation-ratio",
+      "group": "E8B",
+      "title": "Deviation ratio",
+      "body": [
+        "Deviation ratio is a special case of the modulation index used to describe a whole FM system. It uses the worst case: the maximum allowed deviation divided by the highest audio frequency the system passes.",
+        "For amateur narrowband FM, a common example is 5 kHz maximum deviation and 3 kHz highest audio, a deviation ratio of about 1.67.",
+        "The exam sometimes calls this same worst-case number the modulation index. Either way the arithmetic is identical: largest swing divided by highest audio frequency."
+      ],
+      "formula": "deviation ratio = maximum deviation ÷ highest modulating frequency",
+      "status": "draft"
+    },
+    {
+      "id": "e8b-pm-index",
+      "group": "E8B",
+      "title": "Modulation index in phase modulation",
+      "body": [
+        "In phase modulation (PM), the audio shifts the phase of the carrier. The modulation index is the peak phase shift, measured in radians.",
+        "That phase shift depends only on how strongly the audio drives the modulator. The carrier frequency does not enter into it, so a PM signal has the same modulation index whether the carrier is on 10 meters or 70 centimeters.",
+        "Frequency multipliers later in a transmitter do multiply deviation, but the question is about the modulation process itself: the index is independent of the RF carrier frequency."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e8b-multiplexing",
+      "group": "E8B",
+      "title": "Sharing a channel: FDM and TDM",
+      "body": [
+        "Multiplexing lets several streams of information share one transmission.",
+        "• Frequency division multiplexing (FDM): the signal is split into separate frequency slices, and each slice carries its own data stream at the same time. Think of several conversations on different subcarriers side by side.",
+        "• Time division multiplexing (TDM): each stream takes a turn, using its own repeating time slot in the transmission. DMR radios use this to put two conversations on one channel.",
+        "Neither one is frequency hopping (that is spread spectrum) or packet switching."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e8b-ofdm",
+      "group": "E8B",
+      "title": "OFDM: many orthogonal subcarriers",
+      "body": [
+        "Orthogonal frequency-division multiplexing (OFDM) is a digital modulation method that sends data on many closely spaced subcarriers at once. Each subcarrier carries a slow stream, and together they carry a fast one.",
+        "The subcarrier frequencies are chosen to be orthogonal: spaced so that, at the moment each symbol is sampled, the neighbors contribute nothing. That lets them sit tightly packed without interfering. Because each subcarrier's symbols are long and slow, echoes and multipath smear do not blur one symbol into the next (intersymbol interference).",
+        "OFDM is fully legal on the ham bands and is used in amateur digital modes and in high-speed data links such as Wi-Fi-based mesh networks."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e8c-symbol-rate",
+      "group": "E8C",
+      "title": "Symbol rate, baud, and bits",
+      "body": [
+        "A digital signal carries information by changing its waveform: its frequency, phase, or amplitude. Each distinct state it settles into is a symbol. The symbol rate is how many times per second the waveform changes to convey information.",
+        "Baud is simply the unit for symbol rate. One baud is one symbol per second, so symbol rate and baud rate are the same thing.",
+        "Bit rate can be higher than baud. If each symbol can take one of 4 states it carries 2 bits; 16 states carry 4 bits. Using a more efficient code, such as one that packs more bits into each symbol or gives common characters shorter codes, raises the data rate without widening the signal. Forward error correction does the opposite: it adds extra bits, so less of the channel carries new data."
+      ],
+      "formula": "bits per symbol = log2(number of symbol states)",
+      "status": "draft"
+    },
+    {
+      "id": "e8c-qam-constellation",
+      "group": "E8C",
+      "title": "QAM and constellation diagrams",
+      "body": [
+        "Quadrature amplitude modulation (QAM) uses two carriers on the same frequency but 90 degrees apart in phase (in quadrature). Each is amplitude-modulated with its own data, and they are added together. The combined signal can land on many distinct combinations of amplitude and phase.",
+        "A constellation diagram plots those allowed states as dots on a grid. The distance from the center shows amplitude and the angle shows phase. QPSK shows four dots evenly spaced on a circle; 16-QAM shows a 4 by 4 square of dots.",
+        "So a constellation tells you every possible phase and amplitude state a symbol can take. On a received signal, fuzzy or smeared dots warn of noise or distortion."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e8c-psk-shaping",
+      "group": "E8C",
+      "title": "Keeping PSK signals narrow",
+      "body": [
+        "Any sudden jump in a signal creates a burst of sidebands. For a phase-shift keyed signal, a phase flip made while the RF voltage is at a peak is a sharp jump, and it splatters.",
+        "Changing phase as the RF waveform passes through zero avoids that jump, which keeps the bandwidth small.",
+        "PSK31 goes further: at each phase reversal its amplitude smoothly dips to zero and comes back, following a sine-shaped (cosine) curve rather than straight lines or square edges. These sinusoidal data pulses have almost no energy outside a narrow band, which is why PSK31 is only about 31 Hz wide."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e8c-cw-bandwidth",
+      "group": "E8C",
+      "title": "Bandwidth of a CW signal",
+      "body": [
+        "A CW signal is a carrier switched on and off. Its bandwidth depends on two things: how fast it is keyed and how sharply each dot and dash starts and stops (the rise and fall time, or keying shape). Faster sending and harder edges both widen the signal. IF filter settings and output power do not change what the transmitter puts on the air.",
+        "A handy rule for a properly shaped signal: bandwidth in hertz is about 4 times the speed in words per minute. That comes from the Morse symbol rate (about 0.8 times the WPM) multiplied by a shaping factor of about 5."
+      ],
+      "formula": "CW bandwidth (Hz) ≈ 4 × WPM",
+      "status": "draft"
+    },
+    {
+      "id": "e8c-data-bandwidth",
+      "group": "E8C",
+      "title": "Bandwidth of FSK and FT8 signals",
+      "body": [
+        "For a frequency-shift keyed signal, a standard estimate adds a bit more than the shift to the symbol rate: bandwidth equals 1.2 times the frequency shift, plus the baud rate. Both terms must be in hertz.",
+        "Example: 170 Hz shift at 45.45 baud gives 1.2 × 170 + 45.45 ≈ 249 Hz.",
+        "FT8 is a narrow weak-signal mode. It uses 8 tones spaced 6.25 Hz apart, so each signal occupies about 50 Hz. Many FT8 stations fit side by side in one SSB-width audio passband."
+      ],
+      "formula": "FSK bandwidth = (1.2 × shift) + baud rate",
+      "status": "draft"
+    },
+    {
+      "id": "e8c-arq-gray",
+      "group": "E8C",
+      "title": "ARQ error correction and Gray code",
+      "body": [
+        "There are two broad ways to fix errors in data. Forward error correction (FEC) sends extra redundant bits so the receiver can repair errors on its own. ARQ (automatic repeat request) instead checks each block and, if an error is found, asks the sender to transmit that block again. PACTOR and packet radio rely on ARQ.",
+        "Gray code is a way of counting in binary where only one bit changes between each value and the next. In ordinary binary, going from 3 (011) to 4 (100) flips three bits at once. In Gray code a small slip, such as landing on a neighboring symbol, causes only a one-bit error, so it is used to label neighboring points in a PSK or QAM constellation."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e8c-mesh",
+      "group": "E8C",
+      "title": "Amateur mesh networks",
+      "body": [
+        "An amateur mesh network, such as AREDN, is a set of radio nodes (often modified Wi-Fi gear on ham frequencies) that link to each other and pass traffic along automatically.",
+        "Each node has an Internet Protocol (IP) address, just like a computer on a home network, so standard network programs work across the mesh.",
+        "Nodes build the network themselves. They use discovery and link establishment protocols to find neighbors, measure link quality, and work out routes, so the mesh heals itself when a node drops out. This is not the same as a packet digipeater or a DMR talk group."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e8d-spread-spectrum",
+      "group": "E8D",
+      "title": "Spread spectrum: hopping and direct sequence",
+      "body": [
+        "Spread spectrum deliberately spreads a signal over a much wider band than it needs, following a pseudorandom pattern that the transmitter and receiver both know.",
+        "• Frequency hopping: the transmitter rapidly jumps from frequency to frequency in a pseudorandom sequence, and the receiver hops along in step. The hops are preplanned, not triggered by interference reports.",
+        "• Direct sequence: a high-speed pseudorandom bit stream shifts the phase of the RF carrier, spreading its energy over a wide band. The receiver applies the same stream to squeeze it back down.",
+        "Interference resistance comes from that despreading step. The receiver's algorithm collapses the wanted signal back into a narrow band, while any signal not using the same code gets spread out and ends up suppressed as low-level noise. It has nothing to do with high power."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e8d-key-clicks",
+      "group": "E8D",
+      "title": "Key clicks",
+      "body": [
+        "When a CW signal switches on or off too abruptly (extremely short rise and fall times), the sharp edges create wide sidebands. Nearby listeners hear them as clicks on either side of your signal. These are key clicks.",
+        "The fix is to slow the edges: lengthen the rise and fall times so each element ramps up and down smoothly, typically over a few milliseconds. Output filters do not help, because the clicks are close to your frequency, well inside any low-pass filter's passband. Shortening the rise and fall times makes clicks worse."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e8d-afsk-imd",
+      "group": "E8D",
+      "title": "Overdriving AFSK and PSK: watch the IMD",
+      "body": [
+        "With AFSK and other soundcard modes, the transmitter's SSB chain is fed audio tones. Turn the transmit audio level up too high and the audio or RF stages are pushed out of their linear range. That is overmodulation, and it spreads unwanted products on both sides of the signal.",
+        "The measure of this distortion is intermodulation distortion (IMD). Many PSK programs report the IMD of a received signal while it is idling (sending a steady stream of phase reversals, which looks like two tones).",
+        "IMD is given in dB relative to the wanted signal, so more negative is cleaner. About -30 dB or better is considered acceptable; a figure like -20 dB means a dirty, splattering signal. Reduce audio drive and turn off ALC action or speech processing to fix it."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e8d-baudot-ascii",
+      "group": "E8D",
+      "title": "Baudot and ASCII codes",
+      "body": [
+        "Baudot (used for RTTY) sends 5 data bits per character. Five bits give only 32 combinations, not enough for letters, numbers, and punctuation. So Baudot uses two special shift characters: LTRS (letters) and FIGS (figures). After a FIGS code, the same bit patterns mean numbers and symbols until a LTRS code switches back. Baudot has no lowercase.",
+        "ASCII uses 7 bits (128 characters), or 8 in extended form. That is enough room for uppercase and lowercase letters, numbers, and symbols all at once, so ASCII needs no shift codes. ASCII by itself has no built-in error correction."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e8d-parity",
+      "group": "E8D",
+      "title": "Parity bits",
+      "body": [
+        "A parity bit is one extra bit added to each character so the total count of 1 bits is always even (even parity) or always odd (odd parity), as agreed ahead of time.",
+        "If a single bit gets flipped in transit, the count comes out wrong and the receiver knows that character is bad. Parity can detect some errors, but it cannot tell which bit is wrong, so it cannot fix anything, and two flipped bits cancel out and slip through. It adds a bit, so it does not speed anything up."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "E8A01": { "why": "Fourier analysis breaks any repeating waveform into sine waves, and it shows a square wave is a fundamental plus its odd harmonics. Vector, numerical, and differential analysis are general math tools, not this technique.", "concept": "e8a-fourier-domains", "status": "draft" },
+    "E8A02": { "why": "Successive approximation is a common ADC method that homes in on the input value one bit at a time. Harmonic regeneration, level shifting, and phase reversal are not ways of converting analog to digital.", "concept": "e8a-adc-types", "status": "draft" },
+    "E8A03": { "why": "A time-domain view plots amplitude against time, as an oscilloscope does. Plotting against frequency would be the frequency domain.", "concept": "e8a-fourier-domains", "status": "draft" },
+    "E8A04": { "why": "Dither is a small amount of noise added on purpose to the ADC input. It randomizes quantization error so it acts like smooth low-level noise instead of distortion, which improves the conversion of small signals.", "concept": "e8a-converter-quality", "status": "draft" },
+    "E8A05": { "why": "A true-RMS meter computes the RMS value from the actual waveform, so it reads correctly for both sine and non-sine signals. Average-responding meters are only accurate for pure sine waves.", "concept": "e8a-true-rms", "status": "draft" },
+    "E8A06": { "why": "Normal, unprocessed speech has peaks well above its average level, and for SSB voice the PEP runs about 2.5 times the average power. A ratio of 1 to 1 would describe a steady carrier, not speech.", "concept": "e8a-pep-average", "status": "draft" },
+    "E8A07": { "why": "SSB output follows the voice, so the peak-to-average ratio is set by the characteristics of speech: its loud peaks and quiet gaps. Amplifier gain scales both peak and average equally, and carrier suppression is already complete on SSB.", "concept": "e8a-pep-average", "status": "draft" },
+    "E8A08": { "why": "Flash converters produce a sample in one step, so they are fast enough to digitize high-frequency signals directly, which an SDR needs. They actually draw a lot of power, so low power consumption is not the reason.", "concept": "e8a-adc-types", "status": "draft" },
+    "E8A09": { "why": "Each bit doubles the number of levels, so 8 bits give 2 to the 8th power, or 256 levels. Input amplifier gain changes the voltage per step, not how many steps there are.", "work": ["levels = 2^bits", "2^8 = 2 × 2 × 2 × 2 × 2 × 2 × 2 × 2", "= 256 levels"], "concept": "e8a-adc-resolution", "status": "draft" },
+    "E8A10": { "why": "A DAC's stair-step output carries spurious products tied to the sampling rate. A low-pass filter at the output smooths the steps and removes those sampling artifacts.", "concept": "e8a-converter-quality", "status": "draft" },
+    "E8A11": { "why": "Total harmonic distortion measures how much unwanted harmonic energy the converter adds, which is a direct measure of how faithfully it converts. PEP and power factor describe power, and reciprocal mixing is a receiver oscillator problem.", "concept": "e8a-converter-quality", "status": "draft" },
+    "E8B01": { "why": "FM modulation index is the frequency deviation divided by the modulating (audio) frequency. The other choices flip the ratio or bring in bandwidth, which is not part of the definition.", "concept": "e8b-fm-modulation-index", "status": "draft" },
+    "E8B02": { "why": "In PM the modulation index is the peak phase shift, which depends only on how hard the audio drives the modulator. The carrier frequency does not enter into it.", "concept": "e8b-pm-index", "status": "draft" },
+    "E8B03": { "why": "Divide the deviation by the modulating frequency. 3000 Hz of deviation with 1000 Hz audio gives an index of 3. Dividing the other way would give 0.33, not 0.3.", "work": ["modulation index = deviation ÷ modulating frequency", "= 3000 Hz ÷ 1000 Hz", "= 3"], "concept": "e8b-fm-modulation-index", "status": "draft" },
+    "E8B04": { "why": "Divide the 6 kHz deviation by the 2 kHz modulating frequency to get 3. Use the deviation on one side (plus or minus 6 kHz means 6 kHz), not the 12 kHz total swing.", "work": ["modulation index = deviation ÷ modulating frequency", "= 6 kHz ÷ 2 kHz", "= 3"], "concept": "e8b-fm-modulation-index", "status": "draft" },
+    "E8B05": { "why": "Deviation ratio is maximum deviation divided by highest audio frequency: 5 kHz divided by 3 kHz is about 1.67. Dividing the other way gives 0.6.", "work": ["deviation ratio = maximum deviation ÷ highest modulating frequency", "= 5 kHz ÷ 3 kHz", "= 1.67"], "concept": "e8b-deviation-ratio", "status": "draft" },
+    "E8B06": { "why": "Divide the 7.5 kHz maximum deviation by the 3.5 kHz highest audio frequency to get about 2.14. The choice 0.47 comes from dividing the wrong way.", "work": ["deviation ratio = maximum deviation ÷ highest modulating frequency", "= 7.5 kHz ÷ 3.5 kHz", "= 2.14"], "concept": "e8b-deviation-ratio", "status": "draft" },
+    "E8B07": { "why": "OFDM is a digital modulation technique, and amateurs use it in digital modes and high-speed data links. It is legal on the ham bands and is not specific to low-power or EME work.", "concept": "e8b-ofdm", "status": "draft" },
+    "E8B08": { "why": "OFDM sends data on many subcarriers whose frequencies are chosen to be orthogonal, so they can be packed closely, and each carries slow symbols that resist intersymbol interference. It is not a form of FM and not limited to slow, narrow modes.", "concept": "e8b-ofdm", "status": "draft" },
+    "E8B09": { "why": "Deviation ratio is the maximum carrier frequency deviation divided by the highest audio modulating frequency. The carrier's center frequency plays no part in it.", "concept": "e8b-deviation-ratio", "status": "draft" },
+    "E8B10": { "why": "FDM splits the transmitted signal into separate frequency bands, each carrying its own data stream at the same time. Jumping from band to band describes frequency hopping, and splitting data into packets is packet switching.", "concept": "e8b-multiplexing", "status": "draft" },
+    "E8B11": { "why": "Time division multiplexing gives each signal its own repeating time slot in a shared data transmission. Separate sub-carriers would be frequency division, not time division.", "concept": "e8b-multiplexing", "status": "draft" },
+    "E8C01": { "why": "QAM amplitude-modulates two carriers on the same frequency that are 90 degrees apart in phase, then combines them. It is a modulation method, not a compression scheme or an SSB generation technique.", "concept": "e8c-qam-constellation", "status": "draft" },
+    "E8C02": { "why": "Symbol rate is how many times per second the waveform changes state to carry information. It is not a count of characters or control codes.", "concept": "e8c-symbol-rate", "status": "draft" },
+    "E8C03": { "why": "A phase flip at an RF peak is an abrupt jump that throws off extra sidebands. Switching at the zero crossing avoids the jump and keeps the signal narrow.", "concept": "e8c-psk-shaping", "status": "draft" },
+    "E8C04": { "why": "PSK31 shapes its amplitude with smooth sine-shaped pulses at each phase change, which keeps energy inside a narrow band. Linear (straight-line) pulses have sharper corners and spread wider; Reed-Solomon is an error-correction code, not a shaping method.", "concept": "e8c-psk-shaping", "status": "draft" },
+    "E8C05": { "why": "A well-shaped CW signal is about 4 hertz wide for every word per minute. At 13 WPM that comes to about 52 Hz.", "work": ["CW bandwidth ≈ 4 × WPM", "= 4 × 13", "≈ 52 Hz"], "concept": "e8c-cw-bandwidth", "status": "draft" },
+    "E8C06": { "why": "FT8 uses 8 tones spaced 6.25 Hz apart, so one signal is about 50 Hz wide. That is why dozens of FT8 stations fit inside one 2.4 kHz SSB passband.", "concept": "e8c-data-bandwidth", "status": "draft" },
+    "E8C07": { "why": "Use the FSK bandwidth formula: 1.2 times the shift, plus the baud rate. 5760 Hz plus 9600 Hz is 15,360 Hz, or 15.36 kHz. The 5.76 kHz choice forgets to add the baud rate.", "work": ["bandwidth = (1.2 × shift) + baud rate", "1.2 × 4800 Hz = 5760 Hz", "5760 Hz + 9600 Hz = 15,360 Hz", "= 15.36 kHz"], "concept": "e8c-data-bandwidth", "status": "draft" },
+    "E8C08": { "why": "ARQ stands for automatic repeat request: when the receiver detects an error it asks the sender to send that block again. Fixing errors with extra redundant data on the spot is forward error correction, a different method.", "concept": "e8c-arq-gray", "status": "draft" },
+    "E8C09": { "why": "Gray code is arranged so only one bit changes from each value to the next. BCD, EBCDIC, and ASCII are ordinary character or number codes where several bits can change at once.", "concept": "e8c-arq-gray", "status": "draft" },
+    "E8C10": { "why": "A more efficient digital code carries more information per symbol or per character, so more data flows in the same bandwidth. Forward error correction adds overhead bits and lowers the useful data rate, and ADC resolution has nothing to do with it.", "concept": "e8c-symbol-rate", "status": "draft" },
+    "E8C11": { "why": "Baud is the unit of symbol rate, one symbol per second, so the two are the same. It is bit rate, not baud, that can differ depending on how many bits each symbol carries.", "concept": "e8c-symbol-rate", "status": "draft" },
+    "E8C12": { "why": "CW bandwidth depends on how fast you key and how sharply each element starts and stops (the rise and fall time). Receiver IF settings do not change the transmitted signal, and CW has no modulation index.", "concept": "e8c-cw-bandwidth", "status": "draft" },
+    "E8C13": { "why": "A constellation diagram plots every allowed combination of phase and amplitude a symbol can take. Distance from center is amplitude and angle is phase.", "concept": "e8c-qam-constellation", "status": "draft" },
+    "E8C14": { "why": "Mesh nodes have Internet Protocol (IP) addresses, so ordinary network software runs across them. Talk groups belong to DMR, not mesh networking.", "concept": "e8c-mesh", "status": "draft" },
+    "E8C15": { "why": "Nodes use discovery and link establishment protocols to find their neighbors and work out routes, so the mesh builds and repairs itself. They are not simple store-and-forward digipeaters.", "concept": "e8c-mesh", "status": "draft" },
+    "E8D01": { "why": "The receiver despreads using the same pseudorandom code as the transmitter, so the wanted signal collapses back to full strength while signals not using that code are spread out and suppressed. It does not depend on high power or on reporting interference back to the transmitter.", "concept": "e8d-spread-spectrum", "status": "draft" },
+    "E8D02": { "why": "Direct sequence spread spectrum uses a high-speed pseudorandom bit stream to shift the carrier's phase, spreading it over a wide band. Frequency hopping changes frequency instead of phase.", "concept": "e8d-spread-spectrum", "status": "draft" },
+    "E8D03": { "why": "Frequency hopping rapidly changes the transmit frequency according to a pseudorandom sequence that the receiver follows. The hops are preplanned, not a reaction to interference, and shifting phase with a bit stream describes direct sequence.", "concept": "e8d-spread-spectrum", "status": "draft" },
+    "E8D04": { "why": "Very fast on and off edges create wide sidebands that listeners hear as key clicks near your frequency. Harmonics are a separate issue at multiples of the operating frequency.", "concept": "e8d-key-clicks", "status": "draft" },
+    "E8D05": { "why": "Key clicks come from edges that are too sharp, so the cure is longer, smoother rise and fall times. Reducing them makes clicks worse, and output filters cannot remove products so close to the operating frequency.", "concept": "e8d-key-clicks", "status": "draft" },
+    "E8D06": { "why": "A parity bit lets the receiver detect some errors, such as a single flipped bit, because the count of 1s comes out wrong. It cannot correct the error and does not speed up transmission.", "concept": "e8d-parity", "status": "draft" },
+    "E8D07": { "why": "AFSK tones run through the SSB transmitter, and too much transmit audio drives the stages out of their linear range. That overmodulation spreads splatter on both sides of the signal.", "concept": "e8d-afsk-imd", "status": "draft" },
+    "E8D08": { "why": "Overdriven audio makes the tones mix in nonlinear stages, and that distortion is measured as intermodulation distortion (IMD). Signal-to-noise ratio describes noise, not distortion from overdrive.", "concept": "e8d-afsk-imd", "status": "draft" },
+    "E8D09": { "why": "IMD is expressed relative to the wanted signal, so a lower (more negative) number is cleaner. About -30 dB or better is considered acceptable for an idling PSK signal; a positive IMD figure would mean the distortion was stronger than the signal.", "concept": "e8d-afsk-imd", "status": "draft" },
+    "E8D10": { "why": "Baudot uses 5 data bits and needs two shift codes, LTRS and FIGS, to reach both letters and figures. ASCII uses 7 or 8 bits, which is enough room for everything, so it has no shift codes.", "concept": "e8d-baudot-ascii", "status": "draft" },
+    "E8D11": { "why": "ASCII's 7 or 8 bits give room for both uppercase and lowercase letters. It has no built-in error correction, uses more bits per character than Baudot, and needs no shift codes.", "concept": "e8d-baudot-ascii", "status": "draft" }
+  }
+}

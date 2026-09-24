@@ -1,0 +1,232 @@
+{
+  "subelement": "G3",
+  "concepts": [
+    {
+      "id": "g3a-sunspot-cycle",
+      "group": "G3A",
+      "title": "Sunspots, the solar cycle, and the higher HF bands",
+      "body": [
+        "HF skywave works because the Sun's ultraviolet and X-ray radiation ionizes the upper atmosphere, creating the ionosphere that bends signals back to Earth. Sunspots are cooler, darker patches on the Sun, but the active regions around them pour out extra ultraviolet energy. More sunspots means a more heavily ionized ionosphere, and a denser ionosphere can return higher frequencies.",
+        "Sunspot counts rise and fall over a solar cycle of roughly 11 years. Near solar maximum, 15, 12, and 10 meters often open for worldwide contacts. Near solar minimum those upper bands are the least reliable for long distance and may stay closed for days, although short-lived openings still happen.",
+        "A sunspot number of zero does not mean radio is dead. The lower and middle HF bands keep working, just with a lower top frequency. 20 meters is the classic example: during daylight it usually supports worldwide propagation at any point in the solar cycle, which is why it is so popular."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g3a-solar-flux",
+      "group": "G3A",
+      "title": "Solar flux index and the 27-day rotation",
+      "body": [
+        "Counting sunspots by eye is subjective, so the solar flux index gives a steadier measurement. It is the strength of radio noise from the Sun at a wavelength of 10.7 centimeters (about 2800 MHz), measured daily at a radio observatory. Higher solar flux tracks higher sunspot activity and generally better conditions on the upper HF bands.",
+        "The Sun rotates, and its surface layers take about 27 days to go around once as seen from Earth. An active region that is facing us today will swing out of view and, if it survives, face us again roughly four weeks later. That is why HF conditions often repeat in a 26 to 28 day pattern. The Moon, the radiation belts, and the upper atmosphere are not the cause."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g3a-flares-sid",
+      "group": "G3A",
+      "title": "Solar flares and sudden ionospheric disturbances",
+      "body": [
+        "A solar flare is a sudden burst of energy from the Sun, including intense ultraviolet and X-ray radiation. That radiation travels at the speed of light, so it reaches Earth about 8 minutes after the flare, the same time sunlight takes.",
+        "The X-rays sharply increase ionization in the lowest region of the ionosphere, the D region, on the sunlit side of Earth. The D region absorbs rather than returns signals, and absorption is worst at lower frequencies. The result is a sudden ionospheric disturbance (SID): daytime HF signals fade out, with the lower frequencies hit harder than the higher ones. The night side of Earth is not affected, and conditions usually recover within an hour or two."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g3a-cme-coronal-holes",
+      "group": "G3A",
+      "title": "CMEs, coronal holes, and geomagnetic storms",
+      "body": [
+        "The Sun also throws off charged particles, which travel far slower than light. A coronal mass ejection (CME) is a huge cloud of solar material blasted into space. If it is aimed at Earth, it arrives about 15 hours to several days later. Coronal holes are open areas in the Sun's outer atmosphere that release fast streams of charged particles.",
+        "When these particles hit Earth's magnetic field, they can cause a geomagnetic storm, which is a temporary disturbance of Earth's magnetic field. It is not a weather thunderstorm or a drop in solar flux.",
+        "Storms disturb HF communication, especially on paths that cross high latitudes near the poles, where the particles pour into the atmosphere. Ground wave is not affected in the same way."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g3a-aurora",
+      "group": "G3A",
+      "title": "The upside of a storm: aurora",
+      "body": [
+        "Heavy geomagnetic activity does have one benefit. The particles that hurt HF paths also light up auroras, and the ionized aurora can reflect (more exactly, scatter) VHF signals. Hams point their antennas toward the aurora, usually north from the US, and make contacts on 6 and 2 meters that would otherwise be impossible.",
+        "Aurora signals have a distinctive raspy, buzzing sound, so CW is the most readable mode. Polar HF paths get weaker during a storm, not stronger."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g3a-k-a-index",
+      "group": "G3A",
+      "title": "K-index and A-index",
+      "body": [
+        "Two numbers describe how calm Earth's magnetic field is. Both are about Earth's field, not the Sun's field and not sunspots.",
+        "• K-index: short-term stability of Earth's geomagnetic field, reported for 3-hour periods on a 0 to 9 scale.",
+        "• A-index: long-term stability of Earth's geomagnetic field, a daily average built from the K readings.",
+        "Low numbers mean a quiet field and usually better HF conditions. High numbers mean a disturbed field and poorer HF, especially at high latitudes. The 10.7 cm solar radio flux is a separate measurement, the solar flux index."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g3b-muf-luf",
+      "group": "G3B",
+      "title": "MUF and LUF: the usable window between two points",
+      "body": [
+        "For any path between two specific stations there is a range of frequencies that will work by skywave:",
+        "• MUF, Maximum Usable Frequency: the highest frequency that the ionosphere will refract back to Earth to reach the other station. Above it, signals pass through the ionosphere into space.",
+        "• LUF, Lowest Usable Frequency: the lowest frequency that will get through. Below it, signals are absorbed and weakened, mostly in the D region, before they reach the destination.",
+        "Both are defined for communications between two particular points at a particular time, not for all directions or for a 24-hour period.",
+        "Frequencies between the LUF and MUF are refracted back to Earth. The ionosphere does not amplify them or trap them. The best choice for long-distance skip is just below the MUF, because absorption falls as frequency rises. If the LUF rises above the MUF, there is no window left and ordinary skywave on that path is not possible."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g3b-muf-factors",
+      "group": "G3B",
+      "title": "What moves the MUF",
+      "body": [
+        "The MUF is not a fixed number. It changes with:",
+        "• Path distance and location: a longer hop meets the ionosphere at a shallower angle, which raises the MUF, and different parts of the world see different ionization.",
+        "• Time of day and season: the Sun's ultraviolet builds ionization during daylight, so the MUF usually peaks in the afternoon and drops overnight.",
+        "• Solar radiation and ionospheric disturbances: high solar activity raises the MUF, while storms and disturbances can lower it.",
+        "Because all of these matter, a propagation prediction always names a path and a time."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g3b-hop-distance",
+      "group": "G3B",
+      "title": "How far one hop goes",
+      "body": [
+        "Each trip up to the ionosphere and back down is called a hop. The higher the refracting region, the farther a single hop can reach before the curve of the Earth gets in the way.",
+        "• E region (about 60 to 90 miles up): up to about 1,200 miles per hop",
+        "• F2 region (the highest, around 200 miles or more up): up to about 2,500 miles per hop",
+        "Longer contacts are made with several hops, bouncing between the ionosphere and the ground."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g3b-short-long-path",
+      "group": "G3B",
+      "title": "Short path and long path",
+      "body": [
+        "Any two points on Earth are joined by two great-circle routes: the short path, the shorter way around, and the long path, going the other direction around the globe. Sometimes both are open at once.",
+        "The long path is thousands of miles longer, and even at the speed of light that extra distance takes a noticeable fraction of a second. When a signal arrives by both paths, you may hear a slightly delayed echo on it."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g3b-checking-conditions",
+      "group": "G3B",
+      "title": "Checking what the band is doing",
+      "body": [
+        "The most direct way to see where your own signal is going is to transmit and let automated receiving networks report it. Systems such as the Reverse Beacon Network (for CW and digital) and PSK Reporter or WSPRnet collect spots from receivers around the world and post them on the internet, often on a map.",
+        "Indices like the A-index describe overall geomagnetic conditions, but they cannot tell you whether your signal is reaching a given area. Sending dots and listening for echoes is not a real method."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g3b-summer-static",
+      "group": "G3B",
+      "title": "Summer static on the low bands",
+      "body": [
+        "Lightning generates radio noise across a wide range, and it is strongest on the lower HF frequencies such as 160, 80, and 40 meters, where it can travel a long way. Summer brings far more thunderstorms, so these bands typically have high levels of atmospheric noise, or static, during the summer months. That is why many low-band operators prefer winter."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g3c-regions",
+      "group": "G3C",
+      "title": "The ionospheric regions, lowest to highest",
+      "body": [
+        "The ionosphere is divided into regions by height:",
+        "• D region: lowest, about 30 to 60 miles up. It exists mainly in daylight and absorbs signals rather than returning them.",
+        "• E region: about 60 to 90 miles up. It returns some signals and supports medium-length hops.",
+        "• F1 and F2 regions: highest. In daytime the F region splits into F1 and F2; at night they merge into one F region. F2 is the highest and the main region for long-distance HF.",
+        "Skip through F2 goes farthest because F2 is the highest region, not because it is densest. A signal refracted from higher up comes back down farther away."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g3c-d-absorption",
+      "group": "G3C",
+      "title": "Daytime D region absorption",
+      "body": [
+        "Sunlight builds up the D region each morning, and it fades quickly after sunset. Signals must pass through the D region twice on every hop, and it absorbs lower frequencies much more than higher ones. It is the most absorbent region for signals below about 10 MHz during daylight.",
+        "That explains why 160, 80, 60, and 40 meters are mostly short range during the day but open up for long distance after dark, when the D region disappears. The F and E regions are not the cause of the daytime loss."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g3c-critical",
+      "group": "G3C",
+      "title": "Critical frequency and critical angle",
+      "body": [
+        "Critical frequency: the highest frequency that the ionosphere will refract back to Earth. It is usually measured by sending a signal straight up; anything higher than the critical frequency passes through into space.",
+        "Critical angle: for a given frequency and set of ionospheric conditions, the highest takeoff angle that will still return a signal to Earth. Send the signal at a steeper angle than that and it goes through the ionosphere instead of bending back.",
+        "In both cases think 'highest': the highest frequency, and the highest angle, that still come back down."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g3c-scatter",
+      "group": "G3C",
+      "title": "HF scatter and the skip zone",
+      "body": [
+        "The skip zone is the area too far for ground wave but too close for the first skywave hop to come down. Normally you hear nothing from a station in its skip zone.",
+        "Scatter propagation fills in some of that gap. Irregularities in the ionosphere, and the ground at the far end of a hop, scatter a small part of the signal energy in many directions, and some of it lands in the skip zone. Because only a small fraction arrives, scatter signals are usually weak.",
+        "The energy arrives by several different paths at slightly different times, so scatter signals sound distorted and have a characteristic fluttering sound. Phone on scatter is often hard to understand. Scatter is not limited to nighttime."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g3c-nvis",
+      "group": "G3C",
+      "title": "NVIS: near vertical incidence skywave",
+      "body": [
+        "NVIS is short-distance MF or HF propagation using signals sent at high elevation angles, nearly straight up. The signal comes back down over a wide circle around the station, covering roughly 0 to a few hundred miles with no skip zone.",
+        "It only works on frequencies below the critical frequency, so it is used on the lower HF bands such as 80, 60, and 40 meters. A low horizontal dipole, only a small fraction of a wavelength above ground, sends most of its energy upward and is the usual NVIS antenna. NVIS is valuable for emergency communications across a state or region, where hills would block VHF."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "G3A01": { "why": "More sunspots means more solar ultraviolet, a more heavily ionized ionosphere, and a higher MUF, so the upper HF bands are more likely to open. A sunspot number of zero does not stop propagation; the lower bands keep working.", "concept": "g3a-sunspot-cycle", "status": "draft" },
+    "G3A02": { "why": "A sudden ionospheric disturbance boosts D region absorption on the sunlit side of Earth, and that absorption is strongest at lower frequencies. So lower frequencies are disrupted more than higher ones, and the night side is unaffected.", "concept": "g3a-flares-sid", "status": "draft" },
+    "G3A03": { "why": "Ultraviolet and X-rays travel at the speed of light, so they reach Earth about 8 minutes after a flare, just like sunlight. The slower delays of hours or days belong to charged particles.", "concept": "g3a-flares-sid", "status": "draft" },
+    "G3A04": { "why": "The upper HF bands need a heavily ionized ionosphere to return signals, so during low solar activity 15, 12, and 10 meters are the least reliable for long distance. The lower bands such as 80 and 160 meters depend much less on the solar cycle.", "concept": "g3a-sunspot-cycle", "status": "draft" },
+    "G3A05": { "why": "The solar flux index is the Sun's radio output measured at a wavelength of 10.7 centimeters (about 2800 MHz). It is not a sunspot count or a usable frequency, though it tracks sunspot activity closely.", "concept": "g3a-solar-flux", "status": "draft" },
+    "G3A06": { "why": "A geomagnetic storm is a temporary disturbance of Earth's magnetic field, usually set off by charged particles from the Sun. It is not a weather thunderstorm and not a drop in solar flux.", "concept": "g3a-cme-coronal-holes", "status": "draft" },
+    "G3A07": { "why": "20 meters normally supports worldwide daytime propagation at any point in the solar cycle, even near solar minimum. It does not depend on reaching the peak of the cycle the way 10 meters does.", "concept": "g3a-sunspot-cycle", "status": "draft" },
+    "G3A08": { "why": "Charged particles from a storm pour into the atmosphere near the poles, so HF paths through high latitudes are degraded. Ground wave is not what storms affect.", "concept": "g3a-cme-coronal-holes", "status": "draft" },
+    "G3A09": { "why": "Strong geomagnetic activity produces auroras, and the ionized aurora can reflect VHF signals, allowing contacts on 6 and 2 meters. Polar HF paths get weaker during high activity, not stronger.", "concept": "g3a-aurora", "status": "draft" },
+    "G3A10": { "why": "The Sun's surface layers rotate about once every 27 days as seen from Earth, so active regions come back into view on that schedule and conditions tend to repeat. The Moon and Earth's radiation belts are not the cause.", "concept": "g3a-solar-flux", "status": "draft" },
+    "G3A11": { "why": "A coronal mass ejection is made of charged particles moving much slower than light, so it takes about 15 hours to several days to reach Earth. The 8 minute figure applies only to a flare's light and X-rays.", "concept": "g3a-cme-coronal-holes", "status": "draft" },
+    "G3A12": { "why": "The K-index measures the short-term stability of Earth's geomagnetic field over 3-hour periods. It is about Earth's field, not the Sun's field or sunspots, and the solar radio flux is a separate measurement.", "concept": "g3a-k-a-index", "status": "draft" },
+    "G3A13": { "why": "The A-index is a daily average that describes the long-term stability of Earth's geomagnetic field. The short-term, 3-hour reading is the K-index.", "concept": "g3a-k-a-index", "status": "draft" },
+    "G3A14": { "why": "Fast particle streams from coronal holes stir up Earth's magnetic field, which disturbs HF communication. They do not improve HF, and VHF/UHF ducting is a weather effect that they do not control.", "concept": "g3a-cme-coronal-holes", "status": "draft" },
+
+    "G3B01": { "why": "The long path is thousands of miles longer than the short path, so the copy of the signal that takes it arrives a fraction of a second later. That shows up as a slightly delayed echo.", "concept": "g3b-short-long-path", "status": "draft" },
+    "G3B02": { "why": "The MUF depends on the path's length and location, the time of day and season, and solar radiation and disturbances. Every listed factor matters, so all the choices are correct.", "concept": "g3b-muf-factors", "status": "draft" },
+    "G3B03": { "why": "Absorption drops as frequency rises, so the frequency just below the MUF has the least attenuation while still being returned to Earth. Just above the LUF is barely usable, and above the MUF the signal goes into space.", "concept": "g3b-muf-luf", "status": "draft" },
+    "G3B04": { "why": "Automated receiving networks on the internet, such as the Reverse Beacon Network or PSK Reporter, show exactly where your own signal is being heard. The A-index only describes general geomagnetic conditions, and sending dots for echoes is not a real test.", "concept": "g3b-checking-conditions", "status": "draft" },
+    "G3B05": { "why": "Frequencies inside the window between the LUF and MUF are refracted back to Earth and reach the other station. The ionosphere does not amplify them, and they do not pass through or get trapped.", "concept": "g3b-muf-luf", "status": "draft" },
+    "G3B06": { "why": "Below the LUF, signals are absorbed, mainly in the D region, and are too weak by the time they reach the destination. Passing through the ionosphere is what happens above the MUF, not below the LUF.", "concept": "g3b-muf-luf", "status": "draft" },
+    "G3B07": { "why": "LUF means Lowest Usable Frequency, and it applies to communications between two specific points. It is not defined for any point beyond a radius or for a 24-hour or 60-minute period.", "concept": "g3b-muf-luf", "status": "draft" },
+    "G3B08": { "why": "MUF means Maximum Usable Frequency for communications between two points. It is the top of the usable window, not a minimum, and it is tied to a particular path rather than a 24-hour period.", "concept": "g3b-muf-luf", "status": "draft" },
+    "G3B09": { "why": "The F2 region is the highest part of the ionosphere, so one hop off it can reach about 2,500 miles. 1,200 miles is the typical limit for the lower E region.", "concept": "g3b-hop-distance", "status": "draft" },
+    "G3B10": { "why": "The E region is lower than the F2 region, so one hop off it reaches only about 1,200 miles. The longer 2,500 mile figure belongs to F2.", "concept": "g3b-hop-distance", "status": "draft" },
+    "G3B11": { "why": "Usable frequencies must be above the LUF and below the MUF. If the LUF is higher than the MUF, no frequency meets both conditions, so ordinary skywave on that path is not possible.", "concept": "g3b-muf-luf", "status": "draft" },
+    "G3B12": { "why": "Summer thunderstorms produce lots of lightning noise, which is strongest on the lower HF frequencies. High levels of atmospheric static are typical of those bands in summer.", "concept": "g3b-summer-static", "status": "draft" },
+
+    "G3C01": { "why": "The D region is the lowest part of the ionosphere, below the E, F1, and F2 regions. It is also the region that absorbs low-frequency signals during the day.", "concept": "g3c-regions", "status": "draft" },
+    "G3C02": { "why": "The critical frequency is the highest frequency that is refracted back to Earth; anything above it passes through the ionosphere. It is a top limit, not a lowest frequency, and it has nothing to do with signal-to-noise ratio.", "concept": "g3c-critical", "status": "draft" },
+    "G3C03": { "why": "F2 is the highest ionospheric region, so a signal refracted from it comes back to Earth farther away. Its height, not its density, is what gives it the longest skip.", "concept": "g3c-regions", "status": "draft" },
+    "G3C04": { "why": "The critical angle is the highest takeoff angle that will still return a signal to Earth under the current conditions. Steeper signals pass through the ionosphere. Azimuths describe direction, not elevation.", "concept": "g3c-critical", "status": "draft" },
+    "G3C05": { "why": "In daylight the D region forms and absorbs signals on the lower HF bands, including 160, 80, 60, and 40 meters. After dark the D region fades and long-distance contacts become possible. The F and E regions are not the cause.", "concept": "g3c-d-absorption", "status": "draft" },
+    "G3C06": { "why": "Scatter signals arrive over several paths at slightly different times, which gives them a fluttering sound. They are usually weak and hard to understand, and scatter is not limited to nighttime.", "concept": "g3c-scatter", "status": "draft" },
+    "G3C07": { "why": "Energy is scattered into the skip zone by several different paths, and the copies arrive slightly out of step, which distorts the signal. It is not caused by ground wave absorption or a missing E region.", "concept": "g3c-scatter", "status": "draft" },
+    "G3C08": { "why": "Only a small part of the transmitted energy happens to be scattered into the skip zone, so what arrives is weak. The magnetosphere, ground waves, and F region ducts are not involved.", "concept": "g3c-scatter", "status": "draft" },
+    "G3C09": { "why": "Scatter from ionospheric irregularities and from the ground sends a little energy into the skip zone, so stations there can sometimes hear the transmitter. Chordal hop, short path, and Faraday rotation do not fill in the skip zone.", "concept": "g3c-scatter", "status": "draft" },
+    "G3C10": { "why": "NVIS is short-distance MF or HF propagation using high elevation angles, sending signals nearly straight up so they come down over a wide area near the station. It has nothing to do with the MUF, long path, or double hops.", "concept": "g3c-nvis", "status": "draft" },
+    "G3C11": { "why": "During daylight the D region is the most absorbent region for signals below about 10 MHz. That is why the low bands are short range during the day.", "concept": "g3c-d-absorption", "status": "draft" }
+  }
+}

@@ -1,0 +1,496 @@
+{
+  "subelement": "E5",
+  "concepts": [
+    {
+      "id": "e5a-resonance",
+      "group": "E5A",
+      "title": "Resonance: when the reactances cancel",
+      "body": [
+        "Inductive reactance rises as frequency goes up, and capacitive reactance falls. At one frequency the two are exactly equal. That is the resonant frequency. Because inductive and capacitive reactance push in opposite directions (one is +j, the other -j), equal amounts cancel each other and the circuit looks purely resistive.",
+        "With no net reactance left, the voltage and current at the circuit's terminals are in phase, just as they would be across a plain resistor.",
+        "Resistance does not change the resonant frequency. Only L and C set it, so you can ignore R when a question asks for the resonant frequency."
+      ],
+      "formula": "f = 1 ÷ (2π × √(L × C))",
+      "status": "draft"
+    },
+    {
+      "id": "e5a-resonance-math",
+      "group": "E5A",
+      "title": "Working the resonance formula",
+      "body": [
+        "Step 1: Convert to base units. Microhenries times 0.000001 gives henries (50 µH = 50 × 10^-6 H). Picofarads times 10^-12 gives farads (40 pF = 40 × 10^-12 F).",
+        "Step 2: Multiply L × C, then take the square root. Step 3: Multiply by 2π (about 6.283). Step 4: Take 1 divided by that result. The answer comes out in hertz; divide by 1,000,000 for MHz.",
+        "Sanity-check with a shortcut: making L × C four times smaller doubles the frequency. For example, 50 µH with 40 pF resonates near 3.56 MHz, so 50 µH with 10 pF (one-quarter the capacitance) resonates near 7.12 MHz."
+      ],
+      "formula": "f = 1 ÷ (2π × √(L × C))",
+      "status": "draft"
+    },
+    {
+      "id": "e5a-series-vs-parallel",
+      "group": "E5A",
+      "title": "Series and parallel resonance behave in opposite ways",
+      "body": [
+        "Series RLC at resonance: the L and C reactances cancel, so the only thing left to limit the current is the resistance. Impedance drops to about R, its lowest value, and the current from the source is at its maximum.",
+        "Parallel RLC at resonance: the inductor and capacitor branches draw equal currents that are 180 degrees apart, so they cancel as seen from the source. The source sees only the resistor, so the impedance is about equal to R, which is its highest value, and the current at the input is at its minimum.",
+        "Memory aid: series resonance is a short-cut (low impedance, high line current); parallel resonance is a roadblock (high impedance, low line current)."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e5a-hidden-currents-voltages",
+      "group": "E5A",
+      "title": "Big voltages and currents hidden inside a resonant circuit",
+      "body": [
+        "Inside a parallel LC circuit at resonance, energy sloshes back and forth between the inductor's magnetic field and the capacitor's electric field. This circulating current flowing around the L-C loop is at its maximum at resonance, even though the current drawn from the source is at its minimum.",
+        "In a series RLC circuit at resonance, the large current flows through both reactances. The voltage across the inductor alone (and across the capacitor alone) can be many times the applied voltage. The two voltages are opposite in phase, so they cancel as seen from outside. The step-up factor is the Q, so raising Q raises these internal voltages.",
+        "This is why capacitors in antenna tuners and traps need high voltage ratings, even at modest power."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e5a-q",
+      "group": "E5A",
+      "title": "Q: the quality factor",
+      "body": [
+        "Q compares the energy a resonant circuit stores with the energy it loses to resistance. High Q means low loss and a sharp, narrow response.",
+        "In a series circuit, a small resistance is best, so Q = X ÷ R (reactance of either the L or the C, divided by the series resistance).",
+        "In a parallel circuit, a large resistance is best, because a big resistor across the tank draws little current and wastes little energy. So the ratio flips: Q = R ÷ X. Remember which way it goes by asking whether bigger R should help or hurt."
+      ],
+      "formula": "Series: Q = X ÷ R   Parallel: Q = R ÷ X",
+      "status": "draft"
+    },
+    {
+      "id": "e5a-bandwidth",
+      "group": "E5A",
+      "title": "Half-power bandwidth",
+      "body": [
+        "The half-power bandwidth is the width of the frequency range where the circuit's response stays within 3 dB of its peak. The points at each edge are where power has fallen to half.",
+        "It equals the resonant frequency divided by Q. Higher Q gives a narrower bandwidth. That is true of an impedance-matching network too: a high-Q match works over a narrower range of frequencies, so you have to retune more often as you move around the band.",
+        "Watch the units: if the frequency is in hertz, the bandwidth comes out in hertz. Convert 7.1 MHz to 7,100,000 Hz before dividing, then change the answer back to kHz."
+      ],
+      "formula": "BW = f ÷ Q",
+      "status": "draft"
+    },
+    {
+      "id": "e5b-time-constant",
+      "group": "E5B",
+      "title": "The time constant",
+      "body": [
+        "A capacitor charging through a resistor does not fill up instantly. It charges quickly at first, then more and more slowly. The time constant (τ) is the time it takes to charge to 63.2% of the applied voltage, or, when discharging, to fall to 36.8% of where it started.",
+        "For an RC circuit, the time constant in seconds is R in ohms times C in farads. For an RL circuit, it is L in henries divided by R in ohms; there it describes how fast the current builds up.",
+        "After about five time constants the charge or discharge is essentially complete (over 99%)."
+      ],
+      "formula": "RC: τ = R × C   RL: τ = L ÷ R",
+      "status": "draft"
+    },
+    {
+      "id": "e5b-combining-parts",
+      "group": "E5B",
+      "title": "Combining parts before finding τ",
+      "body": [
+        "When a question has several resistors and capacitors, combine them first. Capacitors in parallel add: two 220 µF capacitors in parallel make 440 µF. Resistors in parallel divide: two equal resistors in parallel make half of one, so two 1 megohm resistors give 0.5 megohm.",
+        "Then multiply. A handy shortcut: megohms times microfarads gives seconds directly, because 10^6 × 10^-6 = 1.",
+        "Sanity-check: doubling the capacitance and halving the resistance leaves the time constant the same as one resistor with one capacitor."
+      ],
+      "formula": "τ (seconds) = R (MΩ) × C (µF)",
+      "status": "draft"
+    },
+    {
+      "id": "e5b-eli-ice",
+      "group": "E5B",
+      "title": "Phase in inductors and capacitors: ELI the ICE man",
+      "body": [
+        "In a pure inductor, voltage leads current by 90 degrees. An inductor resists changes in current, so the current lags behind the voltage.",
+        "In a pure capacitor, current leads voltage by 90 degrees. Current has to flow in first before voltage can build up across the plates.",
+        "Memory aid: ELI the ICE man. In ELI, E (voltage) comes before I (current) in an inductor (L). In ICE, I comes before E in a capacitor (C)."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e5b-phase-angle",
+      "group": "E5B",
+      "title": "Phase angle of a series RLC circuit",
+      "body": [
+        "Step 1: Find the net reactance: X = XL - XC. The two reactances subtract because they work in opposite directions.",
+        "Step 2: Divide the net reactance by R, then take the arctangent (the tan^-1 key on a calculator). That gives the angle between voltage and current.",
+        "Step 3: Decide leading or lagging. If XL is bigger, the net reactance is positive and the circuit acts inductive, so voltage leads current (ELI). If XC is bigger, the net reactance is negative and the circuit acts capacitive, so voltage lags current (ICE).",
+        "Useful values to recognize: a ratio of 0.25 gives 14 degrees, 0.5 gives about 27 degrees, 1 gives 45 degrees, and 2 gives about 63 degrees."
+      ],
+      "formula": "θ = arctan((XL - XC) ÷ R)",
+      "status": "draft"
+    },
+    {
+      "id": "e5b-admittance",
+      "group": "E5B",
+      "title": "Admittance and susceptance",
+      "body": [
+        "Admittance (Y) is the inverse of impedance: Y = 1 ÷ Z. Impedance says how hard it is for AC to flow; admittance says how easily it flows. It is measured in siemens.",
+        "Just as impedance has a real part (resistance, R) and an imaginary part (reactance, X), admittance has a real part called conductance (G) and an imaginary part called susceptance (B). So Y = G + jB.",
+        "Converting a pure reactance to susceptance replaces its size with the reciprocal: 50 ohms of reactance becomes 1/50 = 0.02 siemens of susceptance.",
+        "To turn a polar impedance into admittance, take the reciprocal of the magnitude and flip the sign of the angle. For example, 50 Ω at +30 degrees becomes 0.02 siemens at -30 degrees."
+      ],
+      "formula": "Y = 1 ÷ Z = G + jB",
+      "status": "draft"
+    },
+    {
+      "id": "e5c-rectangular",
+      "group": "E5C",
+      "title": "Rectangular form: R + jX",
+      "body": [
+        "An impedance can be written as two parts: resistance plus reactance, R + jX. The j marks the reactive part, which is 90 degrees out of step with the resistive part.",
+        "Inductive reactance is positive (+j) and capacitive reactance is negative (-j). So 50 - j25 means 50 ohms of resistance in series with 25 ohms of capacitive reactance, and a pure 100 ohm capacitive reactance with no resistance is written 0 - j100.",
+        "On a rectangular graph, resistance runs along the horizontal (X) axis and reactance along the vertical (Y) axis. A pure resistance sits right on the horizontal axis; inductive impedances sit above it and capacitive ones below it."
+      ],
+      "formula": "Z = R + jX  (+j inductive, -j capacitive)",
+      "status": "draft"
+    },
+    {
+      "id": "e5c-polar",
+      "group": "E5C",
+      "title": "Polar form: magnitude and angle",
+      "body": [
+        "Polar coordinates describe the same impedance as a length (magnitude, in ohms) and a direction (phase angle, in degrees). This makes them a natural way to display the phase angle of a circuit with resistance and reactance.",
+        "A pure resistance points along 0 degrees. A pure inductive reactance points straight up at +90 degrees. A pure capacitive reactance points straight down at -90 degrees. Anything with both R and X falls somewhere in between.",
+        "To convert from rectangular: magnitude = √(R² + X²) and angle = arctan(X ÷ R)."
+      ],
+      "formula": "|Z| = √(R² + X²)   θ = arctan(X ÷ R)",
+      "status": "draft"
+    },
+    {
+      "id": "e5c-phasors-log",
+      "group": "E5C",
+      "title": "Phasor diagrams and logarithmic scales",
+      "body": [
+        "A phasor diagram draws voltages, currents, or impedances at one frequency as arrows. The length of each arrow is its size and the direction is its phase. It shows at a glance how the pieces of a circuit relate in phase.",
+        "Graphs of frequency response usually use a logarithmic scale, where each step up the axis is a multiplication rather than an addition. The amplitude is normally shown in decibels, which are themselves logarithmic, so a huge range of levels fits on one graph. Frequency is also often plotted on a log scale for the same reason."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e5c-plotting-figure",
+      "group": "E5C",
+      "title": "Placing a series circuit on the impedance graph",
+      "body": [
+        "Step 1: Find the reactance. For a capacitor, XC = 1 ÷ (2π × f × C). For an inductor, XL = 2π × f × L. Use hertz, farads, and henries.",
+        "Step 2: Write the impedance in rectangular form: R + jXL for an inductor, or R - jXC for a capacitor.",
+        "Step 3: Find the point. Go right along the horizontal axis by the resistance, then up for inductive reactance or down for capacitive reactance. Since resistance is never negative, the correct point is always on the right half of the graph.",
+        "Figure E5-1 has points at: Point 1 (300, -400), Point 2 (400, +300), Point 3 (300, +400), Point 4 (400, -300), Point 5 (-400, -300), Point 6 (400, 0), Point 7 (-300, -400), and Point 8 (300, a little above 0)."
+      ],
+      "formula": "XL = 2π × f × L   XC = 1 ÷ (2π × f × C)",
+      "status": "draft"
+    },
+    {
+      "id": "e5d-skin-effect",
+      "group": "E5D",
+      "title": "Skin effect",
+      "body": [
+        "At DC, current uses the whole cross-section of a wire. As frequency rises, RF current crowds toward the outer surface of the conductor. Less of the metal is carrying current, so the effective resistance goes up as frequency goes up.",
+        "Skin effect is a big reason for RF loss in conductors. Even in film capacitors, whose plates are very thin metal films, skin effect in the plates and connections is the main source of loss at RF.",
+        "This is also why silver plating and wide, flat straps are used in RF work: the surface is where the current flows."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e5d-parasitics",
+      "group": "E5D",
+      "title": "Parasitics and self-resonance",
+      "body": [
+        "No real part is pure. Every wire and lead has some inductance, and any two conductors near each other have some capacitance. These unwanted extras are called parasitics, and they matter more as frequency climbs.",
+        "An inductor's turns sit side by side, so there is capacitance between them (inter-turn capacitance). A capacitor's leads and plates have inductance. Each part's intended (nominal) reactance plus its parasitic reactance form a tiny resonant circuit, so every component has a self-resonant frequency. Above it, a capacitor acts like an inductor and an inductor acts like a capacitor.",
+        "Electrolytic capacitors are built from long rolled-up foil strips, which adds a lot of inductance. That makes them fine for power supply filtering but unsuitable at RF."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e5d-short-leads",
+      "group": "E5D",
+      "title": "Keep leads short at VHF and above",
+      "body": [
+        "A short piece of wire has little inductance, but inductive reactance grows with frequency (XL = 2π × f × L). At VHF and above, even a centimeter of component lead adds significant reactance, so leads are kept as short as possible.",
+        "At microwave frequencies a wavelength is only centimeters long, so a connection just a few millimeters long is a noticeable fraction of a wavelength. The signal takes time to travel it, which causes a phase shift. Short connections keep that phase shift small."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e5d-electrical-length",
+      "group": "E5D",
+      "title": "Electrical length of a conductor",
+      "body": [
+        "Electrical length is how long a conductor looks to a radio wave, measured in wavelengths, rather than how long it measures with a tape.",
+        "A thicker conductor has more capacitance along its length and to its ends, which slows the wave slightly. The result is that the same physical length looks electrically longer as diameter increases. That is why a dipole made of fat tubing is cut a bit shorter than one made of thin wire for the same frequency."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "e5d-real-reactive-power",
+      "group": "E5D",
+      "title": "Real power and reactive power",
+      "body": [
+        "Real power is power that is actually used up, turned into heat, light, or radio waves. Only resistance consumes real power, and it can be found with P = I² × R.",
+        "Reactive power belongs to inductors and capacitors. In an ideal L or C, the current and voltage are 90 degrees out of phase. Energy is stored in the magnetic or electric field for part of each cycle and handed back to the source in the next part, so none is dissipated. That is why reactive power is called wattless, nonproductive power.",
+        "In a circuit with both R and X, multiplying volts by amps gives apparent power, which is larger than the real power. For real power, use only the current and the resistance."
+      ],
+      "formula": "Real power P = I² × R",
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "E5A01": {
+      "why": "At resonance in a series RLC circuit the current is high, and that current flowing through each reactance builds up a voltage that can be many times the applied voltage. The inductor and capacitor voltages are opposite in phase, so they cancel as seen from outside. Low Q or more resistance would reduce this effect, not cause it.",
+      "concept": "e5a-hidden-currents-voltages",
+      "status": "draft"
+    },
+    "E5A02": {
+      "why": "Use the resonance formula with L and C in henries and farads. The 22 ohm resistance does not affect the resonant frequency.",
+      "work": ["f = 1 ÷ (2π × √(L × C))", "L × C = (50 × 10^-6 H) × (40 × 10^-12 F) = 2 × 10^-15", "√(2 × 10^-15) = 4.472 × 10^-8", "2π × 4.472 × 10^-8 = 2.810 × 10^-7", "f = 1 ÷ 2.810 × 10^-7 = 3,559,000 Hz ≈ 3.56 MHz"],
+      "concept": "e5a-resonance-math",
+      "status": "draft"
+    },
+    "E5A03": {
+      "why": "At resonance the inductive and capacitive reactances cancel, leaving only the resistance to oppose the current. The impedance of a series circuit is at its lowest, about equal to the circuit resistance.",
+      "concept": "e5a-series-vs-parallel",
+      "status": "draft"
+    },
+    "E5A04": {
+      "why": "At resonance the currents in the inductor and capacitor branches cancel as seen from the source, so the source sees only the resistance. The impedance is about equal to the circuit resistance, which is the highest it gets for a parallel circuit.",
+      "concept": "e5a-series-vs-parallel",
+      "status": "draft"
+    },
+    "E5A05": {
+      "why": "Bandwidth equals frequency divided by Q, so raising the Q of a matching network narrows the range of frequencies it matches well. Higher Q does not make it match over a wider range.",
+      "concept": "e5a-bandwidth",
+      "status": "draft"
+    },
+    "E5A06": {
+      "why": "At resonance, energy swings back and forth between the inductor and the capacitor, and the current circulating around that loop is at its maximum. The formulas with 2π and √(LC) are pieces of the resonant frequency formula, not a current.",
+      "concept": "e5a-hidden-currents-voltages",
+      "status": "draft"
+    },
+    "E5A07": {
+      "why": "A parallel RLC circuit has its highest impedance at resonance, so the current drawn at its input is at a minimum. Maximum input current is what happens in a series circuit at resonance.",
+      "concept": "e5a-series-vs-parallel",
+      "status": "draft"
+    },
+    "E5A08": {
+      "why": "At resonance the reactances cancel and the circuit acts like a pure resistance, so voltage and current are in phase. A 90 degree difference applies to a pure inductor or capacitor alone.",
+      "concept": "e5a-resonance",
+      "status": "draft"
+    },
+    "E5A09": {
+      "why": "In a parallel circuit a larger resistance means less loss, so Q is the resistance divided by the reactance of either the inductor or the capacitor (they are equal at resonance). Reactance divided by resistance is the formula for a series circuit.",
+      "concept": "e5a-q",
+      "status": "draft"
+    },
+    "E5A10": {
+      "why": "Use the resonance formula with L and C in henries and farads. The 33 ohm resistance does not affect the resonant frequency. The result is in the 40-meter band.",
+      "work": ["f = 1 ÷ (2π × √(L × C))", "L × C = (50 × 10^-6 H) × (10 × 10^-12 F) = 5 × 10^-16", "√(5 × 10^-16) = 2.236 × 10^-8", "2π × 2.236 × 10^-8 = 1.405 × 10^-7", "f = 1 ÷ 1.405 × 10^-7 = 7,118,000 Hz ≈ 7.12 MHz"],
+      "concept": "e5a-resonance-math",
+      "status": "draft"
+    },
+    "E5A11": {
+      "why": "Divide the resonant frequency by Q. Half of the right answer (23.67 kHz) is the distance from the center to one edge, not the full bandwidth.",
+      "work": ["BW = f ÷ Q", "BW = 7,100,000 Hz ÷ 150", "BW = 47,333 Hz ≈ 47.3 kHz"],
+      "concept": "e5a-bandwidth",
+      "status": "draft"
+    },
+    "E5A12": {
+      "why": "Divide the resonant frequency by Q. Half of the right answer (15.7 kHz) is only the distance from the center to one edge.",
+      "work": ["BW = f ÷ Q", "BW = 3,700,000 Hz ÷ 118", "BW = 31,356 Hz ≈ 31.4 kHz"],
+      "concept": "e5a-bandwidth",
+      "status": "draft"
+    },
+    "E5A13": {
+      "why": "In a series resonant circuit, the voltage across each reactance is about Q times the applied voltage. Raising Q therefore raises these internal voltages, which is why parts in high-Q circuits need good voltage ratings.",
+      "concept": "e5a-hidden-currents-voltages",
+      "status": "draft"
+    },
+    "E5B01": {
+      "why": "One time constant is the time to charge to 63.2% of the applied voltage, or to discharge to 36.8% of the starting voltage. The other names sound technical but are not real terms.",
+      "concept": "e5b-time-constant",
+      "status": "draft"
+    },
+    "E5B02": {
+      "why": "Susceptance is written B. G is conductance, X is reactance, and Y is admittance, the whole quantity that susceptance is part of.",
+      "concept": "e5b-admittance",
+      "status": "draft"
+    },
+    "E5B03": {
+      "why": "Admittance is 1 divided by impedance. Dividing 1 by a polar number takes the reciprocal of the magnitude and changes the sign of the angle. Taking the reciprocal of an angle has no meaning.",
+      "concept": "e5b-admittance",
+      "status": "draft"
+    },
+    "E5B04": {
+      "why": "Combine the parts first: parallel capacitors add, and two equal resistors in parallel make half of one. Then multiply R by C.",
+      "work": ["C = 220 µF + 220 µF = 440 µF", "R = 1 MΩ ÷ 2 = 0.5 MΩ", "τ = R × C = 0.5 MΩ × 440 µF", "τ = 220 seconds (megohms × microfarads gives seconds)"],
+      "concept": "e5b-combining-parts",
+      "status": "draft"
+    },
+    "E5B05": {
+      "why": "Susceptance is the reciprocal of reactance, so the magnitude is replaced by 1 divided by it. For example, 100 ohms of reactance becomes 0.01 siemens of susceptance.",
+      "concept": "e5b-admittance",
+      "status": "draft"
+    },
+    "E5B06": {
+      "why": "Admittance has a real part, conductance, and an imaginary part, susceptance. Susceptance is to admittance what reactance is to impedance. It has nothing to do with magnetic fields or transformers.",
+      "concept": "e5b-admittance",
+      "status": "draft"
+    },
+    "E5B07": {
+      "why": "Capacitive reactance is larger, so the net reactance is negative and the circuit acts capacitive. In a capacitive circuit the voltage lags the current (ICE).",
+      "work": ["X = XL - XC = 250 Ω - 500 Ω = -250 Ω", "X ÷ R = -250 ÷ 1000 = -0.25", "θ = arctan(-0.25) = -14.0 degrees", "Negative (capacitive): voltage lags current by 14.0 degrees"],
+      "concept": "e5b-phase-angle",
+      "status": "draft"
+    },
+    "E5B08": {
+      "why": "Capacitive reactance is larger, so the circuit acts capacitive and voltage lags current. The 27 degree choices come from dividing R by X instead of X by R.",
+      "work": ["X = XL - XC = 100 Ω - 300 Ω = -200 Ω", "X ÷ R = -200 ÷ 100 = -2", "θ = arctan(-2) = -63.4 degrees", "Negative (capacitive): voltage lags current by about 63 degrees"],
+      "concept": "e5b-phase-angle",
+      "status": "draft"
+    },
+    "E5B09": {
+      "why": "In a capacitor, current leads voltage by 90 degrees: the ICE in ELI the ICE man. Voltage leading current is what happens in an inductor.",
+      "concept": "e5b-eli-ice",
+      "status": "draft"
+    },
+    "E5B10": {
+      "why": "In an inductor, voltage leads current by 90 degrees: the ELI in ELI the ICE man. The inductor fights changes in current, so the current falls behind.",
+      "concept": "e5b-eli-ice",
+      "status": "draft"
+    },
+    "E5B11": {
+      "why": "Inductive reactance is larger, so the net reactance is positive and the circuit acts inductive. In an inductive circuit the voltage leads the current (ELI).",
+      "work": ["X = XL - XC = 75 Ω - 25 Ω = 50 Ω", "X ÷ R = 50 ÷ 100 = 0.5", "θ = arctan(0.5) = 26.6 degrees ≈ 27 degrees", "Positive (inductive): voltage leads current by about 27 degrees"],
+      "concept": "e5b-phase-angle",
+      "status": "draft"
+    },
+    "E5B12": {
+      "why": "Admittance is the inverse of impedance, Y = 1 ÷ Z. The inverse of reactance alone is susceptance, only one part of admittance.",
+      "concept": "e5b-admittance",
+      "status": "draft"
+    },
+    "E5C01": {
+      "why": "A pure reactance has no resistance, so the real part is 0. Capacitive reactance takes a minus sign, giving 0 - j100. A plus sign would mean inductive reactance.",
+      "concept": "e5c-rectangular",
+      "status": "draft"
+    },
+    "E5C02": {
+      "why": "Polar coordinates give the size of the impedance (magnitude) and its direction (phase angle). Real and imaginary parts, or R and X values, describe rectangular form instead.",
+      "concept": "e5c-polar",
+      "status": "draft"
+    },
+    "E5C03": {
+      "why": "A pure inductive reactance points straight up on the impedance graph, at a phase angle of +90 degrees. -90 degrees would be pure capacitive reactance, and 45 degrees would mean equal parts resistance and reactance.",
+      "concept": "e5c-polar",
+      "status": "draft"
+    },
+    "E5C04": {
+      "why": "Frequency response graphs cover a very wide range of levels, so the vertical axis is usually logarithmic, most often marked in decibels. A linear scale would squeeze the small values flat against the axis.",
+      "concept": "e5c-phasors-log",
+      "status": "draft"
+    },
+    "E5C05": {
+      "why": "A phasor diagram draws each impedance at one frequency as an arrow, with length for size and direction for phase, so the phase relationships are easy to see. Near and far field describe antenna radiation, not impedance.",
+      "concept": "e5c-phasors-log",
+      "status": "draft"
+    },
+    "E5C06": {
+      "why": "The real part, 50, is the resistance. The -j part is capacitive reactance, because capacitive reactance is negative. So it is 50 ohms of resistance in series with 25 ohms of capacitive reactance.",
+      "concept": "e5c-rectangular",
+      "status": "draft"
+    },
+    "E5C07": {
+      "why": "Resistance is plotted along the horizontal axis. A pure resistance has zero reactance, so it sits right on that axis with no vertical offset.",
+      "concept": "e5c-rectangular",
+      "status": "draft"
+    },
+    "E5C08": {
+      "why": "Polar coordinates show a quantity as a magnitude and an angle, so the phase angle is displayed directly. The Maidenhead grid is for locating stations on the earth, not for circuits.",
+      "concept": "e5c-polar",
+      "status": "draft"
+    },
+    "E5C09": {
+      "why": "On a rectangular impedance graph the horizontal X axis is resistance and the vertical Y axis is reactance. Magnitude and phase angle belong to polar form.",
+      "concept": "e5c-rectangular",
+      "status": "draft"
+    },
+    "E5C10": {
+      "why": "The capacitor's reactance at 14 MHz works out to about 300 ohms. Capacitive reactance is negative, so the impedance is 400 - j300. That is 400 to the right and 300 down, which is Point 4. Point 2 is the same distance up, which would be inductive.",
+      "work": ["XC = 1 ÷ (2π × f × C)", "2π × 14,000,000 Hz × 38 × 10^-12 F = 0.003343", "XC = 1 ÷ 0.003343 ≈ 299 Ω ≈ 300 Ω", "Z = 400 - j300 Ω", "Right 400, down 300: Point 4"],
+      "concept": "e5c-plotting-figure",
+      "status": "draft"
+    },
+    "E5C11": {
+      "why": "The inductor's reactance at 3.505 MHz works out to about 400 ohms. Inductive reactance is positive, so the impedance is 300 + j400. That is 300 to the right and 400 up, which is Point 3. Point 1 is the same distance down, which would be capacitive.",
+      "work": ["XL = 2π × f × L", "XL = 2π × 3,505,000 Hz × 18 × 10^-6 H", "XL ≈ 396 Ω ≈ 400 Ω", "Z = 300 + j400 Ω", "Right 300, up 400: Point 3"],
+      "concept": "e5c-plotting-figure",
+      "status": "draft"
+    },
+    "E5C12": {
+      "why": "The capacitor's reactance at 21.2 MHz works out to about 400 ohms. Capacitive reactance is negative, so the impedance is 300 - j400. That is 300 to the right and 400 down, which is Point 1. Point 7 is on the left side of the graph, which would need a negative resistance.",
+      "work": ["XC = 1 ÷ (2π × f × C)", "2π × 21,200,000 Hz × 19 × 10^-12 F = 0.002531", "XC = 1 ÷ 0.002531 ≈ 395 Ω ≈ 400 Ω", "Z = 300 - j400 Ω", "Right 300, down 400: Point 1"],
+      "concept": "e5c-plotting-figure",
+      "status": "draft"
+    },
+    "E5D01": {
+      "why": "Skin effect pushes RF current toward the surface of the conductor, so less of the metal carries it and resistance rises with frequency. The choices about temperature describe a different effect entirely.",
+      "concept": "e5d-skin-effect",
+      "status": "draft"
+    },
+    "E5D02": {
+      "why": "Every lead has a little inductance, and inductive reactance grows with frequency. At VHF and above, short leads keep that unwanted reactance small.",
+      "concept": "e5d-short-leads",
+      "status": "draft"
+    },
+    "E5D03": {
+      "why": "Reactive power occurs in inductors and capacitors, where current and voltage are 90 degrees out of phase. When they are in phase, the power is real power consumed by resistance.",
+      "concept": "e5d-real-reactive-power",
+      "status": "draft"
+    },
+    "E5D04": {
+      "why": "At microwave frequencies even a few millimeters of wire is a noticeable part of a wavelength, and the signal's travel time along it shifts its phase. Short connections keep that phase shift small.",
+      "concept": "e5d-short-leads",
+      "status": "draft"
+    },
+    "E5D05": {
+      "why": "Electrolytic capacitors are made of long rolled-up foil strips, which gives them a lot of inductance. At RF that inductance cancels out their usefulness as a capacitor.",
+      "concept": "e5d-parasitics",
+      "status": "draft"
+    },
+    "E5D06": {
+      "why": "The turns of a coil lie next to each other, so there is capacitance between them. That inter-turn capacitance resonates with the coil's own inductance at the self-resonant frequency.",
+      "concept": "e5d-parasitics",
+      "status": "draft"
+    },
+    "E5D07": {
+      "why": "Self-resonance happens when a component's intended (nominal) reactance resonates with its unwanted (parasitic) reactance, such as a capacitor with its lead inductance or an inductor with its inter-turn capacitance. The answer naming inductance and capacitance is close, but the nominal-plus-parasitic wording is the general description that fits every component.",
+      "concept": "e5d-parasitics",
+      "status": "draft"
+    },
+    "E5D08": {
+      "why": "Film capacitors use very thin metal films for plates, and at RF the current crowds into the surface of those films and their connections. Skin effect in these conductors is the main source of loss at RF.",
+      "concept": "e5d-skin-effect",
+      "status": "draft"
+    },
+    "E5D09": {
+      "why": "An ideal inductor or capacitor stores energy in its magnetic or electric field for part of each cycle and returns it in the next. No power is turned into heat.",
+      "concept": "e5d-real-reactive-power",
+      "status": "draft"
+    },
+    "E5D10": {
+      "why": "A thicker conductor has more capacitance, which slows the wave slightly, so the same physical length looks electrically longer. That is why antennas made of fat tubing are cut shorter than thin-wire ones for the same frequency.",
+      "concept": "e5d-electrical-length",
+      "status": "draft"
+    },
+    "E5D11": {
+      "why": "Only the resistor consumes real power; the inductive reactance just stores and returns energy. Multiplying current by total impedance (141.4 volt-amperes) gives apparent power, not real power.",
+      "work": ["P = I² × R", "P = (1 A)² × 100 Ω", "P = 100 W"],
+      "concept": "e5d-real-reactive-power",
+      "status": "draft"
+    },
+    "E5D12": {
+      "why": "Reactive power moves back and forth between the source and the fields of inductors and capacitors without doing any work, so it is called wattless, nonproductive power. It is not consumed by the inductors and capacitors.",
+      "concept": "e5d-real-reactive-power",
+      "status": "draft"
+    }
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "subelement": "G7",
+  "concepts": [
+    {
+      "id": "g7a-rectifiers",
+      "group": "G7A",
+      "title": "Rectifiers: turning AC into pulsing DC",
+      "body": [
+        "A power supply's first job is to turn the AC from the wall into DC. Diodes do this because they let current pass in only one direction. The circuit that does it is called a rectifier, and there are three common types:",
+        "• Half-wave: a single diode. It passes only the positive half of each AC cycle and blocks the other half, so it uses 180 degrees of the 360-degree cycle. The output is one pulse per cycle, at the same frequency as the AC input (60 pulses per second from 60 Hz power).",
+        "• Full-wave (center-tap): two diodes and a transformer whose secondary winding has a center tap. Each diode handles one half of the cycle, so all 360 degrees are used.",
+        "• Full-wave bridge: four diodes arranged in a diamond. It also uses the whole 360 degrees, and needs no center tap.",
+        "Because a full-wave rectifier flips the negative half-cycles up to positive, an unfiltered full-wave rectifier feeding a resistor produces a string of DC pulses at twice the input frequency: 120 pulses per second from 60 Hz. That doubled ripple frequency is easier to smooth out than the half-wave's, and full-wave circuits can deliver more current. The half-wave's one real advantage is simplicity: only one diode."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g7a-filter-bleeder",
+      "group": "G7A",
+      "title": "Smoothing the pulses: filters and bleeder resistors",
+      "body": [
+        "Pulsing DC is not good enough to run a radio. The power supply filter smooths the bumps out using capacitors and inductors. Capacitors charge up at each peak and fill in the valleys between pulses; inductors (chokes) resist changes in current. Together they turn the pulses into nearly steady DC.",
+        "Big filter capacitors can hold a dangerous charge long after the supply is switched off and unplugged. A bleeder resistor is a resistor wired across the filter capacitors so that they discharge through it when power is removed. It is a safety feature, not a fuse, and it has nothing to do with ground loops.",
+        "Even so, never trust a bleeder blindly. Resistors can fail open, so check with a meter or a grounding stick before touching high-voltage parts."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g7a-switchmode",
+      "group": "G7A",
+      "title": "Switchmode versus linear power supplies",
+      "body": [
+        "A linear supply uses a transformer running at 60 Hz, then rectifies and filters the output. At such a low frequency the transformer and filter parts must be large and heavy, which is why an old 20-amp linear supply weighs a lot.",
+        "A switchmode supply first converts the power to a much higher frequency, often tens or hundreds of kilohertz, by switching it on and off rapidly. At high frequency, a transformer or filter capacitor of a given size can handle far more power, so the parts can be much smaller and lighter. That high-frequency operation, allowing smaller components, is the key advantage.",
+        "Switchmode supplies are not simpler (they have more parts), not inherently more stable, and the fast switching can create RF noise if the supply is poorly designed."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g7a-symbols-transistors",
+      "group": "G7A",
+      "title": "Figure G7-1: telling the two transistors apart",
+      "body": [
+        "Figure G7-1 is a small circuit with eleven numbered parts. Two of them are transistors, and both are drawn as a circle with lines inside.",
+        "• Symbol 1 is a field effect transistor (FET). Look for a straight vertical bar (the channel) inside the circle, with two leads (drain and source) leaving from the bar. The third lead, the gate, comes in from the side and has a small arrowhead right where it touches the bar. In this figure it sits near the middle-left, between the diode section and the right-hand transistor.",
+        "• Symbol 2 is an NPN bipolar junction transistor. The lead from the side (the base) touches a short bar, and two slanted lines (collector and emitter) leave that bar at angles. The arrow is on the slanted emitter line and points outward, away from the base. It sits on the right side of the figure, below the transformer.",
+        "Memory aid for bipolar transistors: in an NPN the arrow is 'Not Pointing iN'. A PNP transistor looks the same but its emitter arrow points in toward the base."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g7a-symbols-diodes",
+      "group": "G7A",
+      "title": "Figure G7-1: three kinds of diode",
+      "body": [
+        "Every diode symbol is a triangle pointing at a straight bar. Figure G7-1 has three, and the differences are all in the bar:",
+        "• Symbol 3 is an ordinary diode: a plain triangle and a plain straight bar.",
+        "• Symbol 5 is a Zener diode. Its bar has little bent tails on the ends, one bent up and one bent down, so the bar looks a bit like a stretched letter Z. That is how to remember it: Z for Zener. Zener diodes hold a steady voltage and are used as simple regulators; in the figure it sits across the DC supply line near the top.",
+        "• Symbol 4 is a varactor (a diode used as a voltage-controlled capacitor). It looks like a diode with an extra capacitor plate drawn beside the bar, on the far left of the figure. It is a diode, but not the Zener the exam asks about."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g7a-symbols-coils",
+      "group": "G7A",
+      "title": "Figure G7-1: coils, transformers, and the rest",
+      "body": [
+        "An inductor is drawn as a row of loops, like a stretched spring.",
+        "• Symbol 7 is a tapped inductor: a single coil with an extra wire connected partway along it, between the ends, not just at the two ends. In the figure it is at the lower left, with the tap wire running over to the FET.",
+        "• Symbol 6 is a solid core (iron core) transformer: two coils facing each other, with two straight parallel lines drawn between them. Those lines stand for the solid core. A transformer with no lines between the coils would be air core. In the figure it is at the upper right, feeding the OUT terminal.",
+        "The other numbered parts are simpler. Symbol 9 is a resistor (a zigzag line). Symbol 11 is a potentiometer, or variable resistor: a zigzag with an arrow (the wiper) pointing at its side. Symbols 8 and 10 are capacitors: two short plates facing each other, one straight and one curved."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g7b-digital-logic",
+      "group": "G7B",
+      "title": "Digital building blocks: gates, counters, shift registers",
+      "body": [
+        "Digital circuits work with just two levels, high (1) and low (0). A logic gate combines its inputs by a simple rule. For a two-input AND gate, the output is high only when both inputs are high; if either input is low, the output is low. (An OR gate goes high when either input is high.)",
+        "A binary counter counts pulses using bits. Each bit has 2 possible values, so n bits give 2 to the power n different states. A 3-bit counter has 2 × 2 × 2 = 8 states, counting 000 through 111 (0 through 7) before rolling over.",
+        "A shift register is a chain of storage cells controlled by a clock. On each clock pulse, every bit moves one position along the chain, so data passes in steps from one end to the other. It is not a mixer and has nothing to do with operational amplifiers."
+      ],
+      "formula": "states = 2^n (n = number of bits)",
+      "status": "draft"
+    },
+    {
+      "id": "g7b-amp-classes",
+      "group": "G7B",
+      "title": "Amplifier classes: how much of the time the device conducts",
+      "body": [
+        "Amplifier classes describe how much of each input cycle the transistor or tube actually conducts current:",
+        "• Class A: conducts 100 percent of the time (the full 360 degrees). Very clean, but wasteful, since current flows even with no signal.",
+        "• Class AB: more than half the cycle but less than all of it.",
+        "• Class B: about half the cycle (180 degrees).",
+        "• Class C: less than half the cycle.",
+        "The less time the device conducts, the less power it wastes as heat, so efficiency rises from Class A up to Class C. Class C is the most efficient, but it badly distorts the waveform. Rule of thumb for efficiency: Class A is usually under 50 percent, Class B and AB higher, and Class C can reach roughly 70 percent or more."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g7b-linear-classc",
+      "group": "G7B",
+      "title": "Linear amplifiers and where Class C fits",
+      "body": [
+        "A linear amplifier is one whose output is a faithful, larger copy of its input: the waveform shape is preserved. Hams often call any external power amplifier a 'linear', but the technical meaning is about preserving the waveform, not about being used with a transceiver.",
+        "SSB and AM carry information in the changing amplitude (strength) of the signal, so they need a linear amplifier. A Class C stage would distort those amplitude changes and create splatter.",
+        "FM (and CW) signals have a constant amplitude; the information is in the frequency or simply in whether the carrier is on. Distorting the amplitude does not hurt them, so an efficient Class C stage is fine for amplifying an FM signal. Class C stages are also used as frequency multipliers, but that is a different job from linear amplification."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g7b-efficiency-neutralization",
+      "group": "G7B",
+      "title": "Amplifier efficiency and neutralization",
+      "body": [
+        "An RF power amplifier converts DC power from the supply into RF power. Its efficiency is simply how much RF comes out compared with how much DC goes in: divide the RF output power by the DC input power. Example: 100 watts of RF out from 200 watts of DC in is 50 percent efficient; the other 100 watts become heat.",
+        "Inside a tube or transistor there is a little unavoidable capacitance between the output and the input. At RF, some output signal leaks back to the input through it, and if that feedback is strong enough the amplifier becomes an oscillator and produces signals on its own. Neutralizing an amplifier means adding a deliberate, opposite feedback path that cancels the leak, eliminating these self-oscillations."
+      ],
+      "formula": "Efficiency = RF output power ÷ DC input power",
+      "status": "draft"
+    },
+    {
+      "id": "g7b-oscillators",
+      "group": "G7B",
+      "title": "How an oscillator makes a sine wave",
+      "body": [
+        "An oscillator is an amplifier that feeds part of its own output back to its input, in step, so the signal keeps sustaining itself. A filter in that feedback loop allows only one frequency to build up. So the basic ingredients of a sine wave oscillator are a filter and an amplifier in a feedback loop.",
+        "In an LC oscillator the filter is a tank circuit: an inductor (L) and a capacitor (C). Energy sloshes back and forth between the coil's magnetic field and the capacitor's electric field at the resonant frequency. The values of that inductance and capacitance set the frequency; more L or more C gives a lower frequency.",
+        "Counters, dividers, and delay circuits are not what set an LC oscillator's frequency."
+      ],
+      "formula": "f = 1 ÷ (2π√(L × C))",
+      "status": "draft"
+    },
+    {
+      "id": "g7c-ssb-transmitter",
+      "group": "G7C",
+      "title": "Building an SSB signal: balanced modulator plus filter",
+      "body": [
+        "A balanced modulator combines the audio with a carrier oscillator's RF signal, but it is built so the carrier cancels itself out. What comes out is double-sideband modulated RF: an upper sideband and a lower sideband with the carrier suppressed.",
+        "SSB needs only one sideband, so the next stage is a filter (often a crystal filter) with a passband just wide enough for one sideband. It passes the wanted sideband and blocks the other. Amplifiers only make the signal bigger; they cannot pick one sideband.",
+        "At the transmitter's output, an impedance matching transformer presents the desired impedance to both the transmitter and the feed line (commonly 50 ohms), so power transfers efficiently. Its purpose is not to reduce power or ripple."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g7c-receiver",
+      "group": "G7C",
+      "title": "Receiver pieces: product detector and sensitivity",
+      "body": [
+        "An SSB signal has no carrier, so a simple AM detector cannot recover the audio. A product detector mixes the incoming signal with a locally generated signal from a beat frequency oscillator, putting back the missing carrier and producing audio. It is used in an SSB (and CW) receiver to extract the modulated signal.",
+        "Sensitivity is how weak a signal a receiver can usefully hear. Several things affect it:",
+        "• Noise figure of the first amplifier: how much noise that stage adds on its own. Lower is better, because noise added at the front end gets amplified by everything after it.",
+        "• Gain of the input amplifier: enough gain to lift weak signals above the noise of later stages.",
+        "• Bandwidth of the demodulator stage: a wider bandwidth lets in more noise, so a bandwidth no wider than the signal improves sensitivity.",
+        "All of these matter."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g7c-dds",
+      "group": "G7C",
+      "title": "Direct digital synthesizer (DDS)",
+      "body": [
+        "A direct digital synthesizer builds a waveform from numbers. A crystal-controlled clock steps through a table of sine-wave values, and a digital-to-analog converter turns the numbers into a signal. Changing how big a step is taken through the table changes the output frequency.",
+        "The result is a signal whose frequency can be varied over a wide range in fine steps, yet which has the stability of the crystal oscillator clock. That is why modern transceivers use DDS for their VFOs. The output is low-power and not a perfectly pure sine wave (it contains small spurious signals from the digital steps)."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g7c-filter-terms",
+      "group": "G7C",
+      "title": "Filter vocabulary",
+      "body": [
+        "A filter's passband is the range of frequencies it is meant to pass. Key terms:",
+        "• Cutoff frequency: where the output power falls to half the input power, which is 3 dB down. For a low-pass filter, above the cutoff frequency the output is less than half the input.",
+        "• Bandwidth of a band-pass filter: measured between the upper and lower half-power (3 dB down) frequencies.",
+        "• Insertion loss: how much the filter weakens signals inside its passband, the signals it is supposed to pass. Smaller is better.",
+        "• Ultimate rejection: the most a filter can weaken signals outside its passband, far from the edges. Bigger is better.",
+        "Do not mix these up with return loss (a measure of impedance match), Q (sharpness of a tuned circuit), or rolloff (how steeply the response drops past the cutoff)."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g7c-dsp",
+      "group": "G7C",
+      "title": "DSP filters",
+      "body": [
+        "Digital signal processing (DSP) converts the signal into numbers and filters it with math. Because the filter is just software, changing it is as easy as loading different numbers.",
+        "The big advantage over an analog filter (built from coils, capacitors, or crystals) is flexibility: a DSP can create a wide range of bandwidths and filter shapes, including very steep sides and automatic notch filters, all in one radio. An analog filter does one job and would need separate hardware for each bandwidth."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "g7c-sdr-iq",
+      "group": "G7C",
+      "title": "Software-defined radio and I-Q signals",
+      "body": [
+        "In a software-defined radio (SDR), the signal is converted to digital form early and most of the work that used to be done by hardware is done by software: filtering, detection (demodulation), and modulation.",
+        "SDRs usually represent the signal as two parts called I (in-phase) and Q (quadrature). They are copies of the signal taken 90 degrees apart in phase, a quarter of a cycle. Having both lets the software know both the amplitude and the phase of the signal at every instant.",
+        "Because amplitude and phase together describe any signal, the right processing of I and Q can create or decode every type of modulation: AM, FM, SSB, CW, and digital modes. I-Q does not remove the need for good analog-to-digital converters."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "G7A01": { "why": "A bleeder resistor sits across the filter capacitors and drains their stored charge after the power is turned off, making the supply safer to work on. It is not a fuse and does not affect ground loops.", "concept": "g7a-filter-bleeder", "status": "draft" },
+    "G7A02": { "why": "Capacitors store charge to fill in the gaps between pulses, and inductors resist changes in current, so together they smooth rectified DC. Diodes do the rectifying, not the filtering.", "concept": "g7a-filter-bleeder", "status": "draft" },
+    "G7A03": { "why": "The two-diode full-wave rectifier uses a center-tapped transformer, with each diode handling one half of the cycle. A full-wave bridge uses four diodes and needs no center tap.", "concept": "g7a-rectifiers", "status": "draft" },
+    "G7A04": { "why": "A half-wave rectifier needs just one diode. Its ripple frequency is half that of a full-wave rectifier, not twice, and it cannot supply as much current.", "concept": "g7a-rectifiers", "status": "draft" },
+    "G7A05": { "why": "A half-wave rectifier passes only one half of each cycle, which is 180 of the 360 degrees. The other half is blocked.", "concept": "g7a-rectifiers", "status": "draft" },
+    "G7A06": { "why": "A full-wave rectifier uses both halves of the cycle, flipping the negative half to positive, so the whole 360 degrees becomes DC.", "concept": "g7a-rectifiers", "status": "draft" },
+    "G7A07": { "why": "Without a filter, a full-wave rectifier produces DC pulses, one for each half-cycle, so they come at twice the AC input frequency. A steady DC voltage only appears after filtering.", "concept": "g7a-rectifiers", "status": "draft" },
+    "G7A08": { "why": "A switchmode supply works at a high frequency, where transformers and filter capacitors can be much smaller and lighter for the same power. It actually uses more parts than a linear supply and is not inherently more stable.", "concept": "g7a-switchmode", "status": "draft" },
+    "G7A09": { "why": "Symbol 1 is the FET: a circle with a straight channel bar inside, and a gate lead with an arrowhead touching that bar. Symbol 2 is a bipolar transistor with slanted leads, and symbols 4 and 5 are diodes.", "concept": "g7a-symbols-transistors", "status": "draft" },
+    "G7A10": { "why": "Symbol 5 is the Zener diode: a diode triangle whose bar has bent tails on the ends, like a letter Z. Symbol 4 is a varactor diode, which has an extra capacitor plate instead.", "concept": "g7a-symbols-diodes", "status": "draft" },
+    "G7A11": { "why": "Symbol 2 is the NPN transistor: a base bar with two slanted leads, and the arrow on the emitter points outward, away from the base. Symbol 1 is a FET, which has a straight channel bar and the arrow on the gate.", "concept": "g7a-symbols-transistors", "status": "draft" },
+    "G7A12": { "why": "Symbol 6 shows two coils facing each other with straight parallel lines between them; those lines mark a solid (iron) core. Symbol 7 is a single coil, not a transformer.", "concept": "g7a-symbols-coils", "status": "draft" },
+    "G7A13": { "why": "Symbol 7 is a single coil with an extra wire attached partway along it, which is the tap. Symbol 6 is a transformer with two coils, and symbol 11 is a potentiometer.", "concept": "g7a-symbols-coils", "status": "draft" },
+
+    "G7B01": { "why": "Neutralization cancels the unwanted internal feedback from an amplifier's output back to its input, so the amplifier does not break into self-oscillation.", "concept": "g7b-efficiency-neutralization", "status": "draft" },
+    "G7B02": { "why": "A Class C amplifier conducts for less than half of each cycle, so it wastes the least power as heat and is the most efficient. Class A, which conducts all the time, is the least efficient.", "concept": "g7b-amp-classes", "status": "draft" },
+    "G7B03": { "why": "An AND gate's output is high only when both inputs are high; if either input is low, the output is low. 'High when either input is high' would describe an OR gate.", "concept": "g7b-digital-logic", "status": "draft" },
+    "G7B04": { "why": "A Class A amplifier's device conducts throughout the entire cycle, 100 percent of the time. Class AB conducts between 50 and 100 percent, Class B about 50 percent, and Class C less than 50 percent.", "concept": "g7b-amp-classes", "status": "draft" },
+    "G7B05": { "why": "Each bit has two possible values, so 3 bits give 2 × 2 × 2 = 8 states. Multiplying 3 by 2 to get 6 is a common slip.", "work": ["states = 2^n", "states = 2^3", "states = 2 × 2 × 2 = 8 (000 through 111)"], "concept": "g7b-digital-logic", "status": "draft" },
+    "G7B06": { "why": "A shift register is a chain of storage cells run by a clock; on each clock pulse, the data moves one step along the chain. It is not a mixer of any kind.", "concept": "g7b-digital-logic", "status": "draft" },
+    "G7B07": { "why": "A sine wave oscillator is an amplifier whose output is fed back to its input through a filter, so it sustains itself at the one frequency the filter passes.", "concept": "g7b-oscillators", "status": "draft" },
+    "G7B08": { "why": "Efficiency compares what you get out with what you put in: the RF output power divided by the DC input power from the supply. Dividing DC input by DC output is upside down and uses the wrong kind of power.", "concept": "g7b-efficiency-neutralization", "status": "draft" },
+    "G7B09": { "why": "In an LC oscillator, the inductor and capacitor in the tank circuit resonate at one frequency, and that resonance sets the oscillator's frequency. Counter, divider, and delay stages do not.", "concept": "g7b-oscillators", "status": "draft" },
+    "G7B10": { "why": "A linear amplifier produces an output that preserves the shape of the input waveform, just larger. Being used with a transceiver does not make an amplifier linear, and Class C amplifiers are not linear.", "concept": "g7b-linear-classc", "status": "draft" },
+    "G7B11": { "why": "FM has a constant amplitude, so the distortion of a Class C stage does no harm and its high efficiency is a bonus. SSB and AM carry information in amplitude changes and need a linear amplifier.", "concept": "g7b-linear-classc", "status": "draft" },
+
+    "G7C01": { "why": "A balanced modulator puts out both sidebands, so a filter with a passband about one sideband wide is used to pass the wanted sideband and block the other. Amplifiers cannot separate the sidebands.", "concept": "g7c-ssb-transmitter", "status": "draft" },
+    "G7C02": { "why": "A balanced modulator cancels the carrier and produces double-sideband modulated RF, both sidebands with the carrier suppressed. It does not produce FM or audio.", "concept": "g7c-ssb-transmitter", "status": "draft" },
+    "G7C03": { "why": "An impedance matching transformer lets the transmitter see the load impedance it was designed for and presents the right impedance to the feed line, so power transfers efficiently. It is not meant to reduce power or ripple.", "concept": "g7c-ssb-transmitter", "status": "draft" },
+    "G7C04": { "why": "A product detector mixes the incoming SSB signal with a local oscillator signal to replace the missing carrier and recover the audio, so it is used in a single sideband receiver.", "concept": "g7c-receiver", "status": "draft" },
+    "G7C05": { "why": "A DDS generates its signal digitally from a crystal-controlled clock, so its frequency can be varied widely while keeping the crystal's stability. Its tuning range is wide, its output is low-power, and it is not a perfectly pure sine wave.", "concept": "g7c-dds", "status": "draft" },
+    "G7C06": { "why": "Because a DSP filter is made of math, the same hardware can create a wide range of bandwidths and filter shapes. An analog filter is fixed by its physical parts.", "concept": "g7c-dsp", "status": "draft" },
+    "G7C07": { "why": "Insertion loss is how much a filter weakens the signals inside its passband, the ones it is meant to pass. Ultimate rejection describes signals outside the passband, and return loss is about impedance match.", "concept": "g7c-filter-terms", "status": "draft" },
+    "G7C08": { "why": "Input amplifier gain, the input amplifier's noise figure, and the demodulator bandwidth all affect how weak a signal the receiver can hear, so all of the choices are correct.", "concept": "g7c-receiver", "status": "draft" },
+    "G7C09": { "why": "The I (in-phase) and Q (quadrature) signals are 90 degrees apart, a quarter of a cycle. That offset is what 'quadrature' means.", "concept": "g7c-sdr-iq", "status": "draft" },
+    "G7C10": { "why": "I and Q together capture both the amplitude and the phase of a signal, so with the right processing an SDR can create any type of modulation. It still needs good analog-to-digital converters.", "concept": "g7c-sdr-iq", "status": "draft" },
+    "G7C11": { "why": "In an SDR, software handles filtering, detection, and modulation, jobs that used to need separate hardware circuits. So all of the choices are correct.", "concept": "g7c-sdr-iq", "status": "draft" },
+    "G7C12": { "why": "The cutoff frequency is the half-power (3 dB down) point. For a low-pass filter, the output above it is less than half the input power. Rolloff describes how steeply the response falls past the cutoff, not the point itself.", "concept": "g7c-filter-terms", "status": "draft" },
+    "G7C13": { "why": "Ultimate rejection is the most a filter can weaken signals outside its passband. Insertion loss is the loss inside the passband, and rolloff is the steepness of the edges.", "concept": "g7c-filter-terms", "status": "draft" },
+    "G7C14": { "why": "A band-pass filter's bandwidth is measured between its upper and lower half-power (3 dB down) frequencies, one on each side of the passband.", "concept": "g7c-filter-terms", "status": "draft" }
+  }
+}
