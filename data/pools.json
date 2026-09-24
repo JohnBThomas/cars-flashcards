@@ -1,0 +1,22 @@
+{
+ "pools": [
+  {
+   "id": "technician",
+   "name": "Technician",
+   "blurb": "Your first license: VHF/UHF, repeaters, and some HF. 35 questions.",
+   "file": "data/technician-2026-2030.json",
+   "notes": ["data/notes/technician-T1.json", "data/notes/technician-T5.json"],
+   "images": { "T-1": "images/t-1.jpg", "T-2": "images/t-2.jpg", "T-3": "images/t-3.jpg" }
+  },
+  {
+   "id": "general",
+   "name": "General",
+   "blurb": "Opens up most of the HF bands. 35 questions."
+  },
+  {
+   "id": "extra",
+   "name": "Amateur Extra",
+   "blurb": "Full privileges on every amateur band. 50 questions."
+  }
+ ]
+}

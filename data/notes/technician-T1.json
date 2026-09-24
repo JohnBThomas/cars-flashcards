@@ -1,0 +1,469 @@
+{
+  "subelement": "T1",
+  "concepts": [
+    {
+      "id": "t1a-basis-purpose",
+      "group": "T1A",
+      "title": "Why the Amateur Radio Service exists, and who runs it",
+      "body": [
+        "In the United States, the Federal Communications Commission (FCC) writes and enforces the rules for amateur radio. Those rules live in Part 97 of Title 47 of the Code of Federal Regulations, usually just called Part 97. Clubs like the ARRL help and advise hams, but they are not the government and cannot license or discipline anyone.",
+        "Part 97 opens by explaining why hams get valuable radio spectrum for free. Section 97.1 lists five purposes:",
+        "• Providing a voluntary, noncommercial communication service, especially in emergencies",
+        "• Contributing to the advancement of the radio art",
+        "• Advancing skills in both the technical and the communication sides of radio",
+        "• Building a pool of trained operators, technicians, and electronics experts",
+        "• Promoting international goodwill",
+        "Notice what is not on the list: it is not a personal chat service for as many people as possible (that is more like CB or FRS), and it is not about contesting. Learning and public service are the heart of it."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1a-license-grant",
+      "group": "T1A",
+      "title": "Your license is an entry in a database",
+      "body": [
+        "After you pass your exam, the volunteer examiners send your paperwork to the FCC. When the FCC acts on it, your license and call sign are entered in the FCC's Universal Licensing System (ULS), an online database anyone can search.",
+        "That database entry is the license. A paper certificate from the exam session or an email from the examiners only shows you passed; it is not the grant. The FCC no longer mails paper licenses. Instead it emails you official notice with a link to download a copy of your license grant, which is why the FCC requires an email address on file."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1a-phonetics",
+      "group": "T1A",
+      "title": "Phonetic alphabet: encouraged, not required",
+      "body": [
+        "Many letters sound alike over the radio (B, D, E, P, T, V). The phonetic alphabet (Alfa, Bravo, Charlie...) swaps each letter for a distinctive word so your call sign comes through clearly.",
+        "Part 97 (section 97.119(b)(2)) says using a phonetic alphabet as an aid to correct identification on voice (phone) is encouraged. It is good practice, especially on a weak or noisy signal, but no rule requires it for emergencies, foreign contacts, or anything else."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1a-interference",
+      "group": "T1A",
+      "title": "Interference: never on purpose",
+      "body": [
+        "Amateurs share frequencies, and sometimes signals accidentally overlap. That is normal and is handled by courtesy: listen before you transmit and move if needed.",
+        "Deliberately disrupting someone else's signal is a different matter. Section 97.101(d) flatly prohibits willful or malicious interference to any radio communication or signal. It is one of the most serious violations a ham can commit.",
+        "By contrast, things like international contacts on VHF and higher, or passing messages for third parties using digital modes, are allowed activities, not prohibited ones."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1a-frequency-coordinator",
+      "group": "T1A",
+      "title": "Frequency coordinators keep repeaters from colliding",
+      "body": [
+        "Repeaters and their linking (auxiliary) stations stay on the air around the clock on fixed channels. If two groups put repeaters on the same channel near each other, both would suffer. A frequency coordinator helps prevent that.",
+        "Under Part 97 (97.3(a)(22)), a frequency coordinator is an entity recognized by the amateurs in a local or regional area whose stations are eligible to be repeater or auxiliary stations. It recommends transmit/receive channel pairs and related technical settings. It is volunteer-run and chosen by those local amateurs, not appointed by the FCC, a field office, or the ITU.",
+        "Coordination is a recommendation, not a license, but coordinated repeaters get favored treatment if an interference dispute arises."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1a-special-stations",
+      "group": "T1A",
+      "title": "Special kinds of stations: space stations, beacons, RACES",
+      "body": [
+        "Space station: Part 97 defines this as an amateur station located more than 50 km above the Earth's surface. It does not matter whether it is crewed or not; the ISS ham station and small amateur satellites both qualify. A ground station that merely talks through a satellite is not a space station.",
+        "Beacon: a station that transmits for observing propagation (how far and where signals are travelling). Beacons running under automatic control may only operate in specific segments. On HF the only such segment is 28.200 to 28.300 MHz on 10 meters (others exist on VHF and up, such as 50.06 to 50.08 MHz).",
+        "RACES (Radio Amateur Civil Emergency Service): hams who provide communications for government civil defense and emergency management agencies. To be the control operator of a RACES station you need your FCC amateur license plus certification that you are currently enrolled in a civil defense organization (97.407(a)). ARES membership or an ARRL recommendation does not substitute."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1b-band-names",
+      "group": "T1B",
+      "title": "Band names and where they sit",
+      "body": [
+        "Bands are named by their approximate wavelength in meters. Higher frequency means shorter wavelength, so the 'meter' numbers get smaller as frequency goes up. The bands you will use most as a Technician:",
+        "• 10 meters: 28.000 to 29.700 MHz (HF)",
+        "• 6 meters: 50 to 54 MHz",
+        "• 2 meters: 144 to 148 MHz (146.52 MHz is the national FM calling frequency)",
+        "• 1.25 meters: 222 to 225 MHz for Technicians",
+        "• 70 centimeters: 420 to 450 MHz",
+        "A quick check: wavelength in meters is about 300 divided by the frequency in MHz. 300 / 146 is about 2, so 146.52 MHz is on 2 meters. 300 / 52.5 is about 5.7, which is in the 6 meter band. Frequencies like 49 MHz sit just outside a ham band and belong to other services."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1b-tech-hf",
+      "group": "T1B",
+      "title": "Technician privileges on HF",
+      "body": [
+        "HF (below 30 MHz) is where long-distance, worldwide contacts happen. Technicians get a limited slice:",
+        "• 80 meters: 3.525 to 3.600 MHz, CW only",
+        "• 40 meters: 7.025 to 7.125 MHz, CW only",
+        "• 15 meters: 21.025 to 21.200 MHz, CW only",
+        "• 10 meters: 28.000 to 28.300 MHz, CW, RTTY and data (digital modes like FT8)",
+        "• 10 meters: 28.300 to 28.500 MHz, CW and phone (voice, typically SSB)",
+        "So the only HF band where a Technician may use voice is 10 meters, and only from 28.300 to 28.500 MHz. That is also the only HF band where Technicians may use digital data modes."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1b-vhf-uhf-privileges",
+      "group": "T1B",
+      "title": "Above 50 MHz: full privileges, with a few mode rules",
+      "body": [
+        "On every amateur band above 30 MHz a Technician has the same privileges as a General or Extra. That includes contacting the International Space Station on its VHF and UHF frequencies; any licensee with Technician or higher privileges may do so, with no special NASA approval.",
+        "Part 97 does set aside a few small segments for particular modes. The bottom 100 kHz of 6 meters (50.0 to 50.1 MHz) and of 2 meters (144.0 to 144.1 MHz) are CW only, reserved for weak-signal Morse work.",
+        "Above those segments, voice is widely allowed. Every amateur band above 50 MHz has at least some segment where phone emissions, including SSB, are permitted, and no special power limit or license class is needed to use them.",
+        "Digital modes such as FT8 are allowed for Technicians on 10 meters (28.000 to 28.300 MHz), and on 6 meters, 2 meters, and higher bands."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1b-band-edges",
+      "group": "T1B",
+      "title": "Stay away from the band edges",
+      "body": [
+        "Your privileges end exactly at the band or sub-band edge, and every part of your signal must stay inside. Transmitting right on the edge is risky for several reasons:",
+        "• The frequency display on a radio may be slightly off (calibration error).",
+        "• A transmitter's frequency can drift as it warms up.",
+        "• A voice or data signal is not a single point; its sidebands spread out a few kHz from the displayed frequency, so part of it would spill over the edge.",
+        "Leave a margin of a few kHz inside the edge so all three effects are covered."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1b-secondary",
+      "group": "T1B",
+      "title": "Primary and secondary allocations",
+      "body": [
+        "Some amateur bands, or parts of them, are shared with other radio services. In those segments, one service is primary and the others are secondary.",
+        "Where amateur radio is secondary, you may hear non-amateur stations (for example, government radar on parts of 70 centimeters). Secondary users must not cause harmful interference to primary users and must accept interference from them. The rule is not about foreign hams, international contacts, or digital modes; it is about avoiding the primary service's stations."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1b-power",
+      "group": "T1B",
+      "title": "Power limits for Technicians",
+      "body": [
+        "Power is measured as peak envelope power (PEP): the highest power your transmitter puts out at the peak of its signal. Part 97 (97.313) sets the maximums:",
+        "• Technician HF segments (80, 40, 15, and 10 meters): 200 watts PEP",
+        "• Frequencies above 30 MHz: 1500 watts PEP, the same maximum any amateur may use, except for some specific restrictions in certain bands and locations",
+        "Remember too that you should always use the minimum power needed to carry out the communication. The limits are ceilings, not targets."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1c-license-classes",
+      "group": "T1C",
+      "title": "License classes the FCC issues today",
+      "body": [
+        "The FCC currently issues new licenses in three classes: Technician, General, and Amateur Extra. Each step up adds more HF privileges.",
+        "Older classes such as Novice, Technician Plus, and Advanced are no longer issued. People who already hold Novice or Advanced licenses may keep renewing them, which is why you may still hear of them."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1c-call-signs",
+      "group": "T1C",
+      "title": "Call sign formats and vanity call signs",
+      "body": [
+        "A US call sign has a prefix (one or two letters, starting with K, N, W, or A), a single digit for the region, and a suffix of letters. The FCC hands out sequential call signs in groups by license class:",
+        "• Group A (Extra): shortest calls, such as 1x2 or 2x1 formats",
+        "• Group B (Advanced): 2x2 formats",
+        "• Group C (General): 1x3 formats like W1XXX",
+        "• Group D (Technician): 2x3 formats like KF1XXX",
+        "So a Technician's sequential call sign looks like two letters, a digit, then three letters. Shorter calls such as KA1X or W1XX are reserved for higher classes.",
+        "Any licensed amateur, of any class and with any amount of experience, may apply for a vanity call sign of their choosing, as long as it is available and within the formats their class may hold."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1c-first-license",
+      "group": "T1C",
+      "title": "When a new ham may first transmit",
+      "body": [
+        "Passing the exam does not by itself let a brand new ham transmit. The paper Certificate of Successful Completion of Examination (CSCE) is only proof you passed.",
+        "You may start transmitting as soon as your license grant appears in the FCC's license database (ULS). You do not wait for anything in the mail (the FCC no longer mails licenses), and a listing on a club or ARRL website is not what counts."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1c-term-renewal",
+      "group": "T1C",
+      "title": "License term, renewal, and the grace period",
+      "body": [
+        "• Normal term: 10 years",
+        "• Renewal window: you may apply up to 90 days before the expiration date",
+        "• Grace period: 2 years after expiration, during which you can still renew without retesting",
+        "The grace period protects your license and call sign, but it does not let you operate. Once the license expires you may not transmit until the renewal has actually been granted. After the 2-year grace period ends, you would have to pass the exam again."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1c-contact-info",
+      "group": "T1C",
+      "title": "Keep your address and email current",
+      "body": [
+        "Your license record must show your correct name, mailing address, and email address (97.23). The FCC now communicates mainly by email, so a working email address is required.",
+        "This is taken seriously. If FCC correspondence cannot reach you because your contact information is wrong, the FCC may revoke your station license or suspend your operator license. Updating your information in the FCC system is free and quick."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1c-where-international",
+      "group": "T1C",
+      "title": "Where FCC rules apply, and talking to other countries",
+      "body": [
+        "FCC amateur rules cover US territory and also US-registered ships and aircraft. You may operate from a vessel or craft that is documented or registered in the United States, even in international waters, but only with the permission of the master of the ship or pilot in command of the aircraft. No special FCC permit is needed.",
+        "When you talk to hams in other countries, Part 97 (97.117) limits the content to communications incidental to the purposes of amateur radio plus remarks of a personal character. In other words: radio talk, weather, your family, your hobby. Business communications are not allowed, internationally or at home."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1d-no-broadcasting",
+      "group": "T1D",
+      "title": "Amateur radio is not broadcasting",
+      "body": [
+        "Part 97 defines broadcasting as transmissions intended for reception by the general public. Amateur stations may not broadcast. Ham radio is for communicating between amateur stations, not for serving an audience of listeners like AM/FM radio.",
+        "Some one-way transmissions are allowed because they serve amateurs, not the public. Examples: Morse code practice, information bulletins of interest to amateurs (such as announcements of upcoming ham events), telecommand of a space station, telemetry, and emergency communications.",
+        "Hams also may not help with program production or news gathering for broadcasters. The one exception: when no other means is reasonably available, amateurs may pass information to broadcasters if it is directly related to the immediate safety of human life or the protection of property."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1d-content-limits",
+      "group": "T1D",
+      "title": "What you may not put on the air",
+      "body": [
+        "Section 97.113 lists content that is off limits. Three items come up often:",
+        "• Obscene or indecent language: any such language is prohibited. There is no official 'list' of banned words from the FCC or ITU; the ban is general.",
+        "• Music: not allowed. The only exception is music that is incidental to an authorized retransmission of communications from a manned spacecraft (for example, relaying NASA audio that happens to include music).",
+        "• Secret codes: messages encoded to obscure their meaning are prohibited. The only exceptions are control commands sent to space stations and to model craft (radio-controlled planes, boats, cars), where hiding the commands protects the equipment. Standard published digital modes are fine because anyone can decode them."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1d-no-business",
+      "group": "T1D",
+      "title": "No business, with narrow exceptions",
+      "body": [
+        "Amateur radio is noncommercial. You may not transmit on behalf of your employer or be paid for operating, with a few specific exceptions in 97.113(a)(3):",
+        "• Selling equipment: you may let other hams know about amateur radio equipment you have for sale or trade, as long as you are not doing it on a regular basis (that would be a business).",
+        "• Teachers: a teacher may be paid as part of their teaching job when the station is used as part of classroom instruction at an educational institution.",
+        "Making a profit or not is not the test for equipment sales; the test is that it is amateur gear and not a regular activity. Sales pitches for an employer's products and gathering information for a broadcast station are not allowed."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1d-restricted-countries",
+      "group": "T1D",
+      "title": "Countries you may not contact",
+      "body": [
+        "Radio is international, and each country's government decides whether its people may talk with foreign hams. A country that objects notifies the International Telecommunication Union (ITU), the UN agency that coordinates radio worldwide.",
+        "FCC-licensed stations may not exchange communications with any country whose administration has told the ITU it objects. The ARRL and IARU are amateur organizations; they cannot ban countries."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1d-id-and-tests",
+      "group": "T1D",
+      "title": "Identifying during tests, and the model-craft exception",
+      "body": [
+        "Every transmission must be identified with your call sign, including test transmissions. A short tune-up, an unmodulated carrier, or a very low power test still needs identification. No special hours or FCC notice are required for tests; you just identify.",
+        "The one case where no identification is needed is transmissions sent to control model craft such as radio-controlled airplanes, boats, or cars (97.215)."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1d-auxiliary-station",
+      "group": "T1D",
+      "title": "Auxiliary stations",
+      "body": [
+        "An auxiliary station sends point-to-point communications within a system of cooperating amateur stations. It is a behind-the-scenes link, not a station you talk on directly.",
+        "A classic example is a repeater system with a receiver on a remote hilltop that sends what it hears, one way, to the main repeater transmitter. That link is an auxiliary station. A backup radio, a second contest station, or a military (MARS) network are not what Part 97 means by an auxiliary station."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1e-control-operator",
+      "group": "T1E",
+      "title": "Every transmitting station needs a control operator",
+      "body": [
+        "A control operator is an amateur operator designated by the station licensee to be responsible for the station's transmissions and for following FCC rules at that station (97.3(a)(13)). It is not simply whoever is speaking into the microphone; it is the licensed person who is in charge.",
+        "When a station is transmitting, it must have a control operator (97.7). There are no exceptions. Even a repeater running under automatic control has a control operator responsible for it; they just do not have to sit at the controls.",
+        "The station licensee (the person whose license the station operates under) decides who the control operator is. The FCC, a frequency coordinator, or another ham cannot make that designation."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1e-privileges",
+      "group": "T1E",
+      "title": "Whose privileges apply?",
+      "body": [
+        "The frequencies and modes a station may use are set by the license class of the control operator, not by what the station owner holds, not by anyone else in the room, and not by anything printed on the license.",
+        "So a Technician may never be control operator on frequencies reserved for Amateur Extra operators, even when an Extra licensee invites them, even at a club station with an Extra-class trustee, and even during a contest.",
+        "The same logic covers satellites: anyone whose license lets them transmit on the satellite's uplink frequency may be the control operator of a station working that satellite. No special certification or club membership is required, so Technicians work most amateur satellites and the ISS."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1e-responsibility",
+      "group": "T1E",
+      "title": "Shared responsibility",
+      "body": [
+        "If you let another ham be the control operator of your station, you do not hand off all responsibility. Under 97.103(a), both the control operator and the station licensee are responsible for proper operation. Other hams who are simply present are not."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1e-control-point",
+      "group": "T1E",
+      "title": "The control point",
+      "body": [
+        "The control point is the place where the control operator function is performed, meaning where the person in charge actually controls the transmitter. It may be right beside the radio or miles away.",
+        "It is not necessarily where the antenna or the transmitter sits, and it has nothing to do with the licensee's mailing address."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1e-control-types",
+      "group": "T1E",
+      "title": "Local, remote, and automatic control",
+      "body": [
+        "• Local control: the control operator is at the station, operating it directly.",
+        "• Remote control: the control operator is at a control point away from the station and operates it through a link, such as over the internet or a radio control link. Any amateur station may be remotely controlled (97.109(c)).",
+        "• Automatic control: the station operates by itself under devices and procedures that keep it within the rules, without the control operator at the control point. Repeaters are the classic example; only certain station types, like repeaters and beacons, may use it.",
+        "Be careful with look-alikes. Using a computer to send CW or to send your ID automatically is just a tool while you are in control; it is not automatic control. A software defined radio is a type of radio, not a control type. Flying a model airplane by radio is telecommand of a model craft, not remote control of an amateur station."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1f-station-id",
+      "group": "T1F",
+      "title": "Station identification rules",
+      "body": [
+        "You must transmit your FCC-assigned call sign at least every 10 minutes during a communication and at the end of it (97.119(a)). You do not need to identify at the start of a contact or on every transmission, though many hams do.",
+        "On phone (voice), the call sign must be given in English. A station operating phone may identify either by voice or by sending the call sign in CW (Morse); both satisfy the rule.",
+        "Tactical call signs such as 'Race Headquarters' or 'Net Control' are handy during events, but they do not replace your real call sign. You still give your FCC call at least every 10 minutes and at the end of the communication."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1f-indicators",
+      "group": "T1F",
+      "title": "Self-assigned indicators",
+      "body": [
+        "Sometimes you add an indicator to your call sign, such as a region number when operating away from home or 'AG' after a recent upgrade. On voice, the indicator is separated from your call with a word meaning the slant mark. 'Stroke', 'slant', and 'slash' are all acceptable, so KL7CC stroke W3, slant W3, and slash W3 are all fine."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1f-third-party",
+      "group": "T1F",
+      "title": "Third-party communications",
+      "body": [
+        "Third-party communications are messages a control operator sends to another amateur station on behalf of someone else, the third party (97.3(a)(47)). That person might be a non-licensed friend speaking on your radio, or someone whose message you relay.",
+        "Within the US this is fine as long as a licensed control operator stays in charge. Internationally it is restricted: a non-licensed person may talk to a foreign station only if that country has a third-party agreement with the United States (or the third party is eligible to be a control operator). The third party does not have to be a US citizen, and the station identification is simply done as normal."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1f-repeaters",
+      "group": "T1F",
+      "title": "Repeaters and who is accountable",
+      "body": [
+        "A repeater station simultaneously retransmits the signal of another amateur station on a different channel or channels (97.3(a)(40)). Usually it sits high up, hears weak handheld signals, and retransmits them over a wide area.",
+        "Because a repeater automatically relays whatever it hears, its control operator cannot catch every problem in real time. So if a repeater inadvertently retransmits communications that break the rules, the control operator of the station that originated them is accountable, not the repeater's control operator or owner (97.205(g))."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1f-club-stations",
+      "group": "T1F",
+      "title": "Club station licenses",
+      "body": [
+        "A club can get its own station license and call sign. To qualify, the club must have at least four members (97.5(b)(2)). The license is issued to a trustee designated by the club; there is no requirement that the trustee hold an Extra license or that the club be registered with the ARRL."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t1f-inspection",
+      "group": "T1F",
+      "title": "FCC inspection",
+      "body": [
+        "Holding an amateur license comes with an obligation: the station licensee must make the station and its records available for inspection at any time upon request by an FCC representative (97.103(c)). No advance written notice, waiting period, or warrant is required."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "T1A01": { "why": "Section 97.1 lists advancing skills in both the technical and communication sides of radio as one of the service's five purposes. Providing personal communications for as many people as possible describes services like CB, and contesting is not listed, so 'all these choices' does not fit.", "concept": "t1a-basis-purpose", "status": "draft" },
+    "T1A02": { "why": "The FCC is the US government agency that writes Part 97 and enforces it. The ARRL is a private membership organization that advises hams, and Homeland Security does not regulate amateur licensing.", "concept": "t1a-basis-purpose", "status": "draft" },
+    "T1A03": { "why": "Part 97 says phonetics are encouraged as an aid to correct identification on phone. It is a recommendation, not a requirement for emergencies or foreign contacts.", "concept": "t1a-phonetics", "status": "draft" },
+    "T1A04": { "why": "The FCC no longer mails paper licenses; it emails the new licensee official notice with a link to download the license grant. The volunteer examiners report your results but do not issue the license.", "concept": "t1a-license-grant", "status": "draft" },
+    "T1A05": { "why": "A license exists once the grant is entered in the FCC's ULS database. An exam certificate only shows you passed, and the NCVEC does not grant licenses.", "concept": "t1a-license-grant", "status": "draft" },
+    "T1A06": { "why": "Automatically controlled beacons are limited to specific segments, and the only HF segment is 28.200 to 28.300 MHz on 10 meters. They cannot go just anywhere in the Technician 10 meter segment or on every HF band.", "concept": "t1a-special-stations", "status": "draft" },
+    "T1A07": { "why": "Part 97 defines a space station purely by altitude: an amateur station more than 50 km above Earth's surface. Whether it is crewed does not matter, and a ground station relaying through a satellite is not itself a space station.", "concept": "t1a-special-stations", "status": "draft" },
+    "T1A08": { "why": "Repeater and auxiliary channel pairs are recommended by a volunteer frequency coordinator recognized by local amateurs. The FCC, its field offices, and the ITU do not assign individual repeater channels.", "concept": "t1a-frequency-coordinator", "status": "draft" },
+    "T1A09": { "why": "Under 97.3(a)(22), a frequency coordinator is recognized by the amateurs in a local or regional area whose stations are eligible to be repeater or auxiliary stations. The FCC does not appoint coordinators.", "concept": "t1a-frequency-coordinator", "status": "draft" },
+    "T1A10": { "why": "Section 97.407(a) requires a RACES control operator to hold an FCC amateur license and be certified as enrolled in a civil defense organization. ARES membership or an ARRL recommendation is not a substitute.", "concept": "t1a-special-stations", "status": "draft" },
+    "T1A11": { "why": "Section 97.101(d) forbids willful or malicious interference to any radio communication. International contacts on VHF and up and third-party traffic on digital modes are both permitted, so they are not prohibited.", "concept": "t1a-interference", "status": "draft" },
+
+    "T1B01": { "why": "On 10 meters, Technicians may use phone only from 28.300 to 28.500 MHz. The segment below 28.300 MHz is for CW and data, and 28.500 MHz and up is beyond Technician privileges.", "concept": "t1b-tech-hf", "status": "draft" },
+    "T1B02": { "why": "Technicians have full amateur privileges on the VHF and UHF bands the ISS uses, so any Technician or higher licensee may contact it. No General license or NASA approval is required.", "concept": "t1b-vhf-uhf-privileges", "status": "draft" },
+    "T1B03": { "why": "The 6 meter band runs from 50 to 54 MHz, so 52.525 MHz falls inside it. 49.00 MHz is just below the band, 28.50 MHz is on 10 meters, and 222.15 MHz is on 1.25 meters.", "concept": "t1b-band-names", "status": "draft" },
+    "T1B04": { "why": "The 2 meter band covers 144 to 148 MHz, and 146.52 MHz is its national FM simplex calling frequency. 300 divided by 146 is about 2, which matches the band's name.", "concept": "t1b-band-names", "status": "draft" },
+    "T1B05": { "why": "Technicians may use data modes like FT8 on 10 meters (28.000 to 28.300 MHz) and on 6 and 2 meters, where they hold full privileges. So all of the listed bands qualify.", "concept": "t1b-vhf-uhf-privileges", "status": "draft" },
+    "T1B06": { "why": "Technician privileges on 80, 40, and 15 meters are CW only. Voice is allowed only on 10 meters, from 28.300 to 28.500 MHz, so 10 meters is the only HF phone band.", "concept": "t1b-tech-hf", "status": "draft" },
+    "T1B07": { "why": "The bottom 100 kHz of 6 meters (50.0 to 50.1 MHz) and of 2 meters (144.0 to 144.1 MHz) are set aside for CW only. The other listed segments are not restricted to CW.", "concept": "t1b-vhf-uhf-privileges", "status": "draft" },
+    "T1B08": { "why": "Where amateurs are secondary, other services have priority, so you may hear non-amateur stations there and you must not interfere with them. The rule is not about foreign hams, international contacts, or digital modes.", "concept": "t1b-secondary", "status": "draft" },
+    "T1B09": { "why": "A display calibration error, transmitter drift, or sidebands spreading several kHz from the displayed frequency could each push part of your signal past the edge. All three are real risks, so every choice is correct.", "concept": "t1b-band-edges", "status": "draft" },
+    "T1B10": { "why": "Every amateur band above 50 MHz has at least one segment where phone, including SSB, is permitted, and Technicians hold full privileges there. It is not limited to repeaters, higher license classes, or a 25 watt power cap.", "concept": "t1b-vhf-uhf-privileges", "status": "draft" },
+    "T1B11": { "why": "Section 97.313 limits Technicians to 200 watts PEP in their HF segments (80, 40, 15, and 10 meters). 100 watts is simply a common radio's output, not the legal limit.", "concept": "t1b-power", "status": "draft" },
+    "T1B12": { "why": "Above 30 MHz, Technicians have the same 1500 watts PEP maximum as every other amateur, apart from a few specific band and location restrictions. The 200 watt limit applies only to Technician HF segments.", "concept": "t1b-power", "status": "draft" },
+
+    "T1C01": { "why": "Only Technician, General, and Amateur Extra licenses are issued new today. Novice, Technician Plus, and Advanced are no longer issued, though some existing Novice and Advanced holders keep renewing.", "concept": "t1c-license-classes", "status": "draft" },
+    "T1C02": { "why": "The vanity program is open to any licensed amateur, regardless of class or how long they have been licensed. The call sign they pick still has to fit the formats their class is eligible for.", "concept": "t1c-call-signs", "status": "draft" },
+    "T1C03": { "why": "Section 97.117 limits international communications to things incidental to the purposes of amateur radio plus remarks of a personal character. Business is never allowed, and hams are not broadcasters.", "concept": "t1c-where-international", "status": "draft" },
+    "T1C04": { "why": "The FCC relies on the email and mailing address in your license record. If its correspondence cannot reach you because that information is wrong, it may revoke the station license or suspend the operator license. A fine alone is not the stated consequence.", "concept": "t1c-contact-info", "status": "draft" },
+    "T1C05": { "why": "Group D sequential call signs, issued to Technicians, use a 2-by-3 format: two prefix letters, a digit, and three suffix letters, like KF1XXX. The shorter formats like KA1X and W1XX are reserved for higher license classes.", "concept": "t1c-call-signs", "status": "draft" },
+    "T1C06": { "why": "FCC rules follow US-documented vessels and craft into international waters. You may operate there with the permission of the master, and no special maritime authorization is needed.", "concept": "t1c-where-international", "status": "draft" },
+    "T1C07": { "why": "You may apply to renew up to 90 days before your license expires. Applying earlier than that, such as 6 months or a year ahead, is not allowed.", "concept": "t1c-term-renewal", "status": "draft" },
+    "T1C08": { "why": "Amateur licenses are granted for a normal term of 10 years and then must be renewed. They are not lifetime licenses.", "concept": "t1c-term-renewal", "status": "draft" },
+    "T1C09": { "why": "After a license expires, you have a 2-year grace period to renew it without retesting. After that, you must take the exam again.", "concept": "t1c-term-renewal", "status": "draft" },
+    "T1C10": { "why": "A new ham may transmit as soon as their license grant appears in the FCC's database (ULS). The CSCE only proves you passed, and the FCC does not mail licenses.", "concept": "t1c-first-license", "status": "draft" },
+    "T1C11": { "why": "The grace period only protects your right to renew. An expired license gives you no operating privileges, so you may not transmit until the renewal is granted.", "concept": "t1c-term-renewal", "status": "draft" },
+
+    "T1D01": { "why": "Governments that object to contact with foreign amateurs tell the ITU, the international body that coordinates radio. US hams may not communicate with those countries. The ARRL and IARU are amateur organizations and cannot impose such bans.", "concept": "t1d-restricted-countries", "status": "draft" },
+    "T1D02": { "why": "Broadcasting means transmitting to the general public, and amateur stations may not do it. Morse practice, announcements of ham events, telecommand, and telemetry are permitted one-way transmissions because they serve amateur purposes.", "concept": "t1d-no-broadcasting", "status": "draft" },
+    "T1D03": { "why": "Codes meant to hide a message's meaning are banned, except for control commands to space stations and model craft, where hiding the commands protects the equipment. Published digital modes are not secret codes, since anyone can decode them.", "concept": "t1d-content-limits", "status": "draft" },
+    "T1D04": { "why": "Music is prohibited, except when it is incidental to an authorized retransmission of communications from a manned spacecraft. Time limits, frequency, or lack of spurious emissions do not create an exception.", "concept": "t1d-content-limits", "status": "draft" },
+    "T1D05": { "why": "Hams may announce amateur radio equipment they have for sale or trade, as long as it is not done on a regular basis. Whether a profit is made is not the test.", "concept": "t1d-no-business", "status": "draft" },
+    "T1D06": { "why": "Section 97.113(a)(4) bans obscene or indecent language outright. Neither the FCC nor the ITU publishes a list of forbidden words; the ban covers any such language.", "concept": "t1d-content-limits", "status": "draft" },
+    "T1D07": { "why": "An auxiliary station carries point-to-point links inside a system of amateur stations. A one-way link from a remote repeater receiver to the main repeater transmitter is the textbook example. A backup radio or a second contest station is just another station.", "concept": "t1d-auxiliary-station", "status": "draft" },
+    "T1D08": { "why": "A teacher may be paid as part of their job when the station is used for classroom instruction at an educational institution. Promoting an employer's sales or gathering news for a broadcaster are both prohibited, so 'all these choices' is wrong.", "concept": "t1d-no-business", "status": "draft" },
+    "T1D09": { "why": "Hams may not normally help broadcasters, but when no other means is reasonably available they may pass along information directly related to the immediate safety of human life or protection of property. Being noncommercial or involving spacecraft does not make it allowed.", "concept": "t1d-no-broadcasting", "status": "draft" },
+    "T1D10": { "why": "Part 97 defines broadcasting as transmissions intended for reception by the general public. Messages aimed at other amateurs, and ordinary two-way contacts, are not broadcasting.", "concept": "t1d-no-broadcasting", "status": "draft" },
+    "T1D11": { "why": "Transmissions sent to control model craft are the one case where station identification is not required. Brief adjustments, unmodulated carriers, and very low power signals still have to be identified.", "concept": "t1d-id-and-tests", "status": "draft" },
+    "T1D12": { "why": "Test transmissions are still transmissions, so you must identify your station as usual. There are no required test hours, and you do not notify the FCC.", "concept": "t1d-id-and-tests", "status": "draft" },
+
+    "T1E01": { "why": "Whenever an amateur station transmits, it must have a control operator. Even a repeater under automatic control or an auxiliary station has one who is responsible, so the answer is never.", "concept": "t1e-control-operator", "status": "draft" },
+    "T1E02": { "why": "Privileges come from the control operator's license, so anyone permitted to transmit on the satellite's uplink frequency may be control operator. No Extra license, special certification, or AMSAT membership is needed.", "concept": "t1e-privileges", "status": "draft" },
+    "T1E03": { "why": "The station licensee is responsible for the station, so the licensee chooses who serves as control operator. The FCC and frequency coordinators do not make that choice.", "concept": "t1e-control-operator", "status": "draft" },
+    "T1E04": { "why": "A station may only use the frequencies allowed by the control operator's license class. The owner's class, anyone else present, or anything printed on the license does not change that.", "concept": "t1e-privileges", "status": "draft" },
+    "T1E05": { "why": "The control point is wherever the control operator actually controls the station, which may be far from the transmitter or antenna. It has nothing to do with the licensee's mailing address.", "concept": "t1e-control-point", "status": "draft" },
+    "T1E06": { "why": "Outside an emergency, a Technician may never act as control operator in Extra-only segments, because privileges follow the control operator's own license. An Extra-class host, club trustee, or contest team does not change that.", "concept": "t1e-privileges", "status": "draft" },
+    "T1E07": { "why": "Under 97.103(a), both the control operator and the station licensee are responsible for proper operation. Letting someone else operate does not free the licensee from responsibility.", "concept": "t1e-responsibility", "status": "draft" },
+    "T1E08": { "why": "A repeater runs by itself with no control operator at the control point, which is automatic control. Controlling a station over the internet is remote control, and a computer that sends CW or your ID is just a tool you control.", "concept": "t1e-control-types", "status": "draft" },
+    "T1E09": { "why": "Section 97.109(c) allows any amateur station to be remotely controlled. It is not limited to repeaters, automatic stations, or digital stations.", "concept": "t1e-control-types", "status": "draft" },
+    "T1E10": { "why": "In remote control, the control operator is away from the station and runs it through a link, such as the internet. Radio control of a model aircraft is telecommand of a model craft, and an SDR is just a kind of radio.", "concept": "t1e-control-types", "status": "draft" },
+    "T1E11": { "why": "Part 97 defines the control operator as the amateur designated by the station licensee to be responsible for transmissions and rule compliance at that station. It is not simply the person speaking, and the FCC database does not list control operators.", "concept": "t1e-control-operator", "status": "draft" },
+
+    "T1F01": { "why": "Under 97.103(c), the licensee must make the station and its records available for inspection at any time when an FCC representative asks. No waiting period, written notice, or warrant is required.", "concept": "t1f-inspection", "status": "draft" },
+    "T1F02": { "why": "Tactical call signs do not replace your FCC call sign. You must still give it at least every 10 minutes during a communication and at the end of it.", "concept": "t1f-station-id", "status": "draft" },
+    "T1F03": { "why": "Section 97.119(a) requires your call sign at least every 10 minutes during a communication and at its end. There is no requirement to identify at the start or during every transmission, and 15 minutes is too long.", "concept": "t1f-station-id", "status": "draft" },
+    "T1F04": { "why": "When identifying by voice, Part 97 requires English. A conversation may be in another language, but the call sign itself must be given in English.", "concept": "t1f-station-id", "status": "draft" },
+    "T1F05": { "why": "A voice station may identify either by speaking its call sign or by sending it in CW; both are acceptable. Indicators like 'R' or 'RPT' are not required, and the ID does not have to be by voice only.", "concept": "t1f-station-id", "status": "draft" },
+    "T1F06": { "why": "On phone, an indicator is separated from your call sign by any word meaning the slant mark. 'Stroke', 'slant', and 'slash' are all acceptable, so all of the choices are correct.", "concept": "t1f-indicators", "status": "draft" },
+    "T1F07": { "why": "A non-licensed person may only talk with a foreign station if the United States has a third-party agreement with that country. Citizenship is not required, and identification is done the normal way.", "concept": "t1f-third-party", "status": "draft" },
+    "T1F08": { "why": "A third-party communication is a message a control operator sends to another amateur station on behalf of someone else. It is not about three stations talking together or who owns the equipment.", "concept": "t1f-third-party", "status": "draft" },
+    "T1F09": { "why": "A repeater retransmits another amateur station's signal at the same time on a different channel. A beacon only sends its own signal, and message forwarding systems store and relay messages rather than retransmitting live.", "concept": "t1f-repeaters", "status": "draft" },
+    "T1F10": { "why": "Because a repeater relays automatically, 97.205(g) says the control operator of the originating station is accountable when a repeater accidentally retransmits a rule violation. The repeater's control operator and owner are not.", "concept": "t1f-repeaters", "status": "draft" },
+    "T1F11": { "why": "A club needs at least four members to get a club station license (97.5(b)(2)). The trustee does not need an Extra license, and the club does not have to register with the ARRL.", "concept": "t1f-club-stations", "status": "draft" }
+  }
+}

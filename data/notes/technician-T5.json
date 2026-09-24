@@ -1,0 +1,506 @@
+{
+  "subelement": "T5",
+  "concepts": [
+    {
+      "id": "t5a-voltage",
+      "group": "T5A",
+      "title": "Voltage: the push behind electricity",
+      "body": [
+        "Voltage is the electrical pressure that pushes electrons through a circuit. It is measured in volts (V). A 12-volt car battery has a 12-volt difference between its two terminals.",
+        "Electrons only move when there is a difference in voltage between two points, much as water only flows in a pipe when one end is under more pressure than the other. No voltage difference means no push, and no flow.",
+        "The water picture is only a helper: electricity does not leak out of an open wire the way water spills from an open pipe. Keep the key idea: a voltage difference is what causes electrons to flow."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t5a-current",
+      "group": "T5A",
+      "title": "Current: the flow of electrons",
+      "body": [
+        "Current is the actual flow of electrons through a circuit. It is measured in amperes, usually shortened to amps (A).",
+        "In the water picture, voltage is the pressure and current is how much water is moving past a point each second. More amps means more electrons flowing.",
+        "Do not mix up the names: volts measure the push, amperes measure the flow, ohms measure resistance, and watts measure power."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t5a-power",
+      "group": "T5A",
+      "title": "Power: how fast energy is used",
+      "body": [
+        "Electrical power is the rate at which electrical energy is used or delivered. It is measured in watts (W). A 100-watt transmitter turns electrical energy into radio energy faster than a 5-watt handheld.",
+        "Watch out for watt-hours. A watt-hour is an amount of energy (power kept up for a length of time), like the capacity of a battery. It is not a unit of power itself.",
+        "Think of power as speed and energy as distance: watts tell you how fast, watt-hours tell you how much in total."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t5a-conductors-insulators",
+      "group": "T5A",
+      "title": "Conductors, insulators, and resistance",
+      "body": [
+        "A conductor lets current flow easily. Metals such as copper, aluminum, and steel are good conductors because their atoms hold their outer electrons loosely, leaving many free electrons that can drift along when a voltage is applied.",
+        "An insulator has very few free electrons, so it blocks current. Glass, plastic, ceramic, rubber, and dry air are good insulators. Some things that do not look like metal still conduct: sea water (because of dissolved salt) and graphite (a form of carbon) both carry current.",
+        "Resistance is the opposition a material gives to current, measured in ohms (Ω). Resistance opposes every kind of current: steady direct current, alternating current, and the high-frequency RF current in antennas and feed lines."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t5a-ac-dc",
+      "group": "T5A",
+      "title": "Direct current and alternating current",
+      "body": [
+        "Direct current (DC) flows in one direction only, from a source like a battery or a power supply. Your mobile radio runs on DC.",
+        "Alternating current (AC) keeps reversing direction. It swings one way (positive), back through zero, then the other way (negative), over and over. The electricity from a wall outlet is AC, and so are radio signals.",
+        "A current that only goes between zero and one direction is not true AC, because it never reverses. AC must swing through both positive and negative directions."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t5a-frequency",
+      "group": "T5A",
+      "title": "Frequency and the hertz",
+      "body": [
+        "One full swing of AC, from positive through negative and back to where it started, is called a cycle. The number of complete cycles in one second is the frequency.",
+        "Frequency is measured in hertz (Hz). One hertz means one cycle per second. U.S. household power is 60 Hz; radio signals run from thousands to billions of hertz.",
+        "Similar-sounding units are easy to confuse: the henry is the unit of inductance and the farad is the unit of capacitance. Wavelength is a distance, not a count of cycles per second."
+      ],
+      "formula": "1 Hz = 1 cycle per second",
+      "status": "draft"
+    },
+    {
+      "id": "t5b-metric-prefixes",
+      "group": "T5B",
+      "title": "The metric prefix ladder",
+      "body": [
+        "Electronics uses metric prefixes to avoid writing huge or tiny numbers. Each prefix is a multiplier stuck on the front of a unit. Most steps on the ladder are a factor of 1000.",
+        "• giga (G) = 1,000,000,000 (one billion)",
+        "• mega (M) = 1,000,000 (one million)",
+        "• kilo (k) = 1000 (one thousand)",
+        "• (base unit: volt, amp, watt, hertz, farad) = 1",
+        "• milli (m) = 1/1000 (one one-thousandth)",
+        "• micro (µ) = 1/1,000,000 (one one-millionth)",
+        "• nano (n) = 1/1,000,000,000 (one one-billionth)",
+        "• pico (p) = 1/1,000,000,000,000 (one one-trillionth)",
+        "So a kilovolt is 1000 volts, a milliwatt is one-thousandth of a watt, and a microvolt is one-millionth of a volt."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t5b-converting-units",
+      "group": "T5B",
+      "title": "Converting between prefixes step by step",
+      "body": [
+        "Step 1: Find both prefixes on the ladder and count the steps between them. Each step of 1000 moves the decimal point three places. Mega to kilo is one step; pico to micro is two steps (a factor of 1,000,000).",
+        "Step 2: Decide which way to go. Going to a smaller unit (such as amps to milliamps, or MHz to kHz) makes the number bigger, so multiply. Going to a larger unit (such as milliwatts to watts, or kHz to MHz) makes the number smaller, so divide.",
+        "Step 3: Sanity-check. It takes many small units to make one big one, so the smaller unit should always have the bigger number. Example: 1.5 A becomes 1500 mA, and 28,400 kHz becomes 28.4 MHz."
+      ],
+      "formula": "each 1000× step = move the decimal 3 places",
+      "status": "draft"
+    },
+    {
+      "id": "t5b-decibels",
+      "group": "T5B",
+      "title": "What a decibel is",
+      "body": [
+        "A decibel (dB) describes a ratio: how much bigger or smaller one power is compared with another. It does not say how many watts you have, only how much the power changed.",
+        "Positive dB means an increase (a gain). Negative dB means a decrease (a loss). Zero dB means no change.",
+        "Decibels are handy because gains and losses simply add. An amplifier gain of +10 dB followed by a cable loss of -3 dB gives a total of +7 dB."
+      ],
+      "formula": "dB = 10 × log10(P2 ÷ P1)",
+      "status": "draft"
+    },
+    {
+      "id": "t5b-db-rules-of-thumb",
+      "group": "T5B",
+      "title": "Decibel rules of thumb",
+      "body": [
+        "You rarely need a calculator for exam dB questions. Memorize these power rules: 3 dB is about double the power, 6 dB is about 4 times, 10 dB is exactly 10 times, and 20 dB is 100 times. Losses work the same with a minus sign: -3 dB is about half the power, -6 dB is about one-quarter, -10 dB is one-tenth.",
+        "Step 1: Divide the new power by the old power to get the ratio. Step 2: Break that ratio into doublings (each worth 3 dB) and tens (each worth 10 dB). Step 3: Add up the dB values, using a minus sign if the power went down.",
+        "Example: 12 W down to 3 W is a ratio of 1/4. That is two halvings, so -3 dB + -3 dB = -6 dB. The 3 dB figure is rounded (the exact value for doubling is 3.01 dB), which is why the exam says the answer most closely matches."
+      ],
+      "formula": "2× ≈ 3 dB, 4× ≈ 6 dB, 10× = 10 dB, 100× = 20 dB",
+      "status": "draft"
+    },
+    {
+      "id": "t5c-capacitance",
+      "group": "T5C",
+      "title": "Capacitance: storing energy in an electric field",
+      "body": [
+        "A capacitor is two conductive plates separated by an insulator. When voltage is applied, charge builds up on the plates and energy is stored in the electric field between them. This ability is called capacitance.",
+        "Capacitance is measured in farads (F). One farad is very large, so real capacitors are usually rated in microfarads (µF), nanofarads (nF), or picofarads (pF).",
+        "A rough analogy is a small water tank that fills up and can later release what it holds, but remember the storage is in an electric field, not a magnetic one."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t5c-inductance",
+      "group": "T5C",
+      "title": "Inductance: storing energy in a magnetic field",
+      "body": [
+        "Current flowing through a wire creates a magnetic field around it. Winding the wire into a coil makes that field stronger. A coil that stores energy in its magnetic field is called an inductor, and the ability is called inductance.",
+        "Inductance is measured in henrys (H). Radio circuits often use millihenrys (mH) or microhenrys (µH).",
+        "Memory aid: capacitance goes with the electric field and the farad; inductance goes with the magnetic field and the henry. The coulomb is a unit of electric charge, not inductance or capacitance."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t5c-impedance",
+      "group": "T5C",
+      "title": "Impedance: opposition to AC",
+      "body": [
+        "Impedance is the total opposition a circuit gives to alternating current. It includes ordinary resistance plus reactance, which is the extra opposition that capacitors and inductors show to AC and which changes with frequency.",
+        "Impedance is measured in ohms (Ω), the same unit as resistance. You will hear it often in radio: most transceivers and coaxial cables are designed for 50 ohms.",
+        "Impedance is not the inverse of resistance or reactance, and it says nothing about how much power a part can handle."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t5c-unit-abbreviations",
+      "group": "T5C",
+      "title": "Writing frequency units correctly",
+      "body": [
+        "Radio frequency (RF) means AC at frequencies high enough to radiate as radio waves, from a few kilohertz up to many gigahertz. We write these with prefixes, and the capital letters matter.",
+        "The hertz is named after a person (Heinrich Hertz), so its symbol is a capital H with a lowercase z: Hz. The prefix kilo is a lowercase k, and the prefix mega is a capital M. So kilohertz is kHz and megahertz is MHz.",
+        "Case changes meaning: a lowercase m means milli, so mHz would be millihertz, a thousandth of a hertz, not a million hertz."
+      ],
+      "formula": "kHz = kilohertz, MHz = megahertz, GHz = gigahertz",
+      "status": "draft"
+    },
+    {
+      "id": "t5c-power-formula",
+      "group": "T5C",
+      "title": "Calculating power: P = I × E",
+      "body": [
+        "In a DC circuit, power in watts equals current in amperes times voltage in volts. In formulas, voltage is written E (for electromotive force), current is I, and power is P.",
+        "Example: a radio drawing 10 A from a 13.8 V supply uses 13.8 × 10 = 138 watts.",
+        "Rearrange the same formula to find a missing value: current is power divided by voltage (I = P ÷ E), and voltage is power divided by current (E = P ÷ I). Sanity-check: to get more watts at the same voltage, you need more amps."
+      ],
+      "formula": "P = I × E",
+      "status": "draft"
+    },
+    {
+      "id": "t5d-ohms-law",
+      "group": "T5D",
+      "title": "Ohm's Law",
+      "body": [
+        "Ohm's Law ties together the three basic quantities: voltage (E, in volts), current (I, in amperes), and resistance (R, in ohms). Voltage equals current times resistance.",
+        "In the water picture, pushing the same flow through a narrower pipe (more resistance) takes more pressure (more voltage). Likewise, for a fixed resistance, doubling the current doubles the voltage across it.",
+        "Example: 2 A flowing through a 10 Ω resistor produces 2 × 10 = 20 V across it."
+      ],
+      "formula": "E = I × R",
+      "status": "draft"
+    },
+    {
+      "id": "t5d-ohms-law-rearranged",
+      "group": "T5D",
+      "title": "Rearranging Ohm's Law",
+      "body": [
+        "The same law can be solved for any one of the three quantities. To find current, divide voltage by resistance: I = E ÷ R. To find resistance, divide voltage by current: R = E ÷ I. To find voltage, multiply: E = I × R.",
+        "A memory trick is the triangle with E on top and I and R side by side on the bottom. Cover the one you want: covering E leaves I × R; covering I leaves E over R; covering R leaves E over I.",
+        "Always sanity-check the answer. More voltage across the same resistance gives more current; more resistance at the same voltage gives less current. Any formula with E squared is a power formula, not Ohm's Law."
+      ],
+      "formula": "I = E ÷ R   R = E ÷ I   E = I × R",
+      "status": "draft"
+    },
+    {
+      "id": "t5d-series-circuits",
+      "group": "T5D",
+      "title": "Series circuits",
+      "body": [
+        "In a series circuit, parts are connected end to end in a single loop, like beads on a string. There is only one path for current to take.",
+        "Because there is only one path, the same current flows through every part. Whatever amount of current passes through the first part must pass through all the others too.",
+        "The voltage, however, is shared out among the parts, and the parts' voltages add up to the source voltage."
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "t5d-parallel-circuits",
+      "group": "T5D",
+      "title": "Parallel circuits",
+      "body": [
+        "In a parallel circuit, each part is connected directly across the same two points, like rungs on a ladder. Each part has its own path, or branch.",
+        "Because every part is wired across the same two points, every part has the same voltage across it. Household outlets are wired in parallel so each one gets the same voltage.",
+        "The current, however, splits among the branches, and the branch currents add up to the total. Memory aid: series shares the current, parallel shares the voltage."
+      ],
+      "status": "draft"
+    }
+  ],
+  "explanations": {
+    "T5A01": {
+      "why": "Current, the flow of electrons, is measured in amperes. Volts measure the push, ohms measure resistance, and watts measure power.",
+      "concept": "t5a-current",
+      "status": "draft"
+    },
+    "T5A02": {
+      "why": "Power, the rate of using energy, is measured in watts. Watt-hours is tempting but it measures a total amount of energy over time, not power.",
+      "concept": "t5a-power",
+      "status": "draft"
+    },
+    "T5A03": {
+      "why": "The flow of electrons in a circuit is called current. Voltage is the push that causes the flow, not the flow itself.",
+      "concept": "t5a-current",
+      "status": "draft"
+    },
+    "T5A04": {
+      "why": "The number of complete AC cycles each second is the frequency. Wavelength sounds related, but it is the physical length of one cycle, a distance rather than a count per second.",
+      "concept": "t5a-frequency",
+      "status": "draft"
+    },
+    "T5A05": {
+      "why": "A difference in voltage between two points is the electrical pressure that pushes electrons along. Capacitance and inductance describe energy storage, and ampere-hours describe battery capacity.",
+      "concept": "t5a-voltage",
+      "status": "draft"
+    },
+    "T5A06": {
+      "why": "Frequency is measured in hertz, where one hertz is one cycle per second. The henry is the unit of inductance and the farad is the unit of capacitance.",
+      "concept": "t5a-frequency",
+      "status": "draft"
+    },
+    "T5A07": {
+      "why": "Metals conduct well because they have many loosely held free electrons that can move when a voltage is applied. Protons stay locked in the atom's nucleus and do not carry current in a wire.",
+      "concept": "t5a-conductors-insulators",
+      "status": "draft"
+    },
+    "T5A08": {
+      "why": "Glass has very few free electrons, so it blocks current and makes a good insulator. Sea water, stainless steel, and graphite all conduct electricity.",
+      "concept": "t5a-conductors-insulators",
+      "status": "draft"
+    },
+    "T5A09": {
+      "why": "Alternating current reverses direction, swinging between positive and negative. A current that only goes between zero and one direction never reverses, so it is not AC.",
+      "concept": "t5a-ac-dc",
+      "status": "draft"
+    },
+    "T5A10": {
+      "why": "Power is the rate at which electrical energy is used, measured in watts. Current is the flow of electrons and voltage is the push, not the rate of energy use.",
+      "concept": "t5a-power",
+      "status": "draft"
+    },
+    "T5A11": {
+      "why": "Resistance opposes every kind of current: direct current, alternating current, and RF current alike. So all of the choices are correct.",
+      "concept": "t5a-conductors-insulators",
+      "status": "draft"
+    },
+    "T5B01": {
+      "why": "Milliamperes are smaller units than amperes, so the number gets bigger. There are 1000 milliamperes in each ampere.",
+      "work": ["1 A = 1000 mA", "1.5 A × 1000 = 1500 mA"],
+      "concept": "t5b-converting-units",
+      "status": "draft"
+    },
+    "T5B02": {
+      "why": "Kilo means 1000, so divide the number of hertz by 1000 to get kilohertz. 1500 MHz would be a thousand times too large.",
+      "work": ["1 kHz = 1000 Hz", "1,500,000 Hz ÷ 1000 = 1500 kHz"],
+      "concept": "t5b-converting-units",
+      "status": "draft"
+    },
+    "T5B03": {
+      "why": "The prefix kilo means one thousand, so a kilovolt is one thousand volts.",
+      "work": ["kilo = 1000", "1 kV = 1 × 1000 V = 1000 V"],
+      "concept": "t5b-metric-prefixes",
+      "status": "draft"
+    },
+    "T5B04": {
+      "why": "The prefix micro means one-millionth, so a microvolt is one one-millionth of a volt. One one-thousandth would be a millivolt.",
+      "work": ["micro = 1/1,000,000", "1 µV = 1 ÷ 1,000,000 V = 0.000001 V"],
+      "concept": "t5b-metric-prefixes",
+      "status": "draft"
+    },
+    "T5B05": {
+      "why": "Watts are larger units than milliwatts, so the number gets smaller. Dividing by 1000 turns 500 milliwatts into half a watt.",
+      "work": ["1 W = 1000 mW", "500 mW ÷ 1000 = 0.5 W"],
+      "concept": "t5b-converting-units",
+      "status": "draft"
+    },
+    "T5B06": {
+      "why": "Amperes are larger units than milliamperes, so divide by 1000. 3000 milliamperes equals 3 amperes.",
+      "work": ["1 A = 1000 mA", "3000 mA ÷ 1000 = 3 A"],
+      "concept": "t5b-converting-units",
+      "status": "draft"
+    },
+    "T5B07": {
+      "why": "Kilohertz are smaller units than megahertz, so the number gets bigger. There are 1000 kHz in each MHz.",
+      "work": ["1 MHz = 1000 kHz", "3.525 MHz × 1000 = 3525 kHz"],
+      "concept": "t5b-converting-units",
+      "status": "draft"
+    },
+    "T5B08": {
+      "why": "Pico is two steps below micro on the prefix ladder, a factor of one million. So one million picofarads make exactly one microfarad.",
+      "work": ["1 µF = 1,000,000 pF", "1,000,000 pF ÷ 1,000,000 = 1 µF"],
+      "concept": "t5b-converting-units",
+      "status": "draft"
+    },
+    "T5B09": {
+      "why": "Going from 5 watts to 10 watts doubles the power, and doubling is about a 3 dB increase.",
+      "work": ["Ratio = 10 W ÷ 5 W = 2", "Doubling ≈ +3 dB", "Check: 10 × log10(2) = 3.01 dB ≈ 3 dB"],
+      "concept": "t5b-db-rules-of-thumb",
+      "status": "draft"
+    },
+    "T5B10": {
+      "why": "Dropping from 12 watts to 3 watts cuts the power to one-quarter, which is two halvings. Each halving is about -3 dB, so the total is about -6 dB. -3 dB would only be a drop to 6 watts.",
+      "work": ["Ratio = 3 W ÷ 12 W = 1/4", "1/4 = half × half", "-3 dB + -3 dB = -6 dB", "Check: 10 × log10(0.25) = -6.02 dB ≈ -6 dB"],
+      "concept": "t5b-db-rules-of-thumb",
+      "status": "draft"
+    },
+    "T5B11": {
+      "why": "Going from 20 watts to 200 watts is a tenfold increase, and a factor of 10 in power is exactly 10 dB.",
+      "work": ["Ratio = 200 W ÷ 20 W = 10", "10 × log10(10) = 10 × 1 = 10 dB"],
+      "concept": "t5b-db-rules-of-thumb",
+      "status": "draft"
+    },
+    "T5B12": {
+      "why": "Megahertz are larger units than kilohertz, so divide by 1000. This frequency is in the 10-meter amateur band.",
+      "work": ["1 MHz = 1000 kHz", "28,400 kHz ÷ 1000 = 28.400 MHz"],
+      "concept": "t5b-converting-units",
+      "status": "draft"
+    },
+    "T5B13": {
+      "why": "Gigahertz are larger units than megahertz, so divide by 1000. The result is a little over 2.4 GHz.",
+      "work": ["1 GHz = 1000 MHz", "2425 MHz ÷ 1000 = 2.425 GHz"],
+      "concept": "t5b-converting-units",
+      "status": "draft"
+    },
+    "T5C01": {
+      "why": "Capacitance is the ability to store energy in an electric field, as between the plates of a capacitor. Inductance is the tempting wrong choice, but it stores energy in a magnetic field.",
+      "concept": "t5c-capacitance",
+      "status": "draft"
+    },
+    "T5C02": {
+      "why": "Capacitance is measured in farads. The henry is the unit of inductance, not capacitance.",
+      "concept": "t5c-capacitance",
+      "status": "draft"
+    },
+    "T5C03": {
+      "why": "Inductance is the ability to store energy in a magnetic field, such as the field around a coil carrying current. Capacitance stores energy in an electric field instead.",
+      "concept": "t5c-inductance",
+      "status": "draft"
+    },
+    "T5C04": {
+      "why": "Inductance is measured in henrys. The farad is for capacitance and the coulomb is a unit of electric charge.",
+      "concept": "t5c-inductance",
+      "status": "draft"
+    },
+    "T5C05": {
+      "why": "Impedance is a kind of opposition to current, so it is measured in ohms, the same unit as resistance.",
+      "concept": "t5c-impedance",
+      "status": "draft"
+    },
+    "T5C06": {
+      "why": "Kilo is written with a lowercase k, and hertz is written Hz with a capital H and lowercase z, giving kHz.",
+      "concept": "t5c-unit-abbreviations",
+      "status": "draft"
+    },
+    "T5C07": {
+      "why": "Mega is written with a capital M, and hertz is Hz, giving MHz. A lowercase m would mean milli, so mHz is millihertz, a tiny fraction of a hertz.",
+      "concept": "t5c-unit-abbreviations",
+      "status": "draft"
+    },
+    "T5C08": {
+      "why": "Power equals current times voltage, written P = I × E. Dividing voltage by current gives resistance, not power.",
+      "concept": "t5c-power-formula",
+      "status": "draft"
+    },
+    "T5C09": {
+      "why": "Multiply the current by the voltage to get power in watts.",
+      "work": ["P = I × E", "P = 10 A × 13.8 V", "P = 138 W"],
+      "concept": "t5c-power-formula",
+      "status": "draft"
+    },
+    "T5C10": {
+      "why": "Multiply the current by the voltage to get power in watts.",
+      "work": ["P = I × E", "P = 2.5 A × 12 V", "P = 30 W"],
+      "concept": "t5c-power-formula",
+      "status": "draft"
+    },
+    "T5C11": {
+      "why": "Rearrange the power formula to solve for current: divide the power by the voltage.",
+      "work": ["P = I × E, so I = P ÷ E", "I = 120 W ÷ 12 V", "I = 10 A"],
+      "concept": "t5c-power-formula",
+      "status": "draft"
+    },
+    "T5C12": {
+      "why": "Impedance is the total opposition to alternating current, combining resistance and reactance. It is not the inverse of resistance or reactance, and it has nothing to do with power handling.",
+      "concept": "t5c-impedance",
+      "status": "draft"
+    },
+    "T5D01": {
+      "why": "Current equals voltage divided by resistance, I = E ÷ R. That makes sense: more push gives more current, and more resistance gives less.",
+      "concept": "t5d-ohms-law-rearranged",
+      "status": "draft"
+    },
+    "T5D02": {
+      "why": "Voltage equals current times resistance, E = I × R. This is the basic form of Ohm's Law.",
+      "concept": "t5d-ohms-law",
+      "status": "draft"
+    },
+    "T5D03": {
+      "why": "Resistance equals voltage divided by current, R = E ÷ I. Adding or subtracting volts and amps does not give a meaningful result.",
+      "concept": "t5d-ohms-law-rearranged",
+      "status": "draft"
+    },
+    "T5D04": {
+      "why": "Divide the voltage by the current to find resistance. Multiplying the two (to get 270) would give watts of power, not ohms.",
+      "work": ["R = E ÷ I", "R = 90 V ÷ 3 A", "R = 30 Ω"],
+      "concept": "t5d-ohms-law-rearranged",
+      "status": "draft"
+    },
+    "T5D05": {
+      "why": "Divide the voltage by the current to find resistance.",
+      "work": ["R = E ÷ I", "R = 12 V ÷ 1.5 A", "R = 8 Ω"],
+      "concept": "t5d-ohms-law-rearranged",
+      "status": "draft"
+    },
+    "T5D06": {
+      "why": "Divide the source voltage by the current drawn to find resistance.",
+      "work": ["R = E ÷ I", "R = 12 V ÷ 4 A", "R = 3 Ω"],
+      "concept": "t5d-ohms-law-rearranged",
+      "status": "draft"
+    },
+    "T5D07": {
+      "why": "Divide the voltage by the resistance to find current. Dividing the other way (80 by 120) gives 0.667, which is upside down.",
+      "work": ["I = E ÷ R", "I = 120 V ÷ 80 Ω", "I = 1.5 A"],
+      "concept": "t5d-ohms-law-rearranged",
+      "status": "draft"
+    },
+    "T5D08": {
+      "why": "Divide the voltage by the resistance to find current.",
+      "work": ["I = E ÷ R", "I = 200 V ÷ 100 Ω", "I = 2 A"],
+      "concept": "t5d-ohms-law-rearranged",
+      "status": "draft"
+    },
+    "T5D09": {
+      "why": "Divide the voltage by the resistance to find current.",
+      "work": ["I = E ÷ R", "I = 240 V ÷ 24 Ω", "I = 10 A"],
+      "concept": "t5d-ohms-law-rearranged",
+      "status": "draft"
+    },
+    "T5D10": {
+      "why": "Multiply the current by the resistance to find the voltage across the resistor.",
+      "work": ["E = I × R", "E = 0.5 A × 2 Ω", "E = 1 V"],
+      "concept": "t5d-ohms-law",
+      "status": "draft"
+    },
+    "T5D11": {
+      "why": "Multiply the current by the resistance to find the voltage. Adding the numbers (to get 11) is a common slip.",
+      "work": ["E = I × R", "E = 1 A × 10 Ω", "E = 10 V"],
+      "concept": "t5d-ohms-law",
+      "status": "draft"
+    },
+    "T5D12": {
+      "why": "Multiply the current by the resistance to find the voltage. Adding (12) or subtracting (8) the numbers does not follow Ohm's Law.",
+      "work": ["E = I × R", "E = 2 A × 10 Ω", "E = 20 V"],
+      "concept": "t5d-ohms-law",
+      "status": "draft"
+    },
+    "T5D13": {
+      "why": "A series circuit has only one path, so the same current must flow through every component. In a parallel circuit the current splits among the branches.",
+      "concept": "t5d-series-circuits",
+      "status": "draft"
+    },
+    "T5D14": {
+      "why": "In a parallel circuit every component is connected across the same two points, so each has the same voltage across it. In a series circuit the voltage is divided among the parts.",
+      "concept": "t5d-parallel-circuits",
+      "status": "draft"
+    }
+  }
+}
